@@ -131,10 +131,18 @@ namespace Interface_Usuario
         }
 
 
+
+
+
+
+
         #endregion
 
 
-        
+        private void PainelbarraTitulo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
 
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {
@@ -165,12 +173,12 @@ namespace Interface_Usuario
 
         private void CloseForms(object sender, FormClosedEventArgs e)
         {
-            if (Application.OpenForms["FrmCadastro"] == null)
-                btnCadastro.BackColor = Color.FromArgb(4);
-            if (Application.OpenForms["FrmLivros"] == null)
-                btnCadastro.BackColor = Color.FromArgb(4);
-            if (Application.OpenForms["FrmVendas"] == null)
-                btnCadastro.BackColor = Color.FromArgb(4);
+            //if (Application.OpenForms["FrmCadastro"] == null)
+            //    btnCadastro.BackColor = Color.FromArgb(4);
+            //if (Application.OpenForms["FrmLivros"] == null)
+            //    btnCadastro.BackColor = Color.FromArgb(4);
+            //if (Application.OpenForms["FrmVendas"] == null)
+            //    btnCadastro.BackColor = Color.FromArgb(4);
         }
     }
 
