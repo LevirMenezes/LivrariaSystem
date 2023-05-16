@@ -97,6 +97,9 @@ namespace Interface_Usuario
             // 
             // painelFormularios
             // 
+            this.painelFormularios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.painelFormularios.BackColor = System.Drawing.Color.White;
             this.painelFormularios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.painelFormularios.Controls.Add(this.panel5);
@@ -106,11 +109,11 @@ namespace Interface_Usuario
             this.painelFormularios.Controls.Add(this.picboxRetroceder);
             this.painelFormularios.Controls.Add(this.panel2);
             this.painelFormularios.Controls.Add(this.panel1);
-            this.painelFormularios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.painelFormularios.Location = new System.Drawing.Point(0, 0);
             this.painelFormularios.Name = "painelFormularios";
             this.painelFormularios.Size = new System.Drawing.Size(900, 640);
             this.painelFormularios.TabIndex = 2;
+            this.painelFormularios.Paint += new System.Windows.Forms.PaintEventHandler(this.painelFormularios_Paint);
             // 
             // panel5
             // 
@@ -367,7 +370,8 @@ namespace Interface_Usuario
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.DarkMagenta;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.picboxCarrinho);
@@ -388,19 +392,26 @@ namespace Interface_Usuario
             // 
             // picboxCarrinho
             // 
-            this.picboxCarrinho.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.picboxCarrinho.Location = new System.Drawing.Point(746, 2);
+            this.picboxCarrinho.BackColor = System.Drawing.Color.Transparent;
+            this.picboxCarrinho.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picboxCarrinho.BackgroundImage")));
+            this.picboxCarrinho.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picboxCarrinho.ErrorImage = ((System.Drawing.Image)(resources.GetObject("picboxCarrinho.ErrorImage")));
+            this.picboxCarrinho.InitialImage = ((System.Drawing.Image)(resources.GetObject("picboxCarrinho.InitialImage")));
+            this.picboxCarrinho.Location = new System.Drawing.Point(740, 11);
             this.picboxCarrinho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picboxCarrinho.Name = "picboxCarrinho";
             this.picboxCarrinho.Size = new System.Drawing.Size(41, 41);
             this.picboxCarrinho.TabIndex = 7;
             this.picboxCarrinho.TabStop = false;
+            this.picboxCarrinho.Click += new System.EventHandler(this.picboxCarrinho_Click);
             // 
             // linkLabel1
             // 
+            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.Red;
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.linkLabel1.Location = new System.Drawing.Point(590, 24);
+            this.linkLabel1.LinkColor = System.Drawing.Color.White;
+            this.linkLabel1.Location = new System.Drawing.Point(589, 24);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(146, 18);
@@ -410,21 +421,22 @@ namespace Interface_Usuario
             // 
             // picboxUser
             // 
-            this.picboxUser.BackColor = System.Drawing.Color.White;
+            this.picboxUser.BackColor = System.Drawing.Color.Transparent;
             this.picboxUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picboxUser.BackgroundImage")));
-            this.picboxUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picboxUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picboxUser.ErrorImage = null;
-            this.picboxUser.Location = new System.Drawing.Point(544, 2);
+            this.picboxUser.Location = new System.Drawing.Point(543, 4);
             this.picboxUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picboxUser.Name = "picboxUser";
-            this.picboxUser.Size = new System.Drawing.Size(41, 41);
+            this.picboxUser.Size = new System.Drawing.Size(45, 49);
             this.picboxUser.TabIndex = 5;
             this.picboxUser.TabStop = false;
+            this.picboxUser.Click += new System.EventHandler(this.picboxUser_Click);
             // 
             // tbxPesquisa
             // 
             this.tbxPesquisa.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbxPesquisa.Location = new System.Drawing.Point(160, 24);
+            this.tbxPesquisa.Location = new System.Drawing.Point(162, 24);
             this.tbxPesquisa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxPesquisa.Name = "tbxPesquisa";
             this.tbxPesquisa.Size = new System.Drawing.Size(377, 20);
@@ -437,7 +449,7 @@ namespace Interface_Usuario
             this.lblLivraria.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblLivraria.Font = new System.Drawing.Font("Bauhaus 93", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLivraria.ForeColor = System.Drawing.Color.White;
-            this.lblLivraria.Location = new System.Drawing.Point(11, 11);
+            this.lblLivraria.Location = new System.Drawing.Point(10, 11);
             this.lblLivraria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLivraria.Name = "lblLivraria";
             this.lblLivraria.Size = new System.Drawing.Size(145, 32);
@@ -450,7 +462,7 @@ namespace Interface_Usuario
             this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximizar.Image")));
-            this.btnMaximizar.Location = new System.Drawing.Point(833, 9);
+            this.btnMaximizar.Location = new System.Drawing.Point(833, 14);
             this.btnMaximizar.Name = "btnMaximizar";
             this.btnMaximizar.Size = new System.Drawing.Size(28, 32);
             this.btnMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -463,9 +475,9 @@ namespace Interface_Usuario
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(799, 9);
+            this.btnMinimizar.Location = new System.Drawing.Point(799, 14);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(28, 34);
+            this.btnMinimizar.Size = new System.Drawing.Size(28, 32);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnMinimizar.TabIndex = 2;
             this.btnMinimizar.TabStop = false;
@@ -476,7 +488,7 @@ namespace Interface_Usuario
             this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFechar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFechar.Image = ((System.Drawing.Image)(resources.GetObject("btnFechar.Image")));
-            this.btnFechar.Location = new System.Drawing.Point(867, 11);
+            this.btnFechar.Location = new System.Drawing.Point(867, 14);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(24, 32);
             this.btnFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

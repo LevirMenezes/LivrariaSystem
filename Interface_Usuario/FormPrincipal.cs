@@ -154,6 +154,21 @@ namespace Interface_Usuario
 
         }
 
+        private void picboxUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picboxCarrinho_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void painelFormularios_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {
             Form formulario;
