@@ -144,6 +144,16 @@ namespace Interface_Usuario
 
         }
 
+        private void lblLivraria_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbxPesquisa_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {
             Form formulario;
