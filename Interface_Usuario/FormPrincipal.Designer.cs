@@ -117,13 +117,13 @@ namespace Interface_Usuario
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.button2);
             this.panel5.Controls.Add(this.pictureBox1);
             this.panel5.Location = new System.Drawing.Point(604, 154);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(224, 388);
             this.panel5.TabIndex = 6;
@@ -151,7 +151,7 @@ namespace Interface_Usuario
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(81, 345);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(82, 30);
             this.button2.TabIndex = 3;
@@ -162,7 +162,7 @@ namespace Interface_Usuario
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.pictureBox1.Location = new System.Drawing.Point(43, 28);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(147, 228);
             this.pictureBox1.TabIndex = 2;
@@ -176,7 +176,7 @@ namespace Interface_Usuario
             this.panel4.Controls.Add(this.button3);
             this.panel4.Controls.Add(this.pictureBox3);
             this.panel4.Location = new System.Drawing.Point(337, 154);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(224, 388);
             this.panel4.TabIndex = 5;
@@ -204,7 +204,7 @@ namespace Interface_Usuario
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(68, 345);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(82, 30);
             this.button3.TabIndex = 4;
@@ -215,7 +215,7 @@ namespace Interface_Usuario
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.pictureBox3.Location = new System.Drawing.Point(36, 28);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(147, 228);
             this.pictureBox3.TabIndex = 3;
@@ -229,7 +229,7 @@ namespace Interface_Usuario
             this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Location = new System.Drawing.Point(68, 154);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(223, 388);
             this.panel3.TabIndex = 4;
@@ -257,7 +257,7 @@ namespace Interface_Usuario
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(65, 345);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(82, 30);
             this.button1.TabIndex = 2;
@@ -268,7 +268,7 @@ namespace Interface_Usuario
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.pictureBox2.Location = new System.Drawing.Point(39, 28);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(147, 228);
             this.pictureBox2.TabIndex = 1;
@@ -278,7 +278,7 @@ namespace Interface_Usuario
             // 
             this.picboxAvancar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.picboxAvancar.Location = new System.Drawing.Point(828, 300);
-            this.picboxAvancar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picboxAvancar.Margin = new System.Windows.Forms.Padding(2);
             this.picboxAvancar.Name = "picboxAvancar";
             this.picboxAvancar.Size = new System.Drawing.Size(39, 98);
             this.picboxAvancar.TabIndex = 3;
@@ -288,7 +288,7 @@ namespace Interface_Usuario
             // 
             this.picboxRetroceder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.picboxRetroceder.Location = new System.Drawing.Point(28, 300);
-            this.picboxRetroceder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picboxRetroceder.Margin = new System.Windows.Forms.Padding(2);
             this.picboxRetroceder.Name = "picboxRetroceder";
             this.picboxRetroceder.Size = new System.Drawing.Size(39, 98);
             this.picboxRetroceder.TabIndex = 2;
@@ -303,7 +303,7 @@ namespace Interface_Usuario
             this.panel2.Controls.Add(this.linkLabel3);
             this.panel2.Controls.Add(this.linkLabel2);
             this.panel2.Location = new System.Drawing.Point(28, 73);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(856, 50);
             this.panel2.TabIndex = 1;
@@ -385,7 +385,7 @@ namespace Interface_Usuario
             this.panel1.Controls.Add(this.btnRestaurar);
             this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(900, 57);
             this.panel1.TabIndex = 0;
@@ -398,7 +398,7 @@ namespace Interface_Usuario
             this.picboxCarrinho.ErrorImage = ((System.Drawing.Image)(resources.GetObject("picboxCarrinho.ErrorImage")));
             this.picboxCarrinho.InitialImage = ((System.Drawing.Image)(resources.GetObject("picboxCarrinho.InitialImage")));
             this.picboxCarrinho.Location = new System.Drawing.Point(740, 11);
-            this.picboxCarrinho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picboxCarrinho.Margin = new System.Windows.Forms.Padding(2);
             this.picboxCarrinho.Name = "picboxCarrinho";
             this.picboxCarrinho.Size = new System.Drawing.Size(41, 41);
             this.picboxCarrinho.TabIndex = 7;
@@ -426,7 +426,7 @@ namespace Interface_Usuario
             this.picboxUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picboxUser.ErrorImage = null;
             this.picboxUser.Location = new System.Drawing.Point(543, 4);
-            this.picboxUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picboxUser.Margin = new System.Windows.Forms.Padding(2);
             this.picboxUser.Name = "picboxUser";
             this.picboxUser.Size = new System.Drawing.Size(45, 49);
             this.picboxUser.TabIndex = 5;
@@ -437,7 +437,7 @@ namespace Interface_Usuario
             // 
             this.tbxPesquisa.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbxPesquisa.Location = new System.Drawing.Point(162, 24);
-            this.tbxPesquisa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxPesquisa.Margin = new System.Windows.Forms.Padding(2);
             this.tbxPesquisa.Name = "tbxPesquisa";
             this.tbxPesquisa.Size = new System.Drawing.Size(377, 20);
             this.tbxPesquisa.TabIndex = 1;
