@@ -31,27 +31,26 @@ namespace Interface_Usuario
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastro));
             this.txtTitulo = new System.Windows.Forms.TextBox();
-            this.txtAutor = new System.Windows.Forms.TextBox();
             this.txtEditora = new System.Windows.Forms.TextBox();
-            this.lblCadastroLivro = new System.Windows.Forms.Label();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnCadastroLivro = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblNomeCompleto = new System.Windows.Forms.Label();
+            this.lblTelefoneUsuario = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtPreco = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblLivraria = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -60,39 +59,19 @@ namespace Interface_Usuario
             // 
             // txtTitulo
             // 
-            this.txtTitulo.Location = new System.Drawing.Point(474, 227);
+            this.txtTitulo.Location = new System.Drawing.Point(426, 236);
             this.txtTitulo.Margin = new System.Windows.Forms.Padding(4);
             this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(447, 22);
+            this.txtTitulo.Size = new System.Drawing.Size(374, 22);
             this.txtTitulo.TabIndex = 0;
-            // 
-            // txtAutor
-            // 
-            this.txtAutor.Location = new System.Drawing.Point(474, 278);
-            this.txtAutor.Margin = new System.Windows.Forms.Padding(4);
-            this.txtAutor.Name = "txtAutor";
-            this.txtAutor.Size = new System.Drawing.Size(447, 22);
-            this.txtAutor.TabIndex = 1;
             // 
             // txtEditora
             // 
-            this.txtEditora.Location = new System.Drawing.Point(474, 331);
+            this.txtEditora.Location = new System.Drawing.Point(426, 426);
             this.txtEditora.Margin = new System.Windows.Forms.Padding(4);
             this.txtEditora.Name = "txtEditora";
-            this.txtEditora.Size = new System.Drawing.Size(447, 22);
+            this.txtEditora.Size = new System.Drawing.Size(374, 22);
             this.txtEditora.TabIndex = 2;
-            // 
-            // lblCadastroLivro
-            // 
-            this.lblCadastroLivro.AutoSize = true;
-            this.lblCadastroLivro.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCadastroLivro.ForeColor = System.Drawing.Color.Purple;
-            this.lblCadastroLivro.Location = new System.Drawing.Point(533, 93);
-            this.lblCadastroLivro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCadastroLivro.Name = "lblCadastroLivro";
-            this.lblCadastroLivro.Size = new System.Drawing.Size(163, 23);
-            this.lblCadastroLivro.TabIndex = 3;
-            this.lblCadastroLivro.Text = "Cadastro de Livro";
             // 
             // btnSair
             // 
@@ -100,10 +79,10 @@ namespace Interface_Usuario
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.ForeColor = System.Drawing.Color.Purple;
-            this.btnSair.Location = new System.Drawing.Point(288, 679);
+            this.btnSair.Location = new System.Drawing.Point(293, 679);
             this.btnSair.Margin = new System.Windows.Forms.Padding(4);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(99, 27);
+            this.btnSair.Size = new System.Drawing.Size(150, 30);
             this.btnSair.TabIndex = 5;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
@@ -114,91 +93,73 @@ namespace Interface_Usuario
             this.btnCadastroLivro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastroLivro.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastroLivro.ForeColor = System.Drawing.Color.Purple;
-            this.btnCadastroLivro.Location = new System.Drawing.Point(777, 679);
+            this.btnCadastroLivro.Location = new System.Drawing.Point(773, 679);
             this.btnCadastroLivro.Margin = new System.Windows.Forms.Padding(4);
             this.btnCadastroLivro.Name = "btnCadastroLivro";
-            this.btnCadastroLivro.Size = new System.Drawing.Size(144, 27);
+            this.btnCadastroLivro.Size = new System.Drawing.Size(150, 30);
             this.btnCadastroLivro.TabIndex = 4;
             this.btnCadastroLivro.Text = "Cadastrar";
             this.btnCadastroLivro.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // lblNomeCompleto
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(0, 70);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(97, 84);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.lblNomeCompleto.AutoSize = true;
+            this.lblNomeCompleto.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeCompleto.ForeColor = System.Drawing.Color.Purple;
+            this.lblNomeCompleto.Location = new System.Drawing.Point(424, 193);
+            this.lblNomeCompleto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNomeCompleto.Name = "lblNomeCompleto";
+            this.lblNomeCompleto.Size = new System.Drawing.Size(332, 23);
+            this.lblNomeCompleto.TabIndex = 7;
+            this.lblNomeCompleto.Text = "INFORME SEU NOME COMPLETO";
             // 
-            // label1
+            // lblTelefoneUsuario
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Purple;
-            this.label1.Location = new System.Drawing.Point(284, 226);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 23);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Título:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Purple;
-            this.label2.Location = new System.Drawing.Point(284, 276);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 23);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Autor:";
+            this.lblTelefoneUsuario.AutoSize = true;
+            this.lblTelefoneUsuario.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefoneUsuario.ForeColor = System.Drawing.Color.Purple;
+            this.lblTelefoneUsuario.Location = new System.Drawing.Point(424, 290);
+            this.lblTelefoneUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTelefoneUsuario.Name = "lblTelefoneUsuario";
+            this.lblTelefoneUsuario.Size = new System.Drawing.Size(257, 23);
+            this.lblTelefoneUsuario.TabIndex = 8;
+            this.lblTelefoneUsuario.Text = "INFORME SEU TELEFONE";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Purple;
-            this.label3.Location = new System.Drawing.Point(284, 329);
+            this.label3.Location = new System.Drawing.Point(424, 388);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 23);
+            this.label3.Size = new System.Drawing.Size(216, 23);
             this.label3.TabIndex = 9;
-            this.label3.Text = "Editora:";
+            this.label3.Text = "INFORME SEU EMAIL";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Purple;
-            this.label4.Location = new System.Drawing.Point(284, 380);
+            this.label4.Location = new System.Drawing.Point(424, 474);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(171, 23);
+            this.label4.Size = new System.Drawing.Size(263, 23);
             this.label4.TabIndex = 11;
-            this.label4.Text = "Ano de Publicação:";
+            this.label4.Text = "CADASTRAR NOVA SENHA";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Purple;
-            this.label5.Location = new System.Drawing.Point(286, 426);
+            this.label5.Location = new System.Drawing.Point(424, 576);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 23);
+            this.label5.Size = new System.Drawing.Size(263, 23);
             this.label5.TabIndex = 13;
-            this.label5.Text = "Preço:";
-            // 
-            // txtPreco
-            // 
-            this.txtPreco.Location = new System.Drawing.Point(474, 426);
-            this.txtPreco.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPreco.Name = "txtPreco";
-            this.txtPreco.Size = new System.Drawing.Size(447, 22);
-            this.txtPreco.TabIndex = 12;
+            this.label5.Text = "CONFIRMAR NOVA SENHA";
             // 
             // panel1
             // 
@@ -229,12 +190,36 @@ namespace Interface_Usuario
             this.lblLivraria.TabIndex = 4;
             this.lblLivraria.Text = "Livraria Tor";
             // 
-            // dateTimePicker1
+            // maskedTextBox1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(474, 380);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(447, 22);
-            this.dateTimePicker1.TabIndex = 15;
+            this.maskedTextBox1.Location = new System.Drawing.Point(426, 338);
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(374, 22);
+            this.maskedTextBox1.TabIndex = 16;
+            // 
+            // maskedTextBox2
+            // 
+            this.maskedTextBox2.Location = new System.Drawing.Point(426, 631);
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(374, 22);
+            this.maskedTextBox2.TabIndex = 17;
+            // 
+            // maskedTextBox3
+            // 
+            this.maskedTextBox3.Location = new System.Drawing.Point(426, 525);
+            this.maskedTextBox3.Name = "maskedTextBox3";
+            this.maskedTextBox3.Size = new System.Drawing.Size(374, 22);
+            this.maskedTextBox3.TabIndex = 18;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::Interface_Usuario.Properties.Resources.user_add_21977;
+            this.pictureBox6.Location = new System.Drawing.Point(552, 75);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(111, 103);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 19;
+            this.pictureBox6.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -294,28 +279,27 @@ namespace Interface_Usuario
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 788);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.maskedTextBox3);
+            this.Controls.Add(this.maskedTextBox2);
+            this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtPreco);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lblTelefoneUsuario);
+            this.Controls.Add(this.lblNomeCompleto);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnCadastroLivro);
-            this.Controls.Add(this.lblCadastroLivro);
             this.Controls.Add(this.txtEditora);
-            this.Controls.Add(this.txtAutor);
             this.Controls.Add(this.txtTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmCadastro";
             this.Text = "Livro";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -328,24 +312,23 @@ namespace Interface_Usuario
         #endregion
 
         private System.Windows.Forms.TextBox txtTitulo;
-        private System.Windows.Forms.TextBox txtAutor;
         private System.Windows.Forms.TextBox txtEditora;
-        private System.Windows.Forms.Label lblCadastroLivro;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnCadastroLivro;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblNomeCompleto;
+        private System.Windows.Forms.Label lblTelefoneUsuario;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtPreco;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblLivraria;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+        private System.Windows.Forms.PictureBox pictureBox6;
     }
 }

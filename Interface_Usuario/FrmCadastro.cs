@@ -15,6 +15,7 @@ namespace Interface_Usuario
         public FrmCadastro()
         {
             InitializeComponent();
+
         }
 
         private void btnSairUsuario_Click(object sender, EventArgs e)
@@ -23,6 +24,11 @@ namespace Interface_Usuario
         }
 
         private void btnMaximizar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCadastroLivro_Click(object sender, EventArgs e)
         {
 
         }
