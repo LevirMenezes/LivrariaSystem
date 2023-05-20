@@ -21,5 +21,10 @@ namespace Interface_Usuario
         {
             this.Close();
         }
+
+        private void btnMaximizar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
