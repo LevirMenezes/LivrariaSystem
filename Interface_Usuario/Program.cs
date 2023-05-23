@@ -16,7 +16,7 @@ namespace Interface_Usuario
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormPrincipal());
+            Application.Run(new FrmLivros());
 
         }
     }

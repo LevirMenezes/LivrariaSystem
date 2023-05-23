@@ -28,5 +28,18 @@ namespace Interface_Usuario
         {
 
         }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+            string caminhoDaImagem = openFileDialog1.FileName;
+            pictureBox7.Image      = Image.FromFile(caminhoDaImagem);
+        }
+
+        private void btnSelecionarImagem_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Arquivos de Imagem|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+            openFileDialog1.Title  = "Selecionar Imagem";
+            openFileDialog1.ShowDialog();
+        }
     }
 }
