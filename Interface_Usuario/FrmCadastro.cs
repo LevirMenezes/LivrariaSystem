@@ -15,11 +15,22 @@ namespace Interface_Usuario
         public FrmCadastro()
         {
             InitializeComponent();
+
         }
 
         private void btnSairUsuario_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnMaximizar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCadastroLivro_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

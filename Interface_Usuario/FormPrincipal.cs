@@ -169,6 +169,11 @@ namespace Interface_Usuario
 
         }
 
+        private void FormPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {
             Form formulario;
