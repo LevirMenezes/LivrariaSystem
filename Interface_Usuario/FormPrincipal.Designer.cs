@@ -515,6 +515,7 @@ namespace Interface_Usuario
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.panelConteiner.ResumeLayout(false);
             this.painelFormularios.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
