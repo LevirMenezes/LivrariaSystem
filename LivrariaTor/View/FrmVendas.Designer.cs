@@ -1,5 +1,5 @@
 ﻿
-namespace Interface_Usuario
+namespace LivrariaTor
 {
     partial class FrmVendas
     {

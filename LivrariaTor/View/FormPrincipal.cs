@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
-namespace Interface_Usuario
+namespace LivrariaTor
 {
     public partial class FormPrincipal : Form
     {

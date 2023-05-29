@@ -1,5 +1,5 @@
 ﻿
-namespace Interface_Usuario
+namespace LivrariaTor
 {
     partial class FrmLivros
     {
@@ -213,7 +213,7 @@ namespace Interface_Usuario
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Image = global::Interface_Usuario.Properties.Resources.books_3025;
+            this.pictureBox6.Image = global::LivrariaTor.Properties.Resources.books_3025;
             this.pictureBox6.Location = new System.Drawing.Point(544, 77);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(111, 103);

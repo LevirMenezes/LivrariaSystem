@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Configuration; //add
 using System.Data.SqlClient; //add
 
-namespace Interface_Usuario
+namespace LivrariaTor
 {
 
 
