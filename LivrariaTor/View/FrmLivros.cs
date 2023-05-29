@@ -13,12 +13,8 @@ using System.Data.SqlClient; //add
 namespace LivrariaTor
 {
 
-
-
-
     public partial class FrmLivros : Form
     {
-
         public FrmLivros()
         {
             InitializeComponent();

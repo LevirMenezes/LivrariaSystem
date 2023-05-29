@@ -10,25 +10,24 @@ using System.Windows.Forms;
 
 namespace LivrariaTor
 {
-    public partial class FrmCadastro : Form
+    public partial class FrmAutor : Form
     {
-        public FrmCadastro()
+        public FrmAutor()
         {
             InitializeComponent();
+        }
+
+        private void FrmVendas_Load(object sender, EventArgs e)
+        {
 
         }
 
-        private void btnSairUsuario_Click(object sender, EventArgs e)
+        private void btnSairVendas_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnMaximizar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblCadastroLivro_Click(object sender, EventArgs e)
+        private void FrmVendas_Load_1(object sender, EventArgs e)
         {
 
         }

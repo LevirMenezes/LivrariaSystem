@@ -1,7 +1,7 @@
 ﻿
 namespace LivrariaTor
 {
-    partial class FrmCadastro
+    partial class FrmUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace LivrariaTor
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastro));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUsuario));
             this.txtTitulo = new System.Windows.Forms.TextBox();
             this.txtEditora = new System.Windows.Forms.TextBox();
             this.btnSair = new System.Windows.Forms.Button();
