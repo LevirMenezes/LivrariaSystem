@@ -80,7 +80,6 @@
     <Compile Include="View\Catalogodelivros.Designer.cs">
       <DependentUpon>Catalogodelivros.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FrmCadastro.cs">
     <Compile Include="View\FrmUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,8 +130,6 @@
     <EmbeddedResource Include="View\Catalogodelivros.resx">
       <DependentUpon>Catalogodelivros.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FrmCadastro.resx">
-      <DependentUpon>FrmCadastro.cs</DependentUpon>
     <EmbeddedResource Include="View\FrmUsuario.resx">
       <DependentUpon>FrmUsuario.cs</DependentUpon>
     </EmbeddedResource>

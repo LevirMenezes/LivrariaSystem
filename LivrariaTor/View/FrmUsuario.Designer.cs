@@ -207,13 +207,10 @@ namespace LivrariaTor
             // 
             // pictureBox6
             // 
-<<<<<<<< HEAD:LivrariaTor/View/FrmUsuario.Designer.cs
+
             this.pictureBox6.Image = global::LivrariaTor.Properties.Resources.user_add_21977;
             this.pictureBox6.Location = new System.Drawing.Point(552, 75);
-========
-            this.pictureBox6.Location = new System.Drawing.Point(414, 61);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
->>>>>>>> arquivo-milena:LivrariaTor/View/FrmCadastro.Designer.cs
+
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(83, 84);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -231,7 +228,6 @@ namespace LivrariaTor
             this.btnNormal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnNormal.TabIndex = 6;
             this.btnNormal.TabStop = false;
-            this.btnNormal.Click += new System.EventHandler(this.btnNormal_Click);
             // 
             // btnminimizar
             // 
@@ -244,7 +240,6 @@ namespace LivrariaTor
             this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnminimizar.TabIndex = 7;
             this.btnminimizar.TabStop = false;
-            this.btnminimizar.Click += new System.EventHandler(this.btnminimizar_Click);
             // 
             // btnFecharr
             // 
@@ -257,7 +252,6 @@ namespace LivrariaTor
             this.btnFecharr.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnFecharr.TabIndex = 5;
             this.btnFecharr.TabStop = false;
-            this.btnFecharr.Click += new System.EventHandler(this.btnFecharr_Click);
             // 
             // btnmaximizar
             // 
@@ -271,7 +265,6 @@ namespace LivrariaTor
             this.btnmaximizar.TabIndex = 8;
             this.btnmaximizar.TabStop = false;
             this.btnmaximizar.Visible = false;
-            this.btnmaximizar.Click += new System.EventHandler(this.btnmaximizar_Click_1);
             // 
             // FrmCadastro
             // 
