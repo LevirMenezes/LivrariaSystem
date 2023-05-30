@@ -31,11 +31,12 @@ namespace LivrariaTor.View
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Informacoes));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblLivraria = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.lblLivraria = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -59,18 +60,6 @@ namespace LivrariaTor.View
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(801, 57);
             this.panel1.TabIndex = 17;
-            // 
-            // lblLivraria
-            // 
-            this.lblLivraria.AutoSize = true;
-            this.lblLivraria.Font = new System.Drawing.Font("Bauhaus 93", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLivraria.ForeColor = System.Drawing.Color.White;
-            this.lblLivraria.Location = new System.Drawing.Point(10, 11);
-            this.lblLivraria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblLivraria.Name = "lblLivraria";
-            this.lblLivraria.Size = new System.Drawing.Size(162, 30);
-            this.lblLivraria.TabIndex = 4;
-            this.lblLivraria.Text = "Informações";
             // 
             // pictureBox2
             // 
@@ -121,11 +110,32 @@ namespace LivrariaTor.View
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Visible = false;
             // 
+            // lblLivraria
+            // 
+            this.lblLivraria.AutoSize = true;
+            this.lblLivraria.Font = new System.Drawing.Font("Bauhaus 93", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLivraria.ForeColor = System.Drawing.Color.White;
+            this.lblLivraria.Location = new System.Drawing.Point(10, 11);
+            this.lblLivraria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLivraria.Name = "lblLivraria";
+            this.lblLivraria.Size = new System.Drawing.Size(162, 30);
+            this.lblLivraria.TabIndex = 4;
+            this.lblLivraria.Text = "Informações";
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(73, 87);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(622, 290);
+            this.listBox1.TabIndex = 18;
+            // 
             // Informacoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Informacoes";
@@ -149,5 +159,6 @@ namespace LivrariaTor.View
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label lblLivraria;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

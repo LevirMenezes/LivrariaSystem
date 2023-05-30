@@ -32,10 +32,11 @@ namespace LivrariaTor.View
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lancamentos));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnNormal = new System.Windows.Forms.PictureBox();
+            this.lblLivraria = new System.Windows.Forms.Label();
             this.btnminimizar = new System.Windows.Forms.PictureBox();
             this.btnFecharr = new System.Windows.Forms.PictureBox();
             this.btnmaximizar = new System.Windows.Forms.PictureBox();
-            this.lblLivraria = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnNormal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
@@ -71,6 +72,18 @@ namespace LivrariaTor.View
             this.btnNormal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnNormal.TabIndex = 6;
             this.btnNormal.TabStop = false;
+            // 
+            // lblLivraria
+            // 
+            this.lblLivraria.AutoSize = true;
+            this.lblLivraria.Font = new System.Drawing.Font("Bauhaus 93", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLivraria.ForeColor = System.Drawing.Color.White;
+            this.lblLivraria.Location = new System.Drawing.Point(11, 14);
+            this.lblLivraria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLivraria.Name = "lblLivraria";
+            this.lblLivraria.Size = new System.Drawing.Size(169, 30);
+            this.lblLivraria.TabIndex = 4;
+            this.lblLivraria.Text = "Lançamentos";
             // 
             // btnminimizar
             // 
@@ -109,23 +122,20 @@ namespace LivrariaTor.View
             this.btnmaximizar.TabStop = false;
             this.btnmaximizar.Visible = false;
             // 
-            // lblLivraria
+            // listBox1
             // 
-            this.lblLivraria.AutoSize = true;
-            this.lblLivraria.Font = new System.Drawing.Font("Bauhaus 93", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLivraria.ForeColor = System.Drawing.Color.White;
-            this.lblLivraria.Location = new System.Drawing.Point(11, 14);
-            this.lblLivraria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblLivraria.Name = "lblLivraria";
-            this.lblLivraria.Size = new System.Drawing.Size(169, 30);
-            this.lblLivraria.TabIndex = 4;
-            this.lblLivraria.Text = "Lançamentos";
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(71, 93);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(620, 303);
+            this.listBox1.TabIndex = 16;
             // 
             // Lancamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(785, 489);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Lancamentos";
@@ -149,5 +159,6 @@ namespace LivrariaTor.View
         private System.Windows.Forms.PictureBox btnminimizar;
         private System.Windows.Forms.PictureBox btnFecharr;
         private System.Windows.Forms.PictureBox btnmaximizar;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
