@@ -154,24 +154,32 @@ namespace LivrariaTor
 
         }
 
-        private void picboxUser_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void picboxCarrinho_Click(object sender, EventArgs e)
         {
+            AbrirFormulario<LivrariaTor.View.Carrinho>();
 
+        }  
+
+     
+        private void LklLivros_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AbrirFormulario<LivrariaTor.View.Catalogodelivros>();
         }
 
-        private void painelFormularios_Paint(object sender, PaintEventArgs e)
+        private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            AbrirFormulario<LivrariaTor.View.Informacoes>();
         }
 
-        private void FormPrincipal_Load(object sender, EventArgs e)
+        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            AbrirFormulario<LivrariaTor.View.Maisvendidos>();
+        }
 
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AbrirFormulario<FrmCadastro>();
         }
 
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()
