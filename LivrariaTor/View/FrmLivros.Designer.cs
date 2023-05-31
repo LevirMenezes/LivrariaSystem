@@ -31,9 +31,11 @@ namespace LivrariaTor
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLivros));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.lblLivraria = new System.Windows.Forms.Label();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,16 +47,16 @@ namespace LivrariaTor
             this.txtEditora = new System.Windows.Forms.TextBox();
             this.txtTitulo = new System.Windows.Forms.TextBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -73,153 +75,6 @@ namespace LivrariaTor
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1200, 70);
             this.panel1.TabIndex = 14;
-            // 
-            // lblLivraria
-            // 
-            this.lblLivraria.AutoSize = true;
-            this.lblLivraria.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblLivraria.Font = new System.Drawing.Font("Bauhaus 93", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLivraria.ForeColor = System.Drawing.Color.White;
-            this.lblLivraria.Location = new System.Drawing.Point(13, 14);
-            this.lblLivraria.Name = "lblLivraria";
-            this.lblLivraria.Size = new System.Drawing.Size(181, 41);
-            this.lblLivraria.TabIndex = 4;
-            this.lblLivraria.Text = "Livraria Tor";
-            // 
-            // maskedTextBox3
-            // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(418, 527);
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(374, 22);
-            this.maskedTextBox3.TabIndex = 31;
-            // 
-            // maskedTextBox2
-            // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(418, 633);
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(374, 22);
-            this.maskedTextBox2.TabIndex = 30;
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(418, 340);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(374, 22);
-            this.maskedTextBox1.TabIndex = 29;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Purple;
-            this.label5.Location = new System.Drawing.Point(416, 578);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(303, 23);
-            this.label5.TabIndex = 28;
-            this.label5.Text = "INFORME O AUTOR DO LIVRO";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Purple;
-            this.label4.Location = new System.Drawing.Point(416, 476);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(319, 23);
-            this.label4.TabIndex = 27;
-            this.label4.Text = "INFORME O GENERO DO LIVRO";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Purple;
-            this.label3.Location = new System.Drawing.Point(416, 390);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(374, 23);
-            this.label3.TabIndex = 26;
-            this.label3.Text = "INFORME QUANTIDADE DE ESTOQUE";
-            // 
-            // lblTelefoneUsuario
-            // 
-            this.lblTelefoneUsuario.AutoSize = true;
-            this.lblTelefoneUsuario.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefoneUsuario.ForeColor = System.Drawing.Color.Purple;
-            this.lblTelefoneUsuario.Location = new System.Drawing.Point(416, 292);
-            this.lblTelefoneUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTelefoneUsuario.Name = "lblTelefoneUsuario";
-            this.lblTelefoneUsuario.Size = new System.Drawing.Size(302, 23);
-            this.lblTelefoneUsuario.TabIndex = 25;
-            this.lblTelefoneUsuario.Text = "INFORME O PRECO DO LIVRO";
-            // 
-            // lblNomeCompleto
-            // 
-            this.lblNomeCompleto.AutoSize = true;
-            this.lblNomeCompleto.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomeCompleto.ForeColor = System.Drawing.Color.Purple;
-            this.lblNomeCompleto.Location = new System.Drawing.Point(416, 195);
-            this.lblNomeCompleto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNomeCompleto.Name = "lblNomeCompleto";
-            this.lblNomeCompleto.Size = new System.Drawing.Size(309, 23);
-            this.lblNomeCompleto.TabIndex = 24;
-            this.lblNomeCompleto.Text = "INFORME O TITULO DO LIVRO";
-            // 
-            // btnSair
-            // 
-            this.btnSair.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSair.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.ForeColor = System.Drawing.Color.Purple;
-            this.btnSair.Location = new System.Drawing.Point(285, 681);
-            this.btnSair.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(150, 30);
-            this.btnSair.TabIndex = 23;
-            this.btnSair.Text = "Sair";
-            this.btnSair.UseVisualStyleBackColor = true;
-            // 
-            // btnCadastroLivro
-            // 
-            this.btnCadastroLivro.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnCadastroLivro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastroLivro.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastroLivro.ForeColor = System.Drawing.Color.Purple;
-            this.btnCadastroLivro.Location = new System.Drawing.Point(765, 681);
-            this.btnCadastroLivro.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCadastroLivro.Name = "btnCadastroLivro";
-            this.btnCadastroLivro.Size = new System.Drawing.Size(150, 30);
-            this.btnCadastroLivro.TabIndex = 22;
-            this.btnCadastroLivro.Text = "Cadastrar";
-            this.btnCadastroLivro.UseVisualStyleBackColor = true;
-            // 
-            // txtEditora
-            // 
-            this.txtEditora.Location = new System.Drawing.Point(418, 428);
-            this.txtEditora.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEditora.Name = "txtEditora";
-            this.txtEditora.Size = new System.Drawing.Size(374, 22);
-            this.txtEditora.TabIndex = 21;
-            // 
-            // txtTitulo
-            // 
-            this.txtTitulo.Location = new System.Drawing.Point(418, 238);
-            this.txtTitulo.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(374, 22);
-            this.txtTitulo.TabIndex = 20;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::LivrariaTor.Properties.Resources.books_3025;
-            this.pictureBox6.Location = new System.Drawing.Point(544, 77);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(111, 103);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 32;
-            this.pictureBox6.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -274,14 +129,188 @@ namespace LivrariaTor
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Visible = false;
             // 
+            // lblLivraria
+            // 
+            this.lblLivraria.AutoSize = true;
+            this.lblLivraria.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblLivraria.Font = new System.Drawing.Font("Bauhaus 93", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLivraria.ForeColor = System.Drawing.Color.White;
+            this.lblLivraria.Location = new System.Drawing.Point(13, 14);
+            this.lblLivraria.Name = "lblLivraria";
+            this.lblLivraria.Size = new System.Drawing.Size(181, 41);
+            this.lblLivraria.TabIndex = 4;
+            this.lblLivraria.Text = "Livraria Tor";
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(430, 255);
+            this.maskedTextBox1.Mask = "$ 999,999.00";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(374, 22);
+            this.maskedTextBox1.TabIndex = 29;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Purple;
+            this.label5.Location = new System.Drawing.Point(428, 480);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(303, 23);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "INFORME O AUTOR DO LIVRO";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Purple;
+            this.label4.Location = new System.Drawing.Point(428, 391);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(319, 23);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "INFORME O GENERO DO LIVRO";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Purple;
+            this.label3.Location = new System.Drawing.Point(428, 305);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(374, 23);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "INFORME QUANTIDADE DE ESTOQUE";
+            // 
+            // lblTelefoneUsuario
+            // 
+            this.lblTelefoneUsuario.AutoSize = true;
+            this.lblTelefoneUsuario.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefoneUsuario.ForeColor = System.Drawing.Color.Purple;
+            this.lblTelefoneUsuario.Location = new System.Drawing.Point(428, 207);
+            this.lblTelefoneUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTelefoneUsuario.Name = "lblTelefoneUsuario";
+            this.lblTelefoneUsuario.Size = new System.Drawing.Size(302, 23);
+            this.lblTelefoneUsuario.TabIndex = 25;
+            this.lblTelefoneUsuario.Text = "INFORME O PRECO DO LIVRO";
+            // 
+            // lblNomeCompleto
+            // 
+            this.lblNomeCompleto.AutoSize = true;
+            this.lblNomeCompleto.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeCompleto.ForeColor = System.Drawing.Color.Purple;
+            this.lblNomeCompleto.Location = new System.Drawing.Point(428, 110);
+            this.lblNomeCompleto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNomeCompleto.Name = "lblNomeCompleto";
+            this.lblNomeCompleto.Size = new System.Drawing.Size(309, 23);
+            this.lblNomeCompleto.TabIndex = 24;
+            this.lblNomeCompleto.Text = "INFORME O TITULO DO LIVRO";
+            // 
+            // btnSair
+            // 
+            this.btnSair.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSair.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.ForeColor = System.Drawing.Color.Purple;
+            this.btnSair.Location = new System.Drawing.Point(285, 681);
+            this.btnSair.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(150, 30);
+            this.btnSair.TabIndex = 23;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = true;
+            // 
+            // btnCadastroLivro
+            // 
+            this.btnCadastroLivro.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnCadastroLivro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastroLivro.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastroLivro.ForeColor = System.Drawing.Color.Purple;
+            this.btnCadastroLivro.Location = new System.Drawing.Point(765, 681);
+            this.btnCadastroLivro.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCadastroLivro.Name = "btnCadastroLivro";
+            this.btnCadastroLivro.Size = new System.Drawing.Size(150, 30);
+            this.btnCadastroLivro.TabIndex = 22;
+            this.btnCadastroLivro.Text = "Cadastrar";
+            this.btnCadastroLivro.UseVisualStyleBackColor = true;
+            // 
+            // txtEditora
+            // 
+            this.txtEditora.Location = new System.Drawing.Point(430, 343);
+            this.txtEditora.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEditora.Name = "txtEditora";
+            this.txtEditora.Size = new System.Drawing.Size(374, 22);
+            this.txtEditora.TabIndex = 21;
+            // 
+            // txtTitulo
+            // 
+            this.txtTitulo.Location = new System.Drawing.Point(430, 153);
+            this.txtTitulo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTitulo.Name = "txtTitulo";
+            this.txtTitulo.Size = new System.Drawing.Size(374, 22);
+            this.txtTitulo.TabIndex = 20;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::LivrariaTor.Properties.Resources.books_3025;
+            this.pictureBox6.Location = new System.Drawing.Point(186, 110);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(111, 103);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 32;
+            this.pictureBox6.TabStop = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(432, 526);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(374, 24);
+            this.comboBox1.TabIndex = 33;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(428, 431);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(374, 24);
+            this.comboBox2.TabIndex = 34;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Purple;
+            this.label1.Location = new System.Drawing.Point(430, 572);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(243, 23);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "INFORME NOVO AUTOR";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(432, 610);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(374, 22);
+            this.textBox1.TabIndex = 35;
+            // 
             // FrmLivros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 788);
+            this.ClientSize = new System.Drawing.Size(1200, 800);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.maskedTextBox3);
-            this.Controls.Add(this.maskedTextBox2);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -299,11 +328,11 @@ namespace LivrariaTor
             this.Text = "Livro";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -317,8 +346,6 @@ namespace LivrariaTor
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -329,5 +356,9 @@ namespace LivrariaTor
         private System.Windows.Forms.Button btnCadastroLivro;
         private System.Windows.Forms.TextBox txtEditora;
         private System.Windows.Forms.TextBox txtTitulo;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
