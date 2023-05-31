@@ -56,9 +56,9 @@ namespace LivrariaTor.View
             this.panel1.Controls.Add(this.btnmaximizar);
             this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(786, 57);
+            this.panel1.Size = new System.Drawing.Size(1201, 70);
             this.panel1.TabIndex = 15;
             // 
             // btnNormal
@@ -66,9 +66,10 @@ namespace LivrariaTor.View
             this.btnNormal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNormal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNormal.Image = ((System.Drawing.Image)(resources.GetObject("btnNormal.Image")));
-            this.btnNormal.Location = new System.Drawing.Point(712, 12);
+            this.btnNormal.Location = new System.Drawing.Point(1102, 15);
+            this.btnNormal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNormal.Name = "btnNormal";
-            this.btnNormal.Size = new System.Drawing.Size(29, 32);
+            this.btnNormal.Size = new System.Drawing.Size(39, 39);
             this.btnNormal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnNormal.TabIndex = 6;
             this.btnNormal.TabStop = false;
@@ -78,10 +79,9 @@ namespace LivrariaTor.View
             this.lblLivraria.AutoSize = true;
             this.lblLivraria.Font = new System.Drawing.Font("Bauhaus 93", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLivraria.ForeColor = System.Drawing.Color.White;
-            this.lblLivraria.Location = new System.Drawing.Point(11, 14);
-            this.lblLivraria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLivraria.Location = new System.Drawing.Point(15, 17);
             this.lblLivraria.Name = "lblLivraria";
-            this.lblLivraria.Size = new System.Drawing.Size(169, 30);
+            this.lblLivraria.Size = new System.Drawing.Size(210, 39);
             this.lblLivraria.TabIndex = 4;
             this.lblLivraria.Text = "Lançamentos";
             // 
@@ -90,9 +90,10 @@ namespace LivrariaTor.View
             this.btnminimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnminimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnminimizar.Image")));
-            this.btnminimizar.Location = new System.Drawing.Point(679, 11);
+            this.btnminimizar.Location = new System.Drawing.Point(1058, 14);
+            this.btnminimizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnminimizar.Name = "btnminimizar";
-            this.btnminimizar.Size = new System.Drawing.Size(29, 32);
+            this.btnminimizar.Size = new System.Drawing.Size(39, 39);
             this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnminimizar.TabIndex = 7;
             this.btnminimizar.TabStop = false;
@@ -102,9 +103,10 @@ namespace LivrariaTor.View
             this.btnFecharr.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFecharr.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFecharr.Image = ((System.Drawing.Image)(resources.GetObject("btnFecharr.Image")));
-            this.btnFecharr.Location = new System.Drawing.Point(747, 11);
+            this.btnFecharr.Location = new System.Drawing.Point(1149, 14);
+            this.btnFecharr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFecharr.Name = "btnFecharr";
-            this.btnFecharr.Size = new System.Drawing.Size(29, 32);
+            this.btnFecharr.Size = new System.Drawing.Size(39, 39);
             this.btnFecharr.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnFecharr.TabIndex = 5;
             this.btnFecharr.TabStop = false;
@@ -114,9 +116,10 @@ namespace LivrariaTor.View
             this.btnmaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnmaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnmaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnmaximizar.Image")));
-            this.btnmaximizar.Location = new System.Drawing.Point(713, 11);
+            this.btnmaximizar.Location = new System.Drawing.Point(1104, 14);
+            this.btnmaximizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnmaximizar.Name = "btnmaximizar";
-            this.btnmaximizar.Size = new System.Drawing.Size(29, 32);
+            this.btnmaximizar.Size = new System.Drawing.Size(39, 39);
             this.btnmaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnmaximizar.TabIndex = 8;
             this.btnmaximizar.TabStop = false;
@@ -125,19 +128,22 @@ namespace LivrariaTor.View
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(71, 93);
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(95, 114);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(620, 303);
+            this.listBox1.Size = new System.Drawing.Size(825, 372);
             this.listBox1.TabIndex = 16;
             // 
             // Lancamentos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(785, 489);
+            this.ClientSize = new System.Drawing.Size(1200, 800);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Lancamentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lancamentos";
