@@ -68,6 +68,15 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Autor.cs" />
+    <Compile Include="Model\Conexao.cs" />
+    <Compile Include="Model\Editora.cs" />
+    <Compile Include="Model\FormaPagamento.cs" />
+    <Compile Include="Model\Genero.cs" />
+    <Compile Include="Model\ItensPedido.cs" />
+    <Compile Include="Model\Livro.cs" />
+    <Compile Include="Model\Pedido.cs" />
+    <Compile Include="Model\Usuario.cs" />
     <Compile Include="View\Carrinho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,12 +100,6 @@
     </Compile>
     <Compile Include="View\FrmLivros.Designer.cs">
       <DependentUpon>FrmLivros.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\FrmAutor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FrmAutor.Designer.cs">
-      <DependentUpon>FrmAutor.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FormPrincipal.cs">
       <SubType>Form</SubType>
@@ -135,9 +138,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmLivros.resx">
       <DependentUpon>FrmLivros.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FrmAutor.resx">
-      <DependentUpon>FrmAutor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
@@ -185,7 +185,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controller\" />
-    <Folder Include="Model\" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Accessibility1">

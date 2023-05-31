@@ -118,7 +118,6 @@ namespace LivrariaTor
 
         private void btnVendas_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FrmAutor>();
         }
 
        

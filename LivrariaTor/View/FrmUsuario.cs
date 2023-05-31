@@ -23,11 +23,6 @@ namespace LivrariaTor
             this.Close();
         }
 
-        private void btnMaximizar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void lblCadastroLivro_Click(object sender, EventArgs e)
         {
 
