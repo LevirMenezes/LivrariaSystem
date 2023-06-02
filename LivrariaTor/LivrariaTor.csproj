@@ -68,15 +68,15 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Autor.cs" />
-    <Compile Include="Model\Conexao.cs" />
-    <Compile Include="Model\Editora.cs" />
-    <Compile Include="Model\FormaPagamento.cs" />
-    <Compile Include="Model\Genero.cs" />
-    <Compile Include="Model\ItensPedido.cs" />
-    <Compile Include="Model\Livro.cs" />
-    <Compile Include="Model\Pedido.cs" />
-    <Compile Include="Model\Usuario.cs" />
+    <Compile Include="Persistencia\AutorEnt.cs" />
+    <Compile Include="Persistencia\Conexao.cs" />
+    <Compile Include="Persistencia\EditoraEnt.cs" />
+    <Compile Include="Persistencia\FormaPagamentoEnt.cs" />
+    <Compile Include="Persistencia\GeneroEnt.cs" />
+    <Compile Include="Persistencia\ItensPedidoEnt.cs" />
+    <Compile Include="Persistencia\LivroEnt.cs" />
+    <Compile Include="Persistencia\PedidoEnt.cs" />
+    <Compile Include="Persistencia\UsuarioEnt.cs" />
     <Compile Include="View\Carrinho.cs">
       <SubType>Form</SubType>
     </Compile>

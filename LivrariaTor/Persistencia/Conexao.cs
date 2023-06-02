@@ -1,7 +1,7 @@
 ﻿using System.Configuration;
 using System.Data.SqlClient;
 
-namespace LivrariaTor.Model
+namespace LivrariaTor.Persistencia
 {
     public class Conexao
     {
