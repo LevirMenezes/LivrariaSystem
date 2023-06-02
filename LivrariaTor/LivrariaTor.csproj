@@ -127,6 +127,18 @@
     <Compile Include="View\Maisvendidos.Designer.cs">
       <DependentUpon>Maisvendidos.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\TelaAdm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TelaAdm.Designer.cs">
+      <DependentUpon>TelaAdm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Telalogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Telalogin.Designer.cs">
+      <DependentUpon>Telalogin.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="View\Carrinho.resx">
       <DependentUpon>Carrinho.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +172,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Maisvendidos.resx">
       <DependentUpon>Maisvendidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TelaAdm.resx">
+      <DependentUpon>TelaAdm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Telalogin.resx">
+      <DependentUpon>Telalogin.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
