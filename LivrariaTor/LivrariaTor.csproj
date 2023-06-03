@@ -68,7 +68,17 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\AutorModel.cs" />
+    <Compile Include="Model\EditoraModel.cs" />
+    <Compile Include="Model\EnderecoModel.cs" />
+    <Compile Include="Model\FormaPagamentoModel.cs" />
+    <Compile Include="Model\GeneroModel.cs" />
+    <Compile Include="Model\ItensPedidoModel.cs" />
+    <Compile Include="Model\LivroModel.cs" />
+    <Compile Include="Model\PedidoModel.cs" />
+    <Compile Include="Model\UsuarioModel.cs" />
     <Compile Include="Persistencia\AutorEnt.cs" />
+    <Compile Include="Persistencia\EnderecoEnt.cs" />
     <Compile Include="Persistencia\Conexao.cs" />
     <Compile Include="Persistencia\EditoraEnt.cs" />
     <Compile Include="Persistencia\FormaPagamentoEnt.cs" />
@@ -203,7 +213,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controller\" />
-    <Folder Include="Model\" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Accessibility1">
