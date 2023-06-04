@@ -23,5 +23,17 @@ namespace LivrariaTor.Persistencia
         public string Email { get => email; set => email = value; }
         public string Senha { get => senha; set => senha = value; }
         public int Adm { get => adm; set => adm = value; }
+
+        public UsuarioEnt()
+        {
+            Id       = 0;
+            Nome     = string.Empty;
+            Telefone = string.Empty;
+            Cpf      = string.Empty;
+            Email    = string.Empty;
+            Senha    = string.Empty;
+            Adm      = 0;
+        }
+
     }
 }

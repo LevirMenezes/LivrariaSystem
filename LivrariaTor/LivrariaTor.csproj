@@ -68,6 +68,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\UsuarioController.cs" />
     <Compile Include="Model\AutorModel.cs" />
     <Compile Include="Model\EditoraModel.cs" />
     <Compile Include="Model\EnderecoModel.cs" />
@@ -211,9 +212,7 @@
   <ItemGroup>
     <None Include="Resources\books_3025.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controller\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <COMReference Include="Accessibility1">
       <Guid>{1EA4DBF0-3C3B-11CF-810C-00AA00389B71}</Guid>
