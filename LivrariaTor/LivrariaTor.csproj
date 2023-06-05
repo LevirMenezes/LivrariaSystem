@@ -68,6 +68,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\LivroController.cs" />
     <Compile Include="Controller\UsuarioController.cs" />
     <Compile Include="Model\AutorModel.cs" />
     <Compile Include="Model\EditoraModel.cs" />
@@ -150,6 +151,12 @@
     <Compile Include="View\Telalogin.Designer.cs">
       <DependentUpon>Telalogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ItemLivro.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ItemLivro.Designer.cs">
+      <DependentUpon>ItemLivro.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="View\Carrinho.resx">
       <DependentUpon>Carrinho.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,6 +184,9 @@
     </Compile>
     <EmbeddedResource Include="View\Informacoes.resx">
       <DependentUpon>Informacoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ItemLivro.resx">
+      <DependentUpon>ItemLivro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Lancamentos.resx">
       <DependentUpon>Lancamentos.cs</DependentUpon>
@@ -225,6 +235,7 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\livro-clean-code.jpg" />
     <WCFMetadata Include="Connected Services\" />
     <Content Include="Resources\add_autor.png" />
   </ItemGroup>

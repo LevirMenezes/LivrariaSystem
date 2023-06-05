@@ -83,6 +83,16 @@ namespace LivrariaTor.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap livro_clean_code {
+            get {
+                object obj = ResourceManager.GetObject("livro_clean_code", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap user_add_21977 {
             get {
                 object obj = ResourceManager.GetObject("user_add_21977", resourceCulture);
