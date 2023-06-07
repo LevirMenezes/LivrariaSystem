@@ -20697,4 +20697,10 @@
         AAAAAAAAAAAAAAAAAAAAAAH/2Q==
 </value>
   </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>A Livraria Tor surgiu como resultado de um projeto integrador envolvendo as disciplinas de Bancos de Dados, Linguagem de Programação Visual e Engenharia de Software.
+Nesse projeto, nossa tarefa consistiu em desenvolver um sistema desktop para uma livraria. Buscamos inspiração no navegador Tor para criar o layout e escolher as cores.
+
+O principal objetivo desse sistema é oferecer aos usuários acesso a uma ampla variedade de gêneros literários. A Livraria Tor proporciona uma experiência de navegação intuitiva e amigável, permitindo que os usuários encontrem facilmente os livros que desejam!</value>
+  </data>
 </root>

@@ -39,7 +39,6 @@ namespace LivrariaTor.View
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.lblLivraria = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -141,15 +140,6 @@ namespace LivrariaTor.View
             this.lblLivraria.TabIndex = 4;
             this.lblLivraria.Text = "Informações";
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(201, 90);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(626, 290);
-            this.listBox1.TabIndex = 18;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -247,11 +237,14 @@ namespace LivrariaTor.View
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(296, 201);
+            this.label5.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label5.Location = new System.Drawing.Point(201, 118);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(497, 169);
+            this.label5.Size = new System.Drawing.Size(626, 250);
             this.label5.TabIndex = 28;
-            this.label5.Text = "efbhvfdhvhcd\r\n";
+            this.label5.Text = resources.GetString("label5.Text");
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label5.UseCompatibleTextRendering = true;
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
@@ -270,7 +263,6 @@ namespace LivrariaTor.View
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Informacoes";
@@ -306,7 +298,6 @@ namespace LivrariaTor.View
         private System.Windows.Forms.Label lblLivraria;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.ListBox listBox1;
         private PictureBox pictureBox1;
         private PictureBox pictureBox6;
         private PictureBox pictureBox7;
