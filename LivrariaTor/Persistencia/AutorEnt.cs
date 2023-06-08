@@ -9,9 +9,9 @@ namespace LivrariaTor.Persistencia
     public class AutorEnt
     {
 		private int id;
-        private string autor;
+        private string nome;
 
         public int Id { get => id; set => id = value; }
-        public string Autor { get => autor; set => autor = value; }
+        public string Nome { get => nome; set => nome = value; }
     }
 }

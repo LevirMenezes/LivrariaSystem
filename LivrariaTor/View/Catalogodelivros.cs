@@ -33,8 +33,9 @@ namespace LivrariaTor.View
             
             foreach (LivroEnt livro in Livros)
             {
+                Image img = livro.ByteToIMG();
                 ItemLivro item = new ItemLivro();
-                item.ImagemLivro = Properties.Resources.livro_clean_code;
+                item.ImagemLivro = (img == null ? Properties.Resources.adicionar_foto : img);
                 item.Title       = livro.Titulo;
                 item.Descricao   = livro.Descricao;
                 item.PrecoLivro  = livro.Preco;

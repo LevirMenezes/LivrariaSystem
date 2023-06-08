@@ -68,6 +68,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\AutorController.cs" />
+    <Compile Include="Controller\EditoraController.cs" />
+    <Compile Include="Controller\GeneroController.cs" />
     <Compile Include="Controller\LivroController.cs" />
     <Compile Include="Controller\UsuarioController.cs" />
     <Compile Include="Model\AutorModel.cs" />
@@ -235,6 +238,7 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\adicionar-foto.png" />
     <Content Include="Resources\livro-clean-code.jpg" />
     <WCFMetadata Include="Connected Services\" />
     <Content Include="Resources\add_autor.png" />

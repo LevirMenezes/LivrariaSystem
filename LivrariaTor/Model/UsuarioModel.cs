@@ -45,12 +45,12 @@ namespace LivrariaTor.Model
         {
             SqlConnection cn = Conexao.ObterConexao();
             string query = @"UPDATE tbUsuario 
-                             WHERE id     = @id 
-                             SET nome     = @nome
-                             AND telefone = @telefone
-                             AND cpf      = @cpf
-                             AND email    = @email
-                             AND senha    = @senha";
+                             SET nome = @nome,
+                             telefone = @telefone,
+                             cpf      = @cpf,
+                             email    = @email,
+                             senha    = @senha
+                             WHERE id = @id;";
             string resp = string.Empty;
             try
             {

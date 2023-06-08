@@ -11,7 +11,7 @@ namespace LivrariaTor.Model
         {
             SqlConnection cn = Conexao.ObterConexao();
 
-            string query = "INSERT INTO tbLivro (titulo, preco, descricao, estoque, anopublicacao, isbn, ideditora) VALUES  (@titulo, @preco, @descricao, @estoque, @anopublicacao, @isbn, @editora);";
+            string query = "INSERT INTO tbLivro (titulo, preco, descricao, estoque, anopublicacao, isbn, ideditora, imagem) VALUES  (@titulo, @preco, @descricao, @estoque, @anopublicacao, @isbn, @ideditora, @imagem);";
             string resp = string.Empty;
             try
             {
@@ -24,6 +24,7 @@ namespace LivrariaTor.Model
                     command.Parameters.AddWithValue("@anopublicacao", livro.AnoPublicacao);
                     command.Parameters.AddWithValue("@isbn",          livro.Isbn);
                     command.Parameters.AddWithValue("@ideditora",     livro.IdEditora);
+                    command.Parameters.AddWithValue("@imagem",        livro.Imagem);
                     resp = command.ExecuteNonQuery() == 1 ? "OK" : "O Insert não foi feito!";
                 }
             }
@@ -43,17 +44,17 @@ namespace LivrariaTor.Model
         public string Update(LivroEnt livro)
         {
             SqlConnection cn = Conexao.ObterConexao();
-            string query = @"UPDATE tbLivro 
-                             WHERE id          = @id 
-                             SET nome          = @titulo
-                             AND telefone      = @preco
-                             AND cpf           = @descricao
-                             AND email         = @estoque
-                             AND anopublicacao = @anopublicacao
-                             AND isbn          = @isbn
-                             AND ideditora     = @ideditora"
-;
-            string resp = string.Empty;
+            string resp      = string.Empty;
+            string query     = @"UPDATE tbLivro 
+                                 SET nome      = @titulo,
+                                 telefone      = @preco,
+                                 cpf           = @descricao,
+                                 email         = @estoque,
+                                 anopublicacao = @anopublicacao,
+                                 isbn          = @isbn,
+                                 ideditora     = @ideditora,
+                                 imagem        = @imagem
+                                 WHERE id      = @id;";
             try
             {
                 using (SqlCommand command = new SqlCommand(query, cn))
@@ -66,6 +67,7 @@ namespace LivrariaTor.Model
                     command.Parameters.AddWithValue("@anopublicacao", livro.AnoPublicacao);
                     command.Parameters.AddWithValue("@isbn",          livro.Isbn);
                     command.Parameters.AddWithValue("@ideditora",     livro.IdEditora);
+                    command.Parameters.AddWithValue("@imagem",        livro.Imagem);
                     resp = command.ExecuteNonQuery() == 1 ? "OK" : "O Update não foi feito!";
                 }
             }
@@ -130,6 +132,15 @@ namespace LivrariaTor.Model
                             livro.Isbn          = reader["isbn"].ToString();
                             livro.IdEditora     = Convert.ToInt32(reader["ideditora"]);
 
+                            if (!reader.IsDBNull(reader.GetOrdinal("imagem")))
+                            {
+                                long tamanhoBytes = reader.GetBytes(reader.GetOrdinal("imagem"), 0, null, 0, 0);
+                                byte[] imagemBytes = new byte[tamanhoBytes];
+                                reader.GetBytes(reader.GetOrdinal("imagem"), 0, imagemBytes, 0, (int)tamanhoBytes);
+
+                                livro.Imagem = imagemBytes;
+                            }
+
                             livros.Add(livro);
                         }
                     }
@@ -170,6 +181,15 @@ namespace LivrariaTor.Model
                             livro.AnoPublicacao = Convert.ToDateTime(reader["anopublicacao"]).ToString("dd/MM/yyyy");
                             livro.Isbn          = reader["isbn"].ToString();
                             livro.IdEditora     = Convert.ToInt32(reader["ideditora"]);
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("imagem")))
+                            {
+                                long tamanhoBytes = reader.GetBytes(reader.GetOrdinal("imagem"), 0, null, 0, 0);
+                                byte[] imagemBytes = new byte[tamanhoBytes];
+                                reader.GetBytes(reader.GetOrdinal("imagem"), 0, imagemBytes, 0, (int)tamanhoBytes);
+
+                                livro.Imagem = imagemBytes;
+                            }
                         }
                     }
                 }
@@ -185,5 +205,7 @@ namespace LivrariaTor.Model
 
             return livro;
         }
+
+
     }
 }

@@ -10,10 +10,10 @@ namespace LivrariaTor.Persistencia
     {
 		private int id;
 		private string telefone;
-		private string editora;
+		private string nome;
 
         public int Id { get => id; set => id = value; }
         public string Telefone { get => telefone; set => telefone = value; }
-        public string Editora { get => editora; set => editora = value; }
+        public string Nome { get => nome; set => nome = value; }
     }
 }

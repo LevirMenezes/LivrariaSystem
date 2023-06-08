@@ -18,7 +18,7 @@ namespace LivrariaTor
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Catalogodelivros());
+            Application.Run(new FrmLivros());
 
         }
     }

@@ -16,13 +16,13 @@ namespace LivrariaTor.Model
             {
                 using (SqlCommand command = new SqlCommand(query, cn))
                 {
-                    command.Parameters.AddWithValue("@nome", autor.Autor);
+                    command.Parameters.AddWithValue("@nome", autor.Nome);
                     resp = command.ExecuteNonQuery()==1?"OK":"O Insert não foi feito!";
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                resp = "Erro no insert!";
+                resp = "Erro no insert!" + ex.Message;
             }
             finally
             {
@@ -33,17 +33,19 @@ namespace LivrariaTor.Model
             return resp;
         }
 
-        private string Update(AutorEnt autor)
+        public string Update(AutorEnt autor)
         {
             SqlConnection cn = Conexao.ObterConexao();
-            string query = "UPDATE tbAutor WHERE id = @id SET autor = @autor";
+            string query = @"UPDATE tbAutor 
+                            SET nome = @nome
+                            WHERE id = @id ";
             string resp = string.Empty;
             try
             {
                 using (SqlCommand command = new SqlCommand(query, cn))
                 {
+                    command.Parameters.AddWithValue("@nome", autor.Nome);
                     command.Parameters.AddWithValue("@id", autor.Id);
-                    command.Parameters.AddWithValue("@nome", autor.Autor);
                     resp = command.ExecuteNonQuery() == 1 ? "OK" : "O Update não foi feito!";
                 }
             }
@@ -59,8 +61,8 @@ namespace LivrariaTor.Model
 
             return resp;
         }
-
-        private string Delete(AutorEnt autor)
+        
+        public string Delete(int id)
         {
             SqlConnection cn = Conexao.ObterConexao();
             string query = "DELETE FROM tbAutor WHERE id = @id";
@@ -69,7 +71,7 @@ namespace LivrariaTor.Model
             {
                 using (SqlCommand command = new SqlCommand(query, cn))
                 {
-                    command.Parameters.AddWithValue("@id", autor.Id);
+                    command.Parameters.AddWithValue("@id", id);
                     resp = command.ExecuteNonQuery() == 1 ? "OK" : "O Delete não foi feito!";
                 }
             }
@@ -85,8 +87,8 @@ namespace LivrariaTor.Model
 
             return resp;
         }
-
-        private List<AutorEnt> GetAll()
+        
+        public List<AutorEnt> GetAll()
         {
             SqlConnection cn = Conexao.ObterConexao();
             List<AutorEnt> autores = new List<AutorEnt>();
@@ -100,8 +102,8 @@ namespace LivrariaTor.Model
                         while (reader.Read())
                         {
                             AutorEnt autor = new AutorEnt();
-                            autor.Id = Convert.ToInt32(reader["id"]);
-                            autor.Autor = reader["autor"].ToString();
+                            autor.Id       = Convert.ToInt32(reader["id"]);
+                            autor.Nome     = reader["nome"].ToString();
 
                             autores.Add(autor);
                         }
@@ -120,8 +122,8 @@ namespace LivrariaTor.Model
 
             return autores;
         }
-
-        private AutorEnt GetById(int id)
+        
+        public AutorEnt GetById(int id)
         {
             SqlConnection cn = Conexao.ObterConexao();
             AutorEnt autor = new AutorEnt();
@@ -135,8 +137,8 @@ namespace LivrariaTor.Model
                     {
                         while (reader.Read())
                         {
-                            autor.Id = Convert.ToInt32(reader["id"]);
-                            autor.Autor = reader["autor"].ToString();
+                            autor.Id    = Convert.ToInt32(reader["id"]);
+                            autor.Nome  = reader["nome"].ToString();
                         }
                     }
                 }
