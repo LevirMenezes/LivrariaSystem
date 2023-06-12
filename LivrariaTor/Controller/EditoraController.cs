@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LivrariaTor.Controller
 {
-    internal class EditoraController
+    public class EditoraController
     {
         private EditoraModel EditoraModels = new EditoraModel();
 

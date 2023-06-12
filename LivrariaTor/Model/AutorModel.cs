@@ -154,5 +154,40 @@ namespace LivrariaTor.Model
 
             return autor;
         }
+
+        public AutorEnt GetByLivroId(int idlivro)
+        {
+            SqlConnection cn = Conexao.ObterConexao();
+            AutorEnt autor = new AutorEnt();
+            string query = @"SELECT autor.id, autor.nome FROM tbLivroAutor
+                             INNER JOIN tbAutor AS autor
+                             ON autor.id = tbLivroAutor.idautor
+                             WHERE tbLivroAutor.idlivro = @id";
+            try
+            {
+                using (SqlCommand command = new SqlCommand(query, cn))
+                {
+                    command.Parameters.AddWithValue("@id", idlivro);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            autor.Id = Convert.ToInt32(reader["id"]);
+                            autor.Nome = reader["nome"].ToString();
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                autor = null;
+            }
+            finally
+            {
+                Conexao.FecharConexao();
+            }
+
+            return autor;
+        }
     }
 }

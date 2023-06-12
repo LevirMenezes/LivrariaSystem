@@ -16,6 +16,7 @@ namespace LivrariaTor.View
     {
         private LivroController LivroController = new LivroController();
         private List<LivroEnt> Livros;
+        private LivroEnt LivroSecionado = null;
         public Catalogodelivros()
         {
             InitializeComponent();
@@ -29,25 +30,84 @@ namespace LivrariaTor.View
 
         private void PopularLista()
         {
-            List<ItemLivro> ItensLivro = new List<ItemLivro>(); 
-            
+            List<ItemLivro> ItensLivro = new List<ItemLivro>();
+            if (flowLayoutPanel1.Controls.Count > 0)
+            {
+                flowLayoutPanel1.Controls.Clear();
+            }
             foreach (LivroEnt livro in Livros)
             {
                 Image img = livro.ByteToIMG();
                 ItemLivro item = new ItemLivro();
+                item.Livro       = livro;
                 item.ImagemLivro = (img == null ? Properties.Resources.adicionar_foto : img);
                 item.Title       = livro.Titulo;
                 item.Descricao   = livro.Descricao;
                 item.PrecoLivro  = livro.Preco;
                 item.Width       = flowLayoutPanel1.Width;
+                item.ItemClicado += ItemClicadoHandler;
 
                 ItensLivro.Add(item);   
-                //if (flowLayoutPanel1.Controls.Count > 0)
-                //{
-                //    flowLayoutPanel1.Controls.Clear();
-                //}
-                //else
+                
                 flowLayoutPanel1.Controls.Add(item);
+            }
+        }
+
+        private void ItemClicadoHandler(object sender, ItemLivroEventArgs e)
+        {
+            // Aqui você tem acesso às informações do item clicado
+            string  Titulo    = e.Livro.Titulo;
+            string  Descricao = e.Livro.Descricao;
+            decimal Preco     = e.Livro.Preco;
+            Image   imagem    = e.Imagem;
+
+            LivroSecionado    = e.Livro;
+            picboxLivro.Image = imagem;
+            lblTitulo.Text    = Titulo;
+            lblPreco.Text     = "R$ " + Preco.ToString("F2");
+        }
+
+        private void btnEditarLivro_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (LivroSecionado == null)
+                    throw new Exception("");
+                FrmLivros Form_Editar = new FrmLivros(LivroSecionado);
+                Form_Editar.TextoBotao = "Salvar";
+
+                Form_Editar.Show();
+
+                this.Hide();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Nenhum Livro selecionado! Por Favor Selecione um Livro.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnCadastrarLivro_Click(object sender, EventArgs e)
+        {
+            FrmLivros Form_Cadastrar = new FrmLivros();
+            Form_Cadastrar.TextoBotao = "Cadastrar";
+            Form_Cadastrar.Show();
+            this.Hide();
+        }
+
+        private void btnDeletarLivro_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (LivroSecionado == null)
+                    throw new Exception("");
+                FrmLivros Form_Deletar = new FrmLivros(LivroSecionado);
+                Form_Deletar.TextoBotao = "Deletar";
+                Form_Deletar.Show();
+                this.Hide();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Nenhum Livro selecionado! Por Favor Selecione um Livro.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -36,5 +36,10 @@ namespace LivrariaTor.Controller
         {
             return GeneroModels.GetById(id);
         }
+
+        public GeneroEnt PegaGeneroPorLivroId(int idlivro)
+        {
+            return GeneroModels.GetByLivroId(idlivro);
+        }
     }
 }

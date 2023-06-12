@@ -12,17 +12,17 @@ namespace LivrariaTor.Controller
     {
         private AutorModel AutorModels = new AutorModel();
 
-        public string InserirLivro(AutorEnt autor)
+        public string InserirAutor(AutorEnt autor)
         {
             return AutorModels.Insert(autor);
         }
 
-        public string AtualizarLivro(AutorEnt autor)
+        public string AtualizarAutor(AutorEnt autor)
         {
             return AutorModels.Update(autor);
         }
 
-        public string DeletarLivro(int id)
+        public string DeletarAutor(int id)
         {
             return AutorModels.Delete(id);
         }
@@ -35,6 +35,11 @@ namespace LivrariaTor.Controller
         public AutorEnt PegaAutorPorId(int id)
         {
             return AutorModels.GetById(id);
+        }
+
+        public AutorEnt PegaAutorPorLivroId(int idlivro)
+        {
+            return AutorModels.GetByLivroId(idlivro);
         }
     }
 }

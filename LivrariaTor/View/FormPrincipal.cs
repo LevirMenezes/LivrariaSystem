@@ -107,12 +107,12 @@ namespace LivrariaTor
 
         private void btnCadastro_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FrmUsuario>();
+            //AbrirFormulario<FrmUsuario>();
         }
 
         private void btnLivros_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FrmLivros>();
+            //AbrirFormulario<FrmLivros>();
 
         }
 

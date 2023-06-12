@@ -46,15 +46,15 @@ namespace LivrariaTor.Model
             SqlConnection cn = Conexao.ObterConexao();
             string resp      = string.Empty;
             string query     = @"UPDATE tbLivro 
-                                 SET nome      = @titulo,
-                                 telefone      = @preco,
-                                 cpf           = @descricao,
-                                 email         = @estoque,
-                                 anopublicacao = @anopublicacao,
-                                 isbn          = @isbn,
-                                 ideditora     = @ideditora,
-                                 imagem        = @imagem
-                                 WHERE id      = @id;";
+                                 SET   titulo        = @titulo,
+                                       preco         = @preco,
+                                       descricao     = @descricao,
+                                       estoque       = @estoque,
+                                       anopublicacao = @anopublicacao,
+                                       isbn          = @isbn,
+                                       ideditora     = @ideditora,
+                                       imagem        = @imagem
+                                 WHERE id            = @id;";
             try
             {
                 using (SqlCommand command = new SqlCommand(query, cn))
@@ -86,14 +86,37 @@ namespace LivrariaTor.Model
         public string Delete(int id)
         {
             SqlConnection cn = Conexao.ObterConexao();
-            string query = "DELETE FROM tbLivro WHERE id = @id";
+            string query1 = "DELETE tbLivroAutor  WHERE idlivro = @idlivro1;";
+            string query2 = "DELETE tbLivroGenero WHERE idlivro = @idlivro2;";
+            string query3 = "DELETE FROM tbLivro  WHERE id      = @id3;";
+
             string resp = string.Empty;
             try
             {
-                using (SqlCommand command = new SqlCommand(query, cn))
+                using(SqlTransaction transaction = cn.BeginTransaction())
                 {
-                    command.Parameters.AddWithValue("@id", id);
-                    resp = command.ExecuteNonQuery() == 1 ? "OK" : "O Delete não foi feito!";
+                    try
+                    {
+                        SqlCommand command  = new SqlCommand();
+                        command.Connection  = cn;
+                        command.Transaction = transaction;
+                        command.CommandText = query1 +
+                                              query2 +
+                                              query3;
+                        command.Parameters.AddWithValue("@idlivro1", id);
+                        command.Parameters.AddWithValue("@idlivro2", id);
+                        command.Parameters.AddWithValue("@id3"     , id);
+
+                        command.ExecuteNonQuery();
+
+                        transaction.Commit();
+                        resp = "OK";
+                    }
+                    catch (Exception)
+                    {
+                        transaction.Rollback();
+                        resp = "Falha no delete!";
+                    }
                 }
             }
             catch (Exception)

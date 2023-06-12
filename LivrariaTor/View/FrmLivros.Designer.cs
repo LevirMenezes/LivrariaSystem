@@ -102,7 +102,6 @@ namespace LivrariaTor
             this.mTxtPreco.Name = "mTxtPreco";
             this.mTxtPreco.Size = new System.Drawing.Size(375, 22);
             this.mTxtPreco.TabIndex = 29;
-            this.mTxtPreco.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label5
             // 
@@ -177,6 +176,7 @@ namespace LivrariaTor
             this.btnSair.TabIndex = 23;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnCadastrar
             // 

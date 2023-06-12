@@ -70,8 +70,12 @@
   <ItemGroup>
     <Compile Include="Controller\AutorController.cs" />
     <Compile Include="Controller\EditoraController.cs" />
+    <Compile Include="Controller\EnderecoController.cs" />
+    <Compile Include="Controller\FormaPagamentoController.cs" />
     <Compile Include="Controller\GeneroController.cs" />
+    <Compile Include="Controller\ItensPedidoController.cs" />
     <Compile Include="Controller\LivroController.cs" />
+    <Compile Include="Controller\PedidoController.cs" />
     <Compile Include="Controller\UsuarioController.cs" />
     <Compile Include="Model\AutorModel.cs" />
     <Compile Include="Model\EditoraModel.cs" />
@@ -130,6 +134,7 @@
     <Compile Include="View\Informacoes.Designer.cs">
       <DependentUpon>Informacoes.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ItemLivroEventArgs.cs" />
     <Compile Include="View\Lancamentos.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -48,6 +48,7 @@
             this.lblTituloLivro.Size = new System.Drawing.Size(796, 30);
             this.lblTituloLivro.TabIndex = 1;
             this.lblTituloLivro.Text = "Clean Code";
+            this.lblTituloLivro.Click += new System.EventHandler(this.ItemLivro_Click);
             this.lblTituloLivro.MouseEnter += new System.EventHandler(this.ItemLivro_MouseEnter);
             this.lblTituloLivro.MouseLeave += new System.EventHandler(this.ItemLivro_MouseLeave);
             // 
@@ -59,6 +60,7 @@
             this.lblDescricaoLivro.Size = new System.Drawing.Size(768, 46);
             this.lblDescricaoLivro.TabIndex = 2;
             this.lblDescricaoLivro.Text = "O livro Clean Code.";
+            this.lblDescricaoLivro.Click += new System.EventHandler(this.ItemLivro_Click);
             this.lblDescricaoLivro.MouseEnter += new System.EventHandler(this.ItemLivro_MouseEnter);
             this.lblDescricaoLivro.MouseLeave += new System.EventHandler(this.ItemLivro_MouseLeave);
             // 
@@ -73,6 +75,7 @@
             this.lblPrecoLivro.Size = new System.Drawing.Size(82, 31);
             this.lblPrecoLivro.TabIndex = 3;
             this.lblPrecoLivro.Text = "79,99";
+            this.lblPrecoLivro.Click += new System.EventHandler(this.ItemLivro_Click);
             this.lblPrecoLivro.MouseEnter += new System.EventHandler(this.ItemLivro_MouseEnter);
             this.lblPrecoLivro.MouseLeave += new System.EventHandler(this.ItemLivro_MouseLeave);
             // 
@@ -85,6 +88,7 @@
             this.label4.Size = new System.Drawing.Size(24, 16);
             this.label4.TabIndex = 4;
             this.label4.Text = "R$";
+            this.label4.Click += new System.EventHandler(this.ItemLivro_Click);
             this.label4.MouseEnter += new System.EventHandler(this.ItemLivro_MouseEnter);
             this.label4.MouseLeave += new System.EventHandler(this.ItemLivro_MouseLeave);
             // 
@@ -92,26 +96,28 @@
             // 
             this.picboxLivro.Image = global::LivrariaTor.Properties.Resources.livro_clean_code;
             this.picboxLivro.Location = new System.Drawing.Point(28, 14);
-            this.picboxLivro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picboxLivro.Margin = new System.Windows.Forms.Padding(4);
             this.picboxLivro.Name = "picboxLivro";
             this.picboxLivro.Size = new System.Drawing.Size(145, 151);
             this.picboxLivro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picboxLivro.TabIndex = 0;
             this.picboxLivro.TabStop = false;
+            this.picboxLivro.Click += new System.EventHandler(this.ItemLivro_Click);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.CadetBlue;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(179)))), ((int)(((byte)(242)))));
             this.panel1.Controls.Add(this.picboxLivro);
             this.panel1.Location = new System.Drawing.Point(1, 1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 176);
             this.panel1.TabIndex = 5;
+            this.panel1.Click += new System.EventHandler(this.ItemLivro_Click);
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.CadetBlue;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(179)))), ((int)(((byte)(242)))));
             this.panel2.Location = new System.Drawing.Point(190, 172);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(609, 10);
@@ -127,9 +133,10 @@
             this.Controls.Add(this.lblPrecoLivro);
             this.Controls.Add(this.lblDescricaoLivro);
             this.Controls.Add(this.lblTituloLivro);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ItemLivro";
             this.Size = new System.Drawing.Size(1020, 176);
+            this.Click += new System.EventHandler(this.ItemLivro_Click);
             this.MouseEnter += new System.EventHandler(this.ItemLivro_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.ItemLivro_MouseLeave);
             ((System.ComponentModel.ISupportInitialize)(this.picboxLivro)).EndInit();

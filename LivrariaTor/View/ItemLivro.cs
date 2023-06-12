@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LivrariaTor.Persistencia;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,12 +13,6 @@ namespace LivrariaTor.View
 {
     public partial class ItemLivro : UserControl
     {
-        public ItemLivro()
-        {
-            InitializeComponent();
-        }
-
-
         private string _title;
         private string _descricao;
         private decimal _precoLivro;
@@ -44,6 +39,15 @@ namespace LivrariaTor.View
             set { _imagemLivro = value; picboxLivro.Image = value; }
         }
 
+        public LivroEnt Livro { get; set; }
+
+        public event EventHandler<ItemLivroEventArgs> ItemClicado;
+
+        public ItemLivro()
+        {
+            InitializeComponent();
+        }
+
         private void ItemLivro_MouseEnter(object sender, EventArgs e)
         {
             this.BackColor = Color.Silver;
@@ -52,6 +56,11 @@ namespace LivrariaTor.View
         private void ItemLivro_MouseLeave(object sender, EventArgs e)
         {
             this.BackColor = Color.White;
+        }
+        
+        private void ItemLivro_Click(object sender, EventArgs e)
+        {
+            ItemClicado?.Invoke(this, new ItemLivroEventArgs(Livro, ImagemLivro));
         }
     }
 }

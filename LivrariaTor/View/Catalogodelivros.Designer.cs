@@ -32,22 +32,23 @@ namespace LivrariaTor.View
             this.lblLivraria = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picboxLivro = new System.Windows.Forms.PictureBox();
+            this.btnAdicionarCarrinho = new System.Windows.Forms.Button();
+            this.btnDeletarLivro = new System.Windows.Forms.Button();
+            this.btnCadastrarLivro = new System.Windows.Forms.Button();
+            this.btnEditarLivro = new System.Windows.Forms.Button();
+            this.lblPreco = new System.Windows.Forms.Label();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxLivro)).BeginInit();
             this.SuspendLayout();
             // 
             // lblLivraria
             // 
             this.lblLivraria.AutoSize = true;
-            this.lblLivraria.BackColor = System.Drawing.Color.MediumOrchid;
+            this.lblLivraria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(22)))), ((int)(((byte)(143)))));
             this.lblLivraria.Font = new System.Drawing.Font("Bauhaus 93", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLivraria.ForeColor = System.Drawing.Color.White;
             this.lblLivraria.Location = new System.Drawing.Point(15, 14);
@@ -60,82 +61,106 @@ namespace LivrariaTor.View
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.MediumOrchid;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(22)))), ((int)(((byte)(143)))));
             this.panel1.Controls.Add(this.lblLivraria);
             this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1203, 70);
+            this.panel1.Size = new System.Drawing.Size(1200, 70);
             this.panel1.TabIndex = 15;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.CadetBlue;
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(179)))), ((int)(((byte)(242)))));
+            this.panel2.Controls.Add(this.picboxLivro);
+            this.panel2.Controls.Add(this.btnAdicionarCarrinho);
+            this.panel2.Controls.Add(this.btnDeletarLivro);
+            this.panel2.Controls.Add(this.btnCadastrarLivro);
+            this.panel2.Controls.Add(this.btnEditarLivro);
+            this.panel2.Controls.Add(this.lblPreco);
+            this.panel2.Controls.Add(this.lblTitulo);
             this.panel2.Location = new System.Drawing.Point(1, 70);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(262, 973);
+            this.panel2.Size = new System.Drawing.Size(261, 974);
             this.panel2.TabIndex = 18;
             // 
-            // button4
+            // picboxLivro
             // 
-            this.button4.Location = new System.Drawing.Point(21, 511);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(214, 45);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "DELETAR";
-            this.button4.UseVisualStyleBackColor = true;
+            this.picboxLivro.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.picboxLivro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(179)))), ((int)(((byte)(242)))));
+            this.picboxLivro.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picboxLivro.Location = new System.Drawing.Point(48, 31);
+            this.picboxLivro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picboxLivro.Name = "picboxLivro";
+            this.picboxLivro.Size = new System.Drawing.Size(172, 207);
+            this.picboxLivro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picboxLivro.TabIndex = 0;
+            this.picboxLivro.TabStop = false;
             // 
-            // button2
+            // btnAdicionarCarrinho
             // 
-            this.button2.Location = new System.Drawing.Point(132, 456);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(103, 35);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "CADASTRAR";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAdicionarCarrinho.Location = new System.Drawing.Point(48, 321);
+            this.btnAdicionarCarrinho.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdicionarCarrinho.Name = "btnAdicionarCarrinho";
+            this.btnAdicionarCarrinho.Size = new System.Drawing.Size(164, 38);
+            this.btnAdicionarCarrinho.TabIndex = 7;
+            this.btnAdicionarCarrinho.Text = "Adiocionar ao Carrinho";
+            this.btnAdicionarCarrinho.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnDeletarLivro
             // 
-            this.button1.Location = new System.Drawing.Point(21, 456);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 35);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "EDITAR";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnDeletarLivro.Location = new System.Drawing.Point(48, 503);
+            this.btnDeletarLivro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDeletarLivro.Name = "btnDeletarLivro";
+            this.btnDeletarLivro.Size = new System.Drawing.Size(164, 34);
+            this.btnDeletarLivro.TabIndex = 6;
+            this.btnDeletarLivro.Text = "Deletar";
+            this.btnDeletarLivro.UseVisualStyleBackColor = true;
+            this.btnDeletarLivro.Click += new System.EventHandler(this.btnDeletarLivro_Click);
             // 
-            // label2
+            // btnCadastrarLivro
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(161, 287);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "R$ 00,00";
+            this.btnCadastrarLivro.Location = new System.Drawing.Point(132, 455);
+            this.btnCadastrarLivro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCadastrarLivro.Name = "btnCadastrarLivro";
+            this.btnCadastrarLivro.Size = new System.Drawing.Size(80, 34);
+            this.btnCadastrarLivro.TabIndex = 4;
+            this.btnCadastrarLivro.Text = "Cadastrar";
+            this.btnCadastrarLivro.UseVisualStyleBackColor = true;
+            this.btnCadastrarLivro.Click += new System.EventHandler(this.btnCadastrarLivro_Click);
             // 
-            // label1
+            // btnEditarLivro
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(105, 241);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Title";
+            this.btnEditarLivro.Location = new System.Drawing.Point(48, 455);
+            this.btnEditarLivro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEditarLivro.Name = "btnEditarLivro";
+            this.btnEditarLivro.Size = new System.Drawing.Size(77, 34);
+            this.btnEditarLivro.TabIndex = 3;
+            this.btnEditarLivro.Text = "Editar";
+            this.btnEditarLivro.UseVisualStyleBackColor = true;
+            this.btnEditarLivro.Click += new System.EventHandler(this.btnEditarLivro_Click);
             // 
-            // pictureBox1
+            // lblPreco
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(42, 20);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(177, 207);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.lblPreco.AutoSize = true;
+            this.lblPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblPreco.Location = new System.Drawing.Point(131, 283);
+            this.lblPreco.Name = "lblPreco";
+            this.lblPreco.Size = new System.Drawing.Size(90, 25);
+            this.lblPreco.TabIndex = 2;
+            this.lblPreco.Text = "R$ 00,00";
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblTitulo.Location = new System.Drawing.Point(101, 252);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(49, 25);
+            this.lblTitulo.TabIndex = 1;
+            this.lblTitulo.Text = "Title";
             // 
             // flowLayoutPanel1
             // 
@@ -143,7 +168,7 @@ namespace LivrariaTor.View
             this.flowLayoutPanel1.Location = new System.Drawing.Point(267, 70);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(930, 718);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(931, 718);
             this.flowLayoutPanel1.TabIndex = 19;
             // 
             // Catalogodelivros
@@ -164,7 +189,7 @@ namespace LivrariaTor.View
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxLivro)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -175,11 +200,12 @@ namespace LivrariaTor.View
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnDeletarLivro;
+        private System.Windows.Forms.Button btnCadastrarLivro;
+        private System.Windows.Forms.Button btnEditarLivro;
+        private System.Windows.Forms.Label lblPreco;
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Button btnAdicionarCarrinho;
+        private System.Windows.Forms.PictureBox picboxLivro;
     }
 }

@@ -13,6 +13,13 @@ using System.IO;
 using LivrariaTor.Persistencia;
 using LivrariaTor.Controller;
 using System.Windows.Interop;
+using System.Xml.Serialization;
+using Microsoft.VisualBasic.ApplicationServices;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
+using System.IO.Ports;
+using System.Runtime.ConstrainedExecution;
+using System.Globalization;
+using LivrariaTor.View;
 
 namespace LivrariaTor
 {
@@ -20,19 +27,23 @@ namespace LivrariaTor
     {
         #region Variaveis
 
+        public  string TextoBotao      = string.Empty;
         private string CaminhoDaImagem = string.Empty;
         private LivroController   livroController    = new LivroController();
         private AutorController   autorController    = new AutorController();
         private EditoraController editoraController  = new EditoraController();
         private GeneroController  generoController   = new GeneroController();
-        private int               CbxControleAutor   = 0;
-        private int               CbxControleGenero  = 0;
-        private int               CbxControleEditora = 0;
+        private int               CbxControleAutor;
+        private int               CbxControleGenero;
+        private int               CbxControleEditora;
+        private LivroEnt          Livro = null;
 
         #endregion
-        public FrmLivros()
+        public FrmLivros(LivroEnt livro = null)
         {
             InitializeComponent();
+
+            Livro = livro;
         }
 
         #region Metodos
@@ -42,8 +53,46 @@ namespace LivrariaTor
             PopularCbxAutor();
             PopularCbxEditora();
             PopularCbxGenero();
+            btnCadastrar.Text = TextoBotao;
+
+            if (Livro != null)
+            {
+                CarregarInformacoes();
+                if (TextoBotao == "Deletar")
+                {
+                    txtTitulo.Enabled              = false;
+                    mTxtPreco.Enabled              = false;
+                    txtQtdEstoque.Enabled          = false;
+                    txtDescricaoLivro.Enabled      = false;
+                    txtIsbn.Enabled                = false;
+                    dtpAnoPublicacao.Enabled       = false;
+                    picboxSelecionarImagem.Enabled = false;
+                    btnSelecionarImagem.Enabled    = false;
+                }
+            }
         }
 
+        private void CarregarInformacoes()
+        {
+            txtTitulo.Text               = Livro.Titulo;
+            mTxtPreco.Text               = Livro.Preco.ToString().PadLeft(7, '0');
+            txtQtdEstoque.Text           = Livro.Estoque.ToString();
+            txtDescricaoLivro.Text       = Livro.Descricao;
+            txtIsbn.Text                 = Livro.Isbn;
+            dtpAnoPublicacao.Value       = Convert.ToDateTime(Livro.AnoPublicacao);
+            if (Livro.Imagem != null)
+            {
+                using (MemoryStream stream = new MemoryStream(Livro.Imagem))
+                {
+                    // Crie um objeto Image a partir do MemoryStream
+                    Image imagem = Image.FromStream(stream);
+
+                    // Use a imagem conforme necessário
+                    // Por exemplo, atribua-a a uma PictureBox
+                    picboxSelecionarImagem.Image = imagem;
+                }
+            }
+        }
         private void PopularCbxAutor()
         {
             List<AutorEnt> listaAutores = (autorController.PegaTodosAutores() == null ? new List<AutorEnt>() : autorController.PegaTodosAutores());
@@ -51,14 +100,30 @@ namespace LivrariaTor
             autor.Id = 999999999;
             autor.Nome = "Novo Autor";
             listaAutores.Add(autor);
-            CbxControleAutor = listaAutores[0].Id;
-
 
             // Atribua a lista de objetos à propriedade DataSource do ComboBox
             cbxAutor.DataSource = listaAutores;
 
             // Defina a propriedade DisplayMember para o nome da propriedade do objeto que deseja exibir como texto no ComboBox
             cbxAutor.DisplayMember = "Nome";
+
+            if (Livro == null)
+                CbxControleAutor = listaAutores[0].Id;
+            else
+            {
+                int autorLivroid = (autorController.PegaAutorPorLivroId(Livro.Id)).Id;
+                int indexSelecionado = 0;
+                foreach(AutorEnt aut in listaAutores)
+                {
+                    if(aut.Id == autorLivroid)
+                    {
+                        CbxControleAutor = aut.Id;
+                        cbxAutor.SelectedIndex = indexSelecionado;
+                        cbxAutor.Enabled = false;
+                    }
+                    indexSelecionado++;
+                }
+            }
         }
 
         private void PopularCbxEditora()
@@ -68,25 +133,275 @@ namespace LivrariaTor
             editora.Id = 999999999;
             editora.Nome = "Nova Editora";
             listaEditoras.Add(editora);
-            CbxControleEditora = listaEditoras[0].Id;
 
             // Defina a propriedade DisplayMember para o nome da propriedade do objeto que deseja exibir como texto no ComboBox
             cbxEditora.DisplayMember = "Nome";
 
             // Atribua a lista de objetos à propriedade DataSource do ComboBox
             cbxEditora.DataSource = listaEditoras;
+
+            if (Livro == null)
+                CbxControleEditora = listaEditoras[0].Id;
+            else
+            {
+                int editoraLivroid = (editoraController.PegaEditoraPorId(Livro.IdEditora)).Id;
+                int indexSelecionado = 0;
+                foreach (EditoraEnt edit in listaEditoras)
+                {
+                    if (edit.Id == editoraLivroid)
+                    {
+                        CbxControleEditora = edit.Id;
+                        cbxEditora.SelectedIndex = indexSelecionado;
+                        cbxEditora.Enabled = false;
+                    }
+                    indexSelecionado++;
+                }
+            }
+            
         }
 
         private void PopularCbxGenero()
         {
             List<GeneroEnt> listaGeneros = (generoController.PegaTodosGeneros() == null ? new List<GeneroEnt>() : generoController.PegaTodosGeneros());
             AutorEnt genero = new AutorEnt();
-            CbxControleGenero = listaGeneros[0].Id;
+            
             // Defina a propriedade DisplayMember para o nome da propriedade do objeto que deseja exibir como texto no ComboBox
             cbxGenero.DisplayMember = "Genero";
 
             // Atribua a lista de objetos à propriedade DataSource do ComboBox
             cbxGenero.DataSource = listaGeneros;
+
+            if (Livro == null)
+                CbxControleGenero = listaGeneros[0].Id;
+            else
+            {
+                int generoLivroid = (generoController.PegaGeneroPorLivroId(Livro.Id)).Id;
+                int indexSelecionado = 0;
+                foreach (GeneroEnt gen in listaGeneros)
+                {
+                    if (gen.Id == generoLivroid)
+                    {
+                        CbxControleGenero = gen.Id;
+                        cbxGenero.SelectedIndex = indexSelecionado;
+                        cbxGenero.Enabled = false;
+                        break;
+                    }
+                    indexSelecionado++;
+                }
+            }
+        }
+
+        private void LimparCampos()
+        {
+            PopularCbxAutor();
+            PopularCbxEditora();
+            PopularCbxGenero();
+            txtTitulo.Text               = string.Empty;
+            mTxtPreco.Text               = string.Empty;
+            txtQtdEstoque.Text           = string.Empty;
+            txtDescricaoLivro.Text       = string.Empty;  
+            txtIsbn.Text                 = string.Empty;    
+            dtpAnoPublicacao.Value       = DateTime.Now;
+            txtNomeAutor.Text            = string.Empty;
+            txtNomeEditora.Text          = string.Empty;
+            txtTelefoneEditora.Text      = string.Empty;
+            picboxSelecionarImagem.Image = null;
+        }
+
+        private void Cadastrar()
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(CaminhoDaImagem))
+                    throw new Exception("O Campo Imagem não pode ser vazio! Por favor selecione uma imagem.");
+
+                if (CbxControleAutor == 0)
+                    throw new Exception("Por favor, selecione uma opçao na listagem de Autor.");
+                    
+                if (CbxControleEditora == 0)
+                    throw new Exception("Por favor, selecione uma opçao na listagem de Editora.");
+
+                if (CbxControleGenero == 0)
+                    throw new Exception("Por favor, selecione uma opçao na listagem de Genero.");
+
+                if (string.IsNullOrEmpty(txtTitulo.Text))
+                    throw new Exception("Por favor, Preecha o campo titulo.");
+
+                if (string.IsNullOrEmpty(txtDescricaoLivro.Text))
+                    throw new Exception("Por favor, Preencha o campo descricao do livro.");
+
+                if (string.IsNullOrEmpty(txtQtdEstoque.Text))
+                    throw new Exception("Por favor, Preencha o campo quantidade de estoque.");
+
+                if (string.IsNullOrEmpty(mTxtPreco.Text.Replace("R$", "").Replace(".", "")))
+                    throw new Exception("Por favor, Preencha o campo preço do livro.");
+
+                if (string.IsNullOrEmpty(txtIsbn.Text))
+                    throw new Exception("Por favor, Preencha o campo Isbn do livro.");
+
+
+                byte[] imagemBytes  = File.ReadAllBytes(CaminhoDaImagem);
+                LivroEnt livro      = new LivroEnt();
+                livro.Titulo        = txtTitulo.Text;
+                livro.Preco         = Convert.ToDecimal(mTxtPreco.Text.Replace("R$", "").Replace("0",""));
+                livro.Descricao     = txtDescricaoLivro.Text;
+                livro.Estoque       = Convert.ToInt32(txtQtdEstoque.Text);
+                livro.AnoPublicacao = (dtpAnoPublicacao.Value).ToString();
+                livro.Isbn          = txtIsbn.Text;
+                livro.Imagem        = imagemBytes;
+                if (CbxControleEditora != 999999999)
+                {
+                    livro.IdEditora = CbxControleEditora;
+                }
+                else
+                {
+                    if (string.IsNullOrEmpty(txtNomeEditora.Text))
+                        throw new Exception("Por favor, Preencha o campo Isbn do livro.");
+
+                    if (string.IsNullOrEmpty(txtTelefoneEditora.Text))
+                        throw new Exception("Por favor, Preencha o campo Isbn do livro.");
+
+                    EditoraEnt editora = new EditoraEnt();
+                    editora.Telefone = txtTelefoneEditora.Text;
+                    editora.Nome     = txtNomeEditora.Text;
+
+                    string resultado =  editoraController.InserirEditora(editora);
+
+                    if (resultado == "OK")
+                    {
+                        editora = editoraController.PegarPorNome(editora.Nome);
+
+                        livro.IdEditora = editora.Id;
+                    }
+                }
+
+                string msg = livroController.InserirLivro(livro);
+
+                if (msg == "OK")
+                {
+                    if ( CbxControleAutor == 999999999)
+                    {
+                        AutorEnt autor = new AutorEnt();
+                        autor.Nome = txtNomeAutor.Text;
+                        string respAutor = autorController.InserirAutor(autor);
+                        if (respAutor == "OK")
+                        {
+                            MessageBox.Show("O cadastro foi efetuado com sucesso!", "Situação Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LimparCampos();
+                            Catalogodelivros form_catalogo = new Catalogodelivros();
+                            form_catalogo.Show();
+                            this.Close();
+                        }
+                        else
+                        {
+                            throw new Exception(msg);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("O cadastro foi efetuado com sucesso!", "Situação Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Catalogodelivros form_catalogo = new Catalogodelivros();
+                        form_catalogo.Show();
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    throw new Exception(msg);
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Erro ao cadastrar o Livro" + ex, "Resposta Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Editar()
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(CaminhoDaImagem))
+                    throw new Exception("O Campo Imagem não pode ser vazio! Por favor selecione uma imagem.");
+
+                if (CbxControleAutor == 0)
+                    throw new Exception("Por favor, selecione uma opçao na listagem de Autor.");
+
+                if (CbxControleEditora == 0)
+                    throw new Exception("Por favor, selecione uma opçao na listagem de Editora.");
+
+                if (CbxControleGenero == 0)
+                    throw new Exception("Por favor, selecione uma opçao na listagem de Genero.");
+
+                if (string.IsNullOrEmpty(txtTitulo.Text))
+                    throw new Exception("Por favor, Preecha o campo titulo.");
+
+                if (string.IsNullOrEmpty(txtDescricaoLivro.Text))
+                    throw new Exception("Por favor, Preencha o campo descricao do livro.");
+
+                if (string.IsNullOrEmpty(txtQtdEstoque.Text))
+                    throw new Exception("Por favor, Preencha o campo quantidade de estoque.");
+
+                if (string.IsNullOrEmpty(mTxtPreco.Text.Replace("R$", "").Replace(".", "")))
+                    throw new Exception("Por favor, Preencha o campo preço do livro.");
+
+                if (string.IsNullOrEmpty(txtIsbn.Text))
+                    throw new Exception("Por favor, Preencha o campo Isbn do livro.");
+
+
+                byte[] imagemBytes  = File.ReadAllBytes(CaminhoDaImagem);
+                LivroEnt livro      = new LivroEnt();
+                livro.Id            = Livro.Id;
+                livro.Titulo        = txtTitulo.Text;
+                livro.Preco         = Convert.ToDecimal(mTxtPreco.Text.Replace("R$", "").Replace("0", ""));
+                livro.Descricao     = txtDescricaoLivro.Text;
+                livro.Estoque       = Convert.ToInt32(txtQtdEstoque.Text);
+                livro.AnoPublicacao = (dtpAnoPublicacao.Value).ToString();
+                livro.Isbn          = txtIsbn.Text;
+                livro.Imagem        = imagemBytes;
+                livro.IdEditora = CbxControleEditora;
+
+                string msg = livroController.AtualizarLivro(livro);
+
+                if (msg == "OK")
+                {
+                    MessageBox.Show(msg, "Atualização do Livro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Catalogodelivros form_catalogo = new Catalogodelivros();
+
+                    form_catalogo.Show();
+                    this.Close();
+                }
+                else
+                {
+                    throw new Exception(msg);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao cadastrar o Livro" + ex, "Resposta Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Deletar()
+        {
+            try
+            {
+                string msg = livroController.DeletarLivro(Livro.Id);
+                if (msg == "OK")
+                {
+                    MessageBox.Show($"O Livro: {Livro.Titulo}, foi deletado com Sucesso!", "Livro Deletado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Catalogodelivros form_catalogo = new Catalogodelivros();
+                    form_catalogo.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show($"Falha ao Delatar: {Livro.Titulo}!", "Falhar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Falha ao deletar o Livro" + ex.Message, "Erro ao Deletar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         #endregion
@@ -109,55 +424,28 @@ namespace LivrariaTor
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            try
+            if(Livro != null)
             {
-                if (string.IsNullOrEmpty(CaminhoDaImagem))
-                    throw new Exception("O Campo Imagem não pode ser vazio! Por favor selecione uma imagem.");
-
-                if (CbxControleAutor == 0)
-                    throw new Exception("Por favor, selecione uma opçao na listagem de Autor.");
-
-                if (CbxControleEditora == 0)
-                    throw new Exception("Por favor, selecione uma opçao na listagem de Editora.");
-
-                if (CbxControleGenero == 0)
-                    throw new Exception("Por favor, selecione uma opçao na listagem de Genero.");
-
-                byte[] imagemBytes  = File.ReadAllBytes(CaminhoDaImagem);
-                LivroEnt livro      = new LivroEnt();
-                livro.Titulo        = txtTitulo.Text;
-                livro.Preco         = Convert.ToDecimal(mTxtPreco.Text.Replace("R$", ""));
-                livro.Descricao     = txtDescricaoLivro.Text;
-                livro.Estoque       = Convert.ToInt32(txtQtdEstoque.Text);
-                livro.AnoPublicacao = (dtpAnoPublicacao.Value).ToString();
-                livro.Isbn          = txtIsbn.Text;
-                livro.Imagem        = imagemBytes;
-                if (CbxControleEditora != 0)
+                if(TextoBotao == "Deletar")
                 {
-                    livro.IdEditora = CbxControleEditora;
+                    Deletar();
                 }
                 else
                 {
-                    EditoraEnt editora = new EditoraEnt();
-                    editora.Telefone = txtTelefoneEditora.Text;
-                    editora.Nome     = txtTelefoneEditora.Text;
-
-                    string resultado =  editoraController.InserirEditora(editora);
-
-                    if (resultado == "OK")
-                    {
-                        editora = editoraController.PegarPorNome(editora.Nome);
-
-                        livro.Id = editora.Id;
-                    }
+                    Editar();
                 }
-                string msg = livroController.InserirLivro(livro);
-                MessageBox.Show(msg, "Resposta Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch(Exception ex)
+            else
             {
-                MessageBox.Show("Erro ao cadastrar o Livro" + ex, "Resposta Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Cadastrar();
             }
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            Catalogodelivros form_catalogo = new Catalogodelivros();
+            form_catalogo.Show();
+            this.Close();
         }
 
         #endregion
@@ -202,7 +490,7 @@ namespace LivrariaTor
                 {
                     txtNomeEditora.Enabled     = true;
                     txtTelefoneEditora.Enabled = true;
-                    CbxControleEditora         = 0;
+                    CbxControleEditora         = editora.Id;
                 }
                 else
                 {
@@ -214,5 +502,6 @@ namespace LivrariaTor
         }
 
         #endregion
+
     }
 }
