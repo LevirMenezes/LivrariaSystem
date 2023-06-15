@@ -17,6 +17,7 @@ namespace LivrariaTor.View
         private LivroController LivroController = new LivroController();
         private List<LivroEnt> Livros;
         private LivroEnt LivroSecionado = null;
+
         public Catalogodelivros()
         {
             InitializeComponent();
@@ -26,6 +27,9 @@ namespace LivrariaTor.View
         private void Catalogodelivros_Load(object sender, EventArgs e)
         {
             PopularLista();
+            lblTitulo.Visible            = false;
+            lblPreco.Visible             = false;
+            btnAdicionarCarrinho.Visible = false;   
         }
 
         private void PopularLista()
@@ -60,6 +64,10 @@ namespace LivrariaTor.View
             string  Descricao = e.Livro.Descricao;
             decimal Preco     = e.Livro.Preco;
             Image   imagem    = e.Imagem;
+
+            lblTitulo.Visible            = false;
+            lblPreco.Visible             = false;
+            btnAdicionarCarrinho.Visible = false;
 
             LivroSecionado    = e.Livro;
             picboxLivro.Image = imagem;
@@ -109,6 +117,18 @@ namespace LivrariaTor.View
             {
                 MessageBox.Show("Nenhum Livro selecionado! Por Favor Selecione um Livro.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnVoltarTelaPrincipal_Click(object sender, EventArgs e)
+        {
+            FormPrincipal form_principal = new FormPrincipal();
+            form_principal.Show();
+            this.Close();
+        }
+
+        private void btnAdicionarCarrinho_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

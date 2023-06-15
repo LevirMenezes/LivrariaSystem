@@ -189,5 +189,36 @@ namespace LivrariaTor.Model
 
             return autor;
         }
+
+        public AutorEnt GetId()
+        {
+            SqlConnection cn = Conexao.ObterConexao();
+            AutorEnt editora = new AutorEnt();
+            string query = "SELECT TOP 1 * FROM tbAutor ORDER BY id DESC;";
+            try
+            {
+                using (SqlCommand command = new SqlCommand(query, cn))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            editora.Id = Convert.ToInt32(reader["id"]);
+                            editora.Nome = reader["nome"].ToString();
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                editora = null;
+            }
+            finally
+            {
+                Conexao.FecharConexao();
+            }
+            return editora;
+        }
+
     }
 }

@@ -7,15 +7,16 @@ namespace LivrariaTor.Model
 {
     public class LivroModel
     {
-        public string Insert(LivroEnt livro)
+        public string Insert(LivroEnt livro, int idautor, int idgenero)
         {
             SqlConnection cn = Conexao.ObterConexao();
 
-            string query = "INSERT INTO tbLivro (titulo, preco, descricao, estoque, anopublicacao, isbn, ideditora, imagem) VALUES  (@titulo, @preco, @descricao, @estoque, @anopublicacao, @isbn, @ideditora, @imagem);";
+            string query1 = "INSERT INTO tbLivro (titulo, preco, descricao, estoque, anopublicacao, isbn, ideditora, imagem) VALUES  (@titulo, @preco, @descricao, @estoque, @anopublicacao, @isbn, @ideditora, @imagem);";
             string resp = string.Empty;
+
             try
             {
-                using (SqlCommand command = new SqlCommand(query, cn))
+                using (SqlCommand command = new SqlCommand(query1, cn))
                 {
                     command.Parameters.AddWithValue("@titulo",        livro.Titulo);
                     command.Parameters.AddWithValue("@preco",         livro.Preco);
@@ -25,7 +26,44 @@ namespace LivrariaTor.Model
                     command.Parameters.AddWithValue("@isbn",          livro.Isbn);
                     command.Parameters.AddWithValue("@ideditora",     livro.IdEditora);
                     command.Parameters.AddWithValue("@imagem",        livro.Imagem);
+
                     resp = command.ExecuteNonQuery() == 1 ? "OK" : "O Insert não foi feito!";
+                }
+                if(resp == "OK")
+                {
+                    
+                    int ultimolivroid = (this.GetId()).Id;
+                    string query2     = "INSERT INTO tbLivroGenero (idlivro, idgenero) VALUES  (@idlivroG, @idgenero);";
+                    string query3     = "INSERT INTO tbLivroAutor  (idlivro, idautor)  VALUES  (@idlivroA, @idautor);";
+                    resp              = string.Empty;
+                    cn.Open();
+                    using (SqlTransaction transaction = cn.BeginTransaction())
+                    {
+                        try
+                        {
+                            SqlCommand command = new SqlCommand();
+                            command.Connection = cn;
+                            command.Transaction = transaction;
+                            command.CommandText = query2 +
+                                                  query3;
+
+                            command.Parameters.AddWithValue("@idlivroG",  ultimolivroid);
+                            command.Parameters.AddWithValue("@idgenero",  idgenero);
+
+                            command.Parameters.AddWithValue("@idlivroA",  ultimolivroid);
+                            command.Parameters.AddWithValue("@idautor",   idautor);
+
+                            command.ExecuteNonQuery();
+
+                            transaction.Commit();
+                            resp = "OK";
+                        }
+                        catch (Exception)
+                        {
+                            transaction.Rollback();
+                            resp = "Falha ao relacionar o livro com genero e autor!";
+                        }
+                    }
                 }
             }
             catch (Exception)
@@ -229,6 +267,41 @@ namespace LivrariaTor.Model
             return livro;
         }
 
+        public LivroEnt GetId()
+        {
+            SqlConnection cn = Conexao.ObterConexao();
+            LivroEnt livro = new LivroEnt();
+            string query = "SELECT TOP 1 * FROM tbLivro ORDER BY id DESC;";
+            try
+            {
+                using (SqlCommand command = new SqlCommand(query, cn))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            livro.Id            = Convert.ToInt32(reader["id"]);
+                            livro.Titulo        = reader["titulo"].ToString();
+                            livro.Preco         = Convert.ToDecimal(reader["preco"]);
+                            livro.Descricao     = reader["descricao"].ToString();
+                            livro.Estoque       = Convert.ToInt32(reader["estoque"]);
+                            livro.AnoPublicacao = Convert.ToDateTime(reader["anopublicacao"]).ToString("dd/MM/yyyy");
+                            livro.Isbn          = reader["isbn"].ToString();
+                            livro.IdEditora     = Convert.ToInt32(reader["ideditora"]);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                livro = null;
+            }
+            finally
+            {
+                Conexao.FecharConexao();
+            }
+            return livro;
+        }
 
     }
 }

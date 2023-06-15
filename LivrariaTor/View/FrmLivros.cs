@@ -1,25 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Configuration; //add
-using System.Data.SqlClient; //add
 using System.IO;
 using LivrariaTor.Persistencia;
 using LivrariaTor.Controller;
-using System.Windows.Interop;
-using System.Xml.Serialization;
-using Microsoft.VisualBasic.ApplicationServices;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
-using System.IO.Ports;
-using System.Runtime.ConstrainedExecution;
-using System.Globalization;
 using LivrariaTor.View;
+using System.Windows.Interop;
 
 namespace LivrariaTor
 {
@@ -39,6 +26,7 @@ namespace LivrariaTor
         private LivroEnt          Livro = null;
 
         #endregion
+
         public FrmLivros(LivroEnt livro = null)
         {
             InitializeComponent();
@@ -239,6 +227,12 @@ namespace LivrariaTor
                 if (string.IsNullOrEmpty(txtIsbn.Text))
                     throw new Exception("Por favor, Preencha o campo Isbn do livro.");
 
+                string respAutor    = string.Empty;
+                string respEditora  = string.Empty;
+                string respLivro    = string.Empty;
+
+                int    generoid     = CbxControleGenero;
+                int    autorid      = 0;
 
                 byte[] imagemBytes  = File.ReadAllBytes(CaminhoDaImagem);
                 LivroEnt livro      = new LivroEnt();
@@ -265,54 +259,64 @@ namespace LivrariaTor
                     editora.Telefone = txtTelefoneEditora.Text;
                     editora.Nome     = txtNomeEditora.Text;
 
-                    string resultado =  editoraController.InserirEditora(editora);
+                    respEditora =  editoraController.InserirEditora(editora);
 
-                    if (resultado == "OK")
+                    if (respEditora == "OK")
                     {
-                        editora = editoraController.PegarPorNome(editora.Nome);
+                        editora.Id = (editoraController.PegarId()).Id;
 
                         livro.IdEditora = editora.Id;
                     }
+                    else
+                    {
+                        throw new Exception(respEditora);
+                    }
                 }
 
-                string msg = livroController.InserirLivro(livro);
-
-                if (msg == "OK")
+                if (CbxControleAutor == 999999999)
                 {
-                    if ( CbxControleAutor == 999999999)
+                    if (string.IsNullOrEmpty(txtNomeAutor.Text))
+                        throw new Exception("Por favor, Preencha o campo nome do novo autor.");
+
+                    AutorEnt autor = new AutorEnt();
+                    autor.Nome     = txtNomeAutor.Text;
+
+                    respAutor      = autorController.InserirAutor(autor);
+
+                    if (respAutor == "OK")
                     {
-                        AutorEnt autor = new AutorEnt();
-                        autor.Nome = txtNomeAutor.Text;
-                        string respAutor = autorController.InserirAutor(autor);
-                        if (respAutor == "OK")
-                        {
-                            MessageBox.Show("O cadastro foi efetuado com sucesso!", "Situação Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            LimparCampos();
-                            Catalogodelivros form_catalogo = new Catalogodelivros();
-                            form_catalogo.Show();
-                            this.Close();
-                        }
-                        else
-                        {
-                            throw new Exception(msg);
-                        }
+                        autorid = (autorController.PegarId()).Id;
                     }
-                    else
+                }
+                else
+                {
+                    autorid = CbxControleAutor;
+                }
+
+                
+                if (autorid != 0 && generoid != 0 && livro.IdEditora != 0) 
+                { 
+                    respLivro = livroController.InserirLivro(livro, autorid, generoid);
+                    if (respLivro == "OK")
                     {
                         MessageBox.Show("O cadastro foi efetuado com sucesso!", "Situação Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Catalogodelivros form_catalogo = new Catalogodelivros();
                         form_catalogo.Show();
                         this.Close();
                     }
+                    else
+                    {
+                        throw new Exception(respLivro);
+                    }
                 }
                 else
                 {
-                    throw new Exception(msg);
+                    throw new Exception("Por favor, verifique os dados do cadastro, pois há algo de errado!");
                 }
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Erro ao cadastrar o Livro" + ex, "Resposta Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao cadastrar o Livro" + ex.Message, "Resposta Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -320,7 +324,7 @@ namespace LivrariaTor
         {
             try
             {
-                if (string.IsNullOrEmpty(CaminhoDaImagem))
+                if (Livro.Imagem == null && string.IsNullOrEmpty(CaminhoDaImagem))
                     throw new Exception("O Campo Imagem não pode ser vazio! Por favor selecione uma imagem.");
 
                 if (CbxControleAutor == 0)

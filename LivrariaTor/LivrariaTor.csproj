@@ -134,6 +134,12 @@
     <Compile Include="View\Informacoes.Designer.cs">
       <DependentUpon>Informacoes.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ItemLivroCarrossel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ItemLivroCarrossel.Designer.cs">
+      <DependentUpon>ItemLivroCarrossel.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ItemLivroEventArgs.cs" />
     <Compile Include="View\Lancamentos.cs">
       <SubType>Form</SubType>
@@ -164,6 +170,12 @@
     </Compile>
     <Compile Include="View\ItemLivro.Designer.cs">
       <DependentUpon>ItemLivro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ItemCarrossel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ItemCarrossel.Designer.cs">
+      <DependentUpon>ItemCarrossel.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="View\Carrinho.resx">
       <DependentUpon>Carrinho.cs</DependentUpon>
@@ -196,6 +208,9 @@
     <EmbeddedResource Include="View\ItemLivro.resx">
       <DependentUpon>ItemLivro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ItemLivroCarrossel.resx">
+      <DependentUpon>ItemLivroCarrossel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Lancamentos.resx">
       <DependentUpon>Lancamentos.cs</DependentUpon>
     </EmbeddedResource>
@@ -207,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Telalogin.resx">
       <DependentUpon>Telalogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ItemCarrossel.resx">
+      <DependentUpon>ItemCarrossel.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -245,6 +263,9 @@
   <ItemGroup>
     <Content Include="Resources\adicionar-foto.png" />
     <Content Include="Resources\livro-clean-code.jpg" />
+    <Content Include="Resources\lupa-pesquisar.png" />
+    <Content Include="Resources\seta-direita.png" />
+    <Content Include="Resources\seta-esquerda.png" />
     <WCFMetadata Include="Connected Services\" />
     <Content Include="Resources\add_autor.png" />
   </ItemGroup>

@@ -37,9 +37,9 @@ namespace LivrariaTor.Controller
             return EditoraModels.GetById(id);
         }
 
-        public EditoraEnt PegarPorNome(string nome)
+        public EditoraEnt PegarId()
         {
-            return EditoraModels.GetByName(nome);
+            return EditoraModels.GetId();
         }
     }
 }

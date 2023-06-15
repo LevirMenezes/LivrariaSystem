@@ -157,16 +157,15 @@ namespace LivrariaTor.Model
             return editora;
         }
 
-        public EditoraEnt GetByName(string nome)
+        public EditoraEnt GetId()
         {
             SqlConnection cn = Conexao.ObterConexao();
             EditoraEnt editora = new EditoraEnt();
-            string query = "SELECT * FROM tbEditora WHERE nome = @nome";
+            string query = "SELECT TOP 1 * FROM tbEditora ORDER BY id DESC;";
             try
             {
                 using (SqlCommand command = new SqlCommand(query, cn))
                 {
-                    command.Parameters.AddWithValue("@nome", nome);
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())

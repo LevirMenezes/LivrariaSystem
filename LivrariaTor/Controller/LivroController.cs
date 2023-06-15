@@ -8,9 +8,9 @@ namespace LivrariaTor.Controller
     {
         private LivroModel LivroModels = new LivroModel();
 
-        public string InserirLivro(LivroEnt livro)
+        public string InserirLivro(LivroEnt livro, int idautor, int idgenero)
         {
-            return LivroModels.Insert(livro);
+            return LivroModels.Insert(livro, idautor, idgenero);
         }
 
         public string AtualizarLivro(LivroEnt livro)

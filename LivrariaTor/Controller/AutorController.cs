@@ -41,5 +41,11 @@ namespace LivrariaTor.Controller
         {
             return AutorModels.GetByLivroId(idlivro);
         }
+
+        public AutorEnt PegarId()
+        {
+            return AutorModels.GetId();
+        }
+
     }
 }
