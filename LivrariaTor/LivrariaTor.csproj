@@ -147,6 +147,12 @@
     <Compile Include="View\Lancamentos.Designer.cs">
       <DependentUpon>Lancamentos.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Listadeusuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Listadeusuarios.Designer.cs">
+      <DependentUpon>Listadeusuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Maisvendidos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Lancamentos.resx">
       <DependentUpon>Lancamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Listadeusuarios.resx">
+      <DependentUpon>Listadeusuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Maisvendidos.resx">
       <DependentUpon>Maisvendidos.cs</DependentUpon>
