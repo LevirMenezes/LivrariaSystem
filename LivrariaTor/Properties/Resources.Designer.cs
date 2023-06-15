@@ -123,10 +123,15 @@ namespace LivrariaTor.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap seta_esquerda {
-            get {
+        internal static System.Drawing.Bitmap seta_esquerda
+        {
+            get{
                 object obj = ResourceManager.GetObject("seta_esquerda", resourceCulture);
-        internal static System.Drawing.Bitmap Milena_Souza_Silva {
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap Milena_Souza_Silva 
+        {
             get {
                 object obj = ResourceManager.GetObject("Milena-Souza-Silva", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
