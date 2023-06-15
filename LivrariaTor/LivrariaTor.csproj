@@ -141,6 +141,12 @@
       <DependentUpon>ItemLivroCarrossel.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ItemLivroEventArgs.cs" />
+    <Compile Include="View\ItemUsuario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ItemUsuario.Designer.cs">
+      <DependentUpon>ItemUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Lancamentos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ItemLivroCarrossel.resx">
       <DependentUpon>ItemLivroCarrossel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ItemUsuario.resx">
+      <DependentUpon>ItemUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Lancamentos.resx">
       <DependentUpon>Lancamentos.cs</DependentUpon>
