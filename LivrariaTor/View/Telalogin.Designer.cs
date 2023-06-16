@@ -115,11 +115,13 @@ namespace LivrariaTor.View
             // 
             // btnEntrar
             // 
-            this.btnEntrar.Font = new System.Drawing.Font("Bauhaus 93", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEntrar.Location = new System.Drawing.Point(515, 370);
+            this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEntrar.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnEntrar.ForeColor = System.Drawing.Color.Purple;
+            this.btnEntrar.Location = new System.Drawing.Point(493, 387);
             this.btnEntrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(123, 44);
+            this.btnEntrar.Size = new System.Drawing.Size(166, 36);
             this.btnEntrar.TabIndex = 25;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;

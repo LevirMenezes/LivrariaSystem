@@ -1,5 +1,6 @@
 ﻿using LivrariaTor.Controller;
 using LivrariaTor.Persistencia;
+using LivrariaTor.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -48,6 +49,7 @@ namespace LivrariaTor.View
 
                 if (usuario != null)
                 {
+                    VariaveisGlobais.UsuarioLogado = usuario;
                     MessageBox.Show($"Seja bem vindo {usuario.Nome}", "Logado com Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     FormPrincipal form_principal = new FormPrincipal();
                     form_principal.Show();
@@ -66,7 +68,9 @@ namespace LivrariaTor.View
 
         private void llblCadastrar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            FrmUsuario form_cadastro = new FrmUsuario();
+            form_cadastro.Show();
+            this.Hide();
         }
     }
 }

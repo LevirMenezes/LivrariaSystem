@@ -165,12 +165,17 @@ namespace LivrariaTor
             }
         }
 
-        private void btnSetaDireita_Click(object sender, EventArgs e)
+        private void btnComprar1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnSetaEsquerda_Click(object sender, EventArgs e)
+        private void btnComprar2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnComprar3_Click(object sender, EventArgs e)
         {
 
         }
