@@ -70,7 +70,7 @@ namespace LivrariaTor.View
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(179)))), ((int)(((byte)(242)))));
             this.panel2.Location = new System.Drawing.Point(141, 135);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(457, 8);
             this.panel2.TabIndex = 6;
@@ -115,6 +115,7 @@ namespace LivrariaTor.View
             this.lblTelefone.Size = new System.Drawing.Size(127, 20);
             this.lblTelefone.TabIndex = 8;
             this.lblTelefone.Text = "(69) 99310-6458";
+            this.lblTelefone.Click += new System.EventHandler(this.lblTelefone_Click);
             // 
             // lblCPF
             // 

@@ -24,5 +24,10 @@ namespace LivrariaTor.View
         {
 
         }
+
+        private void lblTelefone_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
