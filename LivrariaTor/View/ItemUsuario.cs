@@ -15,6 +15,14 @@ namespace LivrariaTor.View
         public ItemUsuario()
         {
             InitializeComponent();
+
+
+
+        }
+
+        private void ItemUsuario_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

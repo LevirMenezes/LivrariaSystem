@@ -135,6 +135,12 @@
       <DependentUpon>Informacoes.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ItemLivroEventArgs.cs" />
+    <Compile Include="View\ItemUsuario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ItemUsuario.Designer.cs">
+      <DependentUpon>ItemUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Lancamentos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     <EmbeddedResource Include="View\ItemLivro.resx">
       <DependentUpon>ItemLivro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ItemUsuario.resx">
+      <DependentUpon>ItemUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Lancamentos.resx">
       <DependentUpon>Lancamentos.cs</DependentUpon>
     </EmbeddedResource>
@@ -245,6 +254,7 @@
   <ItemGroup>
     <Content Include="Resources\adicionar-foto.png" />
     <Content Include="Resources\livro-clean-code.jpg" />
+    <None Include="Resources\Milena-Souza-Silva.jpg" />
     <WCFMetadata Include="Connected Services\" />
     <Content Include="Resources\add_autor.png" />
   </ItemGroup>
