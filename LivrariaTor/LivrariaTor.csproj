@@ -284,6 +284,7 @@
     <Content Include="Resources\lupa-pesquisar.png" />
     <Content Include="Resources\seta-direita.png" />
     <Content Include="Resources\seta-esquerda.png" />
+    <None Include="Resources\Milena-Souza-Silva.jpg" />
     <WCFMetadata Include="Connected Services\" />
     <Content Include="Resources\add_autor.png" />
   </ItemGroup>
