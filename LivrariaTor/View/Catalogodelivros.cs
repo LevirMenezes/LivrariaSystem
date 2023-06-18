@@ -61,7 +61,6 @@ namespace LivrariaTor.View
         {
             // Aqui você tem acesso às informações do item clicado
             string  Titulo    = e.Livro.Titulo;
-            string  Descricao = e.Livro.Descricao;
             decimal Preco     = e.Livro.Preco;
             Image   imagem    = e.Imagem;
 

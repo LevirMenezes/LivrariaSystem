@@ -42,5 +42,10 @@ namespace LivrariaTor.Controller
             return UsuarioModel.GetLogin(usuario, senha);
         }
 
+        public UsuarioEnt PegaId()
+        {
+            return UsuarioModel.GetId();
+        }
+
     }
 }

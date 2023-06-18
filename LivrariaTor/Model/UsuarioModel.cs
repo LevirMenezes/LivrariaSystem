@@ -14,7 +14,7 @@ namespace LivrariaTor.Model
         {
             SqlConnection cn = Conexao.ObterConexao();
 
-            string query = "INSERT INTO tbUsuario(nome, telefone, cpf, email, senha, adm) VALUES (@nome, @telefone, @cpf, @email, @senha, 0);";
+            string query = "INSERT INTO tbUsuario(nome, telefone, cpf, email, senha, adm, imagem) VALUES (@nome, @telefone, @cpf, @email, @senha, 0, @imagem);";
             string resp = string.Empty;
             try
             {
@@ -25,6 +25,7 @@ namespace LivrariaTor.Model
                     command.Parameters.AddWithValue("@cpf",      usuario.Cpf);
                     command.Parameters.AddWithValue("@email",    usuario.Email);
                     command.Parameters.AddWithValue("@senha",    usuario.Senha);
+                    command.Parameters.AddWithValue("@imagem",   usuario.Imagem);
                     resp = command.ExecuteNonQuery() == 1 ? "OK" : "O Insert não foi feito!";
                 }
             }
@@ -80,25 +81,45 @@ namespace LivrariaTor.Model
 
         public string Delete(int id)
         {
-            SqlConnection cn = Conexao.ObterConexao();
-            string query = "DELETE FROM tbUsuario WHERE id = @id";
             string resp = string.Empty;
             try
             {
-                using (SqlCommand command = new SqlCommand(query, cn))
+                SqlConnection cn = Conexao.ObterConexao();
+                string query1 = "DELETE tbEndereco WHERE idusuario = @idusuario;";
+                string query2 = "DELETE FROM tbUsuario WHERE id    = @id;";
+
+                using (SqlTransaction transaction = cn.BeginTransaction())
                 {
-                    command.Parameters.AddWithValue("@id", id);
-                    resp = command.ExecuteNonQuery() == 1 ? "OK" : "O Delete não foi feito!";
+                    try
+                    {
+                        SqlCommand command = new SqlCommand();
+                        command.Connection = cn;
+                        command.Transaction = transaction;
+                        command.CommandText = query1 +
+                                              query2;
+
+                        command.Parameters.AddWithValue("@idusuario", id);
+                        command.Parameters.AddWithValue("@id", id);
+
+                        command.ExecuteNonQuery();
+
+                        transaction.Commit();
+                        resp = "OK";
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        resp = "Falha no delete!" + ex.Message;
+                    }
                 }
             }
-            catch (Exception)
+            catch (Exception ex )
             {
-                resp = "Erro no delete!";
+                resp = "Erro no delete!" + ex.Message;
             }
             finally
             {
                 Conexao.FecharConexao();
-
             }
 
             return resp;
@@ -125,6 +146,15 @@ namespace LivrariaTor.Model
                             usuario.Email      = reader["email"].ToString();
                             usuario.Senha      = reader["senha"].ToString();
                             usuario.Adm        = Convert.ToInt32(reader["adm"]);
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("imagem")))
+                            {
+                                long tamanhoBytes = reader.GetBytes(reader.GetOrdinal("imagem"), 0, null, 0, 0);
+                                byte[] imagemBytes = new byte[tamanhoBytes];
+                                reader.GetBytes(reader.GetOrdinal("imagem"), 0, imagemBytes, 0, (int)tamanhoBytes);
+
+                                usuario.Imagem = imagemBytes;
+                            }
 
                             usuarios.Add(usuario);
                         }
@@ -165,6 +195,15 @@ namespace LivrariaTor.Model
                             usuario.Email    = reader["email"].ToString();
                             usuario.Senha    = reader["senha"].ToString();
                             usuario.Adm      = Convert.ToInt32(reader["adm"]);
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("imagem")))
+                            {
+                                long tamanhoBytes = reader.GetBytes(reader.GetOrdinal("imagem"), 0, null, 0, 0);
+                                byte[] imagemBytes = new byte[tamanhoBytes];
+                                reader.GetBytes(reader.GetOrdinal("imagem"), 0, imagemBytes, 0, (int)tamanhoBytes);
+
+                                usuario.Imagem = imagemBytes;
+                            }
                         }
                     }
                 }
@@ -203,6 +242,15 @@ namespace LivrariaTor.Model
                             usuario.Email    = reader["email"].ToString();
                             usuario.Senha    = reader["senha"].ToString();
                             usuario.Adm      = Convert.ToInt32(reader["adm"]);
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("imagem")))
+                            {
+                                long tamanhoBytes = reader.GetBytes(reader.GetOrdinal("imagem"), 0, null, 0, 0);
+                                byte[] imagemBytes = new byte[tamanhoBytes];
+                                reader.GetBytes(reader.GetOrdinal("imagem"), 0, imagemBytes, 0, (int)tamanhoBytes);
+
+                                usuario.Imagem = imagemBytes;
+                            }
                         }
                     }
                 }
@@ -217,6 +265,50 @@ namespace LivrariaTor.Model
             }
 
             return usuario.Id == 0 ? null : usuario;
+        }
+
+        public UsuarioEnt GetId()
+        {
+            SqlConnection cn   = Conexao.ObterConexao();
+            UsuarioEnt usuario = new UsuarioEnt();
+            string query = "SELECT TOP 1 * FROM tbUsuario ORDER BY id DESC;";
+            try
+            {
+                using (SqlCommand command = new SqlCommand(query, cn))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            usuario.Id = Convert.ToInt32(reader["id"]);
+                            usuario.Nome = reader["nome"].ToString();
+                            usuario.Telefone = reader["telefone"].ToString();
+                            usuario.Cpf = reader["cpf"].ToString();
+                            usuario.Email = reader["email"].ToString();
+                            usuario.Senha = reader["senha"].ToString();
+                            usuario.Adm = Convert.ToInt32(reader["adm"]);
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("imagem")))
+                            {
+                                long tamanhoBytes = reader.GetBytes(reader.GetOrdinal("imagem"), 0, null, 0, 0);
+                                byte[] imagemBytes = new byte[tamanhoBytes];
+                                reader.GetBytes(reader.GetOrdinal("imagem"), 0, imagemBytes, 0, (int)tamanhoBytes);
+
+                                usuario.Imagem = imagemBytes;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                usuario = null;
+            }
+            finally
+            {
+                Conexao.FecharConexao();
+            }
+            return (usuario.Id == 0 ? null : usuario);
         }
 
     }

@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
+using System.IO;
 
 namespace LivrariaTor.Persistencia
 {
@@ -15,6 +12,7 @@ namespace LivrariaTor.Persistencia
         private string email;   
         private string senha;   
         private int adm;
+        private byte[] imagem;
 
         public int Id { get => id; set => id = value; }
         public string Nome { get => nome; set => nome = value; }
@@ -23,6 +21,7 @@ namespace LivrariaTor.Persistencia
         public string Email { get => email; set => email = value; }
         public string Senha { get => senha; set => senha = value; }
         public int Adm { get => adm; set => adm = value; }
+        public byte[] Imagem { get => imagem; set => imagem = value; }
 
         public UsuarioEnt()
         {
@@ -33,6 +32,23 @@ namespace LivrariaTor.Persistencia
             Email    = string.Empty;
             Senha    = string.Empty;
             Adm      = 0;
+            Imagem   = null;
+        }
+
+        public Image ByteToIMG()
+        {
+            if (this.Imagem != null)
+            {
+                using (MemoryStream ms = new MemoryStream(this.Imagem))
+                {
+                    return Image.FromStream(ms);
+                }
+            }
+            else
+            {
+                return null;
+            }
+
         }
 
     }

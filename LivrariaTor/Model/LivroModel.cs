@@ -123,14 +123,14 @@ namespace LivrariaTor.Model
 
         public string Delete(int id)
         {
-            SqlConnection cn = Conexao.ObterConexao();
-            string query1 = "DELETE tbLivroAutor  WHERE idlivro = @idlivro1;";
-            string query2 = "DELETE tbLivroGenero WHERE idlivro = @idlivro2;";
-            string query3 = "DELETE FROM tbLivro  WHERE id      = @id3;";
-
             string resp = string.Empty;
             try
             {
+                SqlConnection cn = Conexao.ObterConexao();
+                string query1 = "DELETE tbLivroAutor  WHERE idlivro = @idlivro1;";
+                string query2 = "DELETE tbLivroGenero WHERE idlivro = @idlivro2;";
+                string query3 = "DELETE FROM tbLivro  WHERE id      = @id3;";
+
                 using(SqlTransaction transaction = cn.BeginTransaction())
                 {
                     try
@@ -288,6 +288,15 @@ namespace LivrariaTor.Model
                             livro.AnoPublicacao = Convert.ToDateTime(reader["anopublicacao"]).ToString("dd/MM/yyyy");
                             livro.Isbn          = reader["isbn"].ToString();
                             livro.IdEditora     = Convert.ToInt32(reader["ideditora"]);
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("imagem")))
+                            {
+                                long tamanhoBytes = reader.GetBytes(reader.GetOrdinal("imagem"), 0, null, 0, 0);
+                                byte[] imagemBytes = new byte[tamanhoBytes];
+                                reader.GetBytes(reader.GetOrdinal("imagem"), 0, imagemBytes, 0, (int)tamanhoBytes);
+
+                                livro.Imagem = imagemBytes;
+                            }
                         }
                     }
                 }

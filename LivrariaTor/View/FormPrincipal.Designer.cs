@@ -49,7 +49,6 @@ namespace LivrariaTor
             this.picboxIMG1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.linkLabel6 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.LklLivros = new System.Windows.Forms.LinkLabel();
@@ -88,7 +87,7 @@ namespace LivrariaTor
             this.panelConteiner.Controls.Add(this.painelFormularios);
             this.panelConteiner.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelConteiner.Location = new System.Drawing.Point(0, 0);
-            this.panelConteiner.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelConteiner.Margin = new System.Windows.Forms.Padding(4);
             this.panelConteiner.Name = "panelConteiner";
             this.panelConteiner.Size = new System.Drawing.Size(1200, 788);
             this.panelConteiner.TabIndex = 0;
@@ -104,7 +103,7 @@ namespace LivrariaTor
             this.painelFormularios.Controls.Add(this.panel2);
             this.painelFormularios.Controls.Add(this.panel1);
             this.painelFormularios.Location = new System.Drawing.Point(0, 0);
-            this.painelFormularios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.painelFormularios.Margin = new System.Windows.Forms.Padding(4);
             this.painelFormularios.Name = "painelFormularios";
             this.painelFormularios.Size = new System.Drawing.Size(1200, 800);
             this.painelFormularios.TabIndex = 2;
@@ -117,7 +116,7 @@ namespace LivrariaTor
             this.panel3.Controls.Add(this.btnSetaEsquerda);
             this.panel3.Controls.Add(this.pnlIMG1);
             this.panel3.Location = new System.Drawing.Point(29, 178);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1141, 447);
             this.panel3.TabIndex = 2;
@@ -126,7 +125,7 @@ namespace LivrariaTor
             // 
             this.btnSetaDireita.Image = global::LivrariaTor.Properties.Resources.seta_direita;
             this.btnSetaDireita.Location = new System.Drawing.Point(1076, 171);
-            this.btnSetaDireita.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSetaDireita.Margin = new System.Windows.Forms.Padding(4);
             this.btnSetaDireita.Name = "btnSetaDireita";
             this.btnSetaDireita.Size = new System.Drawing.Size(45, 62);
             this.btnSetaDireita.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -141,7 +140,7 @@ namespace LivrariaTor
             this.pnlIMG3.Controls.Add(this.lblTitulo3);
             this.pnlIMG3.Controls.Add(this.picboxIMG3);
             this.pnlIMG3.Location = new System.Drawing.Point(800, 18);
-            this.pnlIMG3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlIMG3.Margin = new System.Windows.Forms.Padding(4);
             this.pnlIMG3.Name = "pnlIMG3";
             this.pnlIMG3.Size = new System.Drawing.Size(265, 403);
             this.pnlIMG3.TabIndex = 2;
@@ -149,7 +148,7 @@ namespace LivrariaTor
             // btnComprar3
             // 
             this.btnComprar3.Location = new System.Drawing.Point(80, 321);
-            this.btnComprar3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnComprar3.Margin = new System.Windows.Forms.Padding(4);
             this.btnComprar3.Name = "btnComprar3";
             this.btnComprar3.Size = new System.Drawing.Size(121, 37);
             this.btnComprar3.TabIndex = 4;
@@ -171,7 +170,7 @@ namespace LivrariaTor
             // picboxIMG3
             // 
             this.picboxIMG3.Location = new System.Drawing.Point(49, 33);
-            this.picboxIMG3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picboxIMG3.Margin = new System.Windows.Forms.Padding(4);
             this.picboxIMG3.Name = "picboxIMG3";
             this.picboxIMG3.Size = new System.Drawing.Size(171, 193);
             this.picboxIMG3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -185,7 +184,7 @@ namespace LivrariaTor
             this.pnlIMG2.Controls.Add(this.lblTitulo2);
             this.pnlIMG2.Controls.Add(this.picboxIMG2);
             this.pnlIMG2.Location = new System.Drawing.Point(436, 18);
-            this.pnlIMG2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlIMG2.Margin = new System.Windows.Forms.Padding(4);
             this.pnlIMG2.Name = "pnlIMG2";
             this.pnlIMG2.Size = new System.Drawing.Size(265, 403);
             this.pnlIMG2.TabIndex = 1;
@@ -193,7 +192,7 @@ namespace LivrariaTor
             // btnComprar2
             // 
             this.btnComprar2.Location = new System.Drawing.Point(76, 321);
-            this.btnComprar2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnComprar2.Margin = new System.Windows.Forms.Padding(4);
             this.btnComprar2.Name = "btnComprar2";
             this.btnComprar2.Size = new System.Drawing.Size(121, 37);
             this.btnComprar2.TabIndex = 5;
@@ -215,7 +214,7 @@ namespace LivrariaTor
             // picboxIMG2
             // 
             this.picboxIMG2.Location = new System.Drawing.Point(48, 33);
-            this.picboxIMG2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picboxIMG2.Margin = new System.Windows.Forms.Padding(4);
             this.picboxIMG2.Name = "picboxIMG2";
             this.picboxIMG2.Size = new System.Drawing.Size(171, 193);
             this.picboxIMG2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -226,7 +225,7 @@ namespace LivrariaTor
             // 
             this.btnSetaEsquerda.Image = global::LivrariaTor.Properties.Resources.seta_esquerda;
             this.btnSetaEsquerda.Location = new System.Drawing.Point(20, 171);
-            this.btnSetaEsquerda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSetaEsquerda.Margin = new System.Windows.Forms.Padding(4);
             this.btnSetaEsquerda.Name = "btnSetaEsquerda";
             this.btnSetaEsquerda.Size = new System.Drawing.Size(45, 62);
             this.btnSetaEsquerda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -241,7 +240,7 @@ namespace LivrariaTor
             this.pnlIMG1.Controls.Add(this.lblTitulo1);
             this.pnlIMG1.Controls.Add(this.picboxIMG1);
             this.pnlIMG1.Location = new System.Drawing.Point(73, 18);
-            this.pnlIMG1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlIMG1.Margin = new System.Windows.Forms.Padding(4);
             this.pnlIMG1.Name = "pnlIMG1";
             this.pnlIMG1.Size = new System.Drawing.Size(265, 403);
             this.pnlIMG1.TabIndex = 0;
@@ -249,7 +248,7 @@ namespace LivrariaTor
             // btnComprar1
             // 
             this.btnComprar1.Location = new System.Drawing.Point(63, 321);
-            this.btnComprar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnComprar1.Margin = new System.Windows.Forms.Padding(4);
             this.btnComprar1.Name = "btnComprar1";
             this.btnComprar1.Size = new System.Drawing.Size(121, 37);
             this.btnComprar1.TabIndex = 5;
@@ -272,7 +271,7 @@ namespace LivrariaTor
             // picboxIMG1
             // 
             this.picboxIMG1.Location = new System.Drawing.Point(48, 33);
-            this.picboxIMG1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picboxIMG1.Margin = new System.Windows.Forms.Padding(4);
             this.picboxIMG1.Name = "picboxIMG1";
             this.picboxIMG1.Size = new System.Drawing.Size(171, 193);
             this.picboxIMG1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -283,7 +282,6 @@ namespace LivrariaTor
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.linkLabel6);
-            this.panel2.Controls.Add(this.linkLabel5);
             this.panel2.Controls.Add(this.linkLabel4);
             this.panel2.Controls.Add(this.linkLabel3);
             this.panel2.Controls.Add(this.LklLivros);
@@ -305,22 +303,11 @@ namespace LivrariaTor
             this.linkLabel6.Text = "Informações";
             this.linkLabel6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel6_LinkClicked);
             // 
-            // linkLabel5
-            // 
-            this.linkLabel5.AutoSize = true;
-            this.linkLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.linkLabel5.Location = new System.Drawing.Point(733, 22);
-            this.linkLabel5.Name = "linkLabel5";
-            this.linkLabel5.Size = new System.Drawing.Size(103, 24);
-            this.linkLabel5.TabIndex = 3;
-            this.linkLabel5.TabStop = true;
-            this.linkLabel5.Text = "Frete grátis";
-            // 
             // linkLabel4
             // 
             this.linkLabel4.AutoSize = true;
             this.linkLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.linkLabel4.Location = new System.Drawing.Point(471, 22);
+            this.linkLabel4.Location = new System.Drawing.Point(662, 21);
             this.linkLabel4.Name = "linkLabel4";
             this.linkLabel4.Size = new System.Drawing.Size(135, 24);
             this.linkLabel4.TabIndex = 2;
@@ -332,7 +319,7 @@ namespace LivrariaTor
             // 
             this.linkLabel3.AutoSize = true;
             this.linkLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.linkLabel3.Location = new System.Drawing.Point(228, 21);
+            this.linkLabel3.Location = new System.Drawing.Point(328, 21);
             this.linkLabel3.Name = "linkLabel3";
             this.linkLabel3.Size = new System.Drawing.Size(123, 24);
             this.linkLabel3.TabIndex = 1;
@@ -416,7 +403,7 @@ namespace LivrariaTor
             this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximizar.Image")));
             this.btnMaximizar.Location = new System.Drawing.Point(1101, 15);
-            this.btnMaximizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMaximizar.Margin = new System.Windows.Forms.Padding(4);
             this.btnMaximizar.Name = "btnMaximizar";
             this.btnMaximizar.Size = new System.Drawing.Size(39, 39);
             this.btnMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -429,7 +416,7 @@ namespace LivrariaTor
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
             this.btnMinimizar.Location = new System.Drawing.Point(1056, 15);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(4);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(39, 39);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -442,7 +429,7 @@ namespace LivrariaTor
             this.btnFechar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFechar.Image = ((System.Drawing.Image)(resources.GetObject("btnFechar.Image")));
             this.btnFechar.Location = new System.Drawing.Point(1147, 15);
-            this.btnFechar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFechar.Margin = new System.Windows.Forms.Padding(4);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(39, 39);
             this.btnFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -456,7 +443,7 @@ namespace LivrariaTor
             this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaurar.Image")));
             this.btnRestaurar.Location = new System.Drawing.Point(1101, 15);
-            this.btnRestaurar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRestaurar.Margin = new System.Windows.Forms.Padding(4);
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.Size = new System.Drawing.Size(39, 39);
             this.btnRestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -471,7 +458,7 @@ namespace LivrariaTor
             this.ClientSize = new System.Drawing.Size(1200, 788);
             this.Controls.Add(this.panelConteiner);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(867, 492);
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -513,7 +500,6 @@ namespace LivrariaTor
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.LinkLabel linkLabel6;
-        private System.Windows.Forms.LinkLabel linkLabel5;
         private System.Windows.Forms.LinkLabel linkLabel4;
         private System.Windows.Forms.LinkLabel linkLabel3;
         private System.Windows.Forms.LinkLabel LklLivros;

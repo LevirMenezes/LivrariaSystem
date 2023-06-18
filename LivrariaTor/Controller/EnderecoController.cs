@@ -12,27 +12,27 @@ namespace LivrariaTor.Controller
     {
         private EnderecoModel EnderecoModels = new EnderecoModel();
 
-        public string InserirEditora(EnderecoEnt endereco)
+        public string InserirEndereco(EnderecoEnt endereco)
         {
             return EnderecoModels.Insert(endereco);
         }
 
-        public string AtualizarEditora(EnderecoEnt endereco)
+        public string AtualizarEndereco(EnderecoEnt endereco)
         {
             return EnderecoModels.Update(endereco);
         }
 
-        public string DeletarEditora(int id)
+        public string DeletarEndereco(int id)
         {
             return EnderecoModels.Delete(id);
         }
 
-        public List<EnderecoEnt> PegaTodosEditoras()
+        public List<EnderecoEnt> PegaTodosEnderecos()
         {
             return EnderecoModels.GetAll();
         }
 
-        public EnderecoEnt PegaEditoraPorId(int id)
+        public EnderecoEnt PegaEnderecoPorId(int id)
         {
             return EnderecoModels.GetById(id);
         }
