@@ -35,10 +35,14 @@ namespace LivrariaTor.View
         private void PopularLista()
         {
             List<ItemLivro> ItensLivro = new List<ItemLivro>();
+
+            // Verifica se tem algum item no FlowLayout, se tiver algum item ele limpa o layout
             if (flowLayoutPanel1.Controls.Count > 0)
             {
                 flowLayoutPanel1.Controls.Clear();
             }
+
+
             foreach (LivroEnt livro in Livros)
             {
                 Image img = livro.ByteToIMG();

@@ -45,12 +45,12 @@ namespace LivrariaTor.Model
         {
             SqlConnection cn = Conexao.ObterConexao();
             string query = @"UPDATE tbEndereco 
-                            SET   cep       = @cep
-                                  rua       = @rua
-                                  numero    = @numero
-                                  bairro    = @bairro
-                                  cidade    = @cidade
-                                  estado    = @estado
+                            SET   cep       = @cep,
+                                  rua       = @rua,
+                                  numero    = @numero,
+                                  bairro    = @bairro,
+                                  cidade    = @cidade,
+                                  estado    = @estado,
                                   idusuario = @idusuario
                             WHERE id        = @id ";
             string resp = string.Empty;

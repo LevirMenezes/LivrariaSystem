@@ -50,7 +50,8 @@ namespace LivrariaTor.Model
                              telefone = @telefone,
                              cpf      = @cpf,
                              email    = @email,
-                             senha    = @senha
+                             senha    = @senha,
+                             imagem   = @imagem
                              WHERE id = @id;";
             string resp = string.Empty;
             try
@@ -63,12 +64,13 @@ namespace LivrariaTor.Model
                     command.Parameters.AddWithValue("@cpf", usuario.Cpf);
                     command.Parameters.AddWithValue("@email", usuario.Email);
                     command.Parameters.AddWithValue("@senha", usuario.Senha);
+                    command.Parameters.AddWithValue("@imagem", usuario.Imagem);
                     resp = command.ExecuteNonQuery() == 1 ? "OK" : "O Update não foi feito!";
                 }
             }
-            catch (Exception)
+            catch (Exception ex )
             {
-                resp = "Erro no update!";
+                resp = "Erro no update!" + ex.Message;
             }
             finally
             {

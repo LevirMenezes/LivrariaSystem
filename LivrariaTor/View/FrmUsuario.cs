@@ -15,7 +15,7 @@ namespace LivrariaTor
         private UsuarioController  UsuarioController  = new UsuarioController();
         private EnderecoController EnderecoController = new EnderecoController();
         private UsuarioEnt         Usuario            = null;
-        private EnderecoEnt        Endereceo          = null;
+        private EnderecoEnt        Endereco           = null;
         public  string             TextoBotao         = string.Empty;
 
         public FrmUsuario(UsuarioEnt usuario = null)
@@ -72,9 +72,18 @@ namespace LivrariaTor
             }
             else
             {
-                Listadeusuarios form_listausuarios = new Listadeusuarios();
-                form_listausuarios.Show();
-                this.Close();
+                if (VariaveisGlobais.UsuarioLogado.Adm == 0)
+                {
+                    FormPrincipal form_principal = new FormPrincipal();
+                    form_principal.Show();
+                    this.Close();
+                }
+                else
+                {
+                    Listadeusuarios form_listausuarios = new Listadeusuarios();
+                    form_listausuarios.Show();
+                    this.Close();
+                }
             }
         }
 
@@ -177,6 +186,9 @@ namespace LivrariaTor
                 if (UsuarioController.PegaEmail(tbxEmail.Text.Trim()) != null)
                     throw new Exception("Esse email já pertence a outro usuário!");
 
+                if (tbxEstado.TextLength != 2)
+                    throw new Exception("Por Favor, Preencha o campo estado apenas com a Sigla do estado! Ex.: RO -> RONDÔNIA.");
+
                 #endregion
 
                 byte[] imagemBytes = File.ReadAllBytes(CaminhoDaImagem);
@@ -236,7 +248,140 @@ namespace LivrariaTor
 
         private void Editar()
         {
+            try
+            {
+                #region Verificação do campo vazio
 
+                if (string.IsNullOrEmpty(CaminhoDaImagem) && Usuario.Imagem == null)
+                {
+                    btnSelecionarIMG.Focus();
+                    throw new Exception("O Campo Imagem não pode ser vazio! Por favor selecione uma imagem.");
+                }
+
+                if (string.IsNullOrEmpty(tbxNome.Text.Trim()))
+                {
+                    tbxNome.Focus();
+                    tbxNome.BackColor = Color.Red;
+                    throw new Exception("Por favor, Preecha o campo Nome.");
+                }
+
+                if (string.IsNullOrEmpty(mtbxTelefone.Text.Replace("(", "").Replace(")", "").Replace("-", "").Replace(" ", "").Trim()))
+                {
+                    mtbxTelefone.Focus();
+                    throw new Exception("Por favor, Preencha o campo telefone do usuario.");
+                }
+
+                if (string.IsNullOrEmpty(mtbxCpf.Text.Replace("-", "").Replace(".", "").Trim()))
+                {
+                    mtbxCpf.Focus();
+                    throw new Exception("Por favor, Preencha o campo cpf de usuario.");
+                }
+
+                if (string.IsNullOrEmpty(tbxEmail.Text.Trim()))
+                {
+                    tbxEmail.Focus();
+                    throw new Exception("Por favor, Preencha o campo email do usuario.");
+                }
+
+                if (string.IsNullOrEmpty(mtbxSenha.Text.Trim()))
+                {
+                    mtbxSenha.Focus();
+                    throw new Exception("Por favor, Preencha o campo senha do usuario.");
+                }
+
+                if (string.IsNullOrEmpty(mtbxConfirmarSenha.Text.Trim()))
+                {
+                    mtbxConfirmarSenha.Focus();
+                    throw new Exception("Por favor, Preencha o campo confirmação de senha do usuario.");
+                }
+
+                if (mtbxConfirmarSenha.Text.Trim() != mtbxSenha.Text.Trim())
+                {
+                    mtbxSenha.Focus();
+                    throw new Exception("As senhas digitas são diferentes, por favor digite senhas iguais.");
+                }
+
+                if (string.IsNullOrEmpty(tbxCEP.Text.Trim()))
+                {
+                    tbxCEP.Focus();
+                    throw new Exception("Por favor, Preencha o campo CEP do usuario.");
+                }
+
+                if (string.IsNullOrEmpty(tbxNumero.Text.Trim()))
+                {
+                    tbxNumero.Focus();
+                    throw new Exception("Por favor, Preencha o campo Numero do usuario.");
+                }
+
+                if (string.IsNullOrEmpty(tbxBairro.Text.Trim()))
+                {
+                    tbxBairro.Focus();
+                    throw new Exception("Por favor, Preencha o campo Bairro do usuario.");
+                }
+
+                if (string.IsNullOrEmpty(tbxCidade.Text.Trim()))
+                {
+                    tbxCidade.Focus();
+                    throw new Exception("Por favor, Preencha o campo Cidade do usuario.");
+                }
+
+                if (string.IsNullOrEmpty(tbxEstado.Text.Trim()))
+                {
+                    tbxEstado.Focus();
+                    throw new Exception("Por favor, Preencha o campo Estado do usuario.");
+                }
+
+                #endregion
+
+                #region Validações de negocio
+
+                if (mtbxCpf.Text.Replace("-", "").Replace(".", "").Replace(",", "").Trim() != Usuario.Cpf && UsuarioController.PegaCPF(mtbxCpf.Text.Replace("-", "").Replace(".", "").Replace(",", "").Trim()) != null)
+                    throw new Exception("Esse cpf já pertence a outro usuário!");
+
+                if (tbxEmail.Text.Trim() != Usuario.Email && UsuarioController.PegaEmail(tbxEmail.Text.Trim()) != null)
+                    throw new Exception("Esse email já pertence a outro usuário!");
+
+                if(tbxEstado.TextLength != 2)
+                    throw new Exception("Por Favor, Preencha o campo estado apenas com a Sigla do estado! Ex.: RO -> RONDÔNIA.");
+
+                #endregion
+
+                byte[] imagemBytes = string.IsNullOrEmpty(CaminhoDaImagem) ? Usuario.Imagem : File.ReadAllBytes(CaminhoDaImagem);
+                UsuarioEnt usuario = new UsuarioEnt();
+                usuario.Id         = Usuario.Id;
+                usuario.Nome       = tbxNome.Text.Trim();
+                usuario.Telefone   = mtbxTelefone.Text.Replace("(", "").Replace(")", "").Replace("-", "").Replace(" ", "").Trim();
+                usuario.Cpf        = mtbxCpf.Text.Replace("-", "").Replace(".", "").Replace(",", "").Trim();
+                usuario.Email      = tbxEmail.Text.Trim();
+                usuario.Senha      = mtbxSenha.Text.Trim();
+                usuario.Imagem     = imagemBytes;
+
+                EnderecoEnt endereco = new EnderecoEnt();
+                endereco.Id          = Endereco.Id;
+                endereco.Cep         = tbxCEP.Text.Trim();
+                endereco.Numero      = tbxNumero.Text.Trim();
+                endereco.Rua         = tbxRua.Text.Trim();
+                endereco.Bairro      = tbxBairro.Text.Trim();
+                endereco.Cidade      = tbxCidade.Text.Trim();
+                endereco.Estado      = tbxEstado.Text.Trim();
+                endereco.IdUsuario   = Usuario.Id;
+
+                string resposta = UsuarioController.AtualizarUsuario(usuario);
+                if (resposta == "OK")
+                {
+                    string respEnd = EnderecoController.AtualizarEndereco(endereco);
+                    if (respEnd == "OK")
+                        MessageBox.Show("Perfil Atualizado com Sucesso!");
+                    else
+                        MessageBox.Show("Falha ao tentar atualizar o perfil do usuario!");
+                }
+                else
+                    MessageBox.Show("Falha ao tentar atualizar o perfil do usuario!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Falha ao atualizar o perfil: " + ex.Message, "Falha ao Atualizar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void Deletar()
@@ -262,28 +407,51 @@ namespace LivrariaTor
 
         private void CarregarInformacoes()
         {
-            Endereceo = EnderecoController.PegaEnderecoPorIdUsuario(Usuario.Id);
+            Endereco                = EnderecoController.PegaEnderecoPorIdUsuario(Usuario.Id);
             picboxImgUser.Image     = Usuario.ByteToIMG();
             tbxNome.Text            = Usuario.Nome;
             mtbxTelefone.Text       = FormataTelefone(Usuario.Telefone);
             mtbxCpf.Text            = FormataCPF(Usuario.Cpf);
             tbxEmail.Text           = Usuario.Email;
             mtbxSenha.Text          = Usuario.Senha;
-            mtbxConfirmarSenha.Text = Usuario.Senha;
+            mtbxConfirmarSenha.Text = Usuario.Senha;    
 
-            //tbxCEP.Text             = ;
-            //tbxRua.Text             = ;
-            //tbxNumero.Text          = ;
-            //tbxBairro.Text          = ;
-            //tbxCidade.Text          = ;
-            //tbxEstado.Text          = ;
-
+            tbxCEP.Text             = Endereco.Cep;
+            tbxRua.Text             = Endereco.Rua;
+            tbxNumero.Text          = Endereco.Numero;
+            tbxBairro.Text          = Endereco.Bairro;
+            tbxCidade.Text          = Endereco.Cidade;
+            tbxEstado.Text          = Endereco.Estado;
         }
 
         #endregion
         private void FrmUsuario_Load(object sender, EventArgs e)
         {
             btnCadastroUsuario.Text = TextoBotao;
+
+            if(TextoBotao != "Cadastrar")
+            {
+                CarregarInformacoes();
+
+                if(TextoBotao == "Deletar")
+                {
+                    picboxImgUser.Enabled      = false;
+                    tbxNome.Enabled            = false;
+                    mtbxTelefone.Enabled       = false;
+                    mtbxCpf.Enabled            = false;
+                    tbxEmail.Enabled           = false;
+                    mtbxSenha.Enabled          = false;
+                    mtbxConfirmarSenha.Enabled = false;
+
+                    tbxCEP.Enabled             = false;
+                    tbxRua.Enabled             = false;
+                    tbxNumero.Enabled          = false;
+                    tbxBairro.Enabled          = false;
+                    tbxCidade.Enabled          = false;
+                    tbxEstado.Enabled          = false;
+                }
+            }
+            
         }
     }
 }
