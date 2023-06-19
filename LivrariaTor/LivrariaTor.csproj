@@ -109,6 +109,12 @@
     <Compile Include="View\Catalogodelivros.Designer.cs">
       <DependentUpon>Catalogodelivros.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Formas de pagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Formas de pagamento.Designer.cs">
+      <DependentUpon>Formas de pagamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmUsuario.cs">
       <SubType>Form</SubType>
     </Compile>

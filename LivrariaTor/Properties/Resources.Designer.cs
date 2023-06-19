@@ -93,6 +93,16 @@ namespace LivrariaTor.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cash_shopping_credit_card_debit_finance_payment_money_pay_icon_228981 {
+            get {
+                object obj = ResourceManager.GetObject("cash_shopping_credit_card_debit_finance_payment_money_pay_icon_228981", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap livro_clean_code {
             get {
                 object obj = ResourceManager.GetObject("livro_clean_code", resourceCulture);
@@ -113,6 +123,16 @@ namespace LivrariaTor.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Milena_Souza_Silva {
+            get {
+                object obj = ResourceManager.GetObject("Milena-Souza-Silva", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap seta_direita {
             get {
                 object obj = ResourceManager.GetObject("seta_direita", resourceCulture);
@@ -123,17 +143,9 @@ namespace LivrariaTor.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap seta_esquerda
-        {
-            get{
-                object obj = ResourceManager.GetObject("seta_esquerda", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap Milena_Souza_Silva 
-        {
+        internal static System.Drawing.Bitmap seta_esquerda {
             get {
-                object obj = ResourceManager.GetObject("Milena-Souza-Silva", resourceCulture);
+                object obj = ResourceManager.GetObject("seta_esquerda", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

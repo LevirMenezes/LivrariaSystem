@@ -117,38 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="seta_esquerda" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\seta-esquerda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="adicionar_foto" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\adicionar-foto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Milena-Souza-Silva" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Milena-Souza-Silva.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lupa_pesquisar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lupa-pesquisar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="user_add_21977" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user_add_21977.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="seta_direita" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\seta-direita.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="add_autor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\add_autor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="livro_clean_code" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\livro-clean-code.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="books_3025" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\books_3025.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cash_shopping_credit_card_debit_finance_payment_money_pay_icon_228981" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cash_shopping_credit_card_debit_finance_payment_money_pay_icon_228981.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>
