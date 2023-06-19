@@ -1,5 +1,6 @@
 ﻿using LivrariaTor.Controller;
 using LivrariaTor.Persistencia;
+using LivrariaTor.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,9 +28,17 @@ namespace LivrariaTor.View
         private void Catalogodelivros_Load(object sender, EventArgs e)
         {
             PopularLista();
-            lblTitulo.Visible            = false;
-            lblPreco.Visible             = false;
-            btnAdicionarCarrinho.Visible = false;   
+
+            if(VariaveisGlobais.UsuarioLogado.Adm == 1)
+            {
+                btnAdicionarCarrinho.Visible = false;
+            }
+            else
+            {
+                btnCadastrarLivro.Visible = false;
+                btnEditarLivro.Visible    = false;
+                btnDeletarLivro.Visible   = false;
+            }
         }
 
         private void PopularLista()
