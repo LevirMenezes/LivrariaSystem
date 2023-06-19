@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LivrariaTor.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,14 +18,36 @@ namespace LivrariaTor.View
             InitializeComponent();
         }
 
-        private void lblLivraria_Click(object sender, EventArgs e)
+        private void btnRelatorioCliente_Click(object sender, EventArgs e)
+        {
+            Listadeusuarios form_listausuarios = new Listadeusuarios();
+            form_listausuarios.Show();
+            this.Close();
+        }
+
+        private void btnRelatorioVendas_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btnRelatorioEstoque_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnTelaPrincipal_Click(object sender, EventArgs e)
+        {
+            FormPrincipal form_principal = new FormPrincipal();
+            form_principal.Show();
+            this.Close();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            Telalogin form_login = new Telalogin();
+            form_login.Show();
+            this.Close();
+            VariaveisGlobais.UsuarioLogado = null;
         }
     }
 }

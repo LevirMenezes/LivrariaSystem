@@ -48,7 +48,7 @@ namespace LivrariaTor.View
             this.lblTituloLivro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloLivro.Location = new System.Drawing.Point(176, 12);
             this.lblTituloLivro.Name = "lblTituloLivro";
-            this.lblTituloLivro.Size = new System.Drawing.Size(597, 24);
+            this.lblTituloLivro.Size = new System.Drawing.Size(589, 24);
             this.lblTituloLivro.TabIndex = 1;
             this.lblTituloLivro.Text = "Usuário";
             this.lblTituloLivro.Click += new System.EventHandler(this.ItemUsuario_Click);
@@ -65,6 +65,8 @@ namespace LivrariaTor.View
             this.panel1.Size = new System.Drawing.Size(150, 143);
             this.panel1.TabIndex = 5;
             this.panel1.Click += new System.EventHandler(this.ItemUsuario_Click);
+            this.panel1.MouseEnter += new System.EventHandler(this.ItemUsuario_MouseEnter);
+            this.panel1.MouseLeave += new System.EventHandler(this.ItemUsuario_MouseLeave);
             // 
             // panel2
             // 
@@ -85,6 +87,8 @@ namespace LivrariaTor.View
             this.picboxLivro.TabIndex = 0;
             this.picboxLivro.TabStop = false;
             this.picboxLivro.Click += new System.EventHandler(this.ItemUsuario_Click);
+            this.picboxLivro.MouseEnter += new System.EventHandler(this.ItemUsuario_MouseEnter);
+            this.picboxLivro.MouseLeave += new System.EventHandler(this.ItemUsuario_MouseLeave);
             // 
             // lblNomeUsuario
             // 
@@ -95,6 +99,9 @@ namespace LivrariaTor.View
             this.lblNomeUsuario.Size = new System.Drawing.Size(200, 20);
             this.lblNomeUsuario.TabIndex = 6;
             this.lblNomeUsuario.Text = "Milena Daniela Souza Silva";
+            this.lblNomeUsuario.Click += new System.EventHandler(this.ItemUsuario_Click);
+            this.lblNomeUsuario.MouseEnter += new System.EventHandler(this.ItemUsuario_MouseEnter);
+            this.lblNomeUsuario.MouseLeave += new System.EventHandler(this.ItemUsuario_MouseLeave);
             // 
             // lblEmail
             // 
@@ -105,6 +112,9 @@ namespace LivrariaTor.View
             this.lblEmail.Size = new System.Drawing.Size(188, 20);
             this.lblEmail.TabIndex = 7;
             this.lblEmail.Text = "millenamia02@gmail.com";
+            this.lblEmail.Click += new System.EventHandler(this.ItemUsuario_Click);
+            this.lblEmail.MouseEnter += new System.EventHandler(this.ItemUsuario_MouseEnter);
+            this.lblEmail.MouseLeave += new System.EventHandler(this.ItemUsuario_MouseLeave);
             // 
             // lblTelefone
             // 
@@ -115,7 +125,9 @@ namespace LivrariaTor.View
             this.lblTelefone.Size = new System.Drawing.Size(127, 20);
             this.lblTelefone.TabIndex = 8;
             this.lblTelefone.Text = "(69) 99310-6458";
-            this.lblTelefone.Click += new System.EventHandler(this.lblTelefone_Click);
+            this.lblTelefone.Click += new System.EventHandler(this.ItemUsuario_Click);
+            this.lblTelefone.MouseEnter += new System.EventHandler(this.ItemUsuario_MouseEnter);
+            this.lblTelefone.MouseLeave += new System.EventHandler(this.ItemUsuario_MouseLeave);
             // 
             // lblCPF
             // 
@@ -126,6 +138,9 @@ namespace LivrariaTor.View
             this.lblCPF.Size = new System.Drawing.Size(108, 20);
             this.lblCPF.TabIndex = 9;
             this.lblCPF.Text = "03350151230";
+            this.lblCPF.Click += new System.EventHandler(this.ItemUsuario_Click);
+            this.lblCPF.MouseEnter += new System.EventHandler(this.ItemUsuario_MouseEnter);
+            this.lblCPF.MouseLeave += new System.EventHandler(this.ItemUsuario_MouseLeave);
             // 
             // ItemUsuario
             // 
@@ -147,26 +162,6 @@ namespace LivrariaTor.View
             this.ResumeLayout(false);
             this.PerformLayout();
 
-        }
-
-        private void ItemUsuario_MouseLeave(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void ItemUsuario_MouseEnter(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void ItemUsuario_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void ItemLivro_MouseLeave(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
         }
 
         #endregion

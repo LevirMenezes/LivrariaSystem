@@ -44,9 +44,18 @@ namespace LivrariaTor.View
                 {
                     VariaveisGlobais.UsuarioLogado = usuario;
                     MessageBox.Show($"Seja bem vindo {usuario.Nome}", "Logado com Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    FormPrincipal form_principal = new FormPrincipal();
-                    form_principal.Show();
-                    this.Hide();
+                    if (usuario.Adm == 1)
+                    {
+                        TelaAdm form_adm = new TelaAdm();
+                        form_adm.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        FormPrincipal form_principal = new FormPrincipal();
+                        form_principal.Show();
+                        this.Hide();
+                    }
                 }
                 else
                 {

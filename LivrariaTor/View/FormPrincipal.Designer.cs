@@ -61,6 +61,7 @@ namespace LivrariaTor
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnFechar = new System.Windows.Forms.PictureBox();
             this.btnRestaurar = new System.Windows.Forms.PictureBox();
+            this.btnTelaAdm = new System.Windows.Forms.Button();
             this.panelConteiner.SuspendLayout();
             this.painelFormularios.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -99,6 +100,7 @@ namespace LivrariaTor
             | System.Windows.Forms.AnchorStyles.Right)));
             this.painelFormularios.BackColor = System.Drawing.Color.White;
             this.painelFormularios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.painelFormularios.Controls.Add(this.btnTelaAdm);
             this.painelFormularios.Controls.Add(this.btnLogout);
             this.painelFormularios.Controls.Add(this.panel3);
             this.painelFormularios.Controls.Add(this.panel2);
@@ -112,9 +114,9 @@ namespace LivrariaTor
             // 
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
-            this.btnLogout.ForeColor = System.Drawing.Color.Purple;
+            this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(22)))), ((int)(((byte)(143)))));
             this.btnLogout.Location = new System.Drawing.Point(766, 550);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(112, 24);
             this.btnLogout.TabIndex = 3;
@@ -285,7 +287,7 @@ namespace LivrariaTor
             this.panel2.Controls.Add(this.linkLabel3);
             this.panel2.Controls.Add(this.LklLivros);
             this.panel2.Location = new System.Drawing.Point(22, 73);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(856, 50);
             this.panel2.TabIndex = 1;
@@ -345,7 +347,7 @@ namespace LivrariaTor
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.MediumOrchid;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(22)))), ((int)(((byte)(143)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.picboxCarrinho);
             this.panel1.Controls.Add(this.picboxUser);
@@ -356,7 +358,7 @@ namespace LivrariaTor
             this.panel1.Controls.Add(this.btnRestaurar);
             this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(900, 57);
             this.panel1.TabIndex = 0;
@@ -369,7 +371,7 @@ namespace LivrariaTor
             this.picboxCarrinho.ErrorImage = ((System.Drawing.Image)(resources.GetObject("picboxCarrinho.ErrorImage")));
             this.picboxCarrinho.InitialImage = ((System.Drawing.Image)(resources.GetObject("picboxCarrinho.InitialImage")));
             this.picboxCarrinho.Location = new System.Drawing.Point(213, 8);
-            this.picboxCarrinho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picboxCarrinho.Margin = new System.Windows.Forms.Padding(2);
             this.picboxCarrinho.Name = "picboxCarrinho";
             this.picboxCarrinho.Size = new System.Drawing.Size(41, 41);
             this.picboxCarrinho.TabIndex = 7;
@@ -383,7 +385,7 @@ namespace LivrariaTor
             this.picboxUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picboxUser.ErrorImage = null;
             this.picboxUser.Location = new System.Drawing.Point(155, 8);
-            this.picboxUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picboxUser.Margin = new System.Windows.Forms.Padding(2);
             this.picboxUser.Name = "picboxUser";
             this.picboxUser.Size = new System.Drawing.Size(42, 41);
             this.picboxUser.TabIndex = 5;
@@ -451,6 +453,19 @@ namespace LivrariaTor
             this.btnRestaurar.TabIndex = 3;
             this.btnRestaurar.TabStop = false;
             this.btnRestaurar.Visible = false;
+            // 
+            // btnTelaAdm
+            // 
+            this.btnTelaAdm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTelaAdm.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.btnTelaAdm.ForeColor = System.Drawing.Color.Purple;
+            this.btnTelaAdm.Location = new System.Drawing.Point(22, 550);
+            this.btnTelaAdm.Name = "btnTelaAdm";
+            this.btnTelaAdm.Size = new System.Drawing.Size(112, 24);
+            this.btnTelaAdm.TabIndex = 4;
+            this.btnTelaAdm.Text = "Tela Adm";
+            this.btnTelaAdm.UseVisualStyleBackColor = true;
+            this.btnTelaAdm.Click += new System.EventHandler(this.btnTelaAdm_Click);
             // 
             // FormPrincipal
             // 
@@ -522,6 +537,7 @@ namespace LivrariaTor
         private System.Windows.Forms.Label lblTitulo1;
         private System.Windows.Forms.PictureBox picboxIMG1;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnTelaAdm;
     }
 }
 

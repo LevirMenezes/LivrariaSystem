@@ -21,6 +21,16 @@ namespace LivrariaTor
         {
             InitializeComponent();
             Livros = LivroController.PegaTodosLivros();
+            if (VariaveisGlobais.UsuarioLogado.Adm == 1)
+            {
+                btnTelaAdm.Visible = true;
+                btnTelaAdm.Enabled = true;
+            }
+            else
+            {
+                btnTelaAdm.Visible = false;
+                btnTelaAdm.Enabled = false;
+            }
         }
         
         #region DE FUNCIONALIDADE DO FORMULARIO
@@ -188,6 +198,13 @@ namespace LivrariaTor
             FrmUsuario form_cadastro = new FrmUsuario(VariaveisGlobais.UsuarioLogado);
             form_cadastro.TextoBotao = "Editar";
             form_cadastro.Show();
+            this.Close();
+        }
+
+        private void btnTelaAdm_Click(object sender, EventArgs e)
+        {
+            TelaAdm form_adm = new TelaAdm();
+            form_adm.Show();
             this.Close();
         }
     }

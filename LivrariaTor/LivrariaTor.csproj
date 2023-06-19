@@ -96,6 +96,7 @@
     <Compile Include="Persistencia\LivroEnt.cs" />
     <Compile Include="Persistencia\PedidoEnt.cs" />
     <Compile Include="Persistencia\UsuarioEnt.cs" />
+    <Compile Include="Utils\ItemUsuarioEventArgs.cs" />
     <Compile Include="Utils\VariaveisGlobais.cs" />
     <Compile Include="View\Carrinho.cs">
       <SubType>Form</SubType>
@@ -141,7 +142,7 @@
     <Compile Include="View\ItemLivroCarrossel.Designer.cs">
       <DependentUpon>ItemLivroCarrossel.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ItemLivroEventArgs.cs" />
+    <Compile Include="Utils\ItemLivroEventArgs.cs" />
     <Compile Include="View\ItemUsuario.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -183,12 +184,6 @@
     </Compile>
     <Compile Include="View\ItemLivro.Designer.cs">
       <DependentUpon>ItemLivro.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\ItemCarrossel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\ItemCarrossel.Designer.cs">
-      <DependentUpon>ItemCarrossel.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="View\Carrinho.resx">
       <DependentUpon>Carrinho.cs</DependentUpon>
@@ -241,9 +236,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Telalogin.resx">
       <DependentUpon>Telalogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\ItemCarrossel.resx">
-      <DependentUpon>ItemCarrossel.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

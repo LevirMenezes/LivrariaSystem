@@ -15,9 +15,9 @@ namespace LivrariaTor.View
 {
     public partial class Catalogodelivros : Form
     {
-        private LivroController LivroController = new LivroController();
-        private List<LivroEnt> Livros;
-        private LivroEnt LivroSecionado = null;
+        private LivroController LivroController  = new LivroController();
+        private List<LivroEnt>  Livros;
+        private LivroEnt        LivroSelecionado = null;
 
         public Catalogodelivros()
         {
@@ -81,7 +81,7 @@ namespace LivrariaTor.View
             lblPreco.Visible             = false;
             btnAdicionarCarrinho.Visible = false;
 
-            LivroSecionado    = e.Livro;
+            LivroSelecionado    = e.Livro;
             picboxLivro.Image = imagem;
             lblTitulo.Text    = Titulo;
             lblPreco.Text     = "R$ " + Preco.ToString("F2");
@@ -91,9 +91,9 @@ namespace LivrariaTor.View
         {
             try
             {
-                if (LivroSecionado == null)
+                if (LivroSelecionado == null)
                     throw new Exception("");
-                FrmLivros Form_Editar = new FrmLivros(LivroSecionado);
+                FrmLivros Form_Editar = new FrmLivros(LivroSelecionado);
                 Form_Editar.TextoBotao = "Salvar";
 
                 Form_Editar.Show();
@@ -118,9 +118,9 @@ namespace LivrariaTor.View
         {
             try
             {
-                if (LivroSecionado == null)
+                if (LivroSelecionado == null)
                     throw new Exception("");
-                FrmLivros Form_Deletar = new FrmLivros(LivroSecionado);
+                FrmLivros Form_Deletar = new FrmLivros(LivroSelecionado);
                 Form_Deletar.TextoBotao = "Deletar";
                 Form_Deletar.Show();
                 this.Hide();

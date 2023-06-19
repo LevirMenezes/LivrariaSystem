@@ -35,10 +35,10 @@ namespace LivrariaTor
         {
             if (TextoBotao == "Cadastrar")
                 Cadastrar();
-            else if (TextoBotao == "Editar")
-                Editar();
+            else if (TextoBotao == "Deletar")
+                Deletar(); 
             else
-                Deletar();
+                Editar();
         }
 
         private void btnSelecionarIMG_Click(object sender, EventArgs e)
@@ -371,7 +371,21 @@ namespace LivrariaTor
                 {
                     string respEnd = EnderecoController.AtualizarEndereco(endereco);
                     if (respEnd == "OK")
+                    {
                         MessageBox.Show("Perfil Atualizado com Sucesso!");
+                        if(VariaveisGlobais.UsuarioLogado.Adm == 1)
+                        {
+                            Listadeusuarios form_listausuarios = new Listadeusuarios();
+                            form_listausuarios.Show();
+                            this.Close();
+                        }
+                        else
+                        {
+                            FormPrincipal form_principal = new FormPrincipal();
+                            form_principal.Show();
+                            this.Close();
+                        }
+                    }   
                     else
                         MessageBox.Show("Falha ao tentar atualizar o perfil do usuario!");
                 }
