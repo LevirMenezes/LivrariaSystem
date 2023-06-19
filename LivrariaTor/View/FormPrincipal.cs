@@ -12,6 +12,7 @@ using LivrariaTor.Persistencia;
 using LivrariaTor.Controller;
 using LivrariaTor.View;
 using System.IO;
+using LivrariaTor.Utils;
 
 namespace LivrariaTor
 {
@@ -178,6 +179,22 @@ namespace LivrariaTor
         private void btnComprar3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Telalogin form_login = new Telalogin();
+            form_login.Show();
+            this.Close();
+            VariaveisGlobais.UsuarioLogado = null;
+        }
+
+        private void picboxUser_Click(object sender, EventArgs e)
+        {
+            FrmUsuario form_cadastro = new FrmUsuario(VariaveisGlobais.UsuarioLogado);
+            form_cadastro.TextoBotao = "Editar";
+            form_cadastro.Show();
+            this.Close();
         }
     }
 }

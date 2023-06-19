@@ -44,7 +44,7 @@ namespace LivrariaTor.Model
         public string Update(EnderecoEnt endereco)
         {
             SqlConnection cn = Conexao.ObterConexao();
-            string query = @"UPDATE tbGenero 
+            string query = @"UPDATE tbEndereco 
                             SET   cep       = @cep
                                   rua       = @rua
                                   numero    = @numero
@@ -83,7 +83,7 @@ namespace LivrariaTor.Model
         public string Delete(int id)
         {
             SqlConnection cn = Conexao.ObterConexao();
-            string query = "DELETE FROM tbGenero WHERE id = @id";
+            string query = "DELETE FROM tbEndereco WHERE id = @id";
             string resp = string.Empty;
             try
             {
@@ -108,7 +108,7 @@ namespace LivrariaTor.Model
         {
             SqlConnection cn = Conexao.ObterConexao();
             List<EnderecoEnt> enderecos = new List<EnderecoEnt>();
-            string query = "SELECT * FROM tbGenero";
+            string query = "SELECT * FROM tbEndereco";
             try
             {
                 using (SqlCommand command = new SqlCommand(query, cn))
@@ -149,12 +149,50 @@ namespace LivrariaTor.Model
         {
             SqlConnection cn     = Conexao.ObterConexao();
             EnderecoEnt endereco = new EnderecoEnt();
-            string query         = "SELECT * FROM tbGenero WHERE id = @id";
+            string query         = "SELECT * FROM tbEndereco WHERE id = @id";
             try
             {
                 using (SqlCommand command = new SqlCommand(query, cn))
                 {
                     command.Parameters.AddWithValue("@id", id);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            endereco.Id        = Convert.ToInt32(reader["id"]);
+                            endereco.Cep       = reader["cep"].ToString();
+                            endereco.Rua       = reader["rua"].ToString();
+                            endereco.Numero    = reader["numero"].ToString();
+                            endereco.Bairro    = reader["bairro"].ToString();
+                            endereco.Cidade    = reader["cidade"].ToString();
+                            endereco.Estado    = reader["estado"].ToString();
+                            endereco.IdUsuario = Convert.ToInt32(reader["idusuario"]);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                endereco = null;
+            }
+            finally
+            {
+                Conexao.FecharConexao();
+            }
+
+            return endereco;
+        }
+
+        public EnderecoEnt GetByUsuarioId(int idusuario)
+        {
+            SqlConnection cn = Conexao.ObterConexao();
+            EnderecoEnt endereco = new EnderecoEnt();
+            string query = "SELECT * FROM tbEndereco WHERE idusuario = @idusuario";
+            try
+            {
+                using (SqlCommand command = new SqlCommand(query, cn))
+                {
+                    command.Parameters.AddWithValue("@idusuario", idusuario);
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())

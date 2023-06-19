@@ -69,8 +69,14 @@ namespace LivrariaTor.View
         private void llblCadastrar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             FrmUsuario form_cadastro = new FrmUsuario();
+            form_cadastro.TextoBotao = "Cadastrar";
             form_cadastro.Show();
             this.Hide();
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

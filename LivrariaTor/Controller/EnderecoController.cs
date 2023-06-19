@@ -36,5 +36,10 @@ namespace LivrariaTor.Controller
         {
             return EnderecoModels.GetById(id);
         }
+
+        public EnderecoEnt PegaEnderecoPorIdUsuario(int idusuario)
+        {
+            return EnderecoModels.GetByUsuarioId(idusuario);
+        }
     }
 }

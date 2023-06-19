@@ -311,5 +311,97 @@ namespace LivrariaTor.Model
             return (usuario.Id == 0 ? null : usuario);
         }
 
+        public UsuarioEnt GetByCPF(string CPF)
+        {
+            SqlConnection cn = Conexao.ObterConexao();
+            UsuarioEnt usuario = new UsuarioEnt();
+            string query = "SELECT * FROM tbUsuario WHERE cpf = @CPF";
+            try
+            {
+                using (SqlCommand command = new SqlCommand(query, cn))
+                {
+                    command.Parameters.AddWithValue("@CPF", CPF);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            usuario.Id       = Convert.ToInt32(reader["id"]);
+                            usuario.Nome     = reader["nome"].ToString();
+                            usuario.Telefone = reader["telefone"].ToString();
+                            usuario.Cpf      = reader["cpf"].ToString();
+                            usuario.Email    = reader["email"].ToString();
+                            usuario.Senha    = reader["senha"].ToString();
+                            usuario.Adm      = Convert.ToInt32(reader["adm"]);
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("imagem")))
+                            {
+                                long tamanhoBytes  = reader.GetBytes(reader.GetOrdinal("imagem"), 0, null, 0, 0);
+                                byte[] imagemBytes = new byte[tamanhoBytes];
+                                reader.GetBytes(reader.GetOrdinal("imagem"), 0, imagemBytes, 0, (int)tamanhoBytes);
+
+                                usuario.Imagem = imagemBytes;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                usuario = null;
+            }
+            finally
+            {
+                Conexao.FecharConexao();
+            }
+
+            return usuario.Id == 0 ? null : usuario;
+        }
+
+        public UsuarioEnt GetByEmail(string email)
+        {
+            SqlConnection cn = Conexao.ObterConexao();
+            UsuarioEnt usuario = new UsuarioEnt();
+            string query = "SELECT * FROM tbUsuario WHERE email = @email";
+            try
+            {
+                using (SqlCommand command = new SqlCommand(query, cn))
+                {
+                    command.Parameters.AddWithValue("@email", email);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            usuario.Id       = Convert.ToInt32(reader["id"]);
+                            usuario.Nome     = reader["nome"].ToString();
+                            usuario.Telefone = reader["telefone"].ToString();
+                            usuario.Cpf      = reader["cpf"].ToString();
+                            usuario.Email    = reader["email"].ToString();
+                            usuario.Senha    = reader["senha"].ToString();
+                            usuario.Adm      = Convert.ToInt32(reader["adm"]);
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("imagem")))
+                            {
+                                long tamanhoBytes  = reader.GetBytes(reader.GetOrdinal("imagem"), 0, null, 0, 0);
+                                byte[] imagemBytes = new byte[tamanhoBytes];
+                                reader.GetBytes(reader.GetOrdinal("imagem"), 0, imagemBytes, 0, (int)tamanhoBytes);
+
+                                usuario.Imagem = imagemBytes;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                usuario = null;
+            }
+            finally
+            {
+                Conexao.FecharConexao();
+            }
+
+            return usuario.Id == 0 ? null : usuario;
+        }
+
     }
 }

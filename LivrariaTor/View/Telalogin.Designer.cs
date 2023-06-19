@@ -29,6 +29,7 @@ namespace LivrariaTor.View
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Telalogin));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblLivraria = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -37,6 +38,9 @@ namespace LivrariaTor.View
             this.label2 = new System.Windows.Forms.Label();
             this.llblCadastrar = new System.Windows.Forms.LinkLabel();
             this.btnEntrar = new System.Windows.Forms.Button();
+            this.btnFechar = new System.Windows.Forms.PictureBox();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFechar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -44,6 +48,7 @@ namespace LivrariaTor.View
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.MediumOrchid;
+            this.panel1.Controls.Add(this.btnFechar);
             this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(-1, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -127,6 +132,20 @@ namespace LivrariaTor.View
             this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
+            // btnFechar
+            // 
+            this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFechar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFechar.Image = ((System.Drawing.Image)(resources.GetObject("btnFechar.Image")));
+            this.btnFechar.Location = new System.Drawing.Point(1040, 16);
+            this.btnFechar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(39, 39);
+            this.btnFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnFechar.TabIndex = 1;
+            this.btnFechar.TabStop = false;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            // 
             // Telalogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -146,6 +165,8 @@ namespace LivrariaTor.View
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Telalogin";
             this.Load += new System.EventHandler(this.Telalogin_Load);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnFechar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,5 +182,6 @@ namespace LivrariaTor.View
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.LinkLabel llblCadastrar;
         private System.Windows.Forms.Button btnEntrar;
+        private System.Windows.Forms.PictureBox btnFechar;
     }
 }

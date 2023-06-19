@@ -47,5 +47,15 @@ namespace LivrariaTor.Controller
             return UsuarioModel.GetId();
         }
 
+        public UsuarioEnt PegaCPF(string cpf)
+        {
+            return UsuarioModel.GetByCPF(cpf);
+        }
+
+        public UsuarioEnt PegaEmail(string email)
+        {
+            return UsuarioModel.GetByEmail(email);
+        }
+
     }
 }
