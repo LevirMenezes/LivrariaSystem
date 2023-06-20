@@ -10,7 +10,7 @@ namespace LivrariaTor.Model
 {
     public class PedidoModel
     {
-        public string Insert(PedidoEnt pedido)
+        public string Insert(int idusuario)
         {
             SqlConnection cn = Conexao.ObterConexao();
             string query = "INSERT INTO tbPedido(datacompra, precototal, estadopedido, idformapagamento, idusuario) VALUES (@datacompra, @precototal, @estadopedido, @idformapagamento, @idusuario)";
@@ -19,11 +19,11 @@ namespace LivrariaTor.Model
             {
                 using (SqlCommand command = new SqlCommand(query, cn))
                 {
-                    command.Parameters.AddWithValue("@datacompra",       pedido.DataCompra);
-                    command.Parameters.AddWithValue("@precototal",       pedido.PrecoTotal);
-                    command.Parameters.AddWithValue("@estadopedido",     pedido.EstadoPedido);
-                    command.Parameters.AddWithValue("@idformapagamento", pedido.IdFormaPagamento);
-                    command.Parameters.AddWithValue("@idusuario",        pedido.IdUsuario);
+                    command.Parameters.AddWithValue("@datacompra",       DateTime.Now);
+                    command.Parameters.AddWithValue("@precototal",       0.0);
+                    command.Parameters.AddWithValue("@estadopedido",     "EM ANDAMENTO");
+                    command.Parameters.AddWithValue("@idformapagamento", "");
+                    command.Parameters.AddWithValue("@idusuario",        idusuario);
                     resp = command.ExecuteNonQuery() == 1 ? "OK" : "O Insert não foi feito!";
                 }
             }
@@ -169,5 +169,46 @@ namespace LivrariaTor.Model
 
             return pedido;
         }
+
+        public PedidoEnt GetByUsuarioId(int idusuario)
+        {
+            SqlConnection cn = Conexao.ObterConexao();
+            PedidoEnt pedido = new PedidoEnt();
+            string query = @"SELECT TOP 1 *
+                             FROM tbPedido PE
+                             WHERE PE.idusuario    = @idusuario AND 
+                                   PE.estadopedido = 'EM ANDAMENTO' 
+                             ORDER BY PE.id DESC";
+            try
+            {
+                using (SqlCommand command = new SqlCommand(query, cn))
+                {
+                    command.Parameters.AddWithValue("@idusuario", idusuario);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            pedido.Id               = Convert.ToInt32(   reader["id"]);
+                            pedido.DataCompra       = Convert.ToDateTime(reader["datacompra"]);
+                            pedido.PrecoTotal       = Convert.ToDecimal( reader["precototal"]);
+                            pedido.EstadoPedido     = reader["estadopedido"].ToString();
+                            pedido.IdFormaPagamento = Convert.ToInt32(   reader["idformapagamento"]);
+                            pedido.IdUsuario        = Convert.ToInt32(   reader["idusuario"]);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                pedido = null;
+            }
+            finally
+            {
+                Conexao.FecharConexao();
+            }
+
+            return (pedido.Id == 0 ? null : pedido);
+        }
+
     }
 }

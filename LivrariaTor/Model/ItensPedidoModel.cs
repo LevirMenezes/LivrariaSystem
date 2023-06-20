@@ -97,41 +97,49 @@ namespace LivrariaTor.Model
             return resp;
         }
 
-        public List<ItensPedidoEnt> GetAll()
+        public List<ItensPedidoEnt> GetAllByUsuario(int idusuario)
         {
-            SqlConnection cn = Conexao.ObterConexao();
-            List<ItensPedidoEnt> itens = new List<ItensPedidoEnt>();
-            string query = "SELECT * FROM tbItensPedido";
+            SqlConnection        cn    = Conexao.ObterConexao();
+            List<ItensPedidoEnt> Itens = new List<ItensPedidoEnt>();
+            string               query = @"SELECT * FROM tbItensPedido 
+                                           WHERE idpedido in (
+                                           SELECT TOP 1 PE.id 
+                                           FROM tbPedido PE
+                                           WHERE PE.idusuario    = 2 AND 
+                                           	     PE.estadopedido = 'EM ANDAMENTO'
+                                           ORDER BY PE.id DESC);
+                                           ";
             try
             {
                 using (SqlCommand command = new SqlCommand(query, cn))
                 {
+                    command.Parameters.AddWithValue("@idusuario", idusuario);
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
                             ItensPedidoEnt Item = new ItensPedidoEnt();
-                            Item.Quantidade     = Convert.ToInt32(  reader["id"]);
-                            Item.PrecoUnidade   = Convert.ToDecimal(reader["genero"]);
-                            Item.SubTotal       = Convert.ToDecimal(reader["genero"]);
-                            Item.IdPedido       = Convert.ToInt32(  reader["genero"]);
-                            Item.IdLivro        = Convert.ToInt32(  reader["genero"]);
-                            Item.Id             = Convert.ToInt32(  reader["genero"]);
+                            Item.Quantidade     = Convert.ToInt32(  reader["quantidade"]);
+                            Item.PrecoUnidade   = Convert.ToDecimal(reader["precounidade"]);
+                            Item.SubTotal       = Convert.ToDecimal(reader["subtotal"]);
+                            Item.IdPedido       = Convert.ToInt32(  reader["idpedido"]);
+                            Item.IdLivro        = Convert.ToInt32(  reader["idlivro"]);
+                            Item.Id             = Convert.ToInt32(  reader["id"]);
 
-                            itens.Add(Item);
+                            Itens.Add(Item);
                         }
                     }
                 }
             }
             catch (Exception)
             {
-                itens = null;
+                Itens = null;
             }
             finally
             {
                 Conexao.FecharConexao();
             }
-            return itens;
+            return (Itens.Count == 0 ? null : Itens);
         }
 
         public ItensPedidoEnt GetById(int id)

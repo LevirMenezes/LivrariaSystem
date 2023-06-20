@@ -12,29 +12,34 @@ namespace LivrariaTor.Controller
     {
         private PedidoModel PedidoModels = new PedidoModel();
 
-        public string InserirEditora(PedidoEnt pedido)
+        public string InserirPedido(int idusuario)
         {
-            return PedidoModels.Insert(pedido);
+            return PedidoModels.Insert(idusuario);
         }
 
-        public string AtualizarEditora(PedidoEnt pedido)
+        public string AtualizarPedido(PedidoEnt pedido)
         {
             return PedidoModels.Update(pedido);
         }
 
-        public string DeletarEditora(int id)
+        public string DeletarPedido(int id)
         {
             return PedidoModels.Delete(id);
         }
 
-        public List<PedidoEnt> PegaTodosEditoras()
+        public List<PedidoEnt> PegaTodosPedidos()
         {
             return PedidoModels.GetAll();
         }
 
-        public PedidoEnt PegaEditoraPorId(int id)
+        public PedidoEnt PegaPedidoPorId(int id)
         {
             return PedidoModels.GetById(id);
+        }
+
+        public PedidoEnt PegaPedidoPorUsuarioId(int idusuario)
+        {
+            return PedidoModels.GetByUsuarioId(idusuario);
         }
     }
 }

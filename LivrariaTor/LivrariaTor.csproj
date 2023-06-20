@@ -136,6 +136,12 @@
     <Compile Include="View\Informacoes.Designer.cs">
       <DependentUpon>Informacoes.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ItemCarrinho.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ItemCarrinho.Designer.cs">
+      <DependentUpon>ItemCarrinho.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ItemLivroCarrossel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -213,6 +219,9 @@
     <EmbeddedResource Include="View\Informacoes.resx">
       <DependentUpon>Informacoes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ItemCarrinho.resx">
+      <DependentUpon>ItemCarrinho.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ItemLivro.resx">
       <DependentUpon>ItemLivro.cs</DependentUpon>
     </EmbeddedResource>
@@ -273,6 +282,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\adicionar-foto.png" />
+    <Content Include="Resources\icon-fechar-janela.png" />
+    <Content Include="Resources\icons8-excluir-100.png" />
     <Content Include="Resources\livro-clean-code.jpg" />
     <Content Include="Resources\lupa-pesquisar.png" />
     <Content Include="Resources\seta-direita.png" />

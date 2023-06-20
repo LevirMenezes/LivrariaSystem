@@ -46,19 +46,19 @@ namespace LivrariaTor.View
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.MediumOrchid;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(22)))), ((int)(((byte)(143)))));
             this.panel1.Controls.Add(this.lblLivraria);
             this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(858, 57);
+            this.panel1.Size = new System.Drawing.Size(900, 57);
             this.panel1.TabIndex = 16;
             // 
             // lblLivraria
             // 
             this.lblLivraria.AutoSize = true;
-            this.lblLivraria.BackColor = System.Drawing.Color.MediumOrchid;
+            this.lblLivraria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(22)))), ((int)(((byte)(143)))));
             this.lblLivraria.Font = new System.Drawing.Font("Bauhaus 93", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLivraria.ForeColor = System.Drawing.Color.White;
             this.lblLivraria.Location = new System.Drawing.Point(11, 13);
@@ -155,7 +155,7 @@ namespace LivrariaTor.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(855, 460);
+            this.ClientSize = new System.Drawing.Size(900, 650);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.btnTelaPrincipal);
             this.Controls.Add(this.btnRelatorioEstoque);

@@ -27,14 +27,14 @@ namespace LivrariaTor.Controller
             return ItensPedidoModels.Delete(id);
         }
 
-        public List<ItensPedidoEnt> PegaTodosEditoras()
-        {
-            return ItensPedidoModels.GetAll();
-        }
-
         public ItensPedidoEnt PegaEditoraPorId(int id)
         {
             return ItensPedidoModels.GetById(id);
+        }
+
+        public List<ItensPedidoEnt> PegaTodosItensPorUsuario(int idusuario)
+        {
+            return ItensPedidoModels.GetAllByUsuario(idusuario);
         }
     }
 }

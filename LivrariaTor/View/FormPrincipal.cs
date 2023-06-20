@@ -44,7 +44,14 @@ namespace LivrariaTor
 
         private void picboxCarrinho_Click(object sender, EventArgs e)
         {
-            //AbrirFormulario<LivrariaTor.View.Carrinho>();
+            Carrinho form_carrinho = new Carrinho();
+            DialogResult resultado = form_carrinho.ShowDialog();
+
+            if (resultado == DialogResult.OK)
+            {
+                
+            }
+
 
         }  
 
