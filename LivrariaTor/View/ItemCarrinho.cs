@@ -17,4 +17,5 @@ namespace LivrariaTor.View
         {
             InitializeComponent();
         }
+    }
 }

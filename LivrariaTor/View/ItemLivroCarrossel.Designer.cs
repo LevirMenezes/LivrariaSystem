@@ -96,7 +96,6 @@
             // picboxLivro
             // 
             this.picboxLivro.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.picboxLivro.Image = global::LivrariaTor.Properties.Resources.livro_clean_code;
             this.picboxLivro.Location = new System.Drawing.Point(32, 28);
             this.picboxLivro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picboxLivro.Name = "picboxLivro";

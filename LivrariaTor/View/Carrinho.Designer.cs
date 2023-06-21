@@ -161,18 +161,6 @@ namespace LivrariaTor.View
             this.flowLayoutCarrinho.Size = new System.Drawing.Size(319, 460);
             this.flowLayoutCarrinho.TabIndex = 19;
             // 
-            // btnEntrar
-            // 
-            this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEntrar.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnEntrar.ForeColor = System.Drawing.Color.Purple;
-            this.btnEntrar.Location = new System.Drawing.Point(253, 342);
-            this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(194, 29);
-            this.btnEntrar.TabIndex = 26;
-            this.btnEntrar.Text = "Finalizar compras";
-            this.btnEntrar.UseVisualStyleBackColor = true;
-            // 
             // Carrinho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

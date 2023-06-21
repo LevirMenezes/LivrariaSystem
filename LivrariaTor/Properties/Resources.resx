@@ -142,9 +142,6 @@
   <data name="usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cash_shopping_credit_card_debit_finance_payment_money_pay_icon_228981" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cash_shopping_credit_card_debit_finance_payment_money_pay_icon_228981.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icon_fechar_janela" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\icon-fechar-janela.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
