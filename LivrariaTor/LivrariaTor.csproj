@@ -110,6 +110,12 @@
     <Compile Include="View\Catalogodelivros.Designer.cs">
       <DependentUpon>Catalogodelivros.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Formas de pagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Formas de pagamento.Designer.cs">
+      <DependentUpon>Formas de pagamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Catalogodelivros.resx">
       <DependentUpon>Catalogodelivros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Formas de pagamento.resx">
+      <DependentUpon>Formas de pagamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmUsuario.resx">
       <DependentUpon>FrmUsuario.cs</DependentUpon>

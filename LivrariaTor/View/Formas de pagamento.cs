@@ -1,5 +1,4 @@
-﻿using LivrariaTor.Persistencia;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LivrariaTor.View
 {
-    public partial class ItemCarrinho : UserControl
+    public partial class Formas_de_pagamento : Form
     {
-        public ItemCarrinho()
+        public Formas_de_pagamento()
         {
             InitializeComponent();
         }

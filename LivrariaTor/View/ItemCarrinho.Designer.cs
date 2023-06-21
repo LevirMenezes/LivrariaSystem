@@ -52,7 +52,6 @@
             // 
             // picboxIMG
             // 
-            this.picboxIMG.Image = global::LivrariaTor.Properties.Resources.books_3025;
             this.picboxIMG.Location = new System.Drawing.Point(10, 10);
             this.picboxIMG.Name = "picboxIMG";
             this.picboxIMG.Size = new System.Drawing.Size(100, 126);

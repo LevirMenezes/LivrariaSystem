@@ -83,16 +83,6 @@ namespace LivrariaTor.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap books_3025 {
-            get {
-                object obj = ResourceManager.GetObject("books_3025", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap icon_fechar_janela {
             get {
                 object obj = ResourceManager.GetObject("icon_fechar_janela", resourceCulture);
@@ -106,16 +96,6 @@ namespace LivrariaTor.Properties {
         internal static System.Drawing.Bitmap icons8_excluir_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8_excluir_100", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap livro_clean_code {
-            get {
-                object obj = ResourceManager.GetObject("livro_clean_code", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
