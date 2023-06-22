@@ -108,6 +108,7 @@
             this.cbxQuantidade.Name = "cbxQuantidade";
             this.cbxQuantidade.Size = new System.Drawing.Size(59, 21);
             this.cbxQuantidade.TabIndex = 12;
+            this.cbxQuantidade.SelectedIndexChanged += new System.EventHandler(this.cbxQuantidade_SelectedIndexChanged);
             // 
             // btnIMGFechar
             // 
@@ -134,6 +135,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "ItemCarrinho";
             this.Size = new System.Drawing.Size(319, 148);
+            this.Load += new System.EventHandler(this.ItemCarrinho_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picboxIMG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnIMGFechar)).EndInit();

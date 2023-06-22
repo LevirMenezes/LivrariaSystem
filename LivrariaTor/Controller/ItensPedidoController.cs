@@ -12,22 +12,27 @@ namespace LivrariaTor.Controller
     {
         private ItensPedidoModel ItensPedidoModels = new ItensPedidoModel();
 
-        public string InserirEditora(ItensPedidoEnt itemPedido)
+        public string InserirItem(ItensPedidoEnt itemPedido)
         {
             return ItensPedidoModels.Insert(itemPedido);
         }
 
-        public string AtualizarEditora(ItensPedidoEnt itemPedido)
+        public string AtualizarItem(ItensPedidoEnt itemPedido)
         {
-            return ItensPedidoModels.Update(itemPedido);
+            return ItensPedidoModels.UpdateItem(itemPedido);
         }
 
-        public string DeletarEditora(int id)
+        public string AtualizarQuantidadeItem(ItensPedidoEnt itemPedido)
+        {
+            return ItensPedidoModels.UpdateQuantidade(itemPedido);
+        }
+
+        public string DeletarItem(int id)
         {
             return ItensPedidoModels.Delete(id);
         }
 
-        public ItensPedidoEnt PegaEditoraPorId(int id)
+        public ItensPedidoEnt PegaItemPorId(int id)
         {
             return ItensPedidoModels.GetById(id);
         }

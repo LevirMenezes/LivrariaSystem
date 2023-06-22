@@ -12,8 +12,11 @@ namespace LivrariaTor
 {
     public partial class FormPrincipal : Form
     {
-        private List<LivroEnt> Livros = new List<LivroEnt>();
-        private LivroController LivroController = new LivroController();
+        private List<LivroEnt>        Livros                = new List<LivroEnt>();
+        private LivroController       LivroController       = new LivroController();
+        private ItensPedidoController ItensPedidoController = new ItensPedidoController();
+        private PedidoController      PedidoController      = new PedidoController();
+
         private int ImgControle1 = 0; 
         private int ImgControle2 = 0; 
         private int ImgControle3 = 0; 
@@ -45,14 +48,30 @@ namespace LivrariaTor
         private void picboxCarrinho_Click(object sender, EventArgs e)
         {
             Carrinho form_carrinho = new Carrinho();
+            //ialogResult resultado = form_carrinho.ShowDialog();
+
+            // Defina a largura desejada para o Form filho
+            int larguraFormFilho = 330;
+
+            // Configure a posição e a largura do Form filho em relação ao Form pai
+            int x = this.Left;
+            int y = this.Top + (this.Height - form_carrinho.Height) / 2;
+
+            form_carrinho.StartPosition = FormStartPosition.Manual;
+            form_carrinho.Location = new Point(x, y);
+
             DialogResult resultado = form_carrinho.ShowDialog();
 
             if (resultado == DialogResult.OK)
             {
-                
+                FormasPagamento form_pagamento = new FormasPagamento();
+                DialogResult result = form_pagamento.ShowDialog();
+            
+                if (result == DialogResult.OK)
+                {
+                    MessageBox.Show("Compra realizada com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-
-
         }  
 
         private void LklLivros_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -77,24 +96,18 @@ namespace LivrariaTor
             //FrmUsuario form_
         }
 
-        private void CloseForms(object sender, FormClosedEventArgs e)
-        {
-            //if (Application.OpenForms["FrmCadastro"] == null)
-            //    btnCadastro.BackColor = Color.FromArgb(4);
-            //if (Application.OpenForms["FrmLivros"] == null)
-            //    btnCadastro.BackColor = Color.FromArgb(4);
-            //if (Application.OpenForms["FrmVendas"] == null)
-            //    btnCadastro.BackColor = Color.FromArgb(4);
-        }
-
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
+            if (VariaveisGlobais.UsuarioLogado.Imagem != null)
+                picboxUser.Image = VariaveisGlobais.UsuarioLogado.ByteToIMG();
             PopularLista();
         }
         private void PopularLista()
         {
             if (Livros.Count >= 3)
             {
+                #region Livro 1
+
                 using (MemoryStream stream = new MemoryStream(Livros[0].Imagem))
                 {
                     // Crie um objeto Image a partir do MemoryStream
@@ -105,6 +118,22 @@ namespace LivrariaTor
                     picboxIMG1.Image = imagem;
                 }
                 lblTitulo1.Text  = Livros[0].Titulo;
+
+                List<EnumQuantidade> listaNum1 = new List<EnumQuantidade>();
+                for (int i = 1; i <= Livros[0].Estoque; i++)
+                {
+                    EnumQuantidade enume = new EnumQuantidade();
+                    enume.numInt = i;
+                    enume.numString = i.ToString();
+                    listaNum1.Add(enume);
+                }
+
+                cbxEstoqueLivro1.DataSource = listaNum1;
+                cbxEstoqueLivro1.DisplayMember = "numString";
+
+                #endregion
+
+                #region Livro 2
 
                 using (MemoryStream stream = new MemoryStream(Livros[1].Imagem))
                 {
@@ -117,6 +146,22 @@ namespace LivrariaTor
                 }
                 lblTitulo2.Text  = Livros[1].Titulo;
 
+                List<EnumQuantidade> listaNum2 = new List<EnumQuantidade>();
+                for (int i = 1; i <= Livros[1].Estoque; i++)
+                {
+                    EnumQuantidade enume = new EnumQuantidade();
+                    enume.numInt = i;
+                    enume.numString = i.ToString();
+                    listaNum2.Add(enume);
+                }
+
+                cbxEstoqueLivro2.DataSource = listaNum2;
+                cbxEstoqueLivro2.DisplayMember = "numString";
+
+                #endregion
+
+                #region Livro 3
+
                 using (MemoryStream stream = new MemoryStream(Livros[2].Imagem))
                 {
                     // Crie um objeto Image a partir do MemoryStream
@@ -127,8 +172,26 @@ namespace LivrariaTor
                     picboxIMG3.Image = imagem;
                 }
                 lblTitulo3.Text  = Livros[2].Titulo;
-            }else if(Livros.Count == 2)
+
+                List<EnumQuantidade> listaNum3 = new List<EnumQuantidade>();
+                for (int i = 1; i <= Livros[2].Estoque; i++)
+                {
+                    EnumQuantidade enume = new EnumQuantidade();
+                    enume.numInt         = i;
+                    enume.numString      = i.ToString();
+                    listaNum3.Add(enume);
+                }
+
+                cbxEstoqueLivro3.DataSource    = listaNum3;
+                cbxEstoqueLivro3.DisplayMember = "numString";
+
+                #endregion
+
+            }
+            else if(Livros.Count == 2)
             {
+                #region Livro 1
+
                 using (MemoryStream stream = new MemoryStream(Livros[0].Imagem))
                 {
                     // Crie um objeto Image a partir do MemoryStream
@@ -139,6 +202,22 @@ namespace LivrariaTor
                     picboxIMG1.Image = imagem;
                 }
                 lblTitulo1.Text = Livros[0].Titulo;
+
+                List<EnumQuantidade> listaNum1 = new List<EnumQuantidade>();
+                for (int i = 1; i <= Livros[0].Estoque; i++)
+                {
+                    EnumQuantidade enume = new EnumQuantidade();
+                    enume.numInt = i;
+                    enume.numString = i.ToString();
+                    listaNum1.Add(enume);
+                }
+
+                cbxEstoqueLivro1.DataSource = listaNum1;
+                cbxEstoqueLivro1.DisplayMember = "numString";
+
+                #endregion
+
+                #region Livro 2
 
                 using (MemoryStream stream = new MemoryStream(Livros[1].Imagem))
                 {
@@ -151,10 +230,26 @@ namespace LivrariaTor
                 }
                 lblTitulo2.Text = Livros[1].Titulo;
 
+                List<EnumQuantidade> listaNum2 = new List<EnumQuantidade>();
+                for (int i = 1; i <= Livros[1].Estoque; i++)
+                {
+                    EnumQuantidade enume = new EnumQuantidade();
+                    enume.numInt = i;
+                    enume.numString = i.ToString();
+                    listaNum2.Add(enume);
+                }
+
+                cbxEstoqueLivro2.DataSource = listaNum2;
+                cbxEstoqueLivro2.DisplayMember = "numString";
+
+                #endregion
+
                 pnlIMG3.Visible = false;
             }
             else if(Livros.Count == 1)
             {
+                #region Livro 1
+
                 using (MemoryStream stream = new MemoryStream(Livros[0].Imagem))
                 {
                     // Crie um objeto Image a partir do MemoryStream
@@ -165,6 +260,22 @@ namespace LivrariaTor
                     picboxIMG1.Image = imagem;
                 }
                 lblTitulo1.Text = Livros[0].Titulo;
+
+                List<EnumQuantidade> listaNum1 = new List<EnumQuantidade>();
+                for (int i = 1; i <= Livros[0].Estoque; i++)
+                {
+                    EnumQuantidade enume = new EnumQuantidade();
+                    enume.numInt = i;
+                    enume.numString = i.ToString();
+                    listaNum1.Add(enume);
+                }
+
+                cbxEstoqueLivro1.DataSource = listaNum1;
+                cbxEstoqueLivro1.DisplayMember = "numString";
+
+                #endregion
+                
+
 
                 pnlIMG2.Visible = false;
                 pnlIMG3.Visible = false;
@@ -179,7 +290,22 @@ namespace LivrariaTor
 
         private void btnComprar1_Click(object sender, EventArgs e)
         {
+            
+            PedidoEnt Pedido = PedidoController.PegaPedidoPorUsuarioId(VariaveisGlobais.UsuarioLogado.Id);
 
+            if (Pedido == null)
+            {
+                PedidoController.InserirPedido(VariaveisGlobais.UsuarioLogado.Id);
+                Pedido = PedidoController.PegaPedidoPorUsuarioId(VariaveisGlobais.UsuarioLogado.Id);
+            }
+
+            ItensPedidoEnt item = new ItensPedidoEnt();
+            item.Quantidade     = (cbxEstoqueLivro1.SelectedIndex + 1);
+            item.IdLivro        = Livros[0].Id;
+            item.IdPedido       = Pedido.Id;
+            item.PrecoUnidade   = Livros[0].Preco;
+
+            string respItem = ItensPedidoController.InserirItem(item);
         }
 
         private void btnComprar2_Click(object sender, EventArgs e)

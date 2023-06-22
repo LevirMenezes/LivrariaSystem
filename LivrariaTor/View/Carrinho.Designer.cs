@@ -32,7 +32,7 @@ namespace LivrariaTor.View
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Carrinho));
             this.panel1 = new System.Windows.Forms.Panel();
             this.picboxCarrinho = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.btnFecharPagina = new System.Windows.Forms.PictureBox();
             this.lblLivraria = new System.Windows.Forms.Label();
             this.btnFinalizarComprar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -42,7 +42,7 @@ namespace LivrariaTor.View
             this.flowLayoutCarrinho = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxCarrinho)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFecharPagina)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,9 +50,9 @@ namespace LivrariaTor.View
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(22)))), ((int)(((byte)(143)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.panel1.Controls.Add(this.picboxCarrinho);
-            this.panel1.Controls.Add(this.pictureBox4);
+            this.panel1.Controls.Add(this.btnFecharPagina);
             this.panel1.Controls.Add(this.lblLivraria);
             this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -75,17 +75,18 @@ namespace LivrariaTor.View
             this.picboxCarrinho.TabIndex = 9;
             this.picboxCarrinho.TabStop = false;
             // 
-            // pictureBox4
+            // btnFecharPagina
             // 
-            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(289, 12);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(29, 32);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 5;
-            this.pictureBox4.TabStop = false;
+            this.btnFecharPagina.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFecharPagina.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFecharPagina.Image = ((System.Drawing.Image)(resources.GetObject("btnFecharPagina.Image")));
+            this.btnFecharPagina.Location = new System.Drawing.Point(289, 12);
+            this.btnFecharPagina.Name = "btnFecharPagina";
+            this.btnFecharPagina.Size = new System.Drawing.Size(29, 32);
+            this.btnFecharPagina.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnFecharPagina.TabIndex = 5;
+            this.btnFecharPagina.TabStop = false;
+            this.btnFecharPagina.Click += new System.EventHandler(this.btnFecharPagina_Click);
             // 
             // lblLivraria
             // 
@@ -110,6 +111,7 @@ namespace LivrariaTor.View
             this.btnFinalizarComprar.TabIndex = 17;
             this.btnFinalizarComprar.Text = "Finalizar Compra";
             this.btnFinalizarComprar.UseVisualStyleBackColor = true;
+            this.btnFinalizarComprar.Click += new System.EventHandler(this.btnFinalizarComprar_Click);
             // 
             // panel2
             // 
@@ -172,13 +174,12 @@ namespace LivrariaTor.View
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Carrinho";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Carrinho";
             this.Load += new System.EventHandler(this.Carrinho_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxCarrinho)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFecharPagina)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -188,7 +189,7 @@ namespace LivrariaTor.View
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox btnFecharPagina;
         private System.Windows.Forms.Label lblLivraria;
         private System.Windows.Forms.PictureBox picboxCarrinho;
         private System.Windows.Forms.Button btnFinalizarComprar;
