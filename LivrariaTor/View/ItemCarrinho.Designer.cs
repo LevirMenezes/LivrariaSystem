@@ -118,6 +118,7 @@
             this.btnIMGFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnIMGFechar.TabIndex = 13;
             this.btnIMGFechar.TabStop = false;
+            this.btnIMGFechar.Click += new System.EventHandler(this.btnIMGFechar_Click);
             // 
             // ItemCarrinho
             // 

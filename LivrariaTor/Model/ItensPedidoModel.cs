@@ -99,16 +99,21 @@ namespace LivrariaTor.Model
 
         public List<ItensPedidoEnt> GetAllByUsuario(int idusuario)
         {
-            SqlConnection        cn    = Conexao.ObterConexao();
-            List<ItensPedidoEnt> Itens = new List<ItensPedidoEnt>();
-            string               query = @"SELECT * FROM tbItensPedido 
-                                           WHERE idpedido in (
-                                           SELECT TOP 1 PE.id 
-                                           FROM tbPedido PE
-                                           WHERE PE.idusuario    = 2 AND 
-                                           	     PE.estadopedido = 'EM ANDAMENTO'
-                                           ORDER BY PE.id DESC);
-                                           ";
+            SqlConnection        cn     = Conexao.ObterConexao();
+            List<ItensPedidoEnt> Itens  = new List<ItensPedidoEnt>();
+            string               query  = @"SELECT IPE.id as itemid,  IPE.quantidade, IPE.precounidade, IPE.subtotal, IPE.idpedido, IPE.idlivro,
+                                                   LI.id  as livroid, LI.titulo, LI.preco, LI.descricao, LI.estoque, LI.anopublicacao, LI.isbn, LI.imagem, LI.ideditora
+                                            FROM tbItensPedido IPE
+                                            INNER JOIN tbLivro LI ON IPE.idlivro = LI.id
+                                            WHERE IPE.idpedido IN 
+                                            (
+                                            SELECT TOP 1 PE.id
+                                            FROM tbPedido PE
+                                            WHERE    PE.idusuario    = 2 AND 
+                                                     PE.estadopedido = 'EM ANDAMENTO'
+                                            ORDER BY PE.id DESC
+                                            )
+                                            ";
             try
             {
                 using (SqlCommand command = new SqlCommand(query, cn))
@@ -118,15 +123,35 @@ namespace LivrariaTor.Model
                     {
                         while (reader.Read())
                         {
-                            ItensPedidoEnt Item = new ItensPedidoEnt();
-                            Item.Quantidade     = Convert.ToInt32(  reader["quantidade"]);
-                            Item.PrecoUnidade   = Convert.ToDecimal(reader["precounidade"]);
-                            Item.SubTotal       = Convert.ToDecimal(reader["subtotal"]);
-                            Item.IdPedido       = Convert.ToInt32(  reader["idpedido"]);
-                            Item.IdLivro        = Convert.ToInt32(  reader["idlivro"]);
-                            Item.Id             = Convert.ToInt32(  reader["id"]);
+                            LivroEnt livro         = new LivroEnt();
+                            livro.Id               = Convert.ToInt32(reader["livroid"]);
+                            livro.Titulo           = reader["titulo"].ToString();
+                            livro.Preco            = Convert.ToDecimal(reader["preco"]);
+                            livro.Descricao        = reader["descricao"].ToString();
+                            livro.Estoque          = Convert.ToInt32(reader["estoque"]);
+                            livro.AnoPublicacao    = Convert.ToDateTime(reader["anopublicacao"]).ToString("dd/MM/yyyy");
+                            livro.Isbn             = reader["isbn"].ToString();
+                            livro.IdEditora        = Convert.ToInt32(reader["ideditora"]);
+                                                   
+                            if (!reader.IsDBNull(reader.GetOrdinal("imagem")))
+                            {
+                                long tamanhoBytes  = reader.GetBytes(reader.GetOrdinal("imagem"), 0, null, 0, 0);
+                                byte[] imagemBytes = new byte[tamanhoBytes];
+                                reader.GetBytes(reader.GetOrdinal("imagem"), 0, imagemBytes, 0, (int)tamanhoBytes);
 
-                            Itens.Add(Item);
+                                livro.Imagem       = imagemBytes;
+                            }
+
+                            ItensPedidoEnt itensPedidoEnt = new ItensPedidoEnt();
+                            itensPedidoEnt.Id             = Convert.ToInt32(  reader["itemid"]);
+                            itensPedidoEnt.Quantidade     = Convert.ToInt32(  reader["quantidade"]);
+                            itensPedidoEnt.PrecoUnidade   = Convert.ToDecimal(reader["precounidade"]);
+                            itensPedidoEnt.SubTotal       = Convert.ToDecimal(reader["subtotal"]);
+                            itensPedidoEnt.IdPedido       = Convert.ToInt32(  reader["idpedido"]);
+                            itensPedidoEnt.IdLivro        = Convert.ToInt32(  reader["idlivro"]);
+                            itensPedidoEnt.Livro          = livro;
+                            
+                            Itens.Add(itensPedidoEnt);
                         }
                     }
                 }

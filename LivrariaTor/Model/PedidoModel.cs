@@ -13,8 +13,8 @@ namespace LivrariaTor.Model
         public string Insert(int idusuario)
         {
             SqlConnection cn = Conexao.ObterConexao();
-            string query = "INSERT INTO tbPedido(datacompra, precototal, estadopedido, idformapagamento, idusuario) VALUES (@datacompra, @precototal, @estadopedido, @idformapagamento, @idusuario)";
-            string resp = string.Empty;
+            string query     = "INSERT INTO tbPedido(datacompra, precototal, estadopedido, idformapagamento, idusuario) VALUES (@datacompra, @precototal, @estadopedido, @idformapagamento, @idusuario)";
+            string resp      = string.Empty;
             try
             {
                 using (SqlCommand command = new SqlCommand(query, cn))
