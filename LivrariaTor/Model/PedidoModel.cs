@@ -203,5 +203,47 @@ namespace LivrariaTor.Model
             return ((pedido.Id == 0 || pedido == null) ? null : pedido);
         }
 
+        public RelatorioVendasEnt GetRelatorioVendas()
+        {
+            RelatorioVendasEnt Relatorio = new RelatorioVendasEnt();
+           
+            SqlConnection cn = Conexao.ObterConexao();
+            try
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Relatorio.Id = Convert.ToInt32(reader["id"]);
+                            Relatorio.DataCompra = Convert.ToDateTime(reader["datacompra"]);
+                            Relatorio.PrecoTotal = reader.IsDBNull(reader.GetOrdinal("precototal")) ? 0 : Convert.ToDecimal(reader["precototal"]);
+                            Relatorio.EstadoPedido = reader["estadopedido"].ToString();
+                            Relatorio.IdUsuario = Convert.ToInt32(reader["idusuario"]);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Relatorio = null;
+            }
+            finally
+            {
+                Conexao.FecharConexao();
+            }
+            
+            if (Relatorio == null)
+                return null;
+            else
+                if (Relatorio.Pedidoid == 0)
+                    return null;
+                else
+                    return Relatorio;
+
+        }
+
     }
+
 }

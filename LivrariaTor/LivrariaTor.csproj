@@ -95,6 +95,7 @@
     <Compile Include="Persistencia\ItensPedidoEnt.cs" />
     <Compile Include="Persistencia\LivroEnt.cs" />
     <Compile Include="Persistencia\PedidoEnt.cs" />
+    <Compile Include="Persistencia\RelatorioVendasEnt.cs" />
     <Compile Include="Persistencia\UsuarioEnt.cs" />
     <Compile Include="Utils\ItemCarrinhoEventArgs.cs" />
     <Compile Include="Utils\ItemUsuarioEventArgs.cs" />
