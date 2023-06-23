@@ -26,7 +26,6 @@ namespace LivrariaTor.View
                 _listaquantidade            = value; 
                 cbxQuantidade.DataSource    = value; 
                 cbxQuantidade.DisplayMember = "numString";
-                // cbxQuantidade.SelectedIndex = (Item.Quantidade - 1);
             } }
         
         public Image          Imagem                  { get => _imagem;          set { _imagem          = value; picboxIMG.Image          = value; } }
