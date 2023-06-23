@@ -335,6 +335,10 @@
     <None Include="Resources\books_library_study_icon_150963.png" />
     <None Include="Resources\best_choice_recommended_icon_220381.png" />
     <None Include="Resources\book.png" />
+    <None Include="Resources\administrator.png" />
+    <None Include="Resources\exit %281%29.png" />
+    <None Include="Resources\home.png" />
+    <None Include="Resources\exit %281%291.png" />
     <Content Include="Resources\icon-fechar-janela.png" />
     <Content Include="Resources\icons8-excluir-100.png" />
     <None Include="Resources\img_colorida.jpg" />

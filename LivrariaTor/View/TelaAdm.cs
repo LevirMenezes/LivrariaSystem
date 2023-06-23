@@ -39,20 +39,27 @@ namespace LivrariaTor.View
             this.Close();
         }
 
-        private void btnLogOut_Click(object sender, EventArgs e)
-        {
-            Telalogin form_login = new Telalogin();
-            form_login.Show();
-            this.Close();
-            VariaveisGlobais.UsuarioLogado = null;
-        }
-
         private void btnLivrosCadastrados_Click(object sender, EventArgs e)
         {
             Catalogodelivros form_catalogodelivros = new Catalogodelivros();
             form_catalogodelivros.Show();
             this.Close();
             
+        }
+
+        private void BtnInicial_Click(object sender, EventArgs e)
+        {
+            FormPrincipal form_principal = new FormPrincipal();
+            form_principal.Show();
+            this.Close();
+        }
+
+        private void BtnSair_Click(object sender, EventArgs e)
+        {
+            Telalogin form_login = new Telalogin();
+            form_login.Show();
+            this.Close();
+            VariaveisGlobais.UsuarioLogado = null;
         }
     }
 }
