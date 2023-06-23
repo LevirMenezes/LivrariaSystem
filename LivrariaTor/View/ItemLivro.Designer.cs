@@ -68,7 +68,7 @@
             this.lblPrecoLivro.AutoSize = true;
             this.lblPrecoLivro.BackColor = System.Drawing.Color.Transparent;
             this.lblPrecoLivro.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold);
-            this.lblPrecoLivro.Location = new System.Drawing.Point(196, 102);
+            this.lblPrecoLivro.Location = new System.Drawing.Point(207, 102);
             this.lblPrecoLivro.Name = "lblPrecoLivro";
             this.lblPrecoLivro.Size = new System.Drawing.Size(62, 25);
             this.lblPrecoLivro.TabIndex = 3;

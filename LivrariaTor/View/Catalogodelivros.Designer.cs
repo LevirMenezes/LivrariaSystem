@@ -31,9 +31,10 @@ namespace LivrariaTor.View
         {
             this.lblLivraria = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picboxPesquisa = new System.Windows.Forms.PictureBox();
             this.tbxPesquisa = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cbxQuantidade = new System.Windows.Forms.ComboBox();
             this.btnVoltarTelaPrincipal = new System.Windows.Forms.Button();
             this.picboxLivro = new System.Windows.Forms.PictureBox();
             this.btnAdicionarCarrinho = new System.Windows.Forms.Button();
@@ -43,9 +44,8 @@ namespace LivrariaTor.View
             this.lblPreco = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.cbxQuantidade = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxPesquisa)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxLivro)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +68,7 @@ namespace LivrariaTor.View
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(22)))), ((int)(((byte)(143)))));
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.picboxPesquisa);
             this.panel1.Controls.Add(this.tbxPesquisa);
             this.panel1.Controls.Add(this.lblLivraria);
             this.panel1.ForeColor = System.Drawing.Color.Black;
@@ -78,15 +78,16 @@ namespace LivrariaTor.View
             this.panel1.Size = new System.Drawing.Size(900, 57);
             this.panel1.TabIndex = 15;
             // 
-            // pictureBox1
+            // picboxPesquisa
             // 
-            this.pictureBox1.Image = global::LivrariaTor.Properties.Resources.lupa_pesquisar;
-            this.pictureBox1.Location = new System.Drawing.Point(656, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(43, 44);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.picboxPesquisa.Image = global::LivrariaTor.Properties.Resources.lupa_pesquisar;
+            this.picboxPesquisa.Location = new System.Drawing.Point(656, 7);
+            this.picboxPesquisa.Name = "picboxPesquisa";
+            this.picboxPesquisa.Size = new System.Drawing.Size(43, 44);
+            this.picboxPesquisa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picboxPesquisa.TabIndex = 6;
+            this.picboxPesquisa.TabStop = false;
+            this.picboxPesquisa.Click += new System.EventHandler(this.picboxPesquisa_Click);
             // 
             // tbxPesquisa
             // 
@@ -96,6 +97,7 @@ namespace LivrariaTor.View
             this.tbxPesquisa.Name = "tbxPesquisa";
             this.tbxPesquisa.Size = new System.Drawing.Size(377, 20);
             this.tbxPesquisa.TabIndex = 5;
+            this.tbxPesquisa.TextChanged += new System.EventHandler(this.tbxPesquisa_TextChanged);
             // 
             // panel2
             // 
@@ -113,6 +115,16 @@ namespace LivrariaTor.View
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(196, 583);
             this.panel2.TabIndex = 18;
+            // 
+            // cbxQuantidade
+            // 
+            this.cbxQuantidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxQuantidade.FormattingEnabled = true;
+            this.cbxQuantidade.Location = new System.Drawing.Point(26, 230);
+            this.cbxQuantidade.Name = "cbxQuantidade";
+            this.cbxQuantidade.Size = new System.Drawing.Size(54, 21);
+            this.cbxQuantidade.TabIndex = 11;
+            this.cbxQuantidade.SelectedIndexChanged += new System.EventHandler(this.cbxQuantidade_SelectedIndexChanged);
             // 
             // btnVoltarTelaPrincipal
             // 
@@ -227,16 +239,6 @@ namespace LivrariaTor.View
             this.flowLayoutPanel1.Size = new System.Drawing.Size(698, 583);
             this.flowLayoutPanel1.TabIndex = 19;
             // 
-            // cbxQuantidade
-            // 
-            this.cbxQuantidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxQuantidade.FormattingEnabled = true;
-            this.cbxQuantidade.Location = new System.Drawing.Point(26, 230);
-            this.cbxQuantidade.Name = "cbxQuantidade";
-            this.cbxQuantidade.Size = new System.Drawing.Size(54, 21);
-            this.cbxQuantidade.TabIndex = 11;
-            this.cbxQuantidade.SelectedIndexChanged += new System.EventHandler(this.cbxQuantidade_SelectedIndexChanged);
-            // 
             // Catalogodelivros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -252,7 +254,7 @@ namespace LivrariaTor.View
             this.Load += new System.EventHandler(this.Catalogodelivros_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxPesquisa)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxLivro)).EndInit();
@@ -274,7 +276,7 @@ namespace LivrariaTor.View
         private System.Windows.Forms.Button btnAdicionarCarrinho;
         private System.Windows.Forms.PictureBox picboxLivro;
         private System.Windows.Forms.Button btnVoltarTelaPrincipal;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picboxPesquisa;
         public System.Windows.Forms.TextBox tbxPesquisa;
         private System.Windows.Forms.ComboBox cbxQuantidade;
     }

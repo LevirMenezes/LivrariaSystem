@@ -37,5 +37,10 @@ namespace LivrariaTor.Controller
         {
             return LivroModels.GetEstoqueLivros();
         }
+
+        public List<LivroEnt> BuscaLivros(string busca)
+        {
+            return LivroModels.GetBusca(busca);
+        }
     }
 }

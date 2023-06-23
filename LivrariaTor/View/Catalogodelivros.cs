@@ -19,6 +19,8 @@ namespace LivrariaTor.View
         private List<LivroEnt>        Livros;
         private bool                  Config                = true;
         private int                   CbxControl            = 0;
+        private bool                  Buscar                = false;
+        private string                TextoBusca            = string.Empty;
 
         #endregion
 
@@ -27,11 +29,13 @@ namespace LivrariaTor.View
         public Catalogodelivros()
         {
             InitializeComponent();
-            Livros = LivroController.PegaTodosLivros();
         }
 
         private void Catalogodelivros_Load(object sender, EventArgs e)
         {
+           
+            Livros = LivroController.PegaTodosLivros();
+            
             PopularLista();
 
 
@@ -56,6 +60,7 @@ namespace LivrariaTor.View
         #region Metodos
         private void PopularLista()
         {
+            Buscar = false;
             List<ItemLivro> ItensLivro = new List<ItemLivro>();
 
             // Verifica se tem algum item no FlowLayout, se tiver algum item ele limpa o layout
@@ -253,6 +258,56 @@ namespace LivrariaTor.View
             {
                 CbxControl = cbxQuantidade.SelectedIndex + 1;
             }
+        }
+
+        private void picboxPesquisa_Click(object sender, EventArgs e)
+        {
+            TextoBusca = tbxPesquisa.Text;
+            Buscar     = true;
+            Livros = LivroController.BuscaLivros(TextoBusca);
+            PopularLista();
+
+
+            if (VariaveisGlobais.UsuarioLogado.Adm == 1)
+            {
+                btnAdicionarCarrinho.Visible = false;
+                btnCadastrarLivro.Visible = true;
+                btnEditarLivro.Visible = true;
+                btnDeletarLivro.Visible = true;
+            }
+            else
+            {
+                btnCadastrarLivro.Visible = false;
+                btnEditarLivro.Visible = false;
+                btnDeletarLivro.Visible = false;
+                cbxQuantidade.Enabled = false;
+            }
+            this.Refresh();
+        }
+
+        private void tbxPesquisa_TextChanged(object sender, EventArgs e)
+        {
+            TextoBusca = tbxPesquisa.Text;
+            Buscar = true;
+            Livros = LivroController.BuscaLivros(TextoBusca);
+            PopularLista();
+
+
+            if (VariaveisGlobais.UsuarioLogado.Adm == 1)
+            {
+                btnAdicionarCarrinho.Visible = false;
+                btnCadastrarLivro.Visible = true;
+                btnEditarLivro.Visible = true;
+                btnDeletarLivro.Visible = true;
+            }
+            else
+            {
+                btnCadastrarLivro.Visible = false;
+                btnEditarLivro.Visible = false;
+                btnDeletarLivro.Visible = false;
+                cbxQuantidade.Enabled = false;
+            }
+            this.Refresh();
         }
     }
 }
