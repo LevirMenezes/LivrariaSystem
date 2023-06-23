@@ -2,12 +2,7 @@
 using LivrariaTor.Persistencia;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LivrariaTor.View
@@ -57,7 +52,7 @@ namespace LivrariaTor.View
             PopularLista();
         }
 
-        private void btnVoltarTelaPrincipal_Click(object sender, EventArgs e)
+        private void picboxVoltar_Click(object sender, EventArgs e)
         {
             TelaAdm form_telaadm = new TelaAdm();
             form_telaadm.Show();

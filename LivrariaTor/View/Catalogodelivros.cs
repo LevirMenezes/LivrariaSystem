@@ -10,9 +10,15 @@ namespace LivrariaTor.View
 {
     public partial class Catalogodelivros : Form
     {
+        #region Variaveis
+
         private LivroController LivroController  = new LivroController();
         private List<LivroEnt>  Livros;
         private LivroEnt        LivroSelecionado = null;
+
+        #endregion
+
+        #region Inicialização
 
         public Catalogodelivros()
         {
@@ -36,6 +42,9 @@ namespace LivrariaTor.View
             }
         }
 
+        #endregion
+
+        #region Metodos
         private void PopularLista()
         {
             List<ItemLivro> ItensLivro = new List<ItemLivro>();
@@ -65,22 +74,9 @@ namespace LivrariaTor.View
             }
         }
 
-        private void ItemClicadoHandler(object sender, ItemLivroEventArgs e)
-        {
-            // Aqui você tem acesso às informações do item clicado
-            string  Titulo    = e.Livro.Titulo;
-            decimal Preco     = e.Livro.Preco;
-            Image   imagem    = e.Imagem;
+        #endregion
 
-            lblTitulo.Visible            = false;
-            lblPreco.Visible             = false;
-            btnAdicionarCarrinho.Visible = false;
-
-            LivroSelecionado    = e.Livro;
-            picboxLivro.Image = imagem;
-            lblTitulo.Text    = Titulo;
-            lblPreco.Text     = "R$ " + Preco.ToString("F2");
-        }
+        #region Buttons e cliques
 
         private void btnEditarLivro_Click(object sender, EventArgs e)
         {
@@ -128,14 +124,45 @@ namespace LivrariaTor.View
 
         private void btnVoltarTelaPrincipal_Click(object sender, EventArgs e)
         {
-            FormPrincipal form_principal = new FormPrincipal();
-            form_principal.Show();
-            this.Close();
+            if (VariaveisGlobais.UsuarioLogado.Adm == 1)
+            {
+                TelaAdm form_adm = new TelaAdm();
+                form_adm.Show();
+                this.Close();
+            }
+            else
+            {
+                FormPrincipal form_principal = new FormPrincipal();
+                form_principal.Show();
+                this.Close();
+            }
         }
 
         private void btnAdicionarCarrinho_Click(object sender, EventArgs e)
         {
 
         }
+
+        #endregion
+
+        #region ItemClique
+        private void ItemClicadoHandler(object sender, ItemLivroEventArgs e)
+        {
+            // Aqui você tem acesso às informações do item clicado
+            string  Titulo    = e.Livro.Titulo;
+            decimal Preco     = e.Livro.Preco;
+            Image   imagem    = e.Imagem;
+
+            lblTitulo.Visible            = false;
+            lblPreco.Visible             = false;
+            btnAdicionarCarrinho.Visible = false;
+
+            LivroSelecionado    = e.Livro;
+            picboxLivro.Image = imagem;
+            lblTitulo.Text    = Titulo;
+            lblPreco.Text     = "R$ " + Preco.ToString("F2");
+        }
+
+        #endregion
     }
 }

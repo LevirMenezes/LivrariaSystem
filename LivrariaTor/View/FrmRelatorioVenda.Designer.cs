@@ -34,10 +34,11 @@ namespace LivrariaTor.View
             this.lblLivraria = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnVoltarTelaPrincipal = new System.Windows.Forms.Button();
             this.fpnlRelatorioVenda = new System.Windows.Forms.FlowLayoutPanel();
+            this.picboxVoltar = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxVoltar)).BeginInit();
             this.SuspendLayout();
             // 
             // lblLivraria
@@ -69,39 +70,37 @@ namespace LivrariaTor.View
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(179)))), ((int)(((byte)(242)))));
-            this.panel2.Controls.Add(this.btnVoltarTelaPrincipal);
+            this.panel2.Controls.Add(this.picboxVoltar);
             this.panel2.Location = new System.Drawing.Point(1, 57);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(196, 583);
+            this.panel2.Size = new System.Drawing.Size(76, 593);
             this.panel2.TabIndex = 18;
-            // 
-            // btnVoltarTelaPrincipal
-            // 
-            this.btnVoltarTelaPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltarTelaPrincipal.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnVoltarTelaPrincipal.ForeColor = System.Drawing.Color.Purple;
-            this.btnVoltarTelaPrincipal.Location = new System.Drawing.Point(15, 389);
-            this.btnVoltarTelaPrincipal.Margin = new System.Windows.Forms.Padding(2);
-            this.btnVoltarTelaPrincipal.Name = "btnVoltarTelaPrincipal";
-            this.btnVoltarTelaPrincipal.Size = new System.Drawing.Size(150, 28);
-            this.btnVoltarTelaPrincipal.TabIndex = 10;
-            this.btnVoltarTelaPrincipal.Text = "Voltar";
-            this.btnVoltarTelaPrincipal.UseVisualStyleBackColor = true;
-            this.btnVoltarTelaPrincipal.Click += new System.EventHandler(this.btnVoltarTelaPrincipal_Click);
             // 
             // fpnlRelatorioVenda
             // 
             this.fpnlRelatorioVenda.AutoScroll = true;
-            this.fpnlRelatorioVenda.Location = new System.Drawing.Point(200, 57);
+            this.fpnlRelatorioVenda.Location = new System.Drawing.Point(83, 57);
             this.fpnlRelatorioVenda.Name = "fpnlRelatorioVenda";
-            this.fpnlRelatorioVenda.Size = new System.Drawing.Size(698, 583);
+            this.fpnlRelatorioVenda.Size = new System.Drawing.Size(814, 593);
             this.fpnlRelatorioVenda.TabIndex = 19;
+            // 
+            // picboxVoltar
+            // 
+            this.picboxVoltar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picboxVoltar.Image = global::LivrariaTor.Properties.Resources.Retornar;
+            this.picboxVoltar.Location = new System.Drawing.Point(12, 11);
+            this.picboxVoltar.Name = "picboxVoltar";
+            this.picboxVoltar.Size = new System.Drawing.Size(52, 50);
+            this.picboxVoltar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picboxVoltar.TabIndex = 11;
+            this.picboxVoltar.TabStop = false;
+            this.picboxVoltar.Click += new System.EventHandler(this.picboxVoltar_Click);
             // 
             // FrmRelatorioVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 640);
+            this.ClientSize = new System.Drawing.Size(900, 650);
             this.Controls.Add(this.fpnlRelatorioVenda);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -109,22 +108,14 @@ namespace LivrariaTor.View
             this.Name = "FrmRelatorioVenda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Catálogo de livros";
-          
+            this.Load += new System.EventHandler(this.FrmRelatorioVenda_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picboxVoltar)).EndInit();
             this.ResumeLayout(false);
 
         }
-
-        private void btnVoltarTelaPrincipal_Click(object sender, EventArgs e)
-        {
-            TelaAdm form_telaadm = new TelaAdm();
-            form_telaadm.Show();
-            this.Close();
-        }
-
-       
 
         #endregion
 
@@ -133,6 +124,6 @@ namespace LivrariaTor.View
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.FlowLayoutPanel fpnlRelatorioVenda;
-        private System.Windows.Forms.Button btnVoltarTelaPrincipal;
+        private System.Windows.Forms.PictureBox picboxVoltar;
     }
 }

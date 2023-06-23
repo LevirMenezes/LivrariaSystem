@@ -49,6 +49,7 @@ namespace LivrariaTor.View
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.picboxVoltarFormPrincipal = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -59,6 +60,7 @@ namespace LivrariaTor.View
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxVoltarFormPrincipal)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -161,7 +163,6 @@ namespace LivrariaTor.View
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 20;
             this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // pictureBox7
             // 
@@ -246,13 +247,26 @@ namespace LivrariaTor.View
             this.label5.Text = resources.GetString("label5.Text");
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label5.UseCompatibleTextRendering = true;
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // picboxVoltarFormPrincipal
+            // 
+            this.picboxVoltarFormPrincipal.BackColor = System.Drawing.Color.Transparent;
+            this.picboxVoltarFormPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picboxVoltarFormPrincipal.Image = global::LivrariaTor.Properties.Resources.Retornar;
+            this.picboxVoltarFormPrincipal.Location = new System.Drawing.Point(12, 68);
+            this.picboxVoltarFormPrincipal.Name = "picboxVoltarFormPrincipal";
+            this.picboxVoltarFormPrincipal.Size = new System.Drawing.Size(52, 50);
+            this.picboxVoltarFormPrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picboxVoltarFormPrincipal.TabIndex = 29;
+            this.picboxVoltarFormPrincipal.TabStop = false;
+            this.picboxVoltarFormPrincipal.Click += new System.EventHandler(this.picboxVoltarFormPrincipal_Click);
             // 
             // Informacoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 640);
+            this.Controls.Add(this.picboxVoltarFormPrincipal);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.label4);
@@ -280,6 +294,7 @@ namespace LivrariaTor.View
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxVoltarFormPrincipal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -308,5 +323,6 @@ namespace LivrariaTor.View
         private Label label4;
         private PictureBox pictureBox9;
         private Label label5;
+        private PictureBox picboxVoltarFormPrincipal;
     }
 }

@@ -128,38 +128,12 @@ namespace LivrariaTor.Model
             try
             {
                 SqlConnection cn = Conexao.ObterConexao();
-                string query  = "DELETE tbItensPedido WHERE idlivro = @idlivro;";
-                string query1 = "DELETE tbLivroAutor  WHERE idlivro = @idlivro1;";
-                string query2 = "DELETE tbLivroGenero WHERE idlivro = @idlivro2;";
-                string query3 = "DELETE FROM tbLivro  WHERE id      = @id3;";
+                string query = "DELETE FROM tbLivro  WHERE id = @id;";
 
-                using(SqlTransaction transaction = cn.BeginTransaction())
+                using (SqlCommand command = new SqlCommand(query, cn))
                 {
-                    try
-                    {
-                        SqlCommand command  = new SqlCommand();
-                        command.Connection  = cn;
-                        command.Transaction = transaction;
-                        command.CommandText = query  +
-                                              query1 +
-                                              query2 +
-                                              query3;
-
-                        command.Parameters.AddWithValue("@idlivro",  id);
-                        command.Parameters.AddWithValue("@idlivro1", id);
-                        command.Parameters.AddWithValue("@idlivro2", id);
-                        command.Parameters.AddWithValue("@id3"     , id);
-
-                        command.ExecuteNonQuery();
-
-                        transaction.Commit();
-                        resp = "OK";
-                    }
-                    catch (Exception)
-                    {
-                        transaction.Rollback();
-                        resp = "Falha no delete!";
-                    }
+                    command.Parameters.AddWithValue("@id", id);
+                    resp = command.ExecuteNonQuery() == 1 ? "OK" : "O Delete não foi feito!";
                 }
             }
             catch (Exception)
@@ -316,7 +290,6 @@ namespace LivrariaTor.Model
             }
             return livro;
         }
-
 
         public List<LivroEnt> GetEstoqueLivros()
         {

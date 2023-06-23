@@ -45,6 +45,7 @@ namespace LivrariaTor.View
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxLivro)).BeginInit();
             this.SuspendLayout();
@@ -64,15 +65,15 @@ namespace LivrariaTor.View
             this.panel1.Controls.Add(this.picboxLivro);
             this.panel1.Location = new System.Drawing.Point(1, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(169, 237);
+            this.panel1.Size = new System.Drawing.Size(169, 240);
             this.panel1.TabIndex = 5;
             // 
             // picboxLivro
             // 
-            this.picboxLivro.Image = global::LivrariaTor.Properties.Resources.img_colorida;
-            this.picboxLivro.Location = new System.Drawing.Point(13, 25);
+            this.picboxLivro.Image = global::LivrariaTor.Properties.Resources.livro_tipo4;
+            this.picboxLivro.Location = new System.Drawing.Point(3, 33);
             this.picboxLivro.Name = "picboxLivro";
-            this.picboxLivro.Size = new System.Drawing.Size(139, 170);
+            this.picboxLivro.Size = new System.Drawing.Size(163, 170);
             this.picboxLivro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picboxLivro.TabIndex = 0;
             this.picboxLivro.TabStop = false;
@@ -207,11 +208,21 @@ namespace LivrariaTor.View
             this.label6.TabIndex = 20;
             this.label6.Text = "Quantidade:";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(179)))), ((int)(((byte)(242)))));
+            this.panel2.Location = new System.Drawing.Point(166, 238);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(457, 8);
+            this.panel2.TabIndex = 21;
+            // 
             // ItemRelatoriodeVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label6);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -253,5 +264,6 @@ namespace LivrariaTor.View
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel2;
     }
 }

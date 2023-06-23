@@ -11,6 +11,8 @@ namespace LivrariaTor
 {
     public partial class FrmUsuario : Form
     {
+        #region Variaveis
+
         private string CaminhoDaImagem                = string.Empty;
         private UsuarioController  UsuarioController  = new UsuarioController();
         private EnderecoController EnderecoController = new EnderecoController();
@@ -18,13 +20,48 @@ namespace LivrariaTor
         private EnderecoEnt        Endereco           = null;
         public  string             TextoBotao         = string.Empty;
 
+        #endregion
+
+        #region Inicialização
+
         public FrmUsuario(UsuarioEnt usuario = null)
         {
             InitializeComponent();
             Usuario = usuario;
         }
 
-        #region Cliques
+        private void FrmUsuario_Load(object sender, EventArgs e)
+        {
+            btnCadastroUsuario.Text = TextoBotao;
+
+            if (TextoBotao != "Cadastrar")
+            {
+                CarregarInformacoes();
+
+                if (TextoBotao == "Deletar")
+                {
+                    picboxImgUser.Enabled = false;
+                    tbxNome.Enabled = false;
+                    mtbxTelefone.Enabled = false;
+                    mtbxCpf.Enabled = false;
+                    tbxEmail.Enabled = false;
+                    mtbxSenha.Enabled = false;
+                    mtbxConfirmarSenha.Enabled = false;
+
+                    tbxCEP.Enabled = false;
+                    tbxRua.Enabled = false;
+                    tbxNumero.Enabled = false;
+                    tbxBairro.Enabled = false;
+                    tbxCidade.Enabled = false;
+                    tbxEstado.Enabled = false;
+                }
+            }
+
+        }
+
+        #endregion
+
+        #region Buttons e cliques
 
         private void btnSairUsuario_Click(object sender, EventArgs e)
         {
@@ -439,33 +476,5 @@ namespace LivrariaTor
         }
 
         #endregion
-        private void FrmUsuario_Load(object sender, EventArgs e)
-        {
-            btnCadastroUsuario.Text = TextoBotao;
-
-            if(TextoBotao != "Cadastrar")
-            {
-                CarregarInformacoes();
-
-                if(TextoBotao == "Deletar")
-                {
-                    picboxImgUser.Enabled      = false;
-                    tbxNome.Enabled            = false;
-                    mtbxTelefone.Enabled       = false;
-                    mtbxCpf.Enabled            = false;
-                    tbxEmail.Enabled           = false;
-                    mtbxSenha.Enabled          = false;
-                    mtbxConfirmarSenha.Enabled = false;
-
-                    tbxCEP.Enabled             = false;
-                    tbxRua.Enabled             = false;
-                    tbxNumero.Enabled          = false;
-                    tbxBairro.Enabled          = false;
-                    tbxCidade.Enabled          = false;
-                    tbxEstado.Enabled          = false;
-                }
-            }
-            
-        }
     }
 }

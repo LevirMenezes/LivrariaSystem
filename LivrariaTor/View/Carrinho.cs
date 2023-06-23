@@ -2,17 +2,22 @@
 using LivrariaTor.Persistencia;
 using LivrariaTor.Utils;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace LivrariaTor.View
 {
     public partial class Carrinho : Form
     {
+        #region Variaveis
+
         private PedidoController      PedidoController      = new PedidoController();
         private ItensPedidoController ItensPedidoController = new ItensPedidoController();
         private List<ItensPedidoEnt>  Itens                 = null;
         private PedidoEnt             Pedido                = null;
+
+        #endregion
+
+        #region Inicialização
 
         public Carrinho()
         {
@@ -23,6 +28,10 @@ namespace LivrariaTor.View
         {
             RecarregarTela();
         }
+
+        #endregion
+
+        #region Metodos
 
         private void PopularLista()
         {
@@ -60,6 +69,50 @@ namespace LivrariaTor.View
             }
         }
 
+        private void RecarregarTela()
+        {
+            Pedido = PedidoController.PegaPedidoPorUsuarioId(VariaveisGlobais.UsuarioLogado.Id);
+
+            if (Pedido == null)
+            {
+                PedidoController.InserirPedido(VariaveisGlobais.UsuarioLogado.Id);
+            }
+
+            Itens = ItensPedidoController.PegaTodosItensPorUsuario(VariaveisGlobais.UsuarioLogado.Id);
+
+            if (Itens == null)
+            {
+                MessageBox.Show("O carrinho está vazio!", "Carrinho", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.DialogResult = DialogResult.Cancel;
+                this.Close();
+                return;
+            }
+            if (Pedido != null)
+            {
+                lblSubtotal.Text = Pedido.PrecoTotal.ToString("F2");
+            }
+            PopularLista();
+        }
+
+        #endregion
+
+        #region Buttons e cliques
+
+        private void btnFecharPagina_Click(object sender, System.EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        private void btnFinalizarComprar_Click(object sender, System.EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        #endregion
+
+        #region ItemClique
 
         // Método responsável pelo clique no botão X de cada item do carrinho
         private void ItemClicadoHandler(object sender, ItemCarrinhoEventArgs e)
@@ -86,54 +139,6 @@ namespace LivrariaTor.View
                 MessageBox.Show("Falha ao atualizar a quantidade do item do carrinho!", "Falha", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void btnFecharPagina_Click(object sender, System.EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
-            this.Close();
-        }
-
-        private void btnFinalizarComprar_Click(object sender, System.EventArgs e)
-        {
-            DialogResult = DialogResult.OK;
-            this.Close();
-        }
-
-        private void RecarregarTela()
-        {
-            Pedido = PedidoController.PegaPedidoPorUsuarioId(VariaveisGlobais.UsuarioLogado.Id);
-
-            if (Pedido == null)
-            {
-                PedidoController.InserirPedido(VariaveisGlobais.UsuarioLogado.Id);
-            }
-
-            Itens = ItensPedidoController.PegaTodosItensPorUsuario(VariaveisGlobais.UsuarioLogado.Id);
-
-            if (Itens == null)
-            {
-                MessageBox.Show("O carrinho está vazio!", "Carrinho", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                this.DialogResult = DialogResult.Cancel;
-                this.Close();
-                return;
-            }
-            if (Pedido != null)
-            {
-                lblSubtotal.Text = Pedido.PrecoTotal.ToString("F2");
-            }
-            PopularLista();
-        }
-    }
-
-    public class EnumQuantidade
-    {
-        public int numInt { get; set; }
-        public string numString { get; set; }
-
-        public EnumQuantidade()
-        {
-            numInt     = 0;
-            numString  = "0";
-        }
-
+        #endregion
     }
 }

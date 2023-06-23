@@ -18,14 +18,14 @@ namespace LivrariaTor.Persistencia
         private decimal subtotal;
         private string  tipoPagamento;
 
-        public int Pedidoid         { get => pedidoid;      set => pedidoid      = value; }
-        public string DataCompra    { get => dataCompra;    set => dataCompra    = value; }
-        public string NomeUsuario   { get => nomeUsuario;   set => nomeUsuario   = value; }
-        public string EmailUsuario  { get => emailUsuario;  set => emailUsuario  = value; }
-        public string TituloLivro   { get => tituloLivro;   set => tituloLivro   = value; }
-        public decimal PrecoLivro   { get => precoLivro;    set => precoLivro    = value; }
-        public int Quantidade       { get => quantidade;    set => quantidade    = value; }
-        public decimal Subtotal     { get => subtotal;      set => subtotal      = value; }
-        public string TipoPagamento { get => tipoPagamento; set => tipoPagamento = value; }
+        public int     Pedidoid      { get => pedidoid;      set => pedidoid      = value; }
+        public string  DataCompra    { get => dataCompra;    set => dataCompra    = value; }
+        public string  NomeUsuario   { get => nomeUsuario;   set => nomeUsuario   = value; }
+        public string  EmailUsuario  { get => emailUsuario;  set => emailUsuario  = value; }
+        public string  TituloLivro   { get => tituloLivro;   set => tituloLivro   = value; }
+        public decimal PrecoLivro    { get => precoLivro;    set => precoLivro    = value; }
+        public int     Quantidade    { get => quantidade;    set => quantidade    = value; }
+        public decimal Subtotal      { get => subtotal;      set => subtotal      = value; }
+        public string  TipoPagamento { get => tipoPagamento; set => tipoPagamento = value; }
     }
 }

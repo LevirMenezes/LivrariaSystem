@@ -97,6 +97,7 @@
     <Compile Include="Persistencia\PedidoEnt.cs" />
     <Compile Include="Persistencia\RelatorioVendasEnt.cs" />
     <Compile Include="Persistencia\UsuarioEnt.cs" />
+    <Compile Include="Utils\EnumQuantidade.cs" />
     <Compile Include="Utils\ItemCarrinhoEventArgs.cs" />
     <Compile Include="Utils\ItemUsuarioEventArgs.cs" />
     <Compile Include="Utils\VariaveisGlobais.cs" />
@@ -333,6 +334,11 @@
     <Content Include="Resources\icon-fechar-janela.png" />
     <Content Include="Resources\icons8-excluir-100.png" />
     <None Include="Resources\img_colorida.jpg" />
+    <None Include="Resources\icons8-livro-64 %281%29.png" />
+    <None Include="Resources\icons8-livro-96.png" />
+    <None Include="Resources\icons8-livro-64.png" />
+    <None Include="Resources\icons8-livro-100.png" />
+    <None Include="Resources\icons8-retornar-80.png" />
     <Content Include="Resources\user-example.png" />
     <Content Include="Resources\livro-clean-code.jpg" />
     <Content Include="Resources\lupa-pesquisar.png" />

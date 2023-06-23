@@ -41,5 +41,10 @@ namespace LivrariaTor.Controller
         {
             return PedidoModels.GetByUsuarioId(idusuario);
         }
+
+        public List<RelatorioVendasEnt> PegaRelatoriosDeVendas()
+        {
+            return PedidoModels.GetRelatorioVendas();
+        }
     }
 }

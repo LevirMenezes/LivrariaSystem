@@ -3,12 +3,7 @@ using LivrariaTor.Persistencia;
 using LivrariaTor.Utils;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LivrariaTor.View
@@ -84,14 +79,6 @@ namespace LivrariaTor.View
             }
         }
 
-        private void btnCadastrar_Click(object sender, EventArgs e)
-        {
-            FrmUsuario form_cadastrar = new FrmUsuario();
-            form_cadastrar.TextoBotao = "Cadastrar";
-            form_cadastrar.Show();
-            this.Hide();
-        }
-
         private void btnDeletar_Click(object sender, EventArgs e)
         {
             try
@@ -109,16 +96,19 @@ namespace LivrariaTor.View
             }
         }
 
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            FrmUsuario form_cadastrar = new FrmUsuario();
+            form_cadastrar.TextoBotao = "Cadastrar";
+            form_cadastrar.Show();
+            this.Hide();
+        }
+
         private void btnVoltarTelaPrincipal_Click(object sender, EventArgs e)
         {
             TelaAdm form_adm = new TelaAdm();
             form_adm.Show();
             this.Close();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

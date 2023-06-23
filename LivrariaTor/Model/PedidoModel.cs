@@ -1,6 +1,7 @@
 ﻿using LivrariaTor.Persistencia;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -203,44 +204,55 @@ namespace LivrariaTor.Model
             return ((pedido.Id == 0 || pedido == null) ? null : pedido);
         }
 
-        public RelatorioVendasEnt GetRelatorioVendas()
+        public List<RelatorioVendasEnt> GetRelatorioVendas()
         {
-            RelatorioVendasEnt Relatorio = new RelatorioVendasEnt();
-           
-            SqlConnection cn = Conexao.ObterConexao();
+            List<RelatorioVendasEnt> Relatorios = new List<RelatorioVendasEnt>();
+            
             try
             {
+                SqlConnection cn = Conexao.ObterConexao();
+
                 using (SqlCommand command = new SqlCommand())
                 {
+                    command.Connection = cn;
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "gerar_relatorio_vendas_completo";
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            Relatorio.Id = Convert.ToInt32(reader["id"]);
-                            Relatorio.DataCompra = Convert.ToDateTime(reader["datacompra"]);
-                            Relatorio.PrecoTotal = reader.IsDBNull(reader.GetOrdinal("precototal")) ? 0 : Convert.ToDecimal(reader["precototal"]);
-                            Relatorio.EstadoPedido = reader["estadopedido"].ToString();
-                            Relatorio.IdUsuario = Convert.ToInt32(reader["idusuario"]);
+                            RelatorioVendasEnt Relatorio = new RelatorioVendasEnt();
+                            Relatorio.Pedidoid           = Convert.ToInt32(   reader["PedidoId"]);
+                            Relatorio.DataCompra         = Convert.ToDateTime(reader["DataCompra"]).ToString("dd/MM/yyyy");
+                            Relatorio.NomeUsuario        = Convert.ToString(  reader["NomeUsuario"]);
+                            Relatorio.EmailUsuario       = Convert.ToString(  reader["EmailUsuario"]);
+                            Relatorio.TituloLivro        = Convert.ToString(  reader["TituloLivro"]);
+                            Relatorio.PrecoLivro         = Convert.ToDecimal( reader["PrecoLivro"]);
+                            Relatorio.Quantidade         = Convert.ToInt32(   reader["Quantidade"]);
+                            Relatorio.Subtotal           = Convert.ToDecimal( reader["Subtotal"]);
+                            Relatorio.TipoPagamento      = Convert.ToString(  reader["TipoPagamento"]);
+
+                            Relatorios.Add(Relatorio);
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                Relatorio = null;
+                Relatorios = null;
             }
             finally
             {
                 Conexao.FecharConexao();
             }
             
-            if (Relatorio == null)
+            if (Relatorios == null)
                 return null;
             else
-                if (Relatorio.Pedidoid == 0)
+                if (Relatorios.Count == 0)
                     return null;
                 else
-                    return Relatorio;
+                    return Relatorios;
 
         }
 

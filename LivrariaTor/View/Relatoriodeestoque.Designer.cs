@@ -34,10 +34,11 @@ namespace LivrariaTor.View
             this.lblLivraria = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnVoltarTelaPrincipal = new System.Windows.Forms.Button();
             this.fpnlEstoque = new System.Windows.Forms.FlowLayoutPanel();
+            this.picboxVoltar = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxVoltar)).BeginInit();
             this.SuspendLayout();
             // 
             // lblLivraria
@@ -69,33 +70,31 @@ namespace LivrariaTor.View
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(179)))), ((int)(((byte)(242)))));
-            this.panel2.Controls.Add(this.btnVoltarTelaPrincipal);
+            this.panel2.Controls.Add(this.picboxVoltar);
             this.panel2.Location = new System.Drawing.Point(1, 57);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(196, 583);
+            this.panel2.Size = new System.Drawing.Size(76, 593);
             this.panel2.TabIndex = 18;
-            // 
-            // btnVoltarTelaPrincipal
-            // 
-            this.btnVoltarTelaPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltarTelaPrincipal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltarTelaPrincipal.ForeColor = System.Drawing.Color.Purple;
-            this.btnVoltarTelaPrincipal.Location = new System.Drawing.Point(15, 389);
-            this.btnVoltarTelaPrincipal.Margin = new System.Windows.Forms.Padding(2);
-            this.btnVoltarTelaPrincipal.Name = "btnVoltarTelaPrincipal";
-            this.btnVoltarTelaPrincipal.Size = new System.Drawing.Size(165, 28);
-            this.btnVoltarTelaPrincipal.TabIndex = 10;
-            this.btnVoltarTelaPrincipal.Text = "Voltar";
-            this.btnVoltarTelaPrincipal.UseVisualStyleBackColor = true;
-            this.btnVoltarTelaPrincipal.Click += new System.EventHandler(this.btnVoltarTelaPrincipal_Click);
             // 
             // fpnlEstoque
             // 
             this.fpnlEstoque.AutoScroll = true;
-            this.fpnlEstoque.Location = new System.Drawing.Point(200, 57);
+            this.fpnlEstoque.Location = new System.Drawing.Point(83, 57);
             this.fpnlEstoque.Name = "fpnlEstoque";
-            this.fpnlEstoque.Size = new System.Drawing.Size(698, 583);
+            this.fpnlEstoque.Size = new System.Drawing.Size(815, 583);
             this.fpnlEstoque.TabIndex = 19;
+            // 
+            // picboxVoltar
+            // 
+            this.picboxVoltar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picboxVoltar.Image = global::LivrariaTor.Properties.Resources.Retornar;
+            this.picboxVoltar.Location = new System.Drawing.Point(12, 11);
+            this.picboxVoltar.Name = "picboxVoltar";
+            this.picboxVoltar.Size = new System.Drawing.Size(52, 50);
+            this.picboxVoltar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picboxVoltar.TabIndex = 12;
+            this.picboxVoltar.TabStop = false;
+            this.picboxVoltar.Click += new System.EventHandler(this.picboxVoltar_Click);
             // 
             // Relatoriodeestoque
             // 
@@ -113,6 +112,7 @@ namespace LivrariaTor.View
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picboxVoltar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -122,6 +122,6 @@ namespace LivrariaTor.View
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.FlowLayoutPanel fpnlEstoque;
-        private System.Windows.Forms.Button btnVoltarTelaPrincipal;
+        private System.Windows.Forms.PictureBox picboxVoltar;
     }
 }

@@ -6,7 +6,6 @@ using System.IO;
 using LivrariaTor.Persistencia;
 using LivrariaTor.Controller;
 using LivrariaTor.View;
-using System.Windows.Interop;
 
 namespace LivrariaTor
 {
@@ -27,14 +26,14 @@ namespace LivrariaTor
 
         #endregion
 
+        #region Inicialização
+
         public FrmLivros(LivroEnt livro = null)
         {
             InitializeComponent();
 
             Livro = livro;
         }
-
-        #region Metodos
 
         private void FrmLivros_Load(object sender, EventArgs e)
         {
@@ -48,17 +47,21 @@ namespace LivrariaTor
                 CarregarInformacoes();
                 if (TextoBotao == "Deletar")
                 {
-                    txtTitulo.Enabled              = false;
-                    mTxtPreco.Enabled              = false;
-                    txtQtdEstoque.Enabled          = false;
-                    txtDescricaoLivro.Enabled      = false;
-                    txtIsbn.Enabled                = false;
-                    dtpAnoPublicacao.Enabled       = false;
+                    txtTitulo.Enabled = false;
+                    mTxtPreco.Enabled = false;
+                    txtQtdEstoque.Enabled = false;
+                    txtDescricaoLivro.Enabled = false;
+                    txtIsbn.Enabled = false;
+                    dtpAnoPublicacao.Enabled = false;
                     picboxSelecionarImagem.Enabled = false;
-                    btnSelecionarImagem.Enabled    = false;
+                    btnSelecionarImagem.Enabled = false;
                 }
             }
         }
+
+        #endregion
+
+        #region Metodos
 
         private void CarregarInformacoes()
         {
@@ -81,6 +84,7 @@ namespace LivrariaTor
                 }
             }
         }
+
         private void PopularCbxAutor()
         {
             List<AutorEnt> listaAutores = (autorController.PegaTodosAutores() == null ? new List<AutorEnt>() : autorController.PegaTodosAutores());
@@ -410,7 +414,7 @@ namespace LivrariaTor
 
         #endregion
 
-        #region Cliques
+        #region Buttons e cliques
 
         private void btnSelecionarImagem_Click(object sender, EventArgs e)
         {

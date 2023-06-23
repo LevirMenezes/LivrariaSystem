@@ -2,27 +2,33 @@
 using LivrariaTor.Persistencia;
 using LivrariaTor.Utils;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LivrariaTor.View
 {
     public partial class FormasPagamento : Form
     {
+        #region Variaveis
+
         private PedidoController pedidoController          = new PedidoController();
         private PedidoEnt        Pedido                    = null;
         private int              CbxControleFormaPagamento = 0;
+
+        #endregion
+
+        #region Inicialização
 
         public FormasPagamento()
         {
             InitializeComponent();
         }
+
+        private void FormasPagamento_Load(object sender, EventArgs e)
+        {
+            CarregarInformacoes();
+        }
+
+        #endregion
 
         #region Metodos
 
@@ -46,12 +52,7 @@ namespace LivrariaTor.View
 
         #endregion
 
-        #region Eventos
-
-        private void FormasPagamento_Load(object sender, EventArgs e)
-        {
-            CarregarInformacoes();
-        }
+        #region Buttons e Cliques
 
         private void btnConfirmarPagamento_Click(object sender, EventArgs e)
         {
@@ -120,6 +121,8 @@ namespace LivrariaTor.View
 
         #endregion
 
+        #region ItemClique
+
         private void rbtnCredito_CheckedChanged(object sender, EventArgs e)
         {
             CbxControleFormaPagamento = 1;
@@ -129,5 +132,7 @@ namespace LivrariaTor.View
         {
             CbxControleFormaPagamento = 2;
         }
+
+        #endregion
     }
 }

@@ -1,12 +1,5 @@
 ﻿using LivrariaTor.Utils;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LivrariaTor.View
@@ -54,7 +47,7 @@ namespace LivrariaTor.View
             VariaveisGlobais.UsuarioLogado = null;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnLivrosCadastrados_Click(object sender, EventArgs e)
         {
             Catalogodelivros form_catalogodelivros = new Catalogodelivros();
             form_catalogodelivros.Show();

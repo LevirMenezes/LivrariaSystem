@@ -135,6 +135,7 @@ namespace LivrariaTor
                     picboxIMG1.Image = imagem;
                 }
                 lblTitulo1.Text  = Livros[0].Titulo;
+                lblPreco1.Text   = Livros[0].Preco.ToString("F2");
 
                 List<EnumQuantidade> listaNum1 = new List<EnumQuantidade>();
                 for (int i = 1; i <= Livros[0].Estoque; i++)
@@ -162,6 +163,7 @@ namespace LivrariaTor
                     picboxIMG2.Image = imagem;
                 }
                 lblTitulo2.Text  = Livros[1].Titulo;
+                lblPreco2.Text   = Livros[1].Preco.ToString("F2");
 
                 List<EnumQuantidade> listaNum2 = new List<EnumQuantidade>();
                 for (int i = 1; i <= Livros[1].Estoque; i++)
@@ -189,6 +191,7 @@ namespace LivrariaTor
                     picboxIMG3.Image = imagem;
                 }
                 lblTitulo3.Text  = Livros[2].Titulo;
+                lblPreco3.Text   = Livros[2].Preco.ToString("F2");
 
                 List<EnumQuantidade> listaNum3 = new List<EnumQuantidade>();
                 for (int i = 1; i <= Livros[2].Estoque; i++)
@@ -219,6 +222,7 @@ namespace LivrariaTor
                     picboxIMG1.Image = imagem;
                 }
                 lblTitulo1.Text = Livros[0].Titulo;
+                lblPreco1.Text  = Livros[0].Preco.ToString("F2");
 
                 List<EnumQuantidade> listaNum1 = new List<EnumQuantidade>();
                 for (int i = 1; i <= Livros[0].Estoque; i++)
@@ -246,6 +250,7 @@ namespace LivrariaTor
                     picboxIMG2.Image = imagem;
                 }
                 lblTitulo2.Text = Livros[1].Titulo;
+                lblPreco2.Text  = Livros[1].Preco.ToString("F2");
 
                 List<EnumQuantidade> listaNum2 = new List<EnumQuantidade>();
                 for (int i = 1; i <= Livros[1].Estoque; i++)
@@ -277,6 +282,7 @@ namespace LivrariaTor
                     picboxIMG1.Image = imagem;
                 }
                 lblTitulo1.Text = Livros[0].Titulo;
+                lblPreco1.Text  = Livros[0].Preco.ToString("F2");
 
                 List<EnumQuantidade> listaNum1 = new List<EnumQuantidade>();
                 for (int i = 1; i <= Livros[0].Estoque; i++)

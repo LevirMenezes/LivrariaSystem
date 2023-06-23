@@ -31,7 +31,7 @@ namespace LivrariaTor.View
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblLivraria = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLivrosCadastrados = new System.Windows.Forms.Button();
             this.btnRelatorioVendas = new System.Windows.Forms.Button();
             this.btnRelatorioCliente = new System.Windows.Forms.Button();
             this.btnRelatorioEstoque = new System.Windows.Forms.Button();
@@ -66,18 +66,18 @@ namespace LivrariaTor.View
             this.lblLivraria.TabIndex = 4;
             this.lblLivraria.Text = "Administrador";
             // 
-            // button1
+            // btnLivrosCadastrados
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Purple;
-            this.button1.Location = new System.Drawing.Point(161, 203);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(178, 68);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Cadastrar Livro";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnLivrosCadastrados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLivrosCadastrados.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLivrosCadastrados.ForeColor = System.Drawing.Color.Purple;
+            this.btnLivrosCadastrados.Location = new System.Drawing.Point(161, 203);
+            this.btnLivrosCadastrados.Name = "btnLivrosCadastrados";
+            this.btnLivrosCadastrados.Size = new System.Drawing.Size(178, 68);
+            this.btnLivrosCadastrados.TabIndex = 17;
+            this.btnLivrosCadastrados.Text = "Livros Cadastrados";
+            this.btnLivrosCadastrados.UseVisualStyleBackColor = true;
+            this.btnLivrosCadastrados.Click += new System.EventHandler(this.btnLivrosCadastrados_Click);
             // 
             // btnRelatorioVendas
             // 
@@ -154,7 +154,7 @@ namespace LivrariaTor.View
             this.Controls.Add(this.btnRelatorioEstoque);
             this.Controls.Add(this.btnRelatorioCliente);
             this.Controls.Add(this.btnRelatorioVendas);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnLivrosCadastrados);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TelaAdm";
@@ -170,7 +170,7 @@ namespace LivrariaTor.View
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblLivraria;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLivrosCadastrados;
         private System.Windows.Forms.Button btnRelatorioVendas;
         private System.Windows.Forms.Button btnRelatorioCliente;
         private System.Windows.Forms.Button btnRelatorioEstoque;
