@@ -117,6 +117,12 @@
     <Compile Include="View\FormasPagamento.Designer.cs">
       <DependentUpon>FormasPagamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmRelatorioVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmRelatorioVenda.Designer.cs">
+      <DependentUpon>FrmRelatorioVenda.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,12 @@
       <DependentUpon>ItemLivroCarrossel.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\ItemLivroEventArgs.cs" />
+    <Compile Include="View\ItemRelatoriodeVendas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ItemRelatoriodeVendas.Designer.cs">
+      <DependentUpon>ItemRelatoriodeVendas.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ItemRelatorioestoque.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -168,6 +180,7 @@
     <Compile Include="View\ItemUsuario.Designer.cs">
       <DependentUpon>ItemUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ItensPedido.cs" />
     <Compile Include="View\Lancamentos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +232,9 @@
     <EmbeddedResource Include="View\FormasPagamento.resx">
       <DependentUpon>FormasPagamento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmRelatorioVenda.resx">
+      <DependentUpon>FrmRelatorioVenda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmUsuario.resx">
       <DependentUpon>FrmUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -249,6 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ItemLivroCarrossel.resx">
       <DependentUpon>ItemLivroCarrossel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ItemRelatoriodeVendas.resx">
+      <DependentUpon>ItemRelatoriodeVendas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ItemRelatorioestoque.resx">
       <DependentUpon>ItemRelatorioestoque.cs</DependentUpon>

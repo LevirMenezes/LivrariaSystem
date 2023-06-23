@@ -37,6 +37,13 @@ namespace LivrariaTor.Model
             return resp;
         }
 
+      
+
+        internal List<ItensPedidoEnt> GetAllByUsuario(object idusuario)
+        {
+            throw new NotImplementedException();
+        }
+
         public string UpdateItem(ItensPedidoEnt item)
         {
             SqlConnection cn = Conexao.ObterConexao();

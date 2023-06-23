@@ -27,7 +27,9 @@ namespace LivrariaTor.View
 
         private void btnRelatorioVendas_Click(object sender, EventArgs e)
         {
-
+            FrmRelatorioVenda Form_relatoriodevendas = new FrmRelatorioVenda();
+            Form_relatoriodevendas.Show();
+            this.Close();
         }
 
         private void btnRelatorioEstoque_Click(object sender, EventArgs e)
@@ -50,6 +52,14 @@ namespace LivrariaTor.View
             form_login.Show();
             this.Close();
             VariaveisGlobais.UsuarioLogado = null;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Catalogodelivros form_catalogodelivros = new Catalogodelivros();
+            form_catalogodelivros.Show();
+            this.Close();
+            
         }
     }
 }

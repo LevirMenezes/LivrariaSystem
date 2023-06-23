@@ -37,7 +37,11 @@ namespace LivrariaTor.View
             InitializeComponent();
         }
 
-       
+        private void ItemRelatorioestoque_Load(object sender, EventArgs e)
+        {
+
+        }
+
         
     }
 }
