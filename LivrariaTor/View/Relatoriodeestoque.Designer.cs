@@ -78,12 +78,12 @@ namespace LivrariaTor.View
             // btnVoltarTelaPrincipal
             // 
             this.btnVoltarTelaPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltarTelaPrincipal.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnVoltarTelaPrincipal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVoltarTelaPrincipal.ForeColor = System.Drawing.Color.Purple;
             this.btnVoltarTelaPrincipal.Location = new System.Drawing.Point(15, 389);
             this.btnVoltarTelaPrincipal.Margin = new System.Windows.Forms.Padding(2);
             this.btnVoltarTelaPrincipal.Name = "btnVoltarTelaPrincipal";
-            this.btnVoltarTelaPrincipal.Size = new System.Drawing.Size(150, 28);
+            this.btnVoltarTelaPrincipal.Size = new System.Drawing.Size(165, 28);
             this.btnVoltarTelaPrincipal.TabIndex = 10;
             this.btnVoltarTelaPrincipal.Text = "Voltar";
             this.btnVoltarTelaPrincipal.UseVisualStyleBackColor = true;

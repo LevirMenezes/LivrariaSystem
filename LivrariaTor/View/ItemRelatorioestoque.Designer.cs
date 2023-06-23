@@ -84,12 +84,11 @@ namespace LivrariaTor.View
             // 
             this.lblEstoque.AutoSize = true;
             this.lblEstoque.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstoque.Location = new System.Drawing.Point(584, 120);
+            this.lblEstoque.Location = new System.Drawing.Point(594, 120);
             this.lblEstoque.Name = "lblEstoque";
             this.lblEstoque.Size = new System.Drawing.Size(69, 20);
             this.lblEstoque.TabIndex = 9;
             this.lblEstoque.Text = "Estoque";
-            
             // 
             // lblAnopublicacao
             // 
@@ -105,7 +104,7 @@ namespace LivrariaTor.View
             // 
             this.lblIsbn.AutoSize = true;
             this.lblIsbn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIsbn.Location = new System.Drawing.Point(201, 118);
+            this.lblIsbn.Location = new System.Drawing.Point(188, 120);
             this.lblIsbn.Name = "lblIsbn";
             this.lblIsbn.Size = new System.Drawing.Size(47, 20);
             this.lblIsbn.TabIndex = 11;

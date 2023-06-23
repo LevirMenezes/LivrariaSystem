@@ -81,11 +81,11 @@ namespace LivrariaTor
             // 
             this.btnSair.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSair.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.ForeColor = System.Drawing.Color.Purple;
             this.btnSair.Location = new System.Drawing.Point(597, 600);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(112, 24);
+            this.btnSair.Size = new System.Drawing.Size(112, 38);
             this.btnSair.TabIndex = 5;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
@@ -95,11 +95,11 @@ namespace LivrariaTor
             // 
             this.btnCadastroUsuario.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnCadastroUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastroUsuario.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastroUsuario.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastroUsuario.ForeColor = System.Drawing.Color.Purple;
             this.btnCadastroUsuario.Location = new System.Drawing.Point(722, 600);
             this.btnCadastroUsuario.Name = "btnCadastroUsuario";
-            this.btnCadastroUsuario.Size = new System.Drawing.Size(112, 24);
+            this.btnCadastroUsuario.Size = new System.Drawing.Size(112, 38);
             this.btnCadastroUsuario.TabIndex = 4;
             this.btnCadastroUsuario.Text = "Cadastrar";
             this.btnCadastroUsuario.UseVisualStyleBackColor = true;
@@ -168,7 +168,7 @@ namespace LivrariaTor
             this.panel1.Controls.Add(this.lblLivraria);
             this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(900, 57);
             this.panel1.TabIndex = 14;
@@ -188,7 +188,7 @@ namespace LivrariaTor
             // mtbxTelefone
             // 
             this.mtbxTelefone.Location = new System.Drawing.Point(178, 288);
-            this.mtbxTelefone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mtbxTelefone.Margin = new System.Windows.Forms.Padding(2);
             this.mtbxTelefone.Mask = "(00) 0 0000-0000";
             this.mtbxTelefone.Name = "mtbxTelefone";
             this.mtbxTelefone.Size = new System.Drawing.Size(282, 20);
@@ -197,7 +197,7 @@ namespace LivrariaTor
             // mtbxSenha
             // 
             this.mtbxSenha.Location = new System.Drawing.Point(181, 486);
-            this.mtbxSenha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mtbxSenha.Margin = new System.Windows.Forms.Padding(2);
             this.mtbxSenha.Name = "mtbxSenha";
             this.mtbxSenha.PasswordChar = '*';
             this.mtbxSenha.Size = new System.Drawing.Size(282, 20);
@@ -206,7 +206,7 @@ namespace LivrariaTor
             // mtbxCpf
             // 
             this.mtbxCpf.Location = new System.Drawing.Point(181, 356);
-            this.mtbxCpf.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mtbxCpf.Margin = new System.Windows.Forms.Padding(2);
             this.mtbxCpf.Mask = "000.000.000-00";
             this.mtbxCpf.Name = "mtbxCpf";
             this.mtbxCpf.Size = new System.Drawing.Size(282, 20);
@@ -236,7 +236,7 @@ namespace LivrariaTor
             // mtbxConfirmarSenha
             // 
             this.mtbxConfirmarSenha.Location = new System.Drawing.Point(181, 544);
-            this.mtbxConfirmarSenha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mtbxConfirmarSenha.Margin = new System.Windows.Forms.Padding(2);
             this.mtbxConfirmarSenha.Name = "mtbxConfirmarSenha";
             this.mtbxConfirmarSenha.PasswordChar = '*';
             this.mtbxConfirmarSenha.Size = new System.Drawing.Size(282, 20);
@@ -271,9 +271,9 @@ namespace LivrariaTor
             this.label7.ForeColor = System.Drawing.Color.Purple;
             this.label7.Location = new System.Drawing.Point(486, 421);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 19);
+            this.label7.Size = new System.Drawing.Size(57, 19);
             this.label7.TabIndex = 27;
-            this.label7.Text = "Bairro";
+            this.label7.Text = "Bairro:";
             // 
             // label8
             // 
@@ -325,12 +325,12 @@ namespace LivrariaTor
             // btnSelecionarIMG
             // 
             this.btnSelecionarIMG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelecionarIMG.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnSelecionarIMG.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelecionarIMG.ForeColor = System.Drawing.Color.Purple;
             this.btnSelecionarIMG.Location = new System.Drawing.Point(55, 177);
-            this.btnSelecionarIMG.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSelecionarIMG.Margin = new System.Windows.Forms.Padding(2);
             this.btnSelecionarIMG.Name = "btnSelecionarIMG";
-            this.btnSelecionarIMG.Size = new System.Drawing.Size(106, 24);
+            this.btnSelecionarIMG.Size = new System.Drawing.Size(106, 27);
             this.btnSelecionarIMG.TabIndex = 34;
             this.btnSelecionarIMG.Text = "Selecionar";
             this.btnSelecionarIMG.UseVisualStyleBackColor = true;

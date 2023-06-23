@@ -56,7 +56,7 @@ namespace LivrariaTor.View
             this.panel1.Controls.Add(this.lblLivraria);
             this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(901, 57);
             this.panel1.TabIndex = 18;
@@ -127,7 +127,7 @@ namespace LivrariaTor.View
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(50, 86);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(653, 277);
+            this.listBox1.Size = new System.Drawing.Size(797, 524);
             this.listBox1.TabIndex = 19;
             // 
             // Maisvendidos

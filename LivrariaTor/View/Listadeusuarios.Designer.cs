@@ -90,9 +90,10 @@ namespace LivrariaTor.View
             // 
             // btnVoltarTelaPrincipal
             // 
-            this.btnVoltarTelaPrincipal.Location = new System.Drawing.Point(40, 512);
+            this.btnVoltarTelaPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltarTelaPrincipal.Location = new System.Drawing.Point(32, 512);
             this.btnVoltarTelaPrincipal.Name = "btnVoltarTelaPrincipal";
-            this.btnVoltarTelaPrincipal.Size = new System.Drawing.Size(119, 23);
+            this.btnVoltarTelaPrincipal.Size = new System.Drawing.Size(158, 27);
             this.btnVoltarTelaPrincipal.TabIndex = 8;
             this.btnVoltarTelaPrincipal.Text = "Voltar";
             this.btnVoltarTelaPrincipal.UseVisualStyleBackColor = true;
@@ -113,10 +114,11 @@ namespace LivrariaTor.View
             // 
             // btnDeletar
             // 
-            this.btnDeletar.Location = new System.Drawing.Point(40, 369);
+            this.btnDeletar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeletar.Location = new System.Drawing.Point(32, 372);
             this.btnDeletar.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeletar.Name = "btnDeletar";
-            this.btnDeletar.Size = new System.Drawing.Size(119, 28);
+            this.btnDeletar.Size = new System.Drawing.Size(158, 28);
             this.btnDeletar.TabIndex = 6;
             this.btnDeletar.Text = "Deletar";
             this.btnDeletar.UseVisualStyleBackColor = true;
@@ -124,10 +126,11 @@ namespace LivrariaTor.View
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(99, 337);
+            this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.Location = new System.Drawing.Point(98, 340);
             this.btnCadastrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(60, 28);
+            this.btnCadastrar.Size = new System.Drawing.Size(92, 28);
             this.btnCadastrar.TabIndex = 4;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
@@ -135,10 +138,11 @@ namespace LivrariaTor.View
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(40, 337);
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Location = new System.Drawing.Point(32, 340);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(58, 28);
+            this.btnEditar.Size = new System.Drawing.Size(62, 28);
             this.btnEditar.TabIndex = 3;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;

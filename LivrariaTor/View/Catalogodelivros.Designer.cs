@@ -80,9 +80,9 @@ namespace LivrariaTor.View
             // pictureBox1
             // 
             this.pictureBox1.Image = global::LivrariaTor.Properties.Resources.lupa_pesquisar;
-            this.pictureBox1.Location = new System.Drawing.Point(655, 7);
+            this.pictureBox1.Location = new System.Drawing.Point(656, 7);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(43, 43);
+            this.pictureBox1.Size = new System.Drawing.Size(43, 44);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -90,7 +90,7 @@ namespace LivrariaTor.View
             // tbxPesquisa
             // 
             this.tbxPesquisa.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbxPesquisa.Location = new System.Drawing.Point(262, 18);
+            this.tbxPesquisa.Location = new System.Drawing.Point(262, 21);
             this.tbxPesquisa.Margin = new System.Windows.Forms.Padding(2);
             this.tbxPesquisa.Name = "tbxPesquisa";
             this.tbxPesquisa.Size = new System.Drawing.Size(377, 20);
@@ -115,12 +115,12 @@ namespace LivrariaTor.View
             // btnVoltarTelaPrincipal
             // 
             this.btnVoltarTelaPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltarTelaPrincipal.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnVoltarTelaPrincipal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVoltarTelaPrincipal.ForeColor = System.Drawing.Color.Purple;
             this.btnVoltarTelaPrincipal.Location = new System.Drawing.Point(26, 468);
             this.btnVoltarTelaPrincipal.Margin = new System.Windows.Forms.Padding(2);
             this.btnVoltarTelaPrincipal.Name = "btnVoltarTelaPrincipal";
-            this.btnVoltarTelaPrincipal.Size = new System.Drawing.Size(150, 28);
+            this.btnVoltarTelaPrincipal.Size = new System.Drawing.Size(161, 28);
             this.btnVoltarTelaPrincipal.TabIndex = 10;
             this.btnVoltarTelaPrincipal.Text = "Voltar";
             this.btnVoltarTelaPrincipal.UseVisualStyleBackColor = true;
@@ -142,12 +142,12 @@ namespace LivrariaTor.View
             // btnAdicionarCarrinho
             // 
             this.btnAdicionarCarrinho.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionarCarrinho.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnAdicionarCarrinho.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdicionarCarrinho.ForeColor = System.Drawing.Color.Purple;
-            this.btnAdicionarCarrinho.Location = new System.Drawing.Point(26, 274);
+            this.btnAdicionarCarrinho.Location = new System.Drawing.Point(8, 278);
             this.btnAdicionarCarrinho.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdicionarCarrinho.Name = "btnAdicionarCarrinho";
-            this.btnAdicionarCarrinho.Size = new System.Drawing.Size(150, 31);
+            this.btnAdicionarCarrinho.Size = new System.Drawing.Size(179, 49);
             this.btnAdicionarCarrinho.TabIndex = 7;
             this.btnAdicionarCarrinho.Text = "Adiocionar ao Carrinho";
             this.btnAdicionarCarrinho.UseVisualStyleBackColor = true;
@@ -156,12 +156,12 @@ namespace LivrariaTor.View
             // btnDeletarLivro
             // 
             this.btnDeletarLivro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeletarLivro.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnDeletarLivro.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeletarLivro.ForeColor = System.Drawing.Color.Purple;
             this.btnDeletarLivro.Location = new System.Drawing.Point(26, 409);
             this.btnDeletarLivro.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeletarLivro.Name = "btnDeletarLivro";
-            this.btnDeletarLivro.Size = new System.Drawing.Size(150, 28);
+            this.btnDeletarLivro.Size = new System.Drawing.Size(161, 28);
             this.btnDeletarLivro.TabIndex = 6;
             this.btnDeletarLivro.Text = "Deletar";
             this.btnDeletarLivro.UseVisualStyleBackColor = true;
@@ -170,12 +170,12 @@ namespace LivrariaTor.View
             // btnCadastrarLivro
             // 
             this.btnCadastrarLivro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrarLivro.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnCadastrarLivro.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrarLivro.ForeColor = System.Drawing.Color.Purple;
             this.btnCadastrarLivro.Location = new System.Drawing.Point(99, 370);
             this.btnCadastrarLivro.Margin = new System.Windows.Forms.Padding(2);
             this.btnCadastrarLivro.Name = "btnCadastrarLivro";
-            this.btnCadastrarLivro.Size = new System.Drawing.Size(77, 28);
+            this.btnCadastrarLivro.Size = new System.Drawing.Size(88, 28);
             this.btnCadastrarLivro.TabIndex = 4;
             this.btnCadastrarLivro.Text = "Cadastrar";
             this.btnCadastrarLivro.UseVisualStyleBackColor = true;
@@ -184,7 +184,7 @@ namespace LivrariaTor.View
             // btnEditarLivro
             // 
             this.btnEditarLivro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarLivro.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnEditarLivro.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarLivro.ForeColor = System.Drawing.Color.Purple;
             this.btnEditarLivro.Location = new System.Drawing.Point(26, 370);
             this.btnEditarLivro.Margin = new System.Windows.Forms.Padding(2);
@@ -209,7 +209,7 @@ namespace LivrariaTor.View
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.lblTitulo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Location = new System.Drawing.Point(76, 205);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo.Name = "lblTitulo";

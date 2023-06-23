@@ -57,10 +57,10 @@ namespace LivrariaTor.View
             this.tbxNunCartao = new System.Windows.Forms.TextBox();
             this.gbxInfoUsuario = new System.Windows.Forms.GroupBox();
             this.gbxInfoPagamento = new System.Windows.Forms.GroupBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.mtbxTelefoneTitular = new System.Windows.Forms.MaskedTextBox();
-            this.mtbxCpfTitular = new System.Windows.Forms.MaskedTextBox();
             this.mtbxValidadeCartao = new System.Windows.Forms.MaskedTextBox();
+            this.mtbxCpfTitular = new System.Windows.Forms.MaskedTextBox();
+            this.mtbxTelefoneTitular = new System.Windows.Forms.MaskedTextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxCarrinho)).BeginInit();
             this.gbxFormasPagamento.SuspendLayout();
@@ -111,7 +111,7 @@ namespace LivrariaTor.View
             // btnConfirmarPagamento
             // 
             this.btnConfirmarPagamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmarPagamento.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnConfirmarPagamento.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmarPagamento.ForeColor = System.Drawing.Color.Purple;
             this.btnConfirmarPagamento.Location = new System.Drawing.Point(667, 587);
             this.btnConfirmarPagamento.Name = "btnConfirmarPagamento";
@@ -124,7 +124,7 @@ namespace LivrariaTor.View
             // lblTotalAPagar
             // 
             this.lblTotalAPagar.AutoSize = true;
-            this.lblTotalAPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblTotalAPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalAPagar.Location = new System.Drawing.Point(24, 86);
             this.lblTotalAPagar.Name = "lblTotalAPagar";
             this.lblTotalAPagar.Size = new System.Drawing.Size(133, 25);
@@ -376,27 +376,14 @@ namespace LivrariaTor.View
             this.gbxInfoPagamento.TabStop = false;
             this.gbxInfoPagamento.Text = "Informações de Pagamento";
             // 
-            // btnCancelar
+            // mtbxValidadeCartao
             // 
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnCancelar.ForeColor = System.Drawing.Color.Purple;
-            this.btnCancelar.Location = new System.Drawing.Point(29, 587);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(201, 36);
-            this.btnCancelar.TabIndex = 53;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // mtbxTelefoneTitular
-            // 
-            this.mtbxTelefoneTitular.Location = new System.Drawing.Point(154, 230);
-            this.mtbxTelefoneTitular.Margin = new System.Windows.Forms.Padding(2);
-            this.mtbxTelefoneTitular.Mask = "(00) 0 0000-0000";
-            this.mtbxTelefoneTitular.Name = "mtbxTelefoneTitular";
-            this.mtbxTelefoneTitular.Size = new System.Drawing.Size(263, 26);
-            this.mtbxTelefoneTitular.TabIndex = 36;
+            this.mtbxValidadeCartao.Location = new System.Drawing.Point(154, 293);
+            this.mtbxValidadeCartao.Margin = new System.Windows.Forms.Padding(2);
+            this.mtbxValidadeCartao.Mask = "00/0000";
+            this.mtbxValidadeCartao.Name = "mtbxValidadeCartao";
+            this.mtbxValidadeCartao.Size = new System.Drawing.Size(263, 26);
+            this.mtbxValidadeCartao.TabIndex = 36;
             // 
             // mtbxCpfTitular
             // 
@@ -407,14 +394,27 @@ namespace LivrariaTor.View
             this.mtbxCpfTitular.Size = new System.Drawing.Size(261, 26);
             this.mtbxCpfTitular.TabIndex = 36;
             // 
-            // mtbxValidadeCartao
+            // mtbxTelefoneTitular
             // 
-            this.mtbxValidadeCartao.Location = new System.Drawing.Point(154, 293);
-            this.mtbxValidadeCartao.Margin = new System.Windows.Forms.Padding(2);
-            this.mtbxValidadeCartao.Mask = "00/0000";
-            this.mtbxValidadeCartao.Name = "mtbxValidadeCartao";
-            this.mtbxValidadeCartao.Size = new System.Drawing.Size(263, 26);
-            this.mtbxValidadeCartao.TabIndex = 36;
+            this.mtbxTelefoneTitular.Location = new System.Drawing.Point(154, 230);
+            this.mtbxTelefoneTitular.Margin = new System.Windows.Forms.Padding(2);
+            this.mtbxTelefoneTitular.Mask = "(00) 0 0000-0000";
+            this.mtbxTelefoneTitular.Name = "mtbxTelefoneTitular";
+            this.mtbxTelefoneTitular.Size = new System.Drawing.Size(263, 26);
+            this.mtbxTelefoneTitular.TabIndex = 36;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.Purple;
+            this.btnCancelar.Location = new System.Drawing.Point(29, 587);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(201, 36);
+            this.btnCancelar.TabIndex = 53;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // FormasPagamento
             // 

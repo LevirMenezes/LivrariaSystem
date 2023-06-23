@@ -107,7 +107,7 @@ namespace LivrariaTor.View
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(177, 94);
+            this.lblEmail.Location = new System.Drawing.Point(176, 94);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(188, 20);
             this.lblEmail.TabIndex = 7;

@@ -123,10 +123,10 @@ namespace LivrariaTor.View
             // llblCadastrar
             // 
             this.llblCadastrar.AutoSize = true;
-            this.llblCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llblCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llblCadastrar.Location = new System.Drawing.Point(382, 261);
             this.llblCadastrar.Name = "llblCadastrar";
-            this.llblCadastrar.Size = new System.Drawing.Size(96, 20);
+            this.llblCadastrar.Size = new System.Drawing.Size(107, 20);
             this.llblCadastrar.TabIndex = 24;
             this.llblCadastrar.TabStop = true;
             this.llblCadastrar.Text = "Cadastre-se";
@@ -135,7 +135,7 @@ namespace LivrariaTor.View
             // btnEntrar
             // 
             this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEntrar.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnEntrar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEntrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(22)))), ((int)(((byte)(143)))));
             this.btnEntrar.Location = new System.Drawing.Point(366, 314);
             this.btnEntrar.Name = "btnEntrar";
