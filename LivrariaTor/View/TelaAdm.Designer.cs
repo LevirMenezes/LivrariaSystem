@@ -109,7 +109,7 @@ namespace LivrariaTor.View
             this.btnRelatorioEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRelatorioEstoque.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRelatorioEstoque.ForeColor = System.Drawing.Color.Purple;
-            this.btnRelatorioEstoque.Location = new System.Drawing.Point(503, 326);
+            this.btnRelatorioEstoque.Location = new System.Drawing.Point(503, 324);
             this.btnRelatorioEstoque.Name = "btnRelatorioEstoque";
             this.btnRelatorioEstoque.Size = new System.Drawing.Size(178, 68);
             this.btnRelatorioEstoque.TabIndex = 22;

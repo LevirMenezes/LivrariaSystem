@@ -111,7 +111,7 @@ namespace LivrariaTor.View
             // btnConfirmarPagamento
             // 
             this.btnConfirmarPagamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmarPagamento.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnConfirmarPagamento.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmarPagamento.ForeColor = System.Drawing.Color.Purple;
             this.btnConfirmarPagamento.Location = new System.Drawing.Point(667, 587);
             this.btnConfirmarPagamento.Name = "btnConfirmarPagamento";
@@ -124,7 +124,7 @@ namespace LivrariaTor.View
             // lblTotalAPagar
             // 
             this.lblTotalAPagar.AutoSize = true;
-            this.lblTotalAPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblTotalAPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalAPagar.Location = new System.Drawing.Point(24, 86);
             this.lblTotalAPagar.Name = "lblTotalAPagar";
             this.lblTotalAPagar.Size = new System.Drawing.Size(133, 25);
@@ -372,6 +372,36 @@ namespace LivrariaTor.View
             this.gbxInfoPagamento.Text = "Informações de Pagamento";
             // 
             // mtbxValidadeCartao
+            // 
+            this.mtbxValidadeCartao.Location = new System.Drawing.Point(154, 293);
+            this.mtbxValidadeCartao.Margin = new System.Windows.Forms.Padding(2);
+            this.mtbxValidadeCartao.Mask = "00/0000";
+            this.mtbxValidadeCartao.Name = "mtbxValidadeCartao";
+            this.mtbxValidadeCartao.Size = new System.Drawing.Size(263, 26);
+            this.mtbxValidadeCartao.TabIndex = 36;
+            // 
+            // mtbxCpfTitular
+            // 
+            this.mtbxCpfTitular.Location = new System.Drawing.Point(154, 163);
+            this.mtbxCpfTitular.Margin = new System.Windows.Forms.Padding(2);
+            this.mtbxCpfTitular.Mask = "000,000,000-00";
+            this.mtbxCpfTitular.Name = "mtbxCpfTitular";
+            this.mtbxCpfTitular.Size = new System.Drawing.Size(261, 26);
+            this.mtbxCpfTitular.TabIndex = 36;
+            // 
+            // mtbxTelefoneTitular
+            // 
+            this.mtbxTelefoneTitular.Location = new System.Drawing.Point(154, 230);
+            this.mtbxTelefoneTitular.Margin = new System.Windows.Forms.Padding(2);
+            this.mtbxTelefoneTitular.Mask = "(00) 0 0000-0000";
+            this.mtbxTelefoneTitular.Name = "mtbxTelefoneTitular";
+            this.mtbxTelefoneTitular.Size = new System.Drawing.Size(263, 26);
+            this.mtbxTelefoneTitular.TabIndex = 36;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             this.mtbxValidadeCartao.Location = new System.Drawing.Point(154, 293);
             this.mtbxValidadeCartao.Margin = new System.Windows.Forms.Padding(2);

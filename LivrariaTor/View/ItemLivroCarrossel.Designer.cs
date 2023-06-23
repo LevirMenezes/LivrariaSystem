@@ -47,7 +47,7 @@
             this.pnlLivro.Controls.Add(this.lblTitulo);
             this.pnlLivro.Controls.Add(this.picboxLivro);
             this.pnlLivro.Location = new System.Drawing.Point(12, 11);
-            this.pnlLivro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlLivro.Margin = new System.Windows.Forms.Padding(2);
             this.pnlLivro.Name = "pnlLivro";
             this.pnlLivro.Size = new System.Drawing.Size(192, 314);
             this.pnlLivro.TabIndex = 0;
@@ -74,10 +74,11 @@
             // 
             // btnComprar
             // 
-            this.btnComprar.Location = new System.Drawing.Point(58, 261);
-            this.btnComprar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnComprar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnComprar.Location = new System.Drawing.Point(58, 260);
+            this.btnComprar.Margin = new System.Windows.Forms.Padding(2);
             this.btnComprar.Name = "btnComprar";
-            this.btnComprar.Size = new System.Drawing.Size(76, 27);
+            this.btnComprar.Size = new System.Drawing.Size(78, 27);
             this.btnComprar.TabIndex = 2;
             this.btnComprar.Text = "Comprar";
             this.btnComprar.UseVisualStyleBackColor = true;
@@ -97,7 +98,7 @@
             // 
             this.picboxLivro.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picboxLivro.Location = new System.Drawing.Point(32, 28);
-            this.picboxLivro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picboxLivro.Margin = new System.Windows.Forms.Padding(2);
             this.picboxLivro.Name = "picboxLivro";
             this.picboxLivro.Size = new System.Drawing.Size(126, 144);
             this.picboxLivro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
