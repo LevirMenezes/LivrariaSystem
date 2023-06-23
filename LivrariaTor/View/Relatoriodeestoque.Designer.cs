@@ -35,7 +35,7 @@ namespace LivrariaTor.View
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnVoltarTelaPrincipal = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.fpnlEstoque = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -89,20 +89,20 @@ namespace LivrariaTor.View
             this.btnVoltarTelaPrincipal.UseVisualStyleBackColor = true;
             this.btnVoltarTelaPrincipal.Click += new System.EventHandler(this.btnVoltarTelaPrincipal_Click);
             // 
-            // flowLayoutPanel1
+            // fpnlEstoque
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(200, 57);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(698, 583);
-            this.flowLayoutPanel1.TabIndex = 19;
+            this.fpnlEstoque.AutoScroll = true;
+            this.fpnlEstoque.Location = new System.Drawing.Point(200, 57);
+            this.fpnlEstoque.Name = "fpnlEstoque";
+            this.fpnlEstoque.Size = new System.Drawing.Size(698, 583);
+            this.fpnlEstoque.TabIndex = 19;
             // 
             // Relatoriodeestoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 640);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.fpnlEstoque);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -116,26 +116,12 @@ namespace LivrariaTor.View
             this.ResumeLayout(false);
 
         }
-
-        private void btnVoltarTelaPrincipal_Click(object sender, EventArgs e)
-        {
-            TelaAdm form_adm = new TelaAdm();
-            form_adm.Show();
-            this.Close();
-        }
-
-        private void Relatoriodeestoque_Load(object sender, EventArgs e)
-        {
-           
-        }
-
-       
         #endregion
 
         private System.Windows.Forms.Label lblLivraria;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel fpnlEstoque;
         private System.Windows.Forms.Button btnVoltarTelaPrincipal;
     }
 }

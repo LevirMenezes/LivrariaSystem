@@ -13,25 +13,24 @@ namespace LivrariaTor.View
 {
     public partial class ItemRelatorioestoque : UserControl
     {
-        private string _title;
-        private decimal _AnodePublicacao;
-        private decimal _precoLivro;
-        private decimal _isbn;
-        private decimal _Estoque;
-        private Image _imagemLivro;
+        private string   _title;
+        private string _AnodePublicacao;
+        private decimal  _precoLivro;
+        private string   _isbn;
+        private int      _Estoque;
+        private Image    _imagemLivro;
 
-        public LivroEnt Livro { get; set; }
+        public string   Title           { get => _title;           set { _title           = value; lblTituloLivro.Text   = value; } }
 
-        public string Title { get => _title; set { _title = value; lblTituloLivro.Text = value; } }
+        public string AnodePublicacao { get => _AnodePublicacao; set { _AnodePublicacao = value; lblAnopublicacao.Text = value.ToString(); } }
 
-        public decimal AnodePublicacao { get => _AnodePublicacao; set { _AnodePublicacao = value; lblAnopublicacao.Text = value.ToString("F2"); } }
+        public decimal  PrecoLivro      { get => _precoLivro;      set { _precoLivro      = value; lblPreco.Text         = value.ToString("F2"); } }
+                                        
+        public string   Isbn            { get => _isbn;            set { _isbn            = value; lblIsbn.Text          = value; } }
+                                                                   
+        public int      Estoque         { get => _Estoque;         set { _Estoque         = value; lblEstoque.Text       = value.ToString(); } }
 
-        public decimal PrecoLivro { get => _precoLivro; set { _precoLivro = value; lblPreco.Text = value.ToString("F2"); } }
-
-        public decimal isbn { get => _isbn; set { _isbn = value; lblIsbn.Text = value.ToString("F4"); } }
-        public decimal Estoque { get => _Estoque; set { _Estoque = value; lblEstoque.Text = value.ToString("F2"); } }
-
-        public Image ImagemLivro { get => _imagemLivro; set { _imagemLivro = value; picboxLivro.Image = value; } }
+        public Image    ImagemLivro     { get => _imagemLivro;     set { _imagemLivro     = value; picboxLivro.Image     = value; } }
 
         public ItemRelatorioestoque()
         {

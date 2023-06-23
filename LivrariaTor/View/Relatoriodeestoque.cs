@@ -16,7 +16,6 @@ namespace LivrariaTor.View
     {
         private LivroController LivroController = new LivroController();
         private List<LivroEnt> Livros;
-        private LivroEnt LivroSelecionado = null;
 
         public Relatoriodeestoque()
         {
@@ -24,39 +23,45 @@ namespace LivrariaTor.View
             Livros = LivroController.PegaLivroEstoque();
         }
 
-        private void RelatorioRelatoriodeestoque_Load(object sender, EventArgs e)
-        {
-            PopularLista();
-        }
-
         private void PopularLista()
         {
             List<ItemRelatorioestoque> ItensRelatorio = new List<ItemRelatorioestoque>();
 
             // Verifica se tem algum item no FlowLayout, se tiver algum item ele limpa o layout
-            if (flowLayoutPanel1.Controls.Count > 0)
+            if (fpnlEstoque.Controls.Count > 0)
             {
-                flowLayoutPanel1.Controls.Clear();
+                fpnlEstoque.Controls.Clear();
             }
-
 
             foreach (LivroEnt livro in Livros)
             {
                 Image img = livro.ByteToIMG();
                 ItemRelatorioestoque item = new ItemRelatorioestoque();
-                item.Livro = livro;
-                item.ImagemLivro = (img == null ? Properties.Resources.adicionar_foto : img);
-                item.Title = livro.Titulo;
-                item.PrecoLivro = livro.Preco;
+                item.ImagemLivro          = (img == null ? Properties.Resources.adicionar_foto : img);
+                item.Title                = livro.Titulo;
+                item.PrecoLivro           = livro.Preco;
+                item.Isbn                 = livro.Isbn;
+                item.AnodePublicacao      = livro.AnoPublicacao;
+                item.Estoque              = livro.Estoque;
 
-                item.Width = flowLayoutPanel1.Width;
+                item.Width                = fpnlEstoque.Width;
 
                 ItensRelatorio.Add(item);
 
-                flowLayoutPanel1.Controls.Add(item);
+                fpnlEstoque.Controls.Add(item);
             }
         }
 
-       
+        private void Relatoriodeestoque_Load(object sender, EventArgs e)
+        {
+            PopularLista();
+        }
+
+        private void btnVoltarTelaPrincipal_Click(object sender, EventArgs e)
+        {
+            TelaAdm form_telaadm = new TelaAdm();
+            form_telaadm.Show();
+            this.Close();
+        }
     }
 }
