@@ -16,5 +16,10 @@ namespace LivrariaTor.View
         {
             InitializeComponent();
         }
+
+        private void Formas_de_pagamento_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

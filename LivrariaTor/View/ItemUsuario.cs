@@ -48,5 +48,10 @@ namespace LivrariaTor.View
         {
             ItemClicado?.Invoke(this, new ItemUsuarioEventArgs(Usuario, Imagem));
         }
+
+        private void ItemUsuario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

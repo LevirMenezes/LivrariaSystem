@@ -32,7 +32,9 @@ namespace LivrariaTor.View
 
         private void btnRelatorioEstoque_Click(object sender, EventArgs e)
         {
-
+            Relatoriodeestoque form_relatoriodeestoque = new Relatoriodeestoque();
+            form_relatoriodeestoque.Show();
+            this.Close();
         }
 
         private void btnTelaPrincipal_Click(object sender, EventArgs e)
