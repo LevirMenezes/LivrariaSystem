@@ -494,7 +494,7 @@ namespace LivrariaTor
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::LivrariaTor.Properties.Resources._1492719123_rocket_83625;
+            this.pictureBox3.Image = global::LivrariaTor.Properties.Resources.startup_rocket_spaceship_launch_business_icon_191142;
             this.pictureBox3.Location = new System.Drawing.Point(200, 2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(46, 47);
