@@ -63,6 +63,16 @@ namespace LivrariaTor.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1492719123_rocket_83625 {
+            get {
+                object obj = ResourceManager.GetObject("1492719123-rocket_83625", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add_autor {
             get {
                 object obj = ResourceManager.GetObject("add_autor", resourceCulture);
@@ -76,6 +86,36 @@ namespace LivrariaTor.Properties {
         internal static System.Drawing.Bitmap adicionar_foto {
             get {
                 object obj = ResourceManager.GetObject("adicionar_foto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap best_choice_recommended_icon_220381 {
+            get {
+                object obj = ResourceManager.GetObject("best_choice_recommended_icon_220381", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap book {
+            get {
+                object obj = ResourceManager.GetObject("book", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap books_library_study_icon_150963 {
+            get {
+                object obj = ResourceManager.GetObject("books_library_study_icon_150963", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -116,6 +156,9 @@ namespace LivrariaTor.Properties {
         internal static System.Drawing.Bitmap livro_tipo1 {
             get {
                 object obj = ResourceManager.GetObject("livro-tipo1", resourceCulture);
+        internal static System.Drawing.Bitmap key {
+            get {
+                object obj = ResourceManager.GetObject("key", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,6 +166,9 @@ namespace LivrariaTor.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap login {
+            get {
+                object obj = ResourceManager.GetObject("login", resourceCulture);
         internal static System.Drawing.Bitmap livro_tipo2 {
             get {
                 object obj = ResourceManager.GetObject("livro_tipo2", resourceCulture);
@@ -173,6 +219,12 @@ namespace LivrariaTor.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap news_communication_message_report_information_icon_143332 {
+            get {
+                object obj = ResourceManager.GetObject("news_communication_message_report_information_icon_143332", resourceCulture);
+        			return ((System.Drawing.Bitmap)(obj));
+            }
+        }
         internal static System.Drawing.Bitmap Retornar {
             get {
                 object obj = ResourceManager.GetObject("Retornar", resourceCulture);
@@ -206,6 +258,17 @@ namespace LivrariaTor.Properties {
         internal static System.Drawing.Bitmap user_add_21977 {
             get {
                 object obj = ResourceManager.GetObject("user_add_21977", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap User_Clipart_PNG_Images__User_Avatar_Login_Interface_Abstract_Purple_User_Icon__Avatar__User__Login_Avatar_PNG_Image_For_Free_Download {
+            get {
+                object obj = ResourceManager.GetObject("User Clipart PNG Images, User Avatar Login Interface Abstract Purple User Icon, A" +
+                        "vatar, User, Login Avatar PNG Image For Free Download", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

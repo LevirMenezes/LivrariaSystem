@@ -330,7 +330,11 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\1492719123-rocket_83625.png" />
     <Content Include="Resources\adicionar-foto.png" />
+    <None Include="Resources\books_library_study_icon_150963.png" />
+    <None Include="Resources\best_choice_recommended_icon_220381.png" />
+    <None Include="Resources\book.png" />
     <Content Include="Resources\icon-fechar-janela.png" />
     <Content Include="Resources\icons8-excluir-100.png" />
     <None Include="Resources\img_colorida.jpg" />
@@ -339,6 +343,10 @@
     <None Include="Resources\icons8-livro-64.png" />
     <None Include="Resources\icons8-livro-100.png" />
     <None Include="Resources\icons8-retornar-80.png" />
+    <None Include="Resources\news_communication_message_report_information_icon_143332.png" />
+    <None Include="Resources\User Clipart PNG Images, User Avatar Login Interface Abstract Purple User Icon, Avatar, User, Login Avatar PNG Image For Free Download.jpg" />
+    <None Include="Resources\login.png" />
+    <None Include="Resources\key.png" />
     <Content Include="Resources\user-example.png" />
     <Content Include="Resources\livro-clean-code.jpg" />
     <Content Include="Resources\lupa-pesquisar.png" />

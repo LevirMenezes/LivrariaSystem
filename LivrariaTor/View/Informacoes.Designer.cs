@@ -79,7 +79,6 @@ namespace LivrariaTor.View
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(900, 57);
             this.panel1.TabIndex = 17;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // pictureBox2
             // 
@@ -229,7 +228,7 @@ namespace LivrariaTor.View
             // pictureBox9
             // 
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(12, 162);
+            this.pictureBox9.Location = new System.Drawing.Point(12, 143);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(183, 166);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -238,7 +237,7 @@ namespace LivrariaTor.View
             // 
             // label5
             // 
-            this.label5.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label5.Location = new System.Drawing.Point(201, 118);
             this.label5.Name = "label5";
@@ -300,10 +299,7 @@ namespace LivrariaTor.View
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+       
 
         #endregion
 

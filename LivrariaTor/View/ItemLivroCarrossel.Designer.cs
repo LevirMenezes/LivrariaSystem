@@ -65,20 +65,20 @@
             // 
             this.lblPrecoLivro.AutoSize = true;
             this.lblPrecoLivro.BackColor = System.Drawing.Color.Transparent;
-            this.lblPrecoLivro.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecoLivro.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrecoLivro.Location = new System.Drawing.Point(67, 214);
             this.lblPrecoLivro.Name = "lblPrecoLivro";
-            this.lblPrecoLivro.Size = new System.Drawing.Size(66, 26);
+            this.lblPrecoLivro.Size = new System.Drawing.Size(59, 23);
             this.lblPrecoLivro.TabIndex = 5;
             this.lblPrecoLivro.Text = "79,99";
             // 
             // btnComprar
             // 
-            this.btnComprar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComprar.Location = new System.Drawing.Point(58, 260);
+            this.btnComprar.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnComprar.Location = new System.Drawing.Point(52, 259);
             this.btnComprar.Margin = new System.Windows.Forms.Padding(2);
             this.btnComprar.Name = "btnComprar";
-            this.btnComprar.Size = new System.Drawing.Size(78, 27);
+            this.btnComprar.Size = new System.Drawing.Size(89, 27);
             this.btnComprar.TabIndex = 2;
             this.btnComprar.Text = "Comprar";
             this.btnComprar.UseVisualStyleBackColor = true;
@@ -86,11 +86,11 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.lblTitulo.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Location = new System.Drawing.Point(66, 180);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(56, 24);
+            this.lblTitulo.Size = new System.Drawing.Size(53, 21);
             this.lblTitulo.TabIndex = 1;
             this.lblTitulo.Text = "Titulo";
             // 

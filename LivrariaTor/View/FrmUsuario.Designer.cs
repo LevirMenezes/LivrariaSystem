@@ -65,16 +65,18 @@ namespace LivrariaTor
             // 
             // tbxNome
             // 
-            this.tbxNome.Location = new System.Drawing.Point(178, 221);
+            this.tbxNome.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxNome.Location = new System.Drawing.Point(179, 219);
             this.tbxNome.Name = "tbxNome";
-            this.tbxNome.Size = new System.Drawing.Size(282, 20);
+            this.tbxNome.Size = new System.Drawing.Size(284, 26);
             this.tbxNome.TabIndex = 0;
             // 
             // tbxEmail
             // 
+            this.tbxEmail.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxEmail.Location = new System.Drawing.Point(181, 422);
             this.tbxEmail.Name = "tbxEmail";
-            this.tbxEmail.Size = new System.Drawing.Size(282, 20);
+            this.tbxEmail.Size = new System.Drawing.Size(282, 26);
             this.tbxEmail.TabIndex = 2;
             // 
             // btnSair
@@ -110,7 +112,7 @@ namespace LivrariaTor
             this.lblNomeCompleto.AutoSize = true;
             this.lblNomeCompleto.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNomeCompleto.ForeColor = System.Drawing.Color.Purple;
-            this.lblNomeCompleto.Location = new System.Drawing.Point(52, 217);
+            this.lblNomeCompleto.Location = new System.Drawing.Point(52, 221);
             this.lblNomeCompleto.Name = "lblNomeCompleto";
             this.lblNomeCompleto.Size = new System.Drawing.Size(54, 19);
             this.lblNomeCompleto.TabIndex = 7;
@@ -187,34 +189,37 @@ namespace LivrariaTor
             // 
             // mtbxTelefone
             // 
-            this.mtbxTelefone.Location = new System.Drawing.Point(178, 288);
+            this.mtbxTelefone.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtbxTelefone.Location = new System.Drawing.Point(181, 284);
             this.mtbxTelefone.Margin = new System.Windows.Forms.Padding(2);
             this.mtbxTelefone.Mask = "(00) 0 0000-0000";
             this.mtbxTelefone.Name = "mtbxTelefone";
-            this.mtbxTelefone.Size = new System.Drawing.Size(282, 20);
+            this.mtbxTelefone.Size = new System.Drawing.Size(282, 26);
             this.mtbxTelefone.TabIndex = 16;
             // 
             // mtbxSenha
             // 
-            this.mtbxSenha.Location = new System.Drawing.Point(181, 486);
+            this.mtbxSenha.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtbxSenha.Location = new System.Drawing.Point(181, 482);
             this.mtbxSenha.Margin = new System.Windows.Forms.Padding(2);
             this.mtbxSenha.Name = "mtbxSenha";
             this.mtbxSenha.PasswordChar = '*';
-            this.mtbxSenha.Size = new System.Drawing.Size(282, 20);
+            this.mtbxSenha.Size = new System.Drawing.Size(282, 26);
             this.mtbxSenha.TabIndex = 17;
             // 
             // mtbxCpf
             // 
+            this.mtbxCpf.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtbxCpf.Location = new System.Drawing.Point(181, 356);
             this.mtbxCpf.Margin = new System.Windows.Forms.Padding(2);
             this.mtbxCpf.Mask = "000.000.000-00";
             this.mtbxCpf.Name = "mtbxCpf";
-            this.mtbxCpf.Size = new System.Drawing.Size(282, 20);
+            this.mtbxCpf.Size = new System.Drawing.Size(282, 26);
             this.mtbxCpf.TabIndex = 18;
             // 
             // picboxImgUser
             // 
-            this.picboxImgUser.Image = global::LivrariaTor.Properties.Resources.user_add_21977;
+            this.picboxImgUser.Image = global::LivrariaTor.Properties.Resources.login;
             this.picboxImgUser.Location = new System.Drawing.Point(55, 62);
             this.picboxImgUser.Name = "picboxImgUser";
             this.picboxImgUser.Size = new System.Drawing.Size(106, 106);
@@ -235,11 +240,12 @@ namespace LivrariaTor
             // 
             // mtbxConfirmarSenha
             // 
-            this.mtbxConfirmarSenha.Location = new System.Drawing.Point(181, 544);
+            this.mtbxConfirmarSenha.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtbxConfirmarSenha.Location = new System.Drawing.Point(179, 540);
             this.mtbxConfirmarSenha.Margin = new System.Windows.Forms.Padding(2);
             this.mtbxConfirmarSenha.Name = "mtbxConfirmarSenha";
             this.mtbxConfirmarSenha.PasswordChar = '*';
-            this.mtbxConfirmarSenha.Size = new System.Drawing.Size(282, 20);
+            this.mtbxConfirmarSenha.Size = new System.Drawing.Size(284, 26);
             this.mtbxConfirmarSenha.TabIndex = 21;
             // 
             // label2
@@ -280,7 +286,7 @@ namespace LivrariaTor
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Purple;
-            this.label8.Location = new System.Drawing.Point(486, 354);
+            this.label8.Location = new System.Drawing.Point(483, 356);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(68, 19);
             this.label8.TabIndex = 26;
@@ -310,16 +316,18 @@ namespace LivrariaTor
             // 
             // tbxNumero
             // 
-            this.tbxNumero.Location = new System.Drawing.Point(555, 354);
+            this.tbxNumero.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxNumero.Location = new System.Drawing.Point(555, 352);
             this.tbxNumero.Name = "tbxNumero";
-            this.tbxNumero.Size = new System.Drawing.Size(282, 20);
+            this.tbxNumero.Size = new System.Drawing.Size(282, 26);
             this.tbxNumero.TabIndex = 23;
             // 
             // tbxCEP
             // 
+            this.tbxCEP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxCEP.Location = new System.Drawing.Point(553, 219);
             this.tbxCEP.Name = "tbxCEP";
-            this.tbxCEP.Size = new System.Drawing.Size(282, 20);
+            this.tbxCEP.Size = new System.Drawing.Size(284, 26);
             this.tbxCEP.TabIndex = 22;
             // 
             // btnSelecionarIMG
@@ -338,30 +346,34 @@ namespace LivrariaTor
             // 
             // tbxRua
             // 
-            this.tbxRua.Location = new System.Drawing.Point(553, 287);
+            this.tbxRua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxRua.Location = new System.Drawing.Point(553, 285);
             this.tbxRua.Name = "tbxRua";
-            this.tbxRua.Size = new System.Drawing.Size(282, 20);
+            this.tbxRua.Size = new System.Drawing.Size(284, 26);
             this.tbxRua.TabIndex = 35;
             // 
             // tbxBairro
             // 
+            this.tbxBairro.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxBairro.Location = new System.Drawing.Point(555, 421);
             this.tbxBairro.Name = "tbxBairro";
-            this.tbxBairro.Size = new System.Drawing.Size(282, 20);
+            this.tbxBairro.Size = new System.Drawing.Size(282, 26);
             this.tbxBairro.TabIndex = 36;
             // 
             // tbxCidade
             // 
+            this.tbxCidade.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxCidade.Location = new System.Drawing.Point(555, 484);
             this.tbxCidade.Name = "tbxCidade";
-            this.tbxCidade.Size = new System.Drawing.Size(282, 20);
+            this.tbxCidade.Size = new System.Drawing.Size(282, 26);
             this.tbxCidade.TabIndex = 37;
             // 
             // tbxEstado
             // 
-            this.tbxEstado.Location = new System.Drawing.Point(555, 543);
+            this.tbxEstado.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxEstado.Location = new System.Drawing.Point(555, 539);
             this.tbxEstado.Name = "tbxEstado";
-            this.tbxEstado.Size = new System.Drawing.Size(282, 20);
+            this.tbxEstado.Size = new System.Drawing.Size(84, 26);
             this.tbxEstado.TabIndex = 38;
             // 
             // FrmUsuario
