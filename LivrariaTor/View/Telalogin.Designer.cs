@@ -142,7 +142,7 @@ namespace LivrariaTor.View
             // pictureBox2
             // 
             this.pictureBox2.Image = global::LivrariaTor.Properties.Resources.key;
-            this.pictureBox2.Location = new System.Drawing.Point(750, 381);
+            this.pictureBox2.Location = new System.Drawing.Point(749, 380);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(71, 64);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

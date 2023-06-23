@@ -130,7 +130,7 @@ namespace LivrariaTor.View
 
         private void rbtnDebito_CheckedChanged(object sender, EventArgs e)
         {
-            CbxControleFormaPagamento = 2;
+            CbxControleFormaPagamento = 3;
         }
 
         #endregion

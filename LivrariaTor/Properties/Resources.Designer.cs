@@ -19,7 +19,7 @@ namespace LivrariaTor.Properties {
     // através de uma ferramenta como ResGen ou Visual Studio.
     // Para adicionar ou remover um associado, edite o arquivo .ResX e execute ResGen novamente
     // com a opção /str, ou recrie o projeto do VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -93,6 +93,16 @@ namespace LivrariaTor.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap administrator {
+            get {
+                object obj = ResourceManager.GetObject("administrator", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap best_choice_recommended_icon_220381 {
             get {
                 object obj = ResourceManager.GetObject("best_choice_recommended_icon_220381", resourceCulture);
@@ -116,6 +126,36 @@ namespace LivrariaTor.Properties {
         internal static System.Drawing.Bitmap books_library_study_icon_150963 {
             get {
                 object obj = ResourceManager.GetObject("books_library_study_icon_150963", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap exit__1_ {
+            get {
+                object obj = ResourceManager.GetObject("exit (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap exit__1_1 {
+            get {
+                object obj = ResourceManager.GetObject("exit (1)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap home {
+            get {
+                object obj = ResourceManager.GetObject("home", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -266,6 +306,16 @@ namespace LivrariaTor.Properties {
         internal static System.Drawing.Bitmap seta_esquerda {
             get {
                 object obj = ResourceManager.GetObject("seta_esquerda", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap startup_rocket_spaceship_launch_business_icon_191142 {
+            get {
+                object obj = ResourceManager.GetObject("startup_rocket_spaceship_launch_business_icon_191142", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

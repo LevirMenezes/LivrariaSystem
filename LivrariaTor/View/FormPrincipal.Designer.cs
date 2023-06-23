@@ -32,8 +32,8 @@ namespace LivrariaTor
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.panelConteiner = new System.Windows.Forms.Panel();
             this.painelFormularios = new System.Windows.Forms.Panel();
-            this.btnTelaAdm = new System.Windows.Forms.Button();
-            this.btnLogout = new System.Windows.Forms.Button();
+            this.BtnLogout = new System.Windows.Forms.PictureBox();
+            this.BtnAdm = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSetaDireita = new System.Windows.Forms.PictureBox();
             this.pnlIMG3 = new System.Windows.Forms.Panel();
@@ -74,6 +74,8 @@ namespace LivrariaTor
             this.btnFechar = new System.Windows.Forms.PictureBox();
             this.panelConteiner.SuspendLayout();
             this.painelFormularios.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnLogout)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnAdm)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSetaDireita)).BeginInit();
             this.pnlIMG3.SuspendLayout();
@@ -113,8 +115,8 @@ namespace LivrariaTor
             this.painelFormularios.BackColor = System.Drawing.Color.White;
             this.painelFormularios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.painelFormularios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.painelFormularios.Controls.Add(this.btnTelaAdm);
-            this.painelFormularios.Controls.Add(this.btnLogout);
+            this.painelFormularios.Controls.Add(this.BtnLogout);
+            this.painelFormularios.Controls.Add(this.BtnAdm);
             this.painelFormularios.Controls.Add(this.panel3);
             this.painelFormularios.Controls.Add(this.panel2);
             this.painelFormularios.Controls.Add(this.panel1);
@@ -123,36 +125,31 @@ namespace LivrariaTor
             this.painelFormularios.Size = new System.Drawing.Size(898, 648);
             this.painelFormularios.TabIndex = 2;
             // 
-            // btnTelaAdm
+            // BtnLogout
             // 
-            this.btnTelaAdm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTelaAdm.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTelaAdm.ForeColor = System.Drawing.Color.Purple;
-            this.btnTelaAdm.Location = new System.Drawing.Point(22, 581);
-            this.btnTelaAdm.Name = "btnTelaAdm";
-            this.btnTelaAdm.Size = new System.Drawing.Size(112, 33);
-            this.btnTelaAdm.TabIndex = 4;
-            this.btnTelaAdm.Text = "Tela Adm";
-            this.btnTelaAdm.UseVisualStyleBackColor = true;
-            this.btnTelaAdm.Click += new System.EventHandler(this.btnTelaAdm_Click);
+            this.BtnLogout.Image = global::LivrariaTor.Properties.Resources.exit__1_;
+            this.BtnLogout.Location = new System.Drawing.Point(813, 581);
+            this.BtnLogout.Name = "BtnLogout";
+            this.BtnLogout.Size = new System.Drawing.Size(65, 50);
+            this.BtnLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.BtnLogout.TabIndex = 6;
+            this.BtnLogout.TabStop = false;
+            this.BtnLogout.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
-            // btnLogout
+            // BtnAdm
             // 
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(22)))), ((int)(((byte)(143)))));
-            this.btnLogout.Location = new System.Drawing.Point(766, 581);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(112, 33);
-            this.btnLogout.TabIndex = 3;
-            this.btnLogout.Text = "LogOut";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            this.BtnAdm.Image = global::LivrariaTor.Properties.Resources.administrator;
+            this.BtnAdm.Location = new System.Drawing.Point(22, 581);
+            this.BtnAdm.Name = "BtnAdm";
+            this.BtnAdm.Size = new System.Drawing.Size(65, 50);
+            this.BtnAdm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.BtnAdm.TabIndex = 5;
+            this.BtnAdm.TabStop = false;
+            this.BtnAdm.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(179)))), ((int)(((byte)(242)))));
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.btnSetaDireita);
             this.panel3.Controls.Add(this.pnlIMG3);
@@ -426,7 +423,7 @@ namespace LivrariaTor
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(179)))), ((int)(((byte)(242)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.LKlInformacoes);
             this.panel2.Controls.Add(this.LklMaisVendidos);
@@ -437,7 +434,7 @@ namespace LivrariaTor
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.LklLivros);
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(22)))), ((int)(((byte)(143)))));
-            this.panel2.Location = new System.Drawing.Point(22, 73);
+            this.panel2.Location = new System.Drawing.Point(22, 88);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(856, 50);
@@ -476,7 +473,7 @@ namespace LivrariaTor
             this.LKlLancamentos.AutoSize = true;
             this.LKlLancamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LKlLancamentos.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(22)))), ((int)(((byte)(143)))));
-            this.LKlLancamentos.Location = new System.Drawing.Point(246, 17);
+            this.LKlLancamentos.Location = new System.Drawing.Point(259, 17);
             this.LKlLancamentos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LKlLancamentos.Name = "LKlLancamentos";
             this.LKlLancamentos.Size = new System.Drawing.Size(106, 20);
@@ -626,6 +623,8 @@ namespace LivrariaTor
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.panelConteiner.ResumeLayout(false);
             this.painelFormularios.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.BtnLogout)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnAdm)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnSetaDireita)).EndInit();
             this.pnlIMG3.ResumeLayout(false);
@@ -682,8 +681,6 @@ namespace LivrariaTor
         private System.Windows.Forms.Button btnComprar1;
         private System.Windows.Forms.Label lblTitulo1;
         private System.Windows.Forms.PictureBox picboxIMG1;
-        private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Button btnTelaAdm;
         private System.Windows.Forms.ComboBox cbxEstoqueLivro3;
         private System.Windows.Forms.ComboBox cbxEstoqueLivro2;
         private System.Windows.Forms.ComboBox cbxEstoqueLivro1;
@@ -698,6 +695,8 @@ namespace LivrariaTor
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox BtnAdm;
+        private System.Windows.Forms.PictureBox BtnLogout;
     }
 }
 

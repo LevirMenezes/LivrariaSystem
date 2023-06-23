@@ -35,9 +35,11 @@ namespace LivrariaTor.View
             this.btnRelatorioVendas = new System.Windows.Forms.Button();
             this.btnRelatorioCliente = new System.Windows.Forms.Button();
             this.btnRelatorioEstoque = new System.Windows.Forms.Button();
-            this.btnTelaPrincipal = new System.Windows.Forms.Button();
-            this.btnLogOut = new System.Windows.Forms.Button();
+            this.BtnSair = new System.Windows.Forms.PictureBox();
+            this.BtnInicial = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnSair)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnInicial)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -118,39 +120,35 @@ namespace LivrariaTor.View
             this.btnRelatorioEstoque.UseVisualStyleBackColor = true;
             this.btnRelatorioEstoque.Click += new System.EventHandler(this.btnRelatorioEstoque_Click);
             // 
-            // btnTelaPrincipal
+            // BtnSair
             // 
-            this.btnTelaPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTelaPrincipal.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTelaPrincipal.ForeColor = System.Drawing.Color.Purple;
-            this.btnTelaPrincipal.Location = new System.Drawing.Point(16, 79);
-            this.btnTelaPrincipal.Name = "btnTelaPrincipal";
-            this.btnTelaPrincipal.Size = new System.Drawing.Size(119, 33);
-            this.btnTelaPrincipal.TabIndex = 23;
-            this.btnTelaPrincipal.Text = "Tela inicial";
-            this.btnTelaPrincipal.UseVisualStyleBackColor = true;
-            this.btnTelaPrincipal.Click += new System.EventHandler(this.btnTelaPrincipal_Click);
+            this.BtnSair.Image = global::LivrariaTor.Properties.Resources.exit__1_1;
+            this.BtnSair.Location = new System.Drawing.Point(806, 570);
+            this.BtnSair.Name = "BtnSair";
+            this.BtnSair.Size = new System.Drawing.Size(61, 54);
+            this.BtnSair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.BtnSair.TabIndex = 26;
+            this.BtnSair.TabStop = false;
+            this.BtnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
-            // btnLogOut
+            // BtnInicial
             // 
-            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogOut.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.ForeColor = System.Drawing.Color.Purple;
-            this.btnLogOut.Location = new System.Drawing.Point(730, 558);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(112, 37);
-            this.btnLogOut.TabIndex = 24;
-            this.btnLogOut.Text = "LogOut";
-            this.btnLogOut.UseVisualStyleBackColor = true;
-            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            this.BtnInicial.Image = global::LivrariaTor.Properties.Resources.home;
+            this.BtnInicial.Location = new System.Drawing.Point(23, 84);
+            this.BtnInicial.Name = "BtnInicial";
+            this.BtnInicial.Size = new System.Drawing.Size(65, 50);
+            this.BtnInicial.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.BtnInicial.TabIndex = 25;
+            this.BtnInicial.TabStop = false;
+            this.BtnInicial.Click += new System.EventHandler(this.BtnInicial_Click);
             // 
             // TelaAdm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 650);
-            this.Controls.Add(this.btnLogOut);
-            this.Controls.Add(this.btnTelaPrincipal);
+            this.Controls.Add(this.BtnSair);
+            this.Controls.Add(this.BtnInicial);
             this.Controls.Add(this.btnRelatorioEstoque);
             this.Controls.Add(this.btnRelatorioCliente);
             this.Controls.Add(this.btnRelatorioVendas);
@@ -162,6 +160,8 @@ namespace LivrariaTor.View
             this.Text = "TelaAdm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnSair)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnInicial)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -174,7 +174,7 @@ namespace LivrariaTor.View
         private System.Windows.Forms.Button btnRelatorioVendas;
         private System.Windows.Forms.Button btnRelatorioCliente;
         private System.Windows.Forms.Button btnRelatorioEstoque;
-        private System.Windows.Forms.Button btnTelaPrincipal;
-        private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.PictureBox BtnInicial;
+        private System.Windows.Forms.PictureBox BtnSair;
     }
 }

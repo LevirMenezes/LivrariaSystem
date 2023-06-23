@@ -33,8 +33,8 @@ namespace LivrariaTor
             Livros = LivroController.PegaTodosLivros();
             if (VariaveisGlobais.UsuarioLogado.Adm == 1)
             {
-                btnTelaAdm.Visible       = true;
-                btnTelaAdm.Enabled       = true;
+                BtnAdm.Visible       = true;
+                BtnAdm.Enabled       = true;
                 btnComprar1.Enabled      = false;
                 btnComprar2.Enabled      = false;
                 btnComprar3.Enabled      = false;
@@ -44,8 +44,8 @@ namespace LivrariaTor
             }
             else
             {
-                btnTelaAdm.Visible       = false;
-                btnTelaAdm.Enabled       = false;
+                BtnAdm.Visible           = false;
+                BtnAdm.Enabled           = false;
                 btnComprar1.Enabled      = true;
                 btnComprar2.Enabled      = true;
                 btnComprar3.Enabled      = true;
@@ -456,5 +456,20 @@ namespace LivrariaTor
         #region ItemClique
 
         #endregion
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            TelaAdm form_adm = new TelaAdm();
+            form_adm.Show();
+            this.Close();
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            Telalogin form_login = new Telalogin();
+            form_login.Show();
+            this.Close();
+            VariaveisGlobais.UsuarioLogado = null;
+
+        }
     }
 }
