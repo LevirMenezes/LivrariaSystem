@@ -99,7 +99,9 @@ namespace LivrariaTor
 
         private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //AbrirFormulario<LivrariaTor.View.Informacoes>();
+            Informacoes Form_informacoes = new Informacoes();
+            Form_informacoes.Show();
+            this.Hide();
         }
 
         private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -101,7 +101,7 @@ namespace LivrariaTor
             this.mTxtPreco.Margin = new System.Windows.Forms.Padding(2);
             this.mTxtPreco.Mask = "$ 9999.99";
             this.mTxtPreco.Name = "mTxtPreco";
-            this.mTxtPreco.Size = new System.Drawing.Size(282, 21);
+            this.mTxtPreco.Size = new System.Drawing.Size(282, 26);
             this.mTxtPreco.TabIndex = 29;
             // 
             // label5
@@ -163,11 +163,11 @@ namespace LivrariaTor
             // 
             this.btnSair.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSair.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.ForeColor = System.Drawing.Color.Purple;
-            this.btnSair.Location = new System.Drawing.Point(208, 607);
+            this.btnSair.Location = new System.Drawing.Point(209, 594);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(112, 24);
+            this.btnSair.Size = new System.Drawing.Size(112, 37);
             this.btnSair.TabIndex = 23;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
@@ -177,11 +177,11 @@ namespace LivrariaTor
             // 
             this.btnCadastrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrar.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrar.ForeColor = System.Drawing.Color.Purple;
-            this.btnCadastrar.Location = new System.Drawing.Point(570, 607);
+            this.btnCadastrar.Location = new System.Drawing.Point(570, 594);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(112, 24);
+            this.btnCadastrar.Size = new System.Drawing.Size(112, 37);
             this.btnCadastrar.TabIndex = 22;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
@@ -191,14 +191,14 @@ namespace LivrariaTor
             // 
             this.txtQtdEstoque.Location = new System.Drawing.Point(114, 162);
             this.txtQtdEstoque.Name = "txtQtdEstoque";
-            this.txtQtdEstoque.Size = new System.Drawing.Size(282, 25);
+            this.txtQtdEstoque.Size = new System.Drawing.Size(282, 26);
             this.txtQtdEstoque.TabIndex = 21;
             // 
             // txtTitulo
             // 
             this.txtTitulo.Location = new System.Drawing.Point(114, 49);
             this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(282, 25);
+            this.txtTitulo.Size = new System.Drawing.Size(282, 26);
             this.txtTitulo.TabIndex = 20;
             // 
             // cbxAutor
@@ -207,7 +207,7 @@ namespace LivrariaTor
             this.cbxAutor.Location = new System.Drawing.Point(111, 18);
             this.cbxAutor.Margin = new System.Windows.Forms.Padding(2);
             this.cbxAutor.Name = "cbxAutor";
-            this.cbxAutor.Size = new System.Drawing.Size(282, 23);
+            this.cbxAutor.Size = new System.Drawing.Size(282, 27);
             this.cbxAutor.TabIndex = 33;
             this.cbxAutor.SelectedIndexChanged += new System.EventHandler(this.cbxAutor_SelectedIndexChanged);
             // 
@@ -218,7 +218,7 @@ namespace LivrariaTor
             this.cbxGenero.Location = new System.Drawing.Point(114, 219);
             this.cbxGenero.Margin = new System.Windows.Forms.Padding(2);
             this.cbxGenero.Name = "cbxGenero";
-            this.cbxGenero.Size = new System.Drawing.Size(282, 25);
+            this.cbxGenero.Size = new System.Drawing.Size(282, 27);
             this.cbxGenero.TabIndex = 34;
             this.cbxGenero.SelectedIndexChanged += new System.EventHandler(this.cbxGenero_SelectedIndexChanged);
             // 
@@ -238,16 +238,16 @@ namespace LivrariaTor
             this.txtNomeAutor.Enabled = false;
             this.txtNomeAutor.Location = new System.Drawing.Point(110, 78);
             this.txtNomeAutor.Name = "txtNomeAutor";
-            this.txtNomeAutor.Size = new System.Drawing.Size(282, 21);
+            this.txtNomeAutor.Size = new System.Drawing.Size(282, 26);
             this.txtNomeAutor.TabIndex = 35;
             // 
             // picboxSelecionarImagem
             // 
-            this.picboxSelecionarImagem.Image = global::LivrariaTor.Properties.Resources.adicionar_foto;
+            this.picboxSelecionarImagem.Image = global::LivrariaTor.Properties.Resources.book;
             this.picboxSelecionarImagem.Location = new System.Drawing.Point(104, 68);
             this.picboxSelecionarImagem.Margin = new System.Windows.Forms.Padding(2);
             this.picboxSelecionarImagem.Name = "picboxSelecionarImagem";
-            this.picboxSelecionarImagem.Size = new System.Drawing.Size(172, 144);
+            this.picboxSelecionarImagem.Size = new System.Drawing.Size(160, 138);
             this.picboxSelecionarImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picboxSelecionarImagem.TabIndex = 32;
             this.picboxSelecionarImagem.TabStop = false;
@@ -260,7 +260,7 @@ namespace LivrariaTor
             this.btnSelecionarImagem.ForeColor = System.Drawing.Color.Purple;
             this.btnSelecionarImagem.Location = new System.Drawing.Point(105, 226);
             this.btnSelecionarImagem.Name = "btnSelecionarImagem";
-            this.btnSelecionarImagem.Size = new System.Drawing.Size(172, 26);
+            this.btnSelecionarImagem.Size = new System.Drawing.Size(159, 26);
             this.btnSelecionarImagem.TabIndex = 37;
             this.btnSelecionarImagem.Text = "Selecionar";
             this.btnSelecionarImagem.UseVisualStyleBackColor = true;
@@ -274,7 +274,7 @@ namespace LivrariaTor
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtNomeEditora);
             this.groupBox1.Controls.Add(this.cbxEditora);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(17, 378);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
@@ -300,7 +300,7 @@ namespace LivrariaTor
             this.txtTelefoneEditora.Enabled = false;
             this.txtTelefoneEditora.Location = new System.Drawing.Point(110, 138);
             this.txtTelefoneEditora.Name = "txtTelefoneEditora";
-            this.txtTelefoneEditora.Size = new System.Drawing.Size(282, 21);
+            this.txtTelefoneEditora.Size = new System.Drawing.Size(282, 26);
             this.txtTelefoneEditora.TabIndex = 43;
             // 
             // label6
@@ -330,7 +330,7 @@ namespace LivrariaTor
             this.txtNomeEditora.Enabled = false;
             this.txtNomeEditora.Location = new System.Drawing.Point(110, 88);
             this.txtNomeEditora.Name = "txtNomeEditora";
-            this.txtNomeEditora.Size = new System.Drawing.Size(282, 21);
+            this.txtNomeEditora.Size = new System.Drawing.Size(282, 26);
             this.txtNomeEditora.TabIndex = 41;
             // 
             // cbxEditora
@@ -340,7 +340,7 @@ namespace LivrariaTor
             this.cbxEditora.Location = new System.Drawing.Point(111, 32);
             this.cbxEditora.Margin = new System.Windows.Forms.Padding(2);
             this.cbxEditora.Name = "cbxEditora";
-            this.cbxEditora.Size = new System.Drawing.Size(282, 23);
+            this.cbxEditora.Size = new System.Drawing.Size(282, 27);
             this.cbxEditora.TabIndex = 42;
             this.cbxEditora.SelectedIndexChanged += new System.EventHandler(this.cbxEditora_SelectedIndexChanged);
             // 
@@ -350,7 +350,7 @@ namespace LivrariaTor
             this.groupBox2.Controls.Add(this.cbxAutor);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txtNomeAutor);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(17, 257);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
@@ -376,7 +376,7 @@ namespace LivrariaTor
             this.groupBox3.Controls.Add(this.lblTelefoneUsuario);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.mTxtPreco);
-            this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(437, 80);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
@@ -391,7 +391,7 @@ namespace LivrariaTor
             this.dtpAnoPublicacao.Location = new System.Drawing.Point(114, 401);
             this.dtpAnoPublicacao.Margin = new System.Windows.Forms.Padding(2);
             this.dtpAnoPublicacao.Name = "dtpAnoPublicacao";
-            this.dtpAnoPublicacao.Size = new System.Drawing.Size(282, 25);
+            this.dtpAnoPublicacao.Size = new System.Drawing.Size(282, 26);
             this.dtpAnoPublicacao.TabIndex = 42;
             // 
             // label10
@@ -409,7 +409,7 @@ namespace LivrariaTor
             // 
             this.txtIsbn.Location = new System.Drawing.Point(114, 350);
             this.txtIsbn.Name = "txtIsbn";
-            this.txtIsbn.Size = new System.Drawing.Size(282, 25);
+            this.txtIsbn.Size = new System.Drawing.Size(282, 26);
             this.txtIsbn.TabIndex = 37;
             // 
             // label9
@@ -427,7 +427,7 @@ namespace LivrariaTor
             // 
             this.txtDescricaoLivro.Location = new System.Drawing.Point(114, 297);
             this.txtDescricaoLivro.Name = "txtDescricaoLivro";
-            this.txtDescricaoLivro.Size = new System.Drawing.Size(282, 25);
+            this.txtDescricaoLivro.Size = new System.Drawing.Size(282, 26);
             this.txtDescricaoLivro.TabIndex = 35;
             // 
             // label8

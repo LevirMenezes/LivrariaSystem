@@ -41,8 +41,8 @@
             // 
             // lblTituloLivro
             // 
-            this.lblTituloLivro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloLivro.Location = new System.Drawing.Point(159, 28);
+            this.lblTituloLivro.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloLivro.Location = new System.Drawing.Point(161, 17);
             this.lblTituloLivro.Name = "lblTituloLivro";
             this.lblTituloLivro.Size = new System.Drawing.Size(597, 24);
             this.lblTituloLivro.TabIndex = 1;
@@ -53,7 +53,7 @@
             // 
             // lblDescricaoLivro
             // 
-            this.lblDescricaoLivro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescricaoLivro.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescricaoLivro.Location = new System.Drawing.Point(172, 52);
             this.lblDescricaoLivro.Name = "lblDescricaoLivro";
             this.lblDescricaoLivro.Size = new System.Drawing.Size(576, 37);
@@ -67,10 +67,10 @@
             // 
             this.lblPrecoLivro.AutoSize = true;
             this.lblPrecoLivro.BackColor = System.Drawing.Color.Transparent;
-            this.lblPrecoLivro.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecoLivro.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrecoLivro.Location = new System.Drawing.Point(192, 102);
             this.lblPrecoLivro.Name = "lblPrecoLivro";
-            this.lblPrecoLivro.Size = new System.Drawing.Size(66, 26);
+            this.lblPrecoLivro.Size = new System.Drawing.Size(59, 23);
             this.lblPrecoLivro.TabIndex = 3;
             this.lblPrecoLivro.Text = "79,99";
             this.lblPrecoLivro.Click += new System.EventHandler(this.ItemLivro_Click);
@@ -113,7 +113,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(179)))), ((int)(((byte)(242)))));
             this.panel2.Location = new System.Drawing.Point(142, 140);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(457, 8);
             this.panel2.TabIndex = 6;

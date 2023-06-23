@@ -49,6 +49,7 @@ namespace LivrariaTor.View
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnVoltarTelaPrincipal = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -77,7 +78,6 @@ namespace LivrariaTor.View
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(900, 57);
             this.panel1.TabIndex = 17;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // pictureBox2
             // 
@@ -228,7 +228,7 @@ namespace LivrariaTor.View
             // pictureBox9
             // 
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(12, 162);
+            this.pictureBox9.Location = new System.Drawing.Point(12, 143);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(183, 166);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -237,7 +237,7 @@ namespace LivrariaTor.View
             // 
             // label5
             // 
-            this.label5.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label5.Location = new System.Drawing.Point(201, 118);
             this.label5.Name = "label5";
@@ -246,13 +246,27 @@ namespace LivrariaTor.View
             this.label5.Text = resources.GetString("label5.Text");
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label5.UseCompatibleTextRendering = true;
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // btnVoltarTelaPrincipal
+            // 
+            this.btnVoltarTelaPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltarTelaPrincipal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltarTelaPrincipal.ForeColor = System.Drawing.Color.Purple;
+            this.btnVoltarTelaPrincipal.Location = new System.Drawing.Point(15, 575);
+            this.btnVoltarTelaPrincipal.Margin = new System.Windows.Forms.Padding(2);
+            this.btnVoltarTelaPrincipal.Name = "btnVoltarTelaPrincipal";
+            this.btnVoltarTelaPrincipal.Size = new System.Drawing.Size(168, 28);
+            this.btnVoltarTelaPrincipal.TabIndex = 29;
+            this.btnVoltarTelaPrincipal.Text = "Voltar";
+            this.btnVoltarTelaPrincipal.UseVisualStyleBackColor = true;
+            this.btnVoltarTelaPrincipal.Click += new System.EventHandler(this.btnVoltarTelaPrincipal_Click);
             // 
             // Informacoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 640);
+            this.Controls.Add(this.btnVoltarTelaPrincipal);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.label4);
@@ -285,10 +299,7 @@ namespace LivrariaTor.View
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+       
 
         #endregion
 
@@ -308,5 +319,6 @@ namespace LivrariaTor.View
         private Label label4;
         private PictureBox pictureBox9;
         private Label label5;
+        private Button btnVoltarTelaPrincipal;
     }
 }

@@ -59,7 +59,7 @@ namespace LivrariaTor.View
             this.lblLivraria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(22)))), ((int)(((byte)(143)))));
             this.lblLivraria.Font = new System.Drawing.Font("Bauhaus 93", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLivraria.ForeColor = System.Drawing.Color.White;
-            this.lblLivraria.Location = new System.Drawing.Point(11, 13);
+            this.lblLivraria.Location = new System.Drawing.Point(18, 13);
             this.lblLivraria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLivraria.Name = "lblLivraria";
             this.lblLivraria.Size = new System.Drawing.Size(181, 30);

@@ -39,13 +39,17 @@ namespace LivrariaTor.View
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblTelefone = new System.Windows.Forms.Label();
             this.lblCPF = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxLivro)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTituloLivro
             // 
-            this.lblTituloLivro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloLivro.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloLivro.Location = new System.Drawing.Point(176, 12);
             this.lblTituloLivro.Name = "lblTituloLivro";
             this.lblTituloLivro.Size = new System.Drawing.Size(589, 24);
@@ -93,10 +97,10 @@ namespace LivrariaTor.View
             // lblNomeUsuario
             // 
             this.lblNomeUsuario.AutoSize = true;
-            this.lblNomeUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomeUsuario.Location = new System.Drawing.Point(177, 47);
+            this.lblNomeUsuario.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeUsuario.Location = new System.Drawing.Point(222, 48);
             this.lblNomeUsuario.Name = "lblNomeUsuario";
-            this.lblNomeUsuario.Size = new System.Drawing.Size(200, 20);
+            this.lblNomeUsuario.Size = new System.Drawing.Size(210, 21);
             this.lblNomeUsuario.TabIndex = 6;
             this.lblNomeUsuario.Text = "Milena Daniela Souza Silva";
             this.lblNomeUsuario.Click += new System.EventHandler(this.ItemUsuario_Click);
@@ -106,10 +110,10 @@ namespace LivrariaTor.View
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(176, 94);
+            this.lblEmail.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(223, 94);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(188, 20);
+            this.lblEmail.Size = new System.Drawing.Size(199, 21);
             this.lblEmail.TabIndex = 7;
             this.lblEmail.Text = "millenamia02@gmail.com";
             this.lblEmail.Click += new System.EventHandler(this.ItemUsuario_Click);
@@ -119,10 +123,10 @@ namespace LivrariaTor.View
             // lblTelefone
             // 
             this.lblTelefone.AutoSize = true;
-            this.lblTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefone.Location = new System.Drawing.Point(459, 94);
+            this.lblTelefone.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefone.Location = new System.Drawing.Point(532, 94);
             this.lblTelefone.Name = "lblTelefone";
-            this.lblTelefone.Size = new System.Drawing.Size(127, 20);
+            this.lblTelefone.Size = new System.Drawing.Size(132, 21);
             this.lblTelefone.TabIndex = 8;
             this.lblTelefone.Text = "(69) 99310-6458";
             this.lblTelefone.Click += new System.EventHandler(this.ItemUsuario_Click);
@@ -132,20 +136,64 @@ namespace LivrariaTor.View
             // lblCPF
             // 
             this.lblCPF.AutoSize = true;
-            this.lblCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCPF.Location = new System.Drawing.Point(463, 48);
+            this.lblCPF.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCPF.Location = new System.Drawing.Point(531, 47);
             this.lblCPF.Name = "lblCPF";
-            this.lblCPF.Size = new System.Drawing.Size(108, 20);
+            this.lblCPF.Size = new System.Drawing.Size(109, 21);
             this.lblCPF.TabIndex = 9;
             this.lblCPF.Text = "03350151230";
             this.lblCPF.Click += new System.EventHandler(this.ItemUsuario_Click);
             this.lblCPF.MouseEnter += new System.EventHandler(this.ItemUsuario_MouseEnter);
             this.lblCPF.MouseLeave += new System.EventHandler(this.ItemUsuario_MouseLeave);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(473, 46);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 21);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "CPF:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(476, 94);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 21);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Tel:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(157, 47);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 21);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Nome:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(157, 94);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 21);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Email:";
+            // 
             // ItemUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblCPF);
             this.Controls.Add(this.lblTelefone);
             this.Controls.Add(this.lblEmail);
@@ -174,5 +222,9 @@ namespace LivrariaTor.View
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblTelefone;
         private System.Windows.Forms.Label lblCPF;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -32,9 +32,11 @@ namespace LivrariaTor.View
 
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void btnVoltarTelaPrincipal_Click(object sender, EventArgs e)
         {
-
+            FormPrincipal form_principal = new FormPrincipal();
+            form_principal.Show();
+            this.Close();
         }
     }
 }
