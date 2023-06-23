@@ -235,7 +235,7 @@ namespace LivrariaTor.Model
         public ItensPedidoEnt GetByLivroIdAndUsuarioId(int idlivro, int idusuario)
         {
             SqlConnection cn = Conexao.ObterConexao();
-            List<ItensPedidoEnt> Itens = new List<ItensPedidoEnt>();
+            ItensPedidoEnt Itens = new ItensPedidoEnt();
             string query = @"SELECT IPE.id as itemid,  IPE.quantidade, IPE.precounidade, IPE.subtotal, IPE.idpedido, IPE.idlivro,
                                                    LI.id  as livroid, LI.titulo, LI.preco, LI.descricao, LI.estoque, LI.anopublicacao, LI.isbn, LI.imagem, LI.ideditora
                                             FROM tbItensPedido IPE
@@ -278,16 +278,14 @@ namespace LivrariaTor.Model
                                 livro.Imagem = imagemBytes;
                             }
 
-                            ItensPedidoEnt itensPedidoEnt = new ItensPedidoEnt();
-                            itensPedidoEnt.Id = reader.IsDBNull(reader.GetOrdinal("itemid")) ? 0 : Convert.ToInt32(reader["itemid"]);
-                            itensPedidoEnt.Quantidade = reader.IsDBNull(reader.GetOrdinal("quantidade")) ? 0 : Convert.ToInt32(reader["quantidade"]);
-                            itensPedidoEnt.PrecoUnidade = reader.IsDBNull(reader.GetOrdinal("precounidade")) ? 0m : Convert.ToDecimal(reader["precounidade"]);
-                            itensPedidoEnt.SubTotal = reader.IsDBNull(reader.GetOrdinal("subtotal")) ? 0m : Convert.ToDecimal(reader["subtotal"]);
-                            itensPedidoEnt.IdPedido = reader.IsDBNull(reader.GetOrdinal("idpedido")) ? 0 : Convert.ToInt32(reader["idpedido"]);
-                            itensPedidoEnt.IdLivro = reader.IsDBNull(reader.GetOrdinal("idlivro")) ? 0 : Convert.ToInt32(reader["idlivro"]);
-                            itensPedidoEnt.Livro = livro;
-
-                            Itens.Add(itensPedidoEnt);
+                            
+                            Itens.Id           = reader.IsDBNull(reader.GetOrdinal("itemid")) ? 0 : Convert.ToInt32(reader["itemid"]);
+                            Itens.Quantidade   = reader.IsDBNull(reader.GetOrdinal("quantidade")) ? 0 : Convert.ToInt32(reader["quantidade"]);
+                            Itens.PrecoUnidade = reader.IsDBNull(reader.GetOrdinal("precounidade")) ? 0m : Convert.ToDecimal(reader["precounidade"]);
+                            Itens.SubTotal     = reader.IsDBNull(reader.GetOrdinal("subtotal")) ? 0m : Convert.ToDecimal(reader["subtotal"]);
+                            Itens.IdPedido     = reader.IsDBNull(reader.GetOrdinal("idpedido")) ? 0 : Convert.ToInt32(reader["idpedido"]);
+                            Itens.IdLivro      = reader.IsDBNull(reader.GetOrdinal("idlivro")) ? 0 : Convert.ToInt32(reader["idlivro"]);
+                            Itens.Livro        = livro;
                         }
                     }
                 }
@@ -300,7 +298,7 @@ namespace LivrariaTor.Model
             {
                 Conexao.FecharConexao();
             }
-            if (Itens == null || Itens.Count == 0)
+            if (Itens == null)
                 return null;
             else
                 return Itens;
