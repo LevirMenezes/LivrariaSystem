@@ -179,7 +179,7 @@ namespace LivrariaTor.Model
         {
             SqlConnection cn = Conexao.ObterConexao();
             List<LivroEnt> livros = new List<LivroEnt>();
-            string query = "SELECT * FROM tbLivro";
+            string query = "SELECT * FROM tbLivro where estoque > 0";
             try
             {
                 using (SqlCommand command = new SqlCommand(query, cn))

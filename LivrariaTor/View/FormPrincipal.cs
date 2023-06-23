@@ -26,27 +26,41 @@ namespace LivrariaTor
             Livros = LivroController.PegaTodosLivros();
             if (VariaveisGlobais.UsuarioLogado.Adm == 1)
             {
-                btnTelaAdm.Visible = true;
-                btnTelaAdm.Enabled = true;
+                btnTelaAdm.Visible       = true;
+                btnTelaAdm.Enabled       = true;
+                btnComprar1.Enabled      = false;
+                btnComprar2.Enabled      = false;
+                btnComprar3.Enabled      = false;
+                cbxEstoqueLivro1.Enabled = false;
+                cbxEstoqueLivro2.Enabled = false;
+                cbxEstoqueLivro3.Enabled = false;
             }
             else
             {
-                btnTelaAdm.Visible = false;
-                btnTelaAdm.Enabled = false;
+                btnTelaAdm.Visible       = false;
+                btnTelaAdm.Enabled       = false;
+                btnComprar1.Enabled      = true;
+                btnComprar2.Enabled      = true;
+                btnComprar3.Enabled      = true;
+                cbxEstoqueLivro1.Enabled = true;
+                cbxEstoqueLivro2.Enabled = true;
+                cbxEstoqueLivro3.Enabled = true;
             }
         }
-        
-        #region DE FUNCIONALIDADE DO FORMULARIO
         
         private void btnFechar_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        #endregion
-
         private void picboxCarrinho_Click(object sender, EventArgs e)
         {
+            if (VariaveisGlobais.UsuarioLogado.Adm == 1)
+            {
+                MessageBox.Show("O adm não pode acessar o carrinho! Essa funcionalidade é única do cliente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             Carrinho form_carrinho = new Carrinho();
             //ialogResult resultado = form_carrinho.ShowDialog();
 
@@ -70,6 +84,8 @@ namespace LivrariaTor
                 if (result == DialogResult.OK)
                 {
                     MessageBox.Show("Compra realizada com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Livros = LivroController.PegaTodosLivros();
+                    PopularLista();
                 }
             }
         }  
@@ -102,6 +118,7 @@ namespace LivrariaTor
                 picboxUser.Image = VariaveisGlobais.UsuarioLogado.ByteToIMG();
             PopularLista();
         }
+
         private void PopularLista()
         {
             if (Livros.Count >= 3)
@@ -290,13 +307,19 @@ namespace LivrariaTor
 
         private void btnComprar1_Click(object sender, EventArgs e)
         {
-            
             PedidoEnt Pedido = PedidoController.PegaPedidoPorUsuarioId(VariaveisGlobais.UsuarioLogado.Id);
 
             if (Pedido == null)
             {
                 PedidoController.InserirPedido(VariaveisGlobais.UsuarioLogado.Id);
                 Pedido = PedidoController.PegaPedidoPorUsuarioId(VariaveisGlobais.UsuarioLogado.Id);
+            }
+
+            ItensPedidoEnt VerificaItem = ItensPedidoController.PegaItemPorLivro(Livros[0].Id, VariaveisGlobais.UsuarioLogado.Id);
+            if (VerificaItem != null && VerificaItem.Id != 0)
+            {
+                MessageBox.Show("Esse Livro já está no carrinho!!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
 
             ItensPedidoEnt item = new ItensPedidoEnt();
@@ -306,15 +329,73 @@ namespace LivrariaTor
             item.PrecoUnidade   = Livros[0].Preco;
 
             string respItem = ItensPedidoController.InserirItem(item);
+
+            if (respItem == "OK")
+                MessageBox.Show("Livro adicionado ao carrinho!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show("O Livro não foi adicionado, por favor tente novamente!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnComprar2_Click(object sender, EventArgs e)
         {
+            PedidoEnt Pedido = PedidoController.PegaPedidoPorUsuarioId(VariaveisGlobais.UsuarioLogado.Id);
 
+            if (Pedido == null)
+            {
+                PedidoController.InserirPedido(VariaveisGlobais.UsuarioLogado.Id);
+                Pedido = PedidoController.PegaPedidoPorUsuarioId(VariaveisGlobais.UsuarioLogado.Id);
+            }
+
+            ItensPedidoEnt VerificaItem = ItensPedidoController.PegaItemPorLivro(Livros[1].Id, VariaveisGlobais.UsuarioLogado.Id);
+            if(VerificaItem != null && VerificaItem.Id != 0)
+            {
+                MessageBox.Show("Esse Livro já está no carrinho!!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            ItensPedidoEnt item = new ItensPedidoEnt();
+            item.Quantidade     = (cbxEstoqueLivro1.SelectedIndex + 1);
+            item.IdLivro        = Livros[1].Id;
+            item.IdPedido       = Pedido.Id;
+            item.PrecoUnidade   = Livros[1].Preco;
+
+            string respItem = ItensPedidoController.InserirItem(item);
+
+            if (respItem == "OK")
+                MessageBox.Show("Livro adicionado ao carrinho!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show("O Livro não foi adicionado, por favor tente novamente!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnComprar3_Click(object sender, EventArgs e)
         {
+            PedidoEnt Pedido = PedidoController.PegaPedidoPorUsuarioId(VariaveisGlobais.UsuarioLogado.Id);
+
+            if (Pedido == null)
+            {
+                PedidoController.InserirPedido(VariaveisGlobais.UsuarioLogado.Id);
+                Pedido = PedidoController.PegaPedidoPorUsuarioId(VariaveisGlobais.UsuarioLogado.Id);
+            }
+
+            ItensPedidoEnt VerificaItem = ItensPedidoController.PegaItemPorLivro(Livros[2].Id, VariaveisGlobais.UsuarioLogado.Id);
+            if (VerificaItem != null && VerificaItem.Id != 0)
+            {
+                MessageBox.Show("Esse Livro já está no carrinho!!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            ItensPedidoEnt item = new ItensPedidoEnt();
+            item.Quantidade = (cbxEstoqueLivro1.SelectedIndex + 1);
+            item.IdLivro = Livros[2].Id;
+            item.IdPedido = Pedido.Id;
+            item.PrecoUnidade = Livros[2].Preco;
+
+            string respItem = ItensPedidoController.InserirItem(item);
+
+            if (respItem == "OK")
+                MessageBox.Show("Livro Adicionado com Sucesso!!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show("O Livro não foi adicionado, por favor tente novamente!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
 
@@ -328,6 +409,12 @@ namespace LivrariaTor
 
         private void picboxUser_Click(object sender, EventArgs e)
         {
+            if(VariaveisGlobais.UsuarioLogado.Adm == 1)
+            {
+                MessageBox.Show("O adm deve acessar o relatorio de usuarios cadastrados para editar seu perfil!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             FrmUsuario form_cadastro = new FrmUsuario(VariaveisGlobais.UsuarioLogado);
             form_cadastro.TextoBotao = "Editar";
             form_cadastro.Show();

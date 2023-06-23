@@ -40,24 +40,20 @@ namespace LivrariaTor.Model
         {
             SqlConnection cn = Conexao.ObterConexao();
             string query = @"UPDATE tbPedido 
-                            SET   datacompra       = @datacompra
-                                  precototal       = @precototal
-                                  estadopedido     = @estadopedido
+                            SET   datacompra       = @datacompra,
+                                  estadopedido     = @estadopedido,
                                   idformapagamento = @idformapagamento
-                                  idusuario        = @idusuario
                             WHERE id               = @id";
             string resp = string.Empty;
             try
             {
                 using (SqlCommand command = new SqlCommand(query, cn))
                 {
-                    command.Parameters.AddWithValue("@datacompra",       pedido.DataCompra);
-                    command.Parameters.AddWithValue("@precototal",       pedido.PrecoTotal);
-                    command.Parameters.AddWithValue("@estadopedido",     pedido.EstadoPedido);
+                    command.Parameters.AddWithValue("@datacompra",       DateTime.Now);
+                    command.Parameters.AddWithValue("@estadopedido",     "CONCLUÍDO");
                     command.Parameters.AddWithValue("@idformapagamento", pedido.IdFormaPagamento);
-                    command.Parameters.AddWithValue("@idusuario",        pedido.IdUsuario);
                     command.Parameters.AddWithValue("@id",               pedido.Id);
-                    resp = command.ExecuteNonQuery() == 1 ? "OK" : "O Update não foi feito!";
+                    resp = command.ExecuteNonQuery() >= 1 ? "OK" : "O Update não foi feito!";
                 }
             }
             catch (Exception ex)

@@ -54,13 +54,13 @@ namespace LivrariaTor.View
             this.lblCpfTitular = new System.Windows.Forms.Label();
             this.lblNomeTitular = new System.Windows.Forms.Label();
             this.lblNunCartao = new System.Windows.Forms.Label();
-            this.tbxNunCartao = new System.Windows.Forms.TextBox();
             this.gbxInfoUsuario = new System.Windows.Forms.GroupBox();
             this.gbxInfoPagamento = new System.Windows.Forms.GroupBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.mtbxTelefoneTitular = new System.Windows.Forms.MaskedTextBox();
-            this.mtbxCpfTitular = new System.Windows.Forms.MaskedTextBox();
             this.mtbxValidadeCartao = new System.Windows.Forms.MaskedTextBox();
+            this.mtbxCpfTitular = new System.Windows.Forms.MaskedTextBox();
+            this.mtbxTelefoneTitular = new System.Windows.Forms.MaskedTextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.mtbxNunCartao = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxCarrinho)).BeginInit();
             this.gbxFormasPagamento.SuspendLayout();
@@ -237,6 +237,7 @@ namespace LivrariaTor.View
             this.rbtnDebito.TabStop = true;
             this.rbtnDebito.Text = "Cartão de Débito";
             this.rbtnDebito.UseVisualStyleBackColor = true;
+            this.rbtnDebito.CheckedChanged += new System.EventHandler(this.rbtnDebito_CheckedChanged);
             // 
             // rbtnCredito
             // 
@@ -249,6 +250,7 @@ namespace LivrariaTor.View
             this.rbtnCredito.TabStop = true;
             this.rbtnCredito.Text = "Cartão de Crédito";
             this.rbtnCredito.UseVisualStyleBackColor = true;
+            this.rbtnCredito.CheckedChanged += new System.EventHandler(this.rbtnCredito_CheckedChanged);
             // 
             // tbxCodSeguranca
             // 
@@ -259,7 +261,7 @@ namespace LivrariaTor.View
             // 
             // tbxNomeTitular
             // 
-            this.tbxNomeTitular.Location = new System.Drawing.Point(154, 93);
+            this.tbxNomeTitular.Location = new System.Drawing.Point(154, 97);
             this.tbxNomeTitular.Name = "tbxNomeTitular";
             this.tbxNomeTitular.Size = new System.Drawing.Size(261, 26);
             this.tbxNomeTitular.TabIndex = 47;
@@ -325,18 +327,11 @@ namespace LivrariaTor.View
             this.lblNunCartao.AutoSize = true;
             this.lblNunCartao.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNunCartao.ForeColor = System.Drawing.Color.Purple;
-            this.lblNunCartao.Location = new System.Drawing.Point(11, 31);
+            this.lblNunCartao.Location = new System.Drawing.Point(11, 33);
             this.lblNunCartao.Name = "lblNunCartao";
             this.lblNunCartao.Size = new System.Drawing.Size(102, 19);
             this.lblNunCartao.TabIndex = 41;
             this.lblNunCartao.Text = "N° do Cartão:";
-            // 
-            // tbxNunCartao
-            // 
-            this.tbxNunCartao.Location = new System.Drawing.Point(154, 27);
-            this.tbxNunCartao.Name = "tbxNunCartao";
-            this.tbxNunCartao.Size = new System.Drawing.Size(261, 26);
-            this.tbxNunCartao.TabIndex = 39;
             // 
             // gbxInfoUsuario
             // 
@@ -356,11 +351,11 @@ namespace LivrariaTor.View
             // 
             // gbxInfoPagamento
             // 
+            this.gbxInfoPagamento.Controls.Add(this.mtbxNunCartao);
             this.gbxInfoPagamento.Controls.Add(this.mtbxValidadeCartao);
             this.gbxInfoPagamento.Controls.Add(this.mtbxCpfTitular);
             this.gbxInfoPagamento.Controls.Add(this.mtbxTelefoneTitular);
             this.gbxInfoPagamento.Controls.Add(this.lblNunCartao);
-            this.gbxInfoPagamento.Controls.Add(this.tbxNunCartao);
             this.gbxInfoPagamento.Controls.Add(this.tbxCodSeguranca);
             this.gbxInfoPagamento.Controls.Add(this.lblNomeTitular);
             this.gbxInfoPagamento.Controls.Add(this.lblCpfTitular);
@@ -376,6 +371,33 @@ namespace LivrariaTor.View
             this.gbxInfoPagamento.TabStop = false;
             this.gbxInfoPagamento.Text = "Informações de Pagamento";
             // 
+            // mtbxValidadeCartao
+            // 
+            this.mtbxValidadeCartao.Location = new System.Drawing.Point(154, 293);
+            this.mtbxValidadeCartao.Margin = new System.Windows.Forms.Padding(2);
+            this.mtbxValidadeCartao.Mask = "00/0000";
+            this.mtbxValidadeCartao.Name = "mtbxValidadeCartao";
+            this.mtbxValidadeCartao.Size = new System.Drawing.Size(263, 26);
+            this.mtbxValidadeCartao.TabIndex = 36;
+            // 
+            // mtbxCpfTitular
+            // 
+            this.mtbxCpfTitular.Location = new System.Drawing.Point(154, 163);
+            this.mtbxCpfTitular.Margin = new System.Windows.Forms.Padding(2);
+            this.mtbxCpfTitular.Mask = "000,000,000-00";
+            this.mtbxCpfTitular.Name = "mtbxCpfTitular";
+            this.mtbxCpfTitular.Size = new System.Drawing.Size(261, 26);
+            this.mtbxCpfTitular.TabIndex = 36;
+            // 
+            // mtbxTelefoneTitular
+            // 
+            this.mtbxTelefoneTitular.Location = new System.Drawing.Point(154, 230);
+            this.mtbxTelefoneTitular.Margin = new System.Windows.Forms.Padding(2);
+            this.mtbxTelefoneTitular.Mask = "(00) 0 0000-0000";
+            this.mtbxTelefoneTitular.Name = "mtbxTelefoneTitular";
+            this.mtbxTelefoneTitular.Size = new System.Drawing.Size(263, 26);
+            this.mtbxTelefoneTitular.TabIndex = 36;
+            // 
             // btnCancelar
             // 
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -389,32 +411,14 @@ namespace LivrariaTor.View
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // mtbxTelefoneTitular
+            // mtbxNunCartao
             // 
-            this.mtbxTelefoneTitular.Location = new System.Drawing.Point(154, 230);
-            this.mtbxTelefoneTitular.Margin = new System.Windows.Forms.Padding(2);
-            this.mtbxTelefoneTitular.Mask = "(00) 0 0000-0000";
-            this.mtbxTelefoneTitular.Name = "mtbxTelefoneTitular";
-            this.mtbxTelefoneTitular.Size = new System.Drawing.Size(263, 26);
-            this.mtbxTelefoneTitular.TabIndex = 36;
-            // 
-            // mtbxCpfTitular
-            // 
-            this.mtbxCpfTitular.Location = new System.Drawing.Point(154, 163);
-            this.mtbxCpfTitular.Margin = new System.Windows.Forms.Padding(2);
-            this.mtbxCpfTitular.Mask = "000,000,000-00";
-            this.mtbxCpfTitular.Name = "mtbxCpfTitular";
-            this.mtbxCpfTitular.Size = new System.Drawing.Size(261, 26);
-            this.mtbxCpfTitular.TabIndex = 36;
-            // 
-            // mtbxValidadeCartao
-            // 
-            this.mtbxValidadeCartao.Location = new System.Drawing.Point(154, 293);
-            this.mtbxValidadeCartao.Margin = new System.Windows.Forms.Padding(2);
-            this.mtbxValidadeCartao.Mask = "00/0000";
-            this.mtbxValidadeCartao.Name = "mtbxValidadeCartao";
-            this.mtbxValidadeCartao.Size = new System.Drawing.Size(263, 26);
-            this.mtbxValidadeCartao.TabIndex = 36;
+            this.mtbxNunCartao.Location = new System.Drawing.Point(154, 29);
+            this.mtbxNunCartao.Margin = new System.Windows.Forms.Padding(2);
+            this.mtbxNunCartao.Mask = "0000 0000 0000 0000";
+            this.mtbxNunCartao.Name = "mtbxNunCartao";
+            this.mtbxNunCartao.Size = new System.Drawing.Size(261, 26);
+            this.mtbxNunCartao.TabIndex = 51;
             // 
             // FormasPagamento
             // 
@@ -432,6 +436,7 @@ namespace LivrariaTor.View
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormasPagamento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formas_de_pagamento";
             this.Load += new System.EventHandler(this.FormasPagamento_Load);
             this.panel1.ResumeLayout(false);
@@ -474,12 +479,12 @@ namespace LivrariaTor.View
         private System.Windows.Forms.Label lblCpfTitular;
         private System.Windows.Forms.Label lblNomeTitular;
         private System.Windows.Forms.Label lblNunCartao;
-        private System.Windows.Forms.TextBox tbxNunCartao;
         private System.Windows.Forms.GroupBox gbxInfoUsuario;
         private System.Windows.Forms.GroupBox gbxInfoPagamento;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.MaskedTextBox mtbxValidadeCartao;
         private System.Windows.Forms.MaskedTextBox mtbxCpfTitular;
         private System.Windows.Forms.MaskedTextBox mtbxTelefoneTitular;
+        private System.Windows.Forms.MaskedTextBox mtbxNunCartao;
     }
 }

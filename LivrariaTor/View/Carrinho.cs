@@ -68,7 +68,10 @@ namespace LivrariaTor.View
             string respItem = ItensPedidoController.DeletarItem(e.Item.Id);
 
             if (respItem == "OK")
+            {
+                MessageBox.Show("Livro Removido com Sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 RecarregarTela();
+            }
             else
                 MessageBox.Show("Falha ao deletar item do carrinho!", "Falha", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }

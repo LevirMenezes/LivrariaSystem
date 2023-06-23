@@ -102,6 +102,7 @@
             // 
             // cbxQuantidade
             // 
+            this.cbxQuantidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxQuantidade.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold);
             this.cbxQuantidade.FormattingEnabled = true;
             this.cbxQuantidade.Location = new System.Drawing.Point(130, 59);

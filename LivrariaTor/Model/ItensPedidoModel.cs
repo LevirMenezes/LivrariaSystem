@@ -23,7 +23,7 @@ namespace LivrariaTor.Model
                     command.Parameters.AddWithValue("@precounidade", item.PrecoUnidade);
                     command.Parameters.AddWithValue("@idpedido",     item.IdPedido);
                     command.Parameters.AddWithValue("@idlivro",      item.IdLivro);
-                    resp = command.ExecuteNonQuery() == 1 ? "OK" : "O Insert não foi feito!";
+                    resp = command.ExecuteNonQuery() == 6 ? "OK" : "O Insert não foi feito!";
                 }
             }
             catch (Exception ex)
@@ -75,8 +75,8 @@ namespace LivrariaTor.Model
         public string UpdateQuantidade(ItensPedidoEnt item)
         {
             SqlConnection cn = Conexao.ObterConexao();
-            string query = @"UPDATE tbItensPedido 
-                            SET    quantidade = @quantidade
+            string query = @"update tbItensPedido
+                            set quantidade = @quantidade
                             WHERE         id  = @id";
             string resp = string.Empty;
             try
@@ -85,7 +85,7 @@ namespace LivrariaTor.Model
                 {
                     command.Parameters.AddWithValue("@quantidade", item.Quantidade);
                     command.Parameters.AddWithValue("@id",         item.Id);
-                    resp = command.ExecuteNonQuery() == 1 ? "OK" : "O Update não foi feito!";
+                    resp = command.ExecuteNonQuery() == 4 ? "OK" : "O Update não foi feito!";
                 }
             }
             catch (Exception ex)
@@ -109,7 +109,7 @@ namespace LivrariaTor.Model
                 using (SqlCommand command = new SqlCommand(query, cn))
                 {
                     command.Parameters.AddWithValue("@id", id);
-                    resp = command.ExecuteNonQuery() == 1 ? "OK" : "O Delete não foi feito!";
+                    resp = command.ExecuteNonQuery() == 2 ? "OK" : "O Delete não foi feito!";
                 }
             }
             catch (Exception ex)
@@ -235,73 +235,56 @@ namespace LivrariaTor.Model
         public ItensPedidoEnt GetByLivroIdAndUsuarioId(int idlivro, int idusuario)
         {
             SqlConnection cn = Conexao.ObterConexao();
-            ItensPedidoEnt Itens = new ItensPedidoEnt();
-            string query = @"SELECT IPE.id as itemid,  IPE.quantidade, IPE.precounidade, IPE.subtotal, IPE.idpedido, IPE.idlivro,
-                                                   LI.id  as livroid, LI.titulo, LI.preco, LI.descricao, LI.estoque, LI.anopublicacao, LI.isbn, LI.imagem, LI.ideditora
-                                            FROM tbItensPedido IPE
-                                            INNER JOIN tbLivro LI ON IPE.idlivro = LI.id
-                                            WHERE IPE.idpedido IN 
-                                            (
-                                            SELECT TOP 1 PE.id
-                                            FROM tbPedido PE
-                                            WHERE    PE.idusuario    = @idusuario AND 
-                                                     PE.estadopedido = 'EM ANDAMENTO'
-                                            ORDER BY PE.id DESC
-                                            )
-                                            ";
+            ItensPedidoEnt Item = new ItensPedidoEnt();
+            string query = @"SELECT IPE.id,  IPE.quantidade, IPE.precounidade, IPE.subtotal, IPE.idpedido, IPE.idlivro
+                             FROM tbItensPedido IPE
+                             WHERE IPE.idlivro = @idlivro AND
+                                   IPE.idpedido IN 
+                                   (
+                                   SELECT TOP 1 PE.id
+                                   FROM tbPedido PE
+                                   WHERE    PE.idusuario    = @idusuario AND 
+                                            PE.estadopedido = 'EM ANDAMENTO'
+                                   ORDER BY PE.id DESC
+                                   )
+                                   ";
 
             try
             {
                 using (SqlCommand command = new SqlCommand(query, cn))
                 {
+                    command.Parameters.AddWithValue("@idlivro",   idlivro);
                     command.Parameters.AddWithValue("@idusuario", idusuario);
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            LivroEnt livro = new LivroEnt();
-                            livro.Id = Convert.ToInt32(reader["livroid"]);
-                            livro.Titulo = reader["titulo"].ToString();
-                            livro.Preco = Convert.ToDecimal(reader["preco"]);
-                            livro.Descricao = reader["descricao"].ToString();
-                            livro.Estoque = Convert.ToInt32(reader["estoque"]);
-                            livro.AnoPublicacao = Convert.ToDateTime(reader["anopublicacao"]).ToString("dd/MM/yyyy");
-                            livro.Isbn = reader["isbn"].ToString();
-                            livro.IdEditora = Convert.ToInt32(reader["ideditora"]);
-
-                            if (!reader.IsDBNull(reader.GetOrdinal("imagem")))
-                            {
-                                long tamanhoBytes = reader.GetBytes(reader.GetOrdinal("imagem"), 0, null, 0, 0);
-                                byte[] imagemBytes = new byte[tamanhoBytes];
-                                reader.GetBytes(reader.GetOrdinal("imagem"), 0, imagemBytes, 0, (int)tamanhoBytes);
-
-                                livro.Imagem = imagemBytes;
-                            }
-
-                            
-                            Itens.Id           = reader.IsDBNull(reader.GetOrdinal("itemid")) ? 0 : Convert.ToInt32(reader["itemid"]);
-                            Itens.Quantidade   = reader.IsDBNull(reader.GetOrdinal("quantidade")) ? 0 : Convert.ToInt32(reader["quantidade"]);
-                            Itens.PrecoUnidade = reader.IsDBNull(reader.GetOrdinal("precounidade")) ? 0m : Convert.ToDecimal(reader["precounidade"]);
-                            Itens.SubTotal     = reader.IsDBNull(reader.GetOrdinal("subtotal")) ? 0m : Convert.ToDecimal(reader["subtotal"]);
-                            Itens.IdPedido     = reader.IsDBNull(reader.GetOrdinal("idpedido")) ? 0 : Convert.ToInt32(reader["idpedido"]);
-                            Itens.IdLivro      = reader.IsDBNull(reader.GetOrdinal("idlivro")) ? 0 : Convert.ToInt32(reader["idlivro"]);
-                            Itens.Livro        = livro;
+                            Item.Id           = reader.IsDBNull(reader.GetOrdinal("id")) ? 0 : Convert.ToInt32(reader["id"]);
+                            Item.Quantidade   = reader.IsDBNull(reader.GetOrdinal("quantidade")) ? 0 : Convert.ToInt32(reader["quantidade"]);
+                            Item.PrecoUnidade = reader.IsDBNull(reader.GetOrdinal("precounidade")) ? 0m : Convert.ToDecimal(reader["precounidade"]);
+                            Item.SubTotal     = reader.IsDBNull(reader.GetOrdinal("subtotal")) ? 0m : Convert.ToDecimal(reader["subtotal"]);
+                            Item.IdPedido     = reader.IsDBNull(reader.GetOrdinal("idpedido")) ? 0 : Convert.ToInt32(reader["idpedido"]);
+                            Item.IdLivro      = reader.IsDBNull(reader.GetOrdinal("idlivro")) ? 0 : Convert.ToInt32(reader["idlivro"]);
                         }
                     }
                 }
             }
             catch (Exception)
             {
-                Itens = null;
+                Item = null;
             }
             finally
             {
                 Conexao.FecharConexao();
             }
-            if (Itens == null)
+            if (Item == null)
                 return null;
             else
-                return Itens;
+                if(Item.Id == 0)
+                    return null;
+                else
+                    return Item;
+
         }
     }
 }
