@@ -7,11 +7,11 @@ namespace LivrariaTor.View
 {
     public partial class ItemLivro : UserControl
     {
-        private string _title;
-        private string _descricao;
+        private string  _title;
+        private string  _descricao;
         private decimal _precoLivro;
-        private Image _imagemLivro;
-
+        private Image   _imagemLivro;
+          
         public LivroEnt Livro { get; set; }
 
         public string   Title       { get => _title;       set { _title       = value; lblTituloLivro.Text    = value; } }
@@ -43,5 +43,6 @@ namespace LivrariaTor.View
         {
             ItemClicado?.Invoke(this, new ItemLivroEventArgs(Livro, ImagemLivro));
         }
+
     }
 }

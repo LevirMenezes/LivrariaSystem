@@ -64,7 +64,6 @@ namespace LivrariaTor.View
                 cbxQuantidade.SelectedIndex = Item.Quantidade - 1;
                 _config = false;
             }
-            
         }
 
         private void ItemCarrinho_Load(object sender, EventArgs e)

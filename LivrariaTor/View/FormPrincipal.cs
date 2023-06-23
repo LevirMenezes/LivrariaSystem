@@ -12,6 +12,8 @@ namespace LivrariaTor
 {
     public partial class FormPrincipal : Form
     {
+        #region Variaveis
+
         private List<LivroEnt>        Livros                = new List<LivroEnt>();
         private LivroController       LivroController       = new LivroController();
         private ItensPedidoController ItensPedidoController = new ItensPedidoController();
@@ -19,7 +21,12 @@ namespace LivrariaTor
 
         private int ImgControle1 = 0; 
         private int ImgControle2 = 0; 
-        private int ImgControle3 = 0; 
+        private int ImgControle3 = 0;
+
+        #endregion
+
+        #region Inicialização
+
         public FormPrincipal()
         {
             InitializeComponent();
@@ -47,7 +54,212 @@ namespace LivrariaTor
                 cbxEstoqueLivro3.Enabled = true;
             }
         }
-        
+
+        private void FormPrincipal_Load(object sender, EventArgs e)
+        {
+            if (VariaveisGlobais.UsuarioLogado.Imagem != null)
+                picboxUser.Image = VariaveisGlobais.UsuarioLogado.ByteToIMG();
+            PopularLista();
+        }
+
+        #endregion
+
+        #region Metodo
+
+        private void PopularLista()
+        {
+            if (Livros.Count >= 3)
+            {
+                #region Livro 1
+
+                using (MemoryStream stream = new MemoryStream(Livros[0].Imagem))
+                {
+                    // Crie um objeto Image a partir do MemoryStream
+                    Image imagem = Image.FromStream(stream);
+
+                    // Use a imagem conforme necessário
+                    // Por exemplo, atribua-a a uma PictureBox
+                    picboxIMG1.Image = imagem;
+                }
+                lblTitulo1.Text = Livros[0].Titulo;
+                lblPreco1.Text = Livros[0].Preco.ToString("F2");
+
+                List<EnumQuantidade> listaNum1 = new List<EnumQuantidade>();
+                for (int i = 1; i <= Livros[0].Estoque; i++)
+                {
+                    EnumQuantidade enume = new EnumQuantidade();
+                    enume.numInt = i;
+                    enume.numString = i.ToString();
+                    listaNum1.Add(enume);
+                }
+
+                cbxEstoqueLivro1.DataSource = listaNum1;
+                cbxEstoqueLivro1.DisplayMember = "numString";
+
+                #endregion
+
+                #region Livro 2
+
+                using (MemoryStream stream = new MemoryStream(Livros[1].Imagem))
+                {
+                    // Crie um objeto Image a partir do MemoryStream
+                    Image imagem = Image.FromStream(stream);
+
+                    // Use a imagem conforme necessário
+                    // Por exemplo, atribua-a a uma PictureBox
+                    picboxIMG2.Image = imagem;
+                }
+                lblTitulo2.Text = Livros[1].Titulo;
+                lblPreco2.Text = Livros[1].Preco.ToString("F2");
+
+                List<EnumQuantidade> listaNum2 = new List<EnumQuantidade>();
+                for (int i = 1; i <= Livros[1].Estoque; i++)
+                {
+                    EnumQuantidade enume = new EnumQuantidade();
+                    enume.numInt = i;
+                    enume.numString = i.ToString();
+                    listaNum2.Add(enume);
+                }
+
+                cbxEstoqueLivro2.DataSource = listaNum2;
+                cbxEstoqueLivro2.DisplayMember = "numString";
+
+                #endregion
+
+                #region Livro 3
+
+                using (MemoryStream stream = new MemoryStream(Livros[2].Imagem))
+                {
+                    // Crie um objeto Image a partir do MemoryStream
+                    Image imagem = Image.FromStream(stream);
+
+                    // Use a imagem conforme necessário
+                    // Por exemplo, atribua-a a uma PictureBox
+                    picboxIMG3.Image = imagem;
+                }
+                lblTitulo3.Text = Livros[2].Titulo;
+                lblPreco3.Text = Livros[2].Preco.ToString("F2");
+
+                List<EnumQuantidade> listaNum3 = new List<EnumQuantidade>();
+                for (int i = 1; i <= Livros[2].Estoque; i++)
+                {
+                    EnumQuantidade enume = new EnumQuantidade();
+                    enume.numInt = i;
+                    enume.numString = i.ToString();
+                    listaNum3.Add(enume);
+                }
+
+                cbxEstoqueLivro3.DataSource = listaNum3;
+                cbxEstoqueLivro3.DisplayMember = "numString";
+
+                #endregion
+
+            }
+            else if (Livros.Count == 2)
+            {
+                #region Livro 1
+
+                using (MemoryStream stream = new MemoryStream(Livros[0].Imagem))
+                {
+                    // Crie um objeto Image a partir do MemoryStream
+                    Image imagem = Image.FromStream(stream);
+
+                    // Use a imagem conforme necessário
+                    // Por exemplo, atribua-a a uma PictureBox
+                    picboxIMG1.Image = imagem;
+                }
+                lblTitulo1.Text = Livros[0].Titulo;
+                lblPreco1.Text = Livros[0].Preco.ToString("F2");
+
+                List<EnumQuantidade> listaNum1 = new List<EnumQuantidade>();
+                for (int i = 1; i <= Livros[0].Estoque; i++)
+                {
+                    EnumQuantidade enume = new EnumQuantidade();
+                    enume.numInt = i;
+                    enume.numString = i.ToString();
+                    listaNum1.Add(enume);
+                }
+
+                cbxEstoqueLivro1.DataSource = listaNum1;
+                cbxEstoqueLivro1.DisplayMember = "numString";
+
+                #endregion
+
+                #region Livro 2
+
+                using (MemoryStream stream = new MemoryStream(Livros[1].Imagem))
+                {
+                    // Crie um objeto Image a partir do MemoryStream
+                    Image imagem = Image.FromStream(stream);
+
+                    // Use a imagem conforme necessário
+                    // Por exemplo, atribua-a a uma PictureBox
+                    picboxIMG2.Image = imagem;
+                }
+                lblTitulo2.Text = Livros[1].Titulo;
+                lblPreco2.Text = Livros[1].Preco.ToString("F2");
+
+                List<EnumQuantidade> listaNum2 = new List<EnumQuantidade>();
+                for (int i = 1; i <= Livros[1].Estoque; i++)
+                {
+                    EnumQuantidade enume = new EnumQuantidade();
+                    enume.numInt = i;
+                    enume.numString = i.ToString();
+                    listaNum2.Add(enume);
+                }
+
+                cbxEstoqueLivro2.DataSource = listaNum2;
+                cbxEstoqueLivro2.DisplayMember = "numString";
+
+                #endregion
+
+                pnlIMG3.Visible = false;
+            }
+            else if (Livros.Count == 1)
+            {
+                #region Livro 1
+
+                using (MemoryStream stream = new MemoryStream(Livros[0].Imagem))
+                {
+                    // Crie um objeto Image a partir do MemoryStream
+                    Image imagem = Image.FromStream(stream);
+
+                    // Use a imagem conforme necessário
+                    // Por exemplo, atribua-a a uma PictureBox
+                    picboxIMG1.Image = imagem;
+                }
+                lblTitulo1.Text = Livros[0].Titulo;
+                lblPreco1.Text = Livros[0].Preco.ToString("F2");
+
+                List<EnumQuantidade> listaNum1 = new List<EnumQuantidade>();
+                for (int i = 1; i <= Livros[0].Estoque; i++)
+                {
+                    EnumQuantidade enume = new EnumQuantidade();
+                    enume.numInt = i;
+                    enume.numString = i.ToString();
+                    listaNum1.Add(enume);
+                }
+
+                cbxEstoqueLivro1.DataSource = listaNum1;
+                cbxEstoqueLivro1.DisplayMember = "numString";
+
+                #endregion
+
+                pnlIMG2.Visible = false;
+                pnlIMG3.Visible = false;
+            }
+            else
+            {
+                pnlIMG1.Visible = false;
+                pnlIMG2.Visible = false;
+                pnlIMG3.Visible = false;
+            }
+        }
+
+        #endregion
+
+        #region Buttons e cliques
+
         private void btnFechar_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -97,220 +309,23 @@ namespace LivrariaTor
             this.Hide();
         }
 
-        private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LKlInformacoes_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Informacoes Form_informacoes = new Informacoes();
             Form_informacoes.Show();
             this.Hide();
         }
 
-        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LklMaisVendidos_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //AbrirFormulario<LivrariaTor.View.Maisvendidos>();
+            MessageBox.Show("Essa funcionalidade ainda não está disponível!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return;
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LKlLancamentos_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //FrmUsuario form_
-        }
-
-        private void FormPrincipal_Load(object sender, EventArgs e)
-        {
-            if (VariaveisGlobais.UsuarioLogado.Imagem != null)
-                picboxUser.Image = VariaveisGlobais.UsuarioLogado.ByteToIMG();
-            PopularLista();
-        }
-
-        private void PopularLista()
-        {
-            if (Livros.Count >= 3)
-            {
-                #region Livro 1
-
-                using (MemoryStream stream = new MemoryStream(Livros[0].Imagem))
-                {
-                    // Crie um objeto Image a partir do MemoryStream
-                    Image imagem = Image.FromStream(stream);
-
-                    // Use a imagem conforme necessário
-                    // Por exemplo, atribua-a a uma PictureBox
-                    picboxIMG1.Image = imagem;
-                }
-                lblTitulo1.Text  = Livros[0].Titulo;
-                lblPreco1.Text   = Livros[0].Preco.ToString("F2");
-
-                List<EnumQuantidade> listaNum1 = new List<EnumQuantidade>();
-                for (int i = 1; i <= Livros[0].Estoque; i++)
-                {
-                    EnumQuantidade enume = new EnumQuantidade();
-                    enume.numInt = i;
-                    enume.numString = i.ToString();
-                    listaNum1.Add(enume);
-                }
-
-                cbxEstoqueLivro1.DataSource = listaNum1;
-                cbxEstoqueLivro1.DisplayMember = "numString";
-
-                #endregion
-
-                #region Livro 2
-
-                using (MemoryStream stream = new MemoryStream(Livros[1].Imagem))
-                {
-                    // Crie um objeto Image a partir do MemoryStream
-                    Image imagem = Image.FromStream(stream);
-
-                    // Use a imagem conforme necessário
-                    // Por exemplo, atribua-a a uma PictureBox
-                    picboxIMG2.Image = imagem;
-                }
-                lblTitulo2.Text  = Livros[1].Titulo;
-                lblPreco2.Text   = Livros[1].Preco.ToString("F2");
-
-                List<EnumQuantidade> listaNum2 = new List<EnumQuantidade>();
-                for (int i = 1; i <= Livros[1].Estoque; i++)
-                {
-                    EnumQuantidade enume = new EnumQuantidade();
-                    enume.numInt = i;
-                    enume.numString = i.ToString();
-                    listaNum2.Add(enume);
-                }
-
-                cbxEstoqueLivro2.DataSource = listaNum2;
-                cbxEstoqueLivro2.DisplayMember = "numString";
-
-                #endregion
-
-                #region Livro 3
-
-                using (MemoryStream stream = new MemoryStream(Livros[2].Imagem))
-                {
-                    // Crie um objeto Image a partir do MemoryStream
-                    Image imagem = Image.FromStream(stream);
-
-                    // Use a imagem conforme necessário
-                    // Por exemplo, atribua-a a uma PictureBox
-                    picboxIMG3.Image = imagem;
-                }
-                lblTitulo3.Text  = Livros[2].Titulo;
-                lblPreco3.Text   = Livros[2].Preco.ToString("F2");
-
-                List<EnumQuantidade> listaNum3 = new List<EnumQuantidade>();
-                for (int i = 1; i <= Livros[2].Estoque; i++)
-                {
-                    EnumQuantidade enume = new EnumQuantidade();
-                    enume.numInt         = i;
-                    enume.numString      = i.ToString();
-                    listaNum3.Add(enume);
-                }
-
-                cbxEstoqueLivro3.DataSource    = listaNum3;
-                cbxEstoqueLivro3.DisplayMember = "numString";
-
-                #endregion
-
-            }
-            else if(Livros.Count == 2)
-            {
-                #region Livro 1
-
-                using (MemoryStream stream = new MemoryStream(Livros[0].Imagem))
-                {
-                    // Crie um objeto Image a partir do MemoryStream
-                    Image imagem = Image.FromStream(stream);
-
-                    // Use a imagem conforme necessário
-                    // Por exemplo, atribua-a a uma PictureBox
-                    picboxIMG1.Image = imagem;
-                }
-                lblTitulo1.Text = Livros[0].Titulo;
-                lblPreco1.Text  = Livros[0].Preco.ToString("F2");
-
-                List<EnumQuantidade> listaNum1 = new List<EnumQuantidade>();
-                for (int i = 1; i <= Livros[0].Estoque; i++)
-                {
-                    EnumQuantidade enume = new EnumQuantidade();
-                    enume.numInt = i;
-                    enume.numString = i.ToString();
-                    listaNum1.Add(enume);
-                }
-
-                cbxEstoqueLivro1.DataSource = listaNum1;
-                cbxEstoqueLivro1.DisplayMember = "numString";
-
-                #endregion
-
-                #region Livro 2
-
-                using (MemoryStream stream = new MemoryStream(Livros[1].Imagem))
-                {
-                    // Crie um objeto Image a partir do MemoryStream
-                    Image imagem = Image.FromStream(stream);
-
-                    // Use a imagem conforme necessário
-                    // Por exemplo, atribua-a a uma PictureBox
-                    picboxIMG2.Image = imagem;
-                }
-                lblTitulo2.Text = Livros[1].Titulo;
-                lblPreco2.Text  = Livros[1].Preco.ToString("F2");
-
-                List<EnumQuantidade> listaNum2 = new List<EnumQuantidade>();
-                for (int i = 1; i <= Livros[1].Estoque; i++)
-                {
-                    EnumQuantidade enume = new EnumQuantidade();
-                    enume.numInt = i;
-                    enume.numString = i.ToString();
-                    listaNum2.Add(enume);
-                }
-
-                cbxEstoqueLivro2.DataSource = listaNum2;
-                cbxEstoqueLivro2.DisplayMember = "numString";
-
-                #endregion
-
-                pnlIMG3.Visible = false;
-            }
-            else if(Livros.Count == 1)
-            {
-                #region Livro 1
-
-                using (MemoryStream stream = new MemoryStream(Livros[0].Imagem))
-                {
-                    // Crie um objeto Image a partir do MemoryStream
-                    Image imagem = Image.FromStream(stream);
-
-                    // Use a imagem conforme necessário
-                    // Por exemplo, atribua-a a uma PictureBox
-                    picboxIMG1.Image = imagem;
-                }
-                lblTitulo1.Text = Livros[0].Titulo;
-                lblPreco1.Text  = Livros[0].Preco.ToString("F2");
-
-                List<EnumQuantidade> listaNum1 = new List<EnumQuantidade>();
-                for (int i = 1; i <= Livros[0].Estoque; i++)
-                {
-                    EnumQuantidade enume = new EnumQuantidade();
-                    enume.numInt = i;
-                    enume.numString = i.ToString();
-                    listaNum1.Add(enume);
-                }
-
-                cbxEstoqueLivro1.DataSource = listaNum1;
-                cbxEstoqueLivro1.DisplayMember = "numString";
-
-                #endregion
-                
-
-
-                pnlIMG2.Visible = false;
-                pnlIMG3.Visible = false;
-            }
-            else
-            {
-                pnlIMG1.Visible = false;
-                pnlIMG2.Visible = false;
-                pnlIMG3.Visible = false;
-            }
+            MessageBox.Show("Essa funcionalidade ainda não está disponível!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return;
         }
 
         private void btnComprar1_Click(object sender, EventArgs e)
@@ -435,5 +450,11 @@ namespace LivrariaTor
             form_adm.Show();
             this.Close();
         }
+
+        #endregion
+
+        #region ItemClique
+
+        #endregion
     }
 }

@@ -12,9 +12,13 @@ namespace LivrariaTor.View
     {
         #region Variaveis
 
-        private LivroController LivroController  = new LivroController();
-        private List<LivroEnt>  Livros;
-        private LivroEnt        LivroSelecionado = null;
+        private LivroController       LivroController       = new LivroController();
+        private PedidoController      PedidoController      = new PedidoController();
+        private ItensPedidoController ItensPedidoController = new ItensPedidoController();
+        private LivroEnt              LivroSelecionado      = null;
+        private List<LivroEnt>        Livros;
+        private bool                  Config                = true;
+        private int                   CbxControl            = 0;
 
         #endregion
 
@@ -30,15 +34,20 @@ namespace LivrariaTor.View
         {
             PopularLista();
 
+
             if(VariaveisGlobais.UsuarioLogado.Adm == 1)
             {
                 btnAdicionarCarrinho.Visible = false;
+                btnCadastrarLivro.Visible    = true;
+                btnEditarLivro.Visible       = true;
+                btnDeletarLivro.Visible      = true;
             }
             else
             {
                 btnCadastrarLivro.Visible = false;
                 btnEditarLivro.Visible    = false;
                 btnDeletarLivro.Visible   = false;
+                cbxQuantidade.Enabled     = false;
             }
         }
 
@@ -72,6 +81,25 @@ namespace LivrariaTor.View
                 
                 flowLayoutPanel1.Controls.Add(item);
             }
+        }
+
+        private void PopulaCombobox()
+        {
+            List<EnumQuantidade> lista = new List<EnumQuantidade>();
+            if (LivroSelecionado != null)
+            {
+                for (int i = 1; i <= LivroSelecionado.Estoque; i++)
+                {
+                    EnumQuantidade item = new EnumQuantidade();
+                    item.numInt    = i;
+                    item.numString = i.ToString();
+
+                    lista.Add(item);
+                }
+            }
+            cbxQuantidade.DataSource    = lista;
+            cbxQuantidade.DisplayMember = "numString";
+            cbxQuantidade.SelectedIndex = 0;
         }
 
         #endregion
@@ -140,7 +168,39 @@ namespace LivrariaTor.View
 
         private void btnAdicionarCarrinho_Click(object sender, EventArgs e)
         {
+            if(LivroSelecionado == null)
+            {
+                MessageBox.Show("Selecione um livro por favor!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            PedidoEnt Pedido = PedidoController.PegaPedidoPorUsuarioId(VariaveisGlobais.UsuarioLogado.Id);
+
+            if (Pedido == null)
+            {
+                PedidoController.InserirPedido(VariaveisGlobais.UsuarioLogado.Id);
+                Pedido = PedidoController.PegaPedidoPorUsuarioId(VariaveisGlobais.UsuarioLogado.Id);
+            }
+
+            ItensPedidoEnt VerificaItem = ItensPedidoController.PegaItemPorLivro(LivroSelecionado.Id, VariaveisGlobais.UsuarioLogado.Id);
+            if (VerificaItem != null && VerificaItem.Id != 0)
+            {
+                MessageBox.Show("Esse Livro já está no carrinho!!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            ItensPedidoEnt item = new ItensPedidoEnt();
+            item.Quantidade     = (cbxQuantidade.SelectedIndex + 1);
+            item.IdLivro        = LivroSelecionado.Id;
+            item.IdPedido       = Pedido.Id;
+            item.PrecoUnidade   = LivroSelecionado.Preco;
+
+            string respItem = ItensPedidoController.InserirItem(item);
+
+            if (respItem == "OK")
+                MessageBox.Show("Livro adicionado ao carrinho!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show("O Livro não foi adicionado, por favor tente novamente!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         #endregion
@@ -153,16 +213,46 @@ namespace LivrariaTor.View
             decimal Preco     = e.Livro.Preco;
             Image   imagem    = e.Imagem;
 
-            lblTitulo.Visible            = false;
-            lblPreco.Visible             = false;
-            btnAdicionarCarrinho.Visible = false;
+            if(VariaveisGlobais.UsuarioLogado.Adm == 1)
+            {
+                lblPreco.Visible             = false;
+                btnAdicionarCarrinho.Visible = false;
+                lblTitulo.Visible            = false;
+                cbxQuantidade.Visible        = false;
+            }
+            else
+            {
+                lblPreco.Visible             = true;
+                btnAdicionarCarrinho.Visible = true;
+                lblTitulo.Visible            = true;
+                cbxQuantidade.Visible        = true;
+                cbxQuantidade.Enabled        = true;
+            }
 
-            LivroSelecionado    = e.Livro;
+            LivroSelecionado  = e.Livro;
             picboxLivro.Image = imagem;
             lblTitulo.Text    = Titulo;
             lblPreco.Text     = "R$ " + Preco.ToString("F2");
+            Config            = true;
+
+            PopulaCombobox();
+
         }
 
         #endregion
+
+        private void cbxQuantidade_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(Config)
+            {
+                cbxQuantidade.SelectedIndex = 0;
+                CbxControl                  = cbxQuantidade.SelectedIndex + 1;
+                Config                      = false;
+            }
+            else
+            {
+                CbxControl = cbxQuantidade.SelectedIndex + 1;
+            }
+        }
     }
 }

@@ -53,7 +53,7 @@
             // 
             // lblDescricaoLivro
             // 
-            this.lblDescricaoLivro.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescricaoLivro.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.lblDescricaoLivro.Location = new System.Drawing.Point(172, 52);
             this.lblDescricaoLivro.Name = "lblDescricaoLivro";
             this.lblDescricaoLivro.Size = new System.Drawing.Size(576, 37);
@@ -67,10 +67,10 @@
             // 
             this.lblPrecoLivro.AutoSize = true;
             this.lblPrecoLivro.BackColor = System.Drawing.Color.Transparent;
-            this.lblPrecoLivro.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecoLivro.Location = new System.Drawing.Point(192, 102);
+            this.lblPrecoLivro.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold);
+            this.lblPrecoLivro.Location = new System.Drawing.Point(196, 102);
             this.lblPrecoLivro.Name = "lblPrecoLivro";
-            this.lblPrecoLivro.Size = new System.Drawing.Size(59, 23);
+            this.lblPrecoLivro.Size = new System.Drawing.Size(62, 25);
             this.lblPrecoLivro.TabIndex = 3;
             this.lblPrecoLivro.Text = "79,99";
             this.lblPrecoLivro.Click += new System.EventHandler(this.ItemLivro_Click);
@@ -80,9 +80,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(177, 104);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(21, 13);
+            this.label4.Size = new System.Drawing.Size(27, 17);
             this.label4.TabIndex = 4;
             this.label4.Text = "R$";
             this.label4.Click += new System.EventHandler(this.ItemLivro_Click);

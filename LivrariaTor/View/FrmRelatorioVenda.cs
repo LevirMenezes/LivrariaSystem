@@ -2,12 +2,6 @@
 using LivrariaTor.Persistencia;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LivrariaTor.View
@@ -28,8 +22,9 @@ namespace LivrariaTor.View
             try
             {
                 ItensRelatorio = PedidoController.PegaRelatoriosDeVendas();
-                if (ItensRelatorio.Count <= 0)
-                    throw new Exception("Não há itens de relatório de vendas para ser exibido!");
+                if (ItensRelatorio == null)
+                    throw new Exception("A lista do relatória de vendas a ser exibida está vazia!");
+                
 
                 List<ItemRelatoriodeVendas> ItemRelatorio = new List<ItemRelatoriodeVendas>();
 
@@ -61,6 +56,9 @@ namespace LivrariaTor.View
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TelaAdm form_adm = new TelaAdm();
+                form_adm.Show();
+                this.Close();
             }
  
         }

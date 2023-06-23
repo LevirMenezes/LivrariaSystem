@@ -455,7 +455,36 @@ namespace LivrariaTor
             this.LKlInformacoes.TabIndex = 4;
             this.LKlInformacoes.TabStop = true;
             this.LKlInformacoes.Text = "Informações";
-            this.LKlInformacoes.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel6_LinkClicked);
+            this.LKlInformacoes.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LKlInformacoes_LinkClicked);
+            // 
+            // LklMaisVendidos
+            // 
+            this.LklMaisVendidos.AutoSize = true;
+            this.LklMaisVendidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LklMaisVendidos.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(22)))), ((int)(((byte)(143)))));
+            this.LklMaisVendidos.Location = new System.Drawing.Point(496, 17);
+            this.LklMaisVendidos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LklMaisVendidos.Name = "LklMaisVendidos";
+            this.LklMaisVendidos.Size = new System.Drawing.Size(113, 20);
+            this.LklMaisVendidos.TabIndex = 2;
+            this.LklMaisVendidos.TabStop = true;
+            this.LklMaisVendidos.Text = "Mais Vendidos";
+            this.LklMaisVendidos.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LklMaisVendidos_LinkClicked);
+            // 
+            // LKlLancamentos
+            // 
+            this.LKlLancamentos.AutoSize = true;
+            this.LKlLancamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LKlLancamentos.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(22)))), ((int)(((byte)(143)))));
+            this.LKlLancamentos.Location = new System.Drawing.Point(246, 17);
+            this.LKlLancamentos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LKlLancamentos.Name = "LKlLancamentos";
+            this.LKlLancamentos.Size = new System.Drawing.Size(106, 20);
+            this.LKlLancamentos.TabIndex = 1;
+            this.LKlLancamentos.TabStop = true;
+            this.LKlLancamentos.Text = "Lançamentos";
+            this.LKlLancamentos.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LKlLancamentos_LinkClicked);
+            // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::LivrariaTor.Properties.Resources.best_choice_recommended_icon_220381;
@@ -469,7 +498,7 @@ namespace LivrariaTor
             // pictureBox3
             // 
             this.pictureBox3.Image = global::LivrariaTor.Properties.Resources._1492719123_rocket_83625;
-            this.pictureBox3.Location = new System.Drawing.Point(209, 2);
+            this.pictureBox3.Location = new System.Drawing.Point(200, 2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(46, 47);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -496,39 +525,10 @@ namespace LivrariaTor
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // LklMaisVendidos
-            // 
-            this.LklMaisVendidos.AutoSize = true;
-            this.LklMaisVendidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LklMaisVendidos.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(22)))), ((int)(((byte)(143)))));
-            this.LklMaisVendidos.Location = new System.Drawing.Point(496, 17);
-            this.LklMaisVendidos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LklMaisVendidos.Name = "LklMaisVendidos";
-            this.LklMaisVendidos.Size = new System.Drawing.Size(113, 20);
-            this.LklMaisVendidos.TabIndex = 2;
-            this.LklMaisVendidos.TabStop = true;
-            this.LklMaisVendidos.Text = "Mais Vendidos";
-            this.LklMaisVendidos.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
-            // 
-            // LKlLancamentos
-            // 
-            this.LKlLancamentos.AutoSize = true;
-            this.LKlLancamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LKlLancamentos.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(22)))), ((int)(((byte)(143)))));
-            this.LKlLancamentos.Location = new System.Drawing.Point(246, 17);
-            this.LKlLancamentos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LKlLancamentos.Name = "LKlLancamentos";
-            this.LKlLancamentos.Size = new System.Drawing.Size(106, 20);
-            this.LKlLancamentos.TabIndex = 1;
-            this.LKlLancamentos.TabStop = true;
-            this.LKlLancamentos.Text = "Lançamentos";
-            // 
             // LklLivros
             // 
             this.LklLivros.AutoSize = true;
             this.LklLivros.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LklLivros.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(22)))), ((int)(((byte)(143)))));
-            this.LklLivros.Location = new System.Drawing.Point(53, 17);
             this.LklLivros.LinkColor = System.Drawing.Color.Purple;
             this.LklLivros.Location = new System.Drawing.Point(89, 17);
             this.LklLivros.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -626,7 +626,6 @@ namespace LivrariaTor
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.panelConteiner.ResumeLayout(false);
             this.painelFormularios.ResumeLayout(false);
-            this.painelFormularios.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnSetaDireita)).EndInit();
             this.pnlIMG3.ResumeLayout(false);

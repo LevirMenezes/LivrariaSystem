@@ -43,6 +43,7 @@ namespace LivrariaTor.View
             this.lblPreco = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.cbxQuantidade = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -99,6 +100,7 @@ namespace LivrariaTor.View
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(179)))), ((int)(((byte)(242)))));
+            this.panel2.Controls.Add(this.cbxQuantidade);
             this.panel2.Controls.Add(this.btnVoltarTelaPrincipal);
             this.panel2.Controls.Add(this.picboxLivro);
             this.panel2.Controls.Add(this.btnAdicionarCarrinho);
@@ -225,6 +227,16 @@ namespace LivrariaTor.View
             this.flowLayoutPanel1.Size = new System.Drawing.Size(698, 583);
             this.flowLayoutPanel1.TabIndex = 19;
             // 
+            // cbxQuantidade
+            // 
+            this.cbxQuantidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxQuantidade.FormattingEnabled = true;
+            this.cbxQuantidade.Location = new System.Drawing.Point(26, 230);
+            this.cbxQuantidade.Name = "cbxQuantidade";
+            this.cbxQuantidade.Size = new System.Drawing.Size(54, 21);
+            this.cbxQuantidade.TabIndex = 11;
+            this.cbxQuantidade.SelectedIndexChanged += new System.EventHandler(this.cbxQuantidade_SelectedIndexChanged);
+            // 
             // Catalogodelivros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -264,5 +276,6 @@ namespace LivrariaTor.View
         private System.Windows.Forms.Button btnVoltarTelaPrincipal;
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.TextBox tbxPesquisa;
+        private System.Windows.Forms.ComboBox cbxQuantidade;
     }
 }
