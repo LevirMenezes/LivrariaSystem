@@ -191,14 +191,14 @@ namespace LivrariaTor
             // 
             this.txtQtdEstoque.Location = new System.Drawing.Point(114, 162);
             this.txtQtdEstoque.Name = "txtQtdEstoque";
-            this.txtQtdEstoque.Size = new System.Drawing.Size(282, 21);
+            this.txtQtdEstoque.Size = new System.Drawing.Size(282, 25);
             this.txtQtdEstoque.TabIndex = 21;
             // 
             // txtTitulo
             // 
             this.txtTitulo.Location = new System.Drawing.Point(114, 49);
             this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(282, 21);
+            this.txtTitulo.Size = new System.Drawing.Size(282, 25);
             this.txtTitulo.TabIndex = 20;
             // 
             // cbxAutor
@@ -218,7 +218,7 @@ namespace LivrariaTor
             this.cbxGenero.Location = new System.Drawing.Point(114, 219);
             this.cbxGenero.Margin = new System.Windows.Forms.Padding(2);
             this.cbxGenero.Name = "cbxGenero";
-            this.cbxGenero.Size = new System.Drawing.Size(282, 23);
+            this.cbxGenero.Size = new System.Drawing.Size(282, 25);
             this.cbxGenero.TabIndex = 34;
             this.cbxGenero.SelectedIndexChanged += new System.EventHandler(this.cbxGenero_SelectedIndexChanged);
             // 
@@ -376,7 +376,7 @@ namespace LivrariaTor
             this.groupBox3.Controls.Add(this.lblTelefoneUsuario);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.mTxtPreco);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(437, 80);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
@@ -391,7 +391,7 @@ namespace LivrariaTor
             this.dtpAnoPublicacao.Location = new System.Drawing.Point(114, 401);
             this.dtpAnoPublicacao.Margin = new System.Windows.Forms.Padding(2);
             this.dtpAnoPublicacao.Name = "dtpAnoPublicacao";
-            this.dtpAnoPublicacao.Size = new System.Drawing.Size(282, 21);
+            this.dtpAnoPublicacao.Size = new System.Drawing.Size(282, 25);
             this.dtpAnoPublicacao.TabIndex = 42;
             // 
             // label10
@@ -409,7 +409,7 @@ namespace LivrariaTor
             // 
             this.txtIsbn.Location = new System.Drawing.Point(114, 350);
             this.txtIsbn.Name = "txtIsbn";
-            this.txtIsbn.Size = new System.Drawing.Size(282, 21);
+            this.txtIsbn.Size = new System.Drawing.Size(282, 25);
             this.txtIsbn.TabIndex = 37;
             // 
             // label9
@@ -427,7 +427,7 @@ namespace LivrariaTor
             // 
             this.txtDescricaoLivro.Location = new System.Drawing.Point(114, 297);
             this.txtDescricaoLivro.Name = "txtDescricaoLivro";
-            this.txtDescricaoLivro.Size = new System.Drawing.Size(282, 21);
+            this.txtDescricaoLivro.Size = new System.Drawing.Size(282, 25);
             this.txtDescricaoLivro.TabIndex = 35;
             // 
             // label8
