@@ -13,8 +13,8 @@ namespace LivrariaTor.Model
         public string Insert(int idusuario)
         {
             SqlConnection cn = Conexao.ObterConexao();
-            string query = "INSERT INTO tbPedido(datacompra, precototal, estadopedido, idformapagamento, idusuario) VALUES (@datacompra, @precototal, @estadopedido, @idformapagamento, @idusuario)";
-            string resp = string.Empty;
+            string query     = "INSERT INTO tbPedido(datacompra, precototal, estadopedido idusuario) VALUES (@datacompra, @precototal, @estadopedido, @idformapagamento, @idusuario)";
+            string resp      = string.Empty;
             try
             {
                 using (SqlCommand command = new SqlCommand(query, cn))
@@ -22,7 +22,6 @@ namespace LivrariaTor.Model
                     command.Parameters.AddWithValue("@datacompra",       DateTime.Now);
                     command.Parameters.AddWithValue("@precototal",       0.0);
                     command.Parameters.AddWithValue("@estadopedido",     "EM ANDAMENTO");
-                    command.Parameters.AddWithValue("@idformapagamento", "");
                     command.Parameters.AddWithValue("@idusuario",        idusuario);
                     resp = command.ExecuteNonQuery() == 1 ? "OK" : "O Insert não foi feito!";
                 }
@@ -190,15 +189,14 @@ namespace LivrariaTor.Model
                         {
                             pedido.Id               = Convert.ToInt32(   reader["id"]);
                             pedido.DataCompra       = Convert.ToDateTime(reader["datacompra"]);
-                            pedido.PrecoTotal       = Convert.ToDecimal( reader["precototal"]);
+                            pedido.PrecoTotal       = reader.IsDBNull(reader.GetOrdinal("precototal")) ? 0 : Convert.ToDecimal( reader["precototal"]);
                             pedido.EstadoPedido     = reader["estadopedido"].ToString();
-                            pedido.IdFormaPagamento = Convert.ToInt32(   reader["idformapagamento"]);
                             pedido.IdUsuario        = Convert.ToInt32(   reader["idusuario"]);
                         }
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 pedido = null;
             }
@@ -207,7 +205,7 @@ namespace LivrariaTor.Model
                 Conexao.FecharConexao();
             }
 
-            return (pedido.Id == 0 ? null : pedido);
+            return ((pedido.Id == 0 || pedido == null) ? null : pedido);
         }
 
     }

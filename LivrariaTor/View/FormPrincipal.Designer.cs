@@ -32,49 +32,52 @@ namespace LivrariaTor
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.panelConteiner = new System.Windows.Forms.Panel();
             this.painelFormularios = new System.Windows.Forms.Panel();
+            this.btnTelaAdm = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnSetaDireita = new System.Windows.Forms.PictureBox();
             this.pnlIMG3 = new System.Windows.Forms.Panel();
             this.btnComprar3 = new System.Windows.Forms.Button();
             this.lblTitulo3 = new System.Windows.Forms.Label();
-            this.picboxIMG3 = new System.Windows.Forms.PictureBox();
             this.pnlIMG2 = new System.Windows.Forms.Panel();
             this.btnComprar2 = new System.Windows.Forms.Button();
             this.lblTitulo2 = new System.Windows.Forms.Label();
-            this.picboxIMG2 = new System.Windows.Forms.PictureBox();
-            this.btnSetaEsquerda = new System.Windows.Forms.PictureBox();
             this.pnlIMG1 = new System.Windows.Forms.Panel();
             this.btnComprar1 = new System.Windows.Forms.Button();
             this.lblTitulo1 = new System.Windows.Forms.Label();
-            this.picboxIMG1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.linkLabel6 = new System.Windows.Forms.LinkLabel();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.LklLivros = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblLivraria = new System.Windows.Forms.Label();
+            this.cbxEstoqueLivro1 = new System.Windows.Forms.ComboBox();
+            this.cbxEstoqueLivro2 = new System.Windows.Forms.ComboBox();
+            this.cbxEstoqueLivro3 = new System.Windows.Forms.ComboBox();
+            this.btnSetaDireita = new System.Windows.Forms.PictureBox();
+            this.picboxIMG3 = new System.Windows.Forms.PictureBox();
+            this.picboxIMG2 = new System.Windows.Forms.PictureBox();
+            this.btnSetaEsquerda = new System.Windows.Forms.PictureBox();
+            this.picboxIMG1 = new System.Windows.Forms.PictureBox();
             this.picboxCarrinho = new System.Windows.Forms.PictureBox();
             this.picboxUser = new System.Windows.Forms.PictureBox();
-            this.lblLivraria = new System.Windows.Forms.Label();
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnFechar = new System.Windows.Forms.PictureBox();
             this.btnRestaurar = new System.Windows.Forms.PictureBox();
-            this.btnTelaAdm = new System.Windows.Forms.Button();
             this.panelConteiner.SuspendLayout();
             this.painelFormularios.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSetaDireita)).BeginInit();
             this.pnlIMG3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picboxIMG3)).BeginInit();
             this.pnlIMG2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picboxIMG2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSetaEsquerda)).BeginInit();
             this.pnlIMG1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picboxIMG1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSetaDireita)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxIMG3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxIMG2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSetaEsquerda)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxIMG1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picboxCarrinho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picboxUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
@@ -86,11 +89,12 @@ namespace LivrariaTor
             // panelConteiner
             // 
             this.panelConteiner.BackColor = System.Drawing.Color.Plum;
+            this.panelConteiner.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelConteiner.Controls.Add(this.painelFormularios);
             this.panelConteiner.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelConteiner.Location = new System.Drawing.Point(0, 0);
             this.panelConteiner.Name = "panelConteiner";
-            this.panelConteiner.Size = new System.Drawing.Size(900, 640);
+            this.panelConteiner.Size = new System.Drawing.Size(900, 650);
             this.panelConteiner.TabIndex = 0;
             // 
             // painelFormularios
@@ -100,6 +104,7 @@ namespace LivrariaTor
             | System.Windows.Forms.AnchorStyles.Right)));
             this.painelFormularios.BackColor = System.Drawing.Color.White;
             this.painelFormularios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.painelFormularios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.painelFormularios.Controls.Add(this.btnTelaAdm);
             this.painelFormularios.Controls.Add(this.btnLogout);
             this.painelFormularios.Controls.Add(this.panel3);
@@ -107,8 +112,21 @@ namespace LivrariaTor
             this.painelFormularios.Controls.Add(this.panel1);
             this.painelFormularios.Location = new System.Drawing.Point(0, 0);
             this.painelFormularios.Name = "painelFormularios";
-            this.painelFormularios.Size = new System.Drawing.Size(900, 650);
+            this.painelFormularios.Size = new System.Drawing.Size(898, 648);
             this.painelFormularios.TabIndex = 2;
+            // 
+            // btnTelaAdm
+            // 
+            this.btnTelaAdm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTelaAdm.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.btnTelaAdm.ForeColor = System.Drawing.Color.Purple;
+            this.btnTelaAdm.Location = new System.Drawing.Point(22, 550);
+            this.btnTelaAdm.Name = "btnTelaAdm";
+            this.btnTelaAdm.Size = new System.Drawing.Size(112, 24);
+            this.btnTelaAdm.TabIndex = 4;
+            this.btnTelaAdm.Text = "Tela Adm";
+            this.btnTelaAdm.UseVisualStyleBackColor = true;
+            this.btnTelaAdm.Click += new System.EventHandler(this.btnTelaAdm_Click);
             // 
             // btnLogout
             // 
@@ -136,20 +154,10 @@ namespace LivrariaTor
             this.panel3.Size = new System.Drawing.Size(856, 363);
             this.panel3.TabIndex = 2;
             // 
-            // btnSetaDireita
-            // 
-            this.btnSetaDireita.Image = global::LivrariaTor.Properties.Resources.seta_direita;
-            this.btnSetaDireita.Location = new System.Drawing.Point(807, 139);
-            this.btnSetaDireita.Name = "btnSetaDireita";
-            this.btnSetaDireita.Size = new System.Drawing.Size(34, 50);
-            this.btnSetaDireita.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnSetaDireita.TabIndex = 3;
-            this.btnSetaDireita.TabStop = false;
-            this.btnSetaDireita.Visible = false;
-            // 
             // pnlIMG3
             // 
             this.pnlIMG3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlIMG3.Controls.Add(this.cbxEstoqueLivro3);
             this.pnlIMG3.Controls.Add(this.btnComprar3);
             this.pnlIMG3.Controls.Add(this.lblTitulo3);
             this.pnlIMG3.Controls.Add(this.picboxIMG3);
@@ -160,7 +168,10 @@ namespace LivrariaTor
             // 
             // btnComprar3
             // 
-            this.btnComprar3.Location = new System.Drawing.Point(60, 261);
+            this.btnComprar3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnComprar3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.btnComprar3.ForeColor = System.Drawing.Color.Purple;
+            this.btnComprar3.Location = new System.Drawing.Point(60, 277);
             this.btnComprar3.Name = "btnComprar3";
             this.btnComprar3.Size = new System.Drawing.Size(91, 30);
             this.btnComprar3.TabIndex = 4;
@@ -178,18 +189,10 @@ namespace LivrariaTor
             this.lblTitulo3.Text = "Titulo";
             this.lblTitulo3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // picboxIMG3
-            // 
-            this.picboxIMG3.Location = new System.Drawing.Point(37, 27);
-            this.picboxIMG3.Name = "picboxIMG3";
-            this.picboxIMG3.Size = new System.Drawing.Size(128, 157);
-            this.picboxIMG3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picboxIMG3.TabIndex = 2;
-            this.picboxIMG3.TabStop = false;
-            // 
             // pnlIMG2
             // 
             this.pnlIMG2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlIMG2.Controls.Add(this.cbxEstoqueLivro2);
             this.pnlIMG2.Controls.Add(this.btnComprar2);
             this.pnlIMG2.Controls.Add(this.lblTitulo2);
             this.pnlIMG2.Controls.Add(this.picboxIMG2);
@@ -200,7 +203,10 @@ namespace LivrariaTor
             // 
             // btnComprar2
             // 
-            this.btnComprar2.Location = new System.Drawing.Point(57, 261);
+            this.btnComprar2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnComprar2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.btnComprar2.ForeColor = System.Drawing.Color.Purple;
+            this.btnComprar2.Location = new System.Drawing.Point(57, 277);
             this.btnComprar2.Name = "btnComprar2";
             this.btnComprar2.Size = new System.Drawing.Size(91, 30);
             this.btnComprar2.TabIndex = 5;
@@ -218,29 +224,10 @@ namespace LivrariaTor
             this.lblTitulo2.Text = "Titulo";
             this.lblTitulo2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // picboxIMG2
-            // 
-            this.picboxIMG2.Location = new System.Drawing.Point(36, 27);
-            this.picboxIMG2.Name = "picboxIMG2";
-            this.picboxIMG2.Size = new System.Drawing.Size(128, 157);
-            this.picboxIMG2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picboxIMG2.TabIndex = 1;
-            this.picboxIMG2.TabStop = false;
-            // 
-            // btnSetaEsquerda
-            // 
-            this.btnSetaEsquerda.Image = global::LivrariaTor.Properties.Resources.seta_esquerda;
-            this.btnSetaEsquerda.Location = new System.Drawing.Point(15, 139);
-            this.btnSetaEsquerda.Name = "btnSetaEsquerda";
-            this.btnSetaEsquerda.Size = new System.Drawing.Size(34, 50);
-            this.btnSetaEsquerda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnSetaEsquerda.TabIndex = 1;
-            this.btnSetaEsquerda.TabStop = false;
-            this.btnSetaEsquerda.Visible = false;
-            // 
             // pnlIMG1
             // 
             this.pnlIMG1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlIMG1.Controls.Add(this.cbxEstoqueLivro1);
             this.pnlIMG1.Controls.Add(this.btnComprar1);
             this.pnlIMG1.Controls.Add(this.lblTitulo1);
             this.pnlIMG1.Controls.Add(this.picboxIMG1);
@@ -251,7 +238,10 @@ namespace LivrariaTor
             // 
             // btnComprar1
             // 
-            this.btnComprar1.Location = new System.Drawing.Point(47, 261);
+            this.btnComprar1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnComprar1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.btnComprar1.ForeColor = System.Drawing.Color.Purple;
+            this.btnComprar1.Location = new System.Drawing.Point(47, 277);
             this.btnComprar1.Name = "btnComprar1";
             this.btnComprar1.Size = new System.Drawing.Size(91, 30);
             this.btnComprar1.TabIndex = 5;
@@ -269,15 +259,6 @@ namespace LivrariaTor
             this.lblTitulo1.TabIndex = 1;
             this.lblTitulo1.Text = "Titulo";
             this.lblTitulo1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // picboxIMG1
-            // 
-            this.picboxIMG1.Location = new System.Drawing.Point(36, 27);
-            this.picboxIMG1.Name = "picboxIMG1";
-            this.picboxIMG1.Size = new System.Drawing.Size(128, 157);
-            this.picboxIMG1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picboxIMG1.TabIndex = 0;
-            this.picboxIMG1.TabStop = false;
             // 
             // panel2
             // 
@@ -360,8 +341,101 @@ namespace LivrariaTor
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(900, 57);
+            this.panel1.Size = new System.Drawing.Size(896, 57);
             this.panel1.TabIndex = 0;
+            // 
+            // lblLivraria
+            // 
+            this.lblLivraria.AutoSize = true;
+            this.lblLivraria.Font = new System.Drawing.Font("Bauhaus 93", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLivraria.ForeColor = System.Drawing.Color.White;
+            this.lblLivraria.Location = new System.Drawing.Point(10, 11);
+            this.lblLivraria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLivraria.Name = "lblLivraria";
+            this.lblLivraria.Size = new System.Drawing.Size(143, 30);
+            this.lblLivraria.TabIndex = 4;
+            this.lblLivraria.Text = "Livraria Tor";
+            // 
+            // cbxEstoqueLivro1
+            // 
+            this.cbxEstoqueLivro1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxEstoqueLivro1.FormattingEnabled = true;
+            this.cbxEstoqueLivro1.Location = new System.Drawing.Point(116, 232);
+            this.cbxEstoqueLivro1.Name = "cbxEstoqueLivro1";
+            this.cbxEstoqueLivro1.Size = new System.Drawing.Size(48, 21);
+            this.cbxEstoqueLivro1.TabIndex = 6;
+            // 
+            // cbxEstoqueLivro2
+            // 
+            this.cbxEstoqueLivro2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxEstoqueLivro2.FormattingEnabled = true;
+            this.cbxEstoqueLivro2.Location = new System.Drawing.Point(116, 232);
+            this.cbxEstoqueLivro2.Name = "cbxEstoqueLivro2";
+            this.cbxEstoqueLivro2.Size = new System.Drawing.Size(48, 21);
+            this.cbxEstoqueLivro2.TabIndex = 7;
+            // 
+            // cbxEstoqueLivro3
+            // 
+            this.cbxEstoqueLivro3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxEstoqueLivro3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.cbxEstoqueLivro3.ForeColor = System.Drawing.Color.Black;
+            this.cbxEstoqueLivro3.FormattingEnabled = true;
+            this.cbxEstoqueLivro3.Location = new System.Drawing.Point(117, 232);
+            this.cbxEstoqueLivro3.Name = "cbxEstoqueLivro3";
+            this.cbxEstoqueLivro3.Size = new System.Drawing.Size(48, 23);
+            this.cbxEstoqueLivro3.TabIndex = 7;
+            // 
+            // btnSetaDireita
+            // 
+            this.btnSetaDireita.Image = global::LivrariaTor.Properties.Resources.seta_direita;
+            this.btnSetaDireita.Location = new System.Drawing.Point(807, 139);
+            this.btnSetaDireita.Name = "btnSetaDireita";
+            this.btnSetaDireita.Size = new System.Drawing.Size(34, 50);
+            this.btnSetaDireita.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnSetaDireita.TabIndex = 3;
+            this.btnSetaDireita.TabStop = false;
+            this.btnSetaDireita.Visible = false;
+            // 
+            // picboxIMG3
+            // 
+            this.picboxIMG3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picboxIMG3.Location = new System.Drawing.Point(37, 27);
+            this.picboxIMG3.Name = "picboxIMG3";
+            this.picboxIMG3.Size = new System.Drawing.Size(128, 157);
+            this.picboxIMG3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picboxIMG3.TabIndex = 2;
+            this.picboxIMG3.TabStop = false;
+            // 
+            // picboxIMG2
+            // 
+            this.picboxIMG2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picboxIMG2.Location = new System.Drawing.Point(36, 27);
+            this.picboxIMG2.Name = "picboxIMG2";
+            this.picboxIMG2.Size = new System.Drawing.Size(128, 157);
+            this.picboxIMG2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picboxIMG2.TabIndex = 1;
+            this.picboxIMG2.TabStop = false;
+            // 
+            // btnSetaEsquerda
+            // 
+            this.btnSetaEsquerda.Image = global::LivrariaTor.Properties.Resources.seta_esquerda;
+            this.btnSetaEsquerda.Location = new System.Drawing.Point(15, 139);
+            this.btnSetaEsquerda.Name = "btnSetaEsquerda";
+            this.btnSetaEsquerda.Size = new System.Drawing.Size(34, 50);
+            this.btnSetaEsquerda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnSetaEsquerda.TabIndex = 1;
+            this.btnSetaEsquerda.TabStop = false;
+            this.btnSetaEsquerda.Visible = false;
+            // 
+            // picboxIMG1
+            // 
+            this.picboxIMG1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picboxIMG1.Location = new System.Drawing.Point(36, 27);
+            this.picboxIMG1.Name = "picboxIMG1";
+            this.picboxIMG1.Size = new System.Drawing.Size(128, 157);
+            this.picboxIMG1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picboxIMG1.TabIndex = 0;
+            this.picboxIMG1.TabStop = false;
             // 
             // picboxCarrinho
             // 
@@ -381,35 +455,25 @@ namespace LivrariaTor
             // picboxUser
             // 
             this.picboxUser.BackColor = System.Drawing.Color.Transparent;
-            this.picboxUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picboxUser.BackgroundImage")));
             this.picboxUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picboxUser.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picboxUser.ErrorImage = null;
+            this.picboxUser.Image = global::LivrariaTor.Properties.Resources.Milena_Souza_Silva;
             this.picboxUser.Location = new System.Drawing.Point(155, 8);
             this.picboxUser.Margin = new System.Windows.Forms.Padding(2);
             this.picboxUser.Name = "picboxUser";
             this.picboxUser.Size = new System.Drawing.Size(42, 41);
+            this.picboxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picboxUser.TabIndex = 5;
             this.picboxUser.TabStop = false;
             this.picboxUser.Click += new System.EventHandler(this.picboxUser_Click);
-            // 
-            // lblLivraria
-            // 
-            this.lblLivraria.AutoSize = true;
-            this.lblLivraria.Font = new System.Drawing.Font("Bauhaus 93", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLivraria.ForeColor = System.Drawing.Color.White;
-            this.lblLivraria.Location = new System.Drawing.Point(10, 11);
-            this.lblLivraria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblLivraria.Name = "lblLivraria";
-            this.lblLivraria.Size = new System.Drawing.Size(143, 30);
-            this.lblLivraria.TabIndex = 4;
-            this.lblLivraria.Text = "Livraria Tor";
             // 
             // btnMaximizar
             // 
             this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximizar.Image")));
-            this.btnMaximizar.Location = new System.Drawing.Point(826, 12);
+            this.btnMaximizar.Location = new System.Drawing.Point(822, 12);
             this.btnMaximizar.Name = "btnMaximizar";
             this.btnMaximizar.Size = new System.Drawing.Size(29, 32);
             this.btnMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -421,7 +485,7 @@ namespace LivrariaTor
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(792, 12);
+            this.btnMinimizar.Location = new System.Drawing.Point(788, 12);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(29, 32);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -433,7 +497,7 @@ namespace LivrariaTor
             this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFechar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFechar.Image = ((System.Drawing.Image)(resources.GetObject("btnFechar.Image")));
-            this.btnFechar.Location = new System.Drawing.Point(860, 12);
+            this.btnFechar.Location = new System.Drawing.Point(856, 12);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(29, 32);
             this.btnFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -446,7 +510,7 @@ namespace LivrariaTor
             this.btnRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaurar.Image")));
-            this.btnRestaurar.Location = new System.Drawing.Point(826, 12);
+            this.btnRestaurar.Location = new System.Drawing.Point(822, 12);
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.Size = new System.Drawing.Size(29, 32);
             this.btnRestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -454,24 +518,11 @@ namespace LivrariaTor
             this.btnRestaurar.TabStop = false;
             this.btnRestaurar.Visible = false;
             // 
-            // btnTelaAdm
-            // 
-            this.btnTelaAdm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTelaAdm.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
-            this.btnTelaAdm.ForeColor = System.Drawing.Color.Purple;
-            this.btnTelaAdm.Location = new System.Drawing.Point(22, 550);
-            this.btnTelaAdm.Name = "btnTelaAdm";
-            this.btnTelaAdm.Size = new System.Drawing.Size(112, 24);
-            this.btnTelaAdm.TabIndex = 4;
-            this.btnTelaAdm.Text = "Tela Adm";
-            this.btnTelaAdm.UseVisualStyleBackColor = true;
-            this.btnTelaAdm.Click += new System.EventHandler(this.btnTelaAdm_Click);
-            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 640);
+            this.ClientSize = new System.Drawing.Size(900, 650);
             this.Controls.Add(this.panelConteiner);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(650, 400);
@@ -482,18 +533,18 @@ namespace LivrariaTor
             this.panelConteiner.ResumeLayout(false);
             this.painelFormularios.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnSetaDireita)).EndInit();
             this.pnlIMG3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picboxIMG3)).EndInit();
             this.pnlIMG2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picboxIMG2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSetaEsquerda)).EndInit();
             this.pnlIMG1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picboxIMG1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSetaDireita)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxIMG3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxIMG2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSetaEsquerda)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxIMG1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picboxCarrinho)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picboxUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).EndInit();
@@ -538,6 +589,9 @@ namespace LivrariaTor
         private System.Windows.Forms.PictureBox picboxIMG1;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnTelaAdm;
+        private System.Windows.Forms.ComboBox cbxEstoqueLivro3;
+        private System.Windows.Forms.ComboBox cbxEstoqueLivro2;
+        private System.Windows.Forms.ComboBox cbxEstoqueLivro1;
     }
 }
 

@@ -96,6 +96,7 @@
     <Compile Include="Persistencia\LivroEnt.cs" />
     <Compile Include="Persistencia\PedidoEnt.cs" />
     <Compile Include="Persistencia\UsuarioEnt.cs" />
+    <Compile Include="Utils\ItemCarrinhoEventArgs.cs" />
     <Compile Include="Utils\ItemUsuarioEventArgs.cs" />
     <Compile Include="Utils\VariaveisGlobais.cs" />
     <Compile Include="View\Carrinho.cs">
@@ -110,11 +111,11 @@
     <Compile Include="View\Catalogodelivros.Designer.cs">
       <DependentUpon>Catalogodelivros.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Formas de pagamento.cs">
+    <Compile Include="View\FormasPagamento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Formas de pagamento.Designer.cs">
-      <DependentUpon>Formas de pagamento.cs</DependentUpon>
+    <Compile Include="View\FormasPagamento.Designer.cs">
+      <DependentUpon>FormasPagamento.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmUsuario.cs">
       <SubType>Form</SubType>
@@ -215,8 +216,8 @@
     <EmbeddedResource Include="View\Catalogodelivros.resx">
       <DependentUpon>Catalogodelivros.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Formas de pagamento.resx">
-      <DependentUpon>Formas de pagamento.cs</DependentUpon>
+    <EmbeddedResource Include="View\FormasPagamento.resx">
+      <DependentUpon>FormasPagamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmUsuario.resx">
       <DependentUpon>FrmUsuario.cs</DependentUpon>
@@ -312,6 +313,7 @@
     <Content Include="Resources\icon-fechar-janela.png" />
     <Content Include="Resources\icons8-excluir-100.png" />
     <None Include="Resources\img_colorida.jpg" />
+    <Content Include="Resources\user-example.png" />
     <Content Include="Resources\livro-clean-code.jpg" />
     <Content Include="Resources\lupa-pesquisar.png" />
     <Content Include="Resources\seta-direita.png" />
