@@ -1,6 +1,7 @@
 ﻿using LivrariaTor.Persistencia;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace LivrariaTor.Model
@@ -127,6 +128,7 @@ namespace LivrariaTor.Model
             try
             {
                 SqlConnection cn = Conexao.ObterConexao();
+                string query  = "DELETE tbItensPedido WHERE idlivro = @idlivro;";
                 string query1 = "DELETE tbLivroAutor  WHERE idlivro = @idlivro1;";
                 string query2 = "DELETE tbLivroGenero WHERE idlivro = @idlivro2;";
                 string query3 = "DELETE FROM tbLivro  WHERE id      = @id3;";
@@ -138,9 +140,12 @@ namespace LivrariaTor.Model
                         SqlCommand command  = new SqlCommand();
                         command.Connection  = cn;
                         command.Transaction = transaction;
-                        command.CommandText = query1 +
+                        command.CommandText = query  +
+                                              query1 +
                                               query2 +
                                               query3;
+
+                        command.Parameters.AddWithValue("@idlivro",  id);
                         command.Parameters.AddWithValue("@idlivro1", id);
                         command.Parameters.AddWithValue("@idlivro2", id);
                         command.Parameters.AddWithValue("@id3"     , id);
@@ -310,6 +315,62 @@ namespace LivrariaTor.Model
                 Conexao.FecharConexao();
             }
             return livro;
+        }
+
+
+        public List<LivroEnt> GetEstoqueLivros()
+        {
+            SqlConnection cn = Conexao.ObterConexao();
+            List<LivroEnt> livros = new List<LivroEnt>();
+
+            try
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+
+                    command.Connection = cn;
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "relatorioEstoque";
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            LivroEnt livro = new LivroEnt();
+                            livro.Id = Convert.ToInt32(reader["id"]);
+                            livro.Titulo = reader["titulo"].ToString();
+                            livro.Preco = Convert.ToDecimal(reader["preco"]);
+                            livro.Descricao = reader["descricao"].ToString();
+                            livro.Estoque = Convert.ToInt32(reader["estoque"]);
+                            livro.AnoPublicacao = Convert.ToDateTime(reader["anopublicacao"]).ToString("dd/MM/yyyy");
+                            livro.Isbn = reader["isbn"].ToString();
+                            livro.IdEditora = Convert.ToInt32(reader["ideditora"]);
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("imagem")))
+                            {
+                                long tamanhoBytes = reader.GetBytes(reader.GetOrdinal("imagem"), 0, null, 0, 0);
+                                byte[] imagemBytes = new byte[tamanhoBytes];
+                                reader.GetBytes(reader.GetOrdinal("imagem"), 0, imagemBytes, 0, (int)tamanhoBytes);
+
+                                livro.Imagem = imagemBytes;
+                            }
+
+                            livros.Add(livro);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                livros = null;
+            }
+            finally
+            {
+                Conexao.FecharConexao();
+
+            }
+
+            return livros;
         }
 
     }

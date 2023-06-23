@@ -13,14 +13,13 @@ namespace LivrariaTor.Model
         public string Insert(int idusuario)
         {
             SqlConnection cn = Conexao.ObterConexao();
-            string query     = "INSERT INTO tbPedido(datacompra, precototal, estadopedido idusuario) VALUES (@datacompra, @precototal, @estadopedido, @idformapagamento, @idusuario)";
+            string query     = "INSERT INTO tbPedido(datacompra, estadopedido, idusuario) VALUES (@datacompra, @estadopedido, @idusuario)";
             string resp      = string.Empty;
             try
             {
                 using (SqlCommand command = new SqlCommand(query, cn))
                 {
                     command.Parameters.AddWithValue("@datacompra",       DateTime.Now);
-                    command.Parameters.AddWithValue("@precototal",       0.0);
                     command.Parameters.AddWithValue("@estadopedido",     "EM ANDAMENTO");
                     command.Parameters.AddWithValue("@idusuario",        idusuario);
                     resp = command.ExecuteNonQuery() == 1 ? "OK" : "O Insert não foi feito!";

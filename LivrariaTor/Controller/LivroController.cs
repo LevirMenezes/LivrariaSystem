@@ -32,5 +32,10 @@ namespace LivrariaTor.Controller
         {
             return LivroModels.GetById(id);
         }
+
+        public List<LivroEnt> PegaLivroEstoque()
+        {
+            return LivroModels.GetEstoqueLivros();
+        }
     }
 }

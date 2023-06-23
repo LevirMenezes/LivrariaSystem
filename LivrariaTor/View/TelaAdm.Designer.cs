@@ -32,8 +32,6 @@ namespace LivrariaTor.View
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblLivraria = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.btnRelatorioVendas = new System.Windows.Forms.Button();
             this.btnRelatorioCliente = new System.Windows.Forms.Button();
             this.btnRelatorioEstoque = new System.Windows.Forms.Button();
@@ -70,34 +68,22 @@ namespace LivrariaTor.View
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(172, 139);
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Purple;
+            this.button1.Location = new System.Drawing.Point(161, 203);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(178, 68);
             this.button1.TabIndex = 17;
             this.button1.Text = "Cadastrar Livro";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(172, 223);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(178, 68);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Alterar livro";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(172, 309);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(178, 68);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "Excluir livro";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // btnRelatorioVendas
             // 
-            this.btnRelatorioVendas.Location = new System.Drawing.Point(499, 223);
+            this.btnRelatorioVendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRelatorioVendas.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRelatorioVendas.ForeColor = System.Drawing.Color.Purple;
+            this.btnRelatorioVendas.Location = new System.Drawing.Point(163, 324);
             this.btnRelatorioVendas.Name = "btnRelatorioVendas";
             this.btnRelatorioVendas.Size = new System.Drawing.Size(178, 68);
             this.btnRelatorioVendas.TabIndex = 20;
@@ -107,7 +93,10 @@ namespace LivrariaTor.View
             // 
             // btnRelatorioCliente
             // 
-            this.btnRelatorioCliente.Location = new System.Drawing.Point(499, 139);
+            this.btnRelatorioCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRelatorioCliente.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRelatorioCliente.ForeColor = System.Drawing.Color.Purple;
+            this.btnRelatorioCliente.Location = new System.Drawing.Point(503, 205);
             this.btnRelatorioCliente.Name = "btnRelatorioCliente";
             this.btnRelatorioCliente.Size = new System.Drawing.Size(178, 68);
             this.btnRelatorioCliente.TabIndex = 21;
@@ -117,7 +106,10 @@ namespace LivrariaTor.View
             // 
             // btnRelatorioEstoque
             // 
-            this.btnRelatorioEstoque.Location = new System.Drawing.Point(499, 309);
+            this.btnRelatorioEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRelatorioEstoque.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRelatorioEstoque.ForeColor = System.Drawing.Color.Purple;
+            this.btnRelatorioEstoque.Location = new System.Drawing.Point(503, 326);
             this.btnRelatorioEstoque.Name = "btnRelatorioEstoque";
             this.btnRelatorioEstoque.Size = new System.Drawing.Size(178, 68);
             this.btnRelatorioEstoque.TabIndex = 22;
@@ -128,11 +120,11 @@ namespace LivrariaTor.View
             // btnTelaPrincipal
             // 
             this.btnTelaPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTelaPrincipal.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.btnTelaPrincipal.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTelaPrincipal.ForeColor = System.Drawing.Color.Purple;
-            this.btnTelaPrincipal.Location = new System.Drawing.Point(16, 82);
+            this.btnTelaPrincipal.Location = new System.Drawing.Point(16, 79);
             this.btnTelaPrincipal.Name = "btnTelaPrincipal";
-            this.btnTelaPrincipal.Size = new System.Drawing.Size(112, 24);
+            this.btnTelaPrincipal.Size = new System.Drawing.Size(119, 33);
             this.btnTelaPrincipal.TabIndex = 23;
             this.btnTelaPrincipal.Text = "Tela inicial";
             this.btnTelaPrincipal.UseVisualStyleBackColor = true;
@@ -141,11 +133,11 @@ namespace LivrariaTor.View
             // btnLogOut
             // 
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogOut.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.btnLogOut.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.ForeColor = System.Drawing.Color.Purple;
-            this.btnLogOut.Location = new System.Drawing.Point(703, 414);
+            this.btnLogOut.Location = new System.Drawing.Point(730, 558);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(112, 24);
+            this.btnLogOut.Size = new System.Drawing.Size(112, 37);
             this.btnLogOut.TabIndex = 24;
             this.btnLogOut.Text = "LogOut";
             this.btnLogOut.UseVisualStyleBackColor = true;
@@ -161,8 +153,6 @@ namespace LivrariaTor.View
             this.Controls.Add(this.btnRelatorioEstoque);
             this.Controls.Add(this.btnRelatorioCliente);
             this.Controls.Add(this.btnRelatorioVendas);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -180,8 +170,6 @@ namespace LivrariaTor.View
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblLivraria;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnRelatorioVendas;
         private System.Windows.Forms.Button btnRelatorioCliente;
         private System.Windows.Forms.Button btnRelatorioEstoque;

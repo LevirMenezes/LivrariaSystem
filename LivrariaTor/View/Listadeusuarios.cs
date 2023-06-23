@@ -115,5 +115,10 @@ namespace LivrariaTor.View
             form_adm.Show();
             this.Close();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

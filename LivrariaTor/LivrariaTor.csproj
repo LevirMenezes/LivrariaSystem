@@ -156,6 +156,12 @@
       <DependentUpon>ItemLivroCarrossel.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\ItemLivroEventArgs.cs" />
+    <Compile Include="View\ItemRelatorioestoque.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ItemRelatorioestoque.Designer.cs">
+      <DependentUpon>ItemRelatorioestoque.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ItemUsuario.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -179,6 +185,12 @@
     </Compile>
     <Compile Include="View\Maisvendidos.Designer.cs">
       <DependentUpon>Maisvendidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Relatoriodeestoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Relatoriodeestoque.Designer.cs">
+      <DependentUpon>Relatoriodeestoque.cs</DependentUpon>
     </Compile>
     <Compile Include="View\TelaAdm.cs">
       <SubType>Form</SubType>
@@ -238,6 +250,9 @@
     <EmbeddedResource Include="View\ItemLivroCarrossel.resx">
       <DependentUpon>ItemLivroCarrossel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ItemRelatorioestoque.resx">
+      <DependentUpon>ItemRelatorioestoque.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ItemUsuario.resx">
       <DependentUpon>ItemUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -249,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Maisvendidos.resx">
       <DependentUpon>Maisvendidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Relatoriodeestoque.resx">
+      <DependentUpon>Relatoriodeestoque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\TelaAdm.resx">
       <DependentUpon>TelaAdm.cs</DependentUpon>
@@ -294,6 +312,7 @@
     <Content Include="Resources\adicionar-foto.png" />
     <Content Include="Resources\icon-fechar-janela.png" />
     <Content Include="Resources\icons8-excluir-100.png" />
+    <None Include="Resources\img_colorida.jpg" />
     <Content Include="Resources\user-example.png" />
     <Content Include="Resources\livro-clean-code.jpg" />
     <Content Include="Resources\lupa-pesquisar.png" />
