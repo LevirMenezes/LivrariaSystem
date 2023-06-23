@@ -66,9 +66,6 @@ namespace LivrariaTor
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.LklLivros = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.picboxCarrinho = new System.Windows.Forms.PictureBox();
@@ -116,7 +113,6 @@ namespace LivrariaTor
             this.painelFormularios.BackColor = System.Drawing.Color.White;
             this.painelFormularios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.painelFormularios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.painelFormularios.Controls.Add(this.label2);
             this.painelFormularios.Controls.Add(this.btnTelaAdm);
             this.painelFormularios.Controls.Add(this.btnLogout);
             this.painelFormularios.Controls.Add(this.panel3);
@@ -439,9 +435,6 @@ namespace LivrariaTor
             this.panel2.Controls.Add(this.pictureBox3);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.linkLabel6);
-            this.panel2.Controls.Add(this.linkLabel4);
-            this.panel2.Controls.Add(this.linkLabel3);
             this.panel2.Controls.Add(this.LklLivros);
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(22)))), ((int)(((byte)(143)))));
             this.panel2.Location = new System.Drawing.Point(22, 73);
@@ -503,20 +496,6 @@ namespace LivrariaTor
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // linkLabel6
-            // 
-            this.linkLabel6.AutoSize = true;
-            this.linkLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel6.LinkColor = System.Drawing.Color.Purple;
-            this.linkLabel6.Location = new System.Drawing.Point(728, 18);
-            this.linkLabel6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel6.Name = "linkLabel6";
-            this.linkLabel6.Size = new System.Drawing.Size(98, 20);
-            this.linkLabel6.TabIndex = 4;
-            this.linkLabel6.TabStop = true;
-            this.linkLabel6.Text = "Informações";
-            this.linkLabel6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel6_LinkClicked);
-            // 
             // LklMaisVendidos
             // 
             this.LklMaisVendidos.AutoSize = true;
@@ -530,17 +509,6 @@ namespace LivrariaTor
             this.LklMaisVendidos.TabStop = true;
             this.LklMaisVendidos.Text = "Mais Vendidos";
             this.LklMaisVendidos.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
-            this.linkLabel4.AutoSize = true;
-            this.linkLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel4.LinkColor = System.Drawing.Color.Purple;
-            this.linkLabel4.Location = new System.Drawing.Point(482, 17);
-            this.linkLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(113, 20);
-            this.linkLabel4.TabIndex = 2;
-            this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "Mais Vendidos";
-            this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
             // 
             // LKlLancamentos
             // 
@@ -554,16 +522,6 @@ namespace LivrariaTor
             this.LKlLancamentos.TabIndex = 1;
             this.LKlLancamentos.TabStop = true;
             this.LKlLancamentos.Text = "Lançamentos";
-            this.linkLabel3.AutoSize = true;
-            this.linkLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel3.LinkColor = System.Drawing.Color.Purple;
-            this.linkLabel3.Location = new System.Drawing.Point(259, 17);
-            this.linkLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(106, 20);
-            this.linkLabel3.TabIndex = 1;
-            this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "Lançamentos";
             // 
             // LklLivros
             // 
@@ -653,16 +611,6 @@ namespace LivrariaTor
             this.btnFechar.TabIndex = 0;
             this.btnFechar.TabStop = false;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(382, 138);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 25);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Destaques";
             // 
             // FormPrincipal
             // 

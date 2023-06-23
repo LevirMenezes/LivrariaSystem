@@ -143,6 +143,36 @@ namespace LivrariaTor.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_livro_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_livro_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_livro_64__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8_livro_64__1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_livro_96 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_livro_96", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap img_colorida {
             get {
                 object obj = ResourceManager.GetObject("img_colorida", resourceCulture);
@@ -153,9 +183,6 @@ namespace LivrariaTor.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap livro_tipo1 {
-            get {
-                object obj = ResourceManager.GetObject("livro-tipo1", resourceCulture);
         internal static System.Drawing.Bitmap key {
             get {
                 object obj = ResourceManager.GetObject("key", resourceCulture);
@@ -166,32 +193,19 @@ namespace LivrariaTor.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap livro1 {
+            get {
+                object obj = ResourceManager.GetObject("livro1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap login {
             get {
                 object obj = ResourceManager.GetObject("login", resourceCulture);
-        internal static System.Drawing.Bitmap livro_tipo2 {
-            get {
-                object obj = ResourceManager.GetObject("livro_tipo2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap livro_tipo3 {
-            get {
-                object obj = ResourceManager.GetObject("livro_tipo3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap livro_tipo4 {
-            get {
-                object obj = ResourceManager.GetObject("livro_tipo4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -222,9 +236,13 @@ namespace LivrariaTor.Properties {
         internal static System.Drawing.Bitmap news_communication_message_report_information_icon_143332 {
             get {
                 object obj = ResourceManager.GetObject("news_communication_message_report_information_icon_143332", resourceCulture);
-        			return ((System.Drawing.Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Retornar {
             get {
                 object obj = ResourceManager.GetObject("Retornar", resourceCulture);

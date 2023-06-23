@@ -70,7 +70,7 @@ namespace LivrariaTor.View
             // 
             // picboxLivro
             // 
-            this.picboxLivro.Image = global::LivrariaTor.Properties.Resources.livro_tipo4;
+            this.picboxLivro.Image = global::LivrariaTor.Properties.Resources.livro1;
             this.picboxLivro.Location = new System.Drawing.Point(3, 33);
             this.picboxLivro.Name = "picboxLivro";
             this.picboxLivro.Size = new System.Drawing.Size(163, 170);
